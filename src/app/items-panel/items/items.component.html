@@ -1,0 +1,44 @@
+<div class="row text-center">
+    <div class="col-12">
+        <img [src]="'assets/img/icons/'+image+'.png'" width="50" />&nbsp;
+        <span style="font-size: 25px;">{{image | uppercase}}</span>
+    </div>
+    <div class="col-12">
+        <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
+            <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
+                (change)="show = true" checked>
+            <label class="btn btn-option btn-toggle" [for]="'show'+image">
+                <span class="material-symbols-outlined">
+                    check
+                </span>
+            </label>
+
+            <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
+                (change)="show = false">
+            <label class="btn btn-option btn-toggle" [for]="'hide'+image">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </label>
+        </div>
+    </div>
+    <!-- ITEMS -->
+    <div class="col-12" *ngIf="show">
+        <div class="row">
+            <ng-container *ngFor="let item of items; let i=index">
+                <div class="col-12 mt-2">
+                    <button class="btn btn-sm btn-primary btn-item w" [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                        (click)="item.mastered = !item.mastered;calculate()"
+                        [ngClass]="{'prime': item.name.includes('Prime'), 'mastered': item.mastered}">
+                        <img src="assets/img/icons/mastered.png" width="20" class="mastered-icon"
+                            *ngIf="item.mastered" />
+                        {{item.name | uppercase}}
+                        <span class="material-symbols-outlined" style="font-size: 20px;" *ngIf="item.mastered">
+                            check
+                        </span>
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

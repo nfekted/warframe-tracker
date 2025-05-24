@@ -1,0 +1,5 @@
+<div class="row items">
+    <div class="col-12 col-md-3" *ngFor="let item of items">
+        <app-items [image]="item" [items]="account[item]" (update)="calculate()"></app-items>
+    </div>
+</div>

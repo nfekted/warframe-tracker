@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sidebar">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarContent"
+      aria-controls="sidebarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="sidebarContent">
+      <div class="row w">
+        <div class="col-12 text-center">
+          <img [src]="'assets/img/masteryRanks/' + account.masteryRank.rank + '.png'" width="80" />
+        </div>
+        <div class="col-12 text-center">
+          <h3>MASTERY RANK {{account.masteryRank.rank}}</h3>
+          <h4><u>{{mrList[account.masteryRank.rank].name}}</u></h4>
+        </div>
+        <div class="col-12 text-center mt-4">
+          <h5>{{account.mastered}} of {{itemsCount}} items.</h5>
+          <h5>{{account.xp}} of {{maxXp}} XP</h5>
+        </div>
+        <div class="col-12 text-center mt-4">
+          <h5>Railjack Intrinsics:</h5>
+          <input class="form-control text-center" type="number" min="0" max="50" step="1"
+            oninput="validity.valid||(value='');" [(ngModel)]="account.railjack" (input)="calculate()" />
+          <h5>Drifter Intrinsics:</h5>
+          <input class="form-control text-center" type="number" min="0" max="40" step="1"
+            oninput="validity.valid||(value='');" [(ngModel)]="account.drifter" (input)="calculate()" />
+        </div>
+        <div class="col-12 text-center mt-4">
+          <h5>Your next rank is <u>{{nextRank.name}}</u>, with {{nextRank.xp}}XP</h5>
+          <div class="progress" role="progressbar" aria-label="Current XP" aria-valuenow="0" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar bg-warning" [style]="'width: '+progress()+'%'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

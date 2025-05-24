@@ -1,0 +1,8 @@
+<app-sidebar [account]="account" [nextRank]="nextRank" (update)="calculate()" [itemsCount]="itemsCount"></app-sidebar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-5" style="margin-left: 2rem">
+            <app-items-panel [account]="account" (update)="calculate()"></app-items-panel>
+        </div>
+    </div>
+</div>

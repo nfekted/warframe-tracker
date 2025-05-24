@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Amesha",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Amesha#Acquisition"
+    },
+    {
+        "name": "Elytron",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Elytron#Acquisition"
+    },
+    {
+        "name": "Itzal",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Itzal#Acquisition"
+    },
+    {
+        "name": "Odonata",
+        "acquisition": "Quest",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Odonata#Acquisition"
+    },
+    {
+        "name": "Odonata Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Odonata/Prime#Acquisition"
+    }
+]
