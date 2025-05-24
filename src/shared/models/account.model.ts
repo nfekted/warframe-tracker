@@ -10,6 +10,7 @@ export class Account {
     warframes: Item[] = [];
     archwings: Item[] = [];
     plexus: Item[] = [];
+    kdrives: Item[] = [];
 
     constructor() {
 

@@ -12,6 +12,7 @@ import { MasteryRank } from '../shared/models/mastery-rank.model';
 import mrJson from '../shared/jsons/mr.json';
 import warframesJson from '../shared/jsons/warframes.json';
 import archwingJson from '../shared/jsons/archwings.json';
+import kDriveJson from '../shared/jsons/kdrives.json';
 
 
 @Component({
@@ -37,9 +38,10 @@ export class AppComponent {
     this.account.plexus = [new Item('Plexus', 'Plexus', 'Quest')];
     this.initWarframes();
     this.initArchwings();
+    this.initKDrive();
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
-    this.itemsCount = warframesJson.length + archwingJson.length;
+    this.itemsCount = 1 + warframesJson.length + archwingJson.length + kDriveJson.length;
   }
 
   initWarframes() {
@@ -62,6 +64,18 @@ export class AppComponent {
 
       for (const archwing of newArch) {
         this.account.archwings.push(new Item(archwing.name, 'Archwing', archwing.acquisition));
+      }
+    }
+  }
+
+  initKDrive() {
+    if (this.account.kdrives.length != kDriveJson.length) {
+      const newKD = kDriveJson.filter(kdrive => {
+        return !this.account.kdrives.some(kd => kd.name == kdrive.name);
+      });
+
+      for (const kd of newKD) {
+        this.account.kdrives.push(new Item(kd.name, 'kdrives', kd.acquisition));
       }
     }
   }

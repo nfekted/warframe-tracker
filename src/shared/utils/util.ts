@@ -21,8 +21,9 @@ export abstract class Util {
         //6000XP Items
         const mastered6000: number = account.warframes.filter(w => w.mastered).length
             + account.archwings.filter(a => a.mastered).length
-            + account.plexus.filter(p => p.mastered).length;
-            
+            + account.plexus.filter(p => p.mastered).length
+            + account.kdrives.filter(k => k.mastered).length;
+
         //Intrinsics
         const intrinsics: number = account.railjack + account.drifter;
 
