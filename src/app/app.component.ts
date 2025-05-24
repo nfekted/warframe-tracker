@@ -13,6 +13,7 @@ import mrJson from '../shared/jsons/mr.json';
 import warframesJson from '../shared/jsons/warframes.json';
 import archwingJson from '../shared/jsons/archwings.json';
 import kDriveJson from '../shared/jsons/kdrives.json';
+import necramechJson from '../shared/jsons/necramech.json';
 
 
 @Component({
@@ -39,9 +40,11 @@ export class AppComponent {
     this.initWarframes();
     this.initArchwings();
     this.initKDrive();
+    this.initNecramech();
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
-    this.itemsCount = 1 + warframesJson.length + archwingJson.length + kDriveJson.length;
+    this.itemsCount = 1 + warframesJson.length + archwingJson.length + kDriveJson.length
+      + necramechJson.length;
   }
 
   initWarframes() {
@@ -76,6 +79,18 @@ export class AppComponent {
 
       for (const kd of newKD) {
         this.account.kdrives.push(new Item(kd.name, 'kdrives', kd.acquisition));
+      }
+    }
+  }
+
+  initNecramech() {
+    if (this.account.necramechs.length != necramechJson.length) {
+      const newNecra = necramechJson.filter(necra => {
+        return !this.account.necramechs.some(n => n.name == necra.name);
+      });
+
+      for (const necra of newNecra) {
+        this.account.necramechs.push(new Item(necra.name, 'Necramech', necra.acquisition));
       }
     }
   }

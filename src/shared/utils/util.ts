@@ -24,10 +24,13 @@ export abstract class Util {
             + account.plexus.filter(p => p.mastered).length
             + account.kdrives.filter(k => k.mastered).length;
 
+        //8000XP Items
+        const mastered8000: number = account.necramechs.filter(n => n.mastered).length;
+
         //Intrinsics
         const intrinsics: number = account.railjack + account.drifter;
 
-        account.xp = (1500 * intrinsics) + (6000 * mastered6000);
+        account.xp = (1500 * intrinsics) + (6000 * mastered6000) + (8000 * mastered8000);
         account.mastered = mastered6000;
         return account;
     }

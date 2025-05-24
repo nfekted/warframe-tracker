@@ -11,6 +11,7 @@ export class Account {
     archwings: Item[] = [];
     plexus: Item[] = [];
     kdrives: Item[] = [];
+    necramechs: Item[] = [];
 
     constructor() {
 
