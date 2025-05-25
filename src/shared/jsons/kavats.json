@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Adarza",
+        "acquisition": "Incubator",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Adarza_Kavat#Acquisition"
+    },
+    {
+        "name": "Smeeta",
+        "acquisition": "Incubator",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Smeeta_Kavat#Acquisition"
+    },
+    {
+        "name": "Vasca",
+        "acquisition": "Incubator",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vasca_Kavat#Acquisition"
+    },
+    {
+        "name": "Venari",
+        "acquisition": "Automatically acquired ",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Khora/Abilities#Passive"
+    },
+    {
+        "name": "Venari Prime",
+        "acquisition": "Automatically acquired ",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Khora/Abilities#Passive"
+    }
+]

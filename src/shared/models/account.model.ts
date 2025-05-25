@@ -13,6 +13,7 @@ export class Account {
     kdrives: Item[] = [];
     necramechs: Item[] = [];
     kubrows: Item[] = [];
+    kavats: Item[] = [];
     hounds: Item[] = [];
     moas: Item[] = [];
     sentinels: Item[] = [];

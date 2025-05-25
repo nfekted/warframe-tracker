@@ -30,7 +30,9 @@ export abstract class Util {
             + account.hounds.filter(h => h.mastered).length
             + account.moas.filter(m => m.mastered).length
             + account.sentinels.filter(s => s.mastered).length
-            + account.kubrows.filter(k => k.mastered).length;
+            + account.kubrows.filter(k => k.mastered).length
+            + account.kavats.filter(k => k.mastered).length
+            ;
 
         //8000XP Items
         const mastered8000: number = account.necramechs.filter(n => n.mastered).length;
