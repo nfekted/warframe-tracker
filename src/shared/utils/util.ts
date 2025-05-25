@@ -23,7 +23,9 @@ export abstract class Util {
             + account.archwings.filter(a => a.mastered).length
             + account.plexus.filter(p => p.mastered).length
             + account.kdrives.filter(k => k.mastered).length
-            + account.hounds.filter(h => h.mastered).length;
+            + account.hounds.filter(h => h.mastered).length
+            + account.moas.filter(m => m.mastered).length
+            ;
 
         //8000XP Items
         const mastered8000: number = account.necramechs.filter(n => n.mastered).length;

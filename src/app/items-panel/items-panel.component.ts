@@ -16,7 +16,7 @@ export class ItemsPanelComponent {
   @Input() account: Account;
   @Output() update = new EventEmitter<void>();
 
-  items: string[] = ['hounds','necramechs', 'warframes', 'archwings', 'plexus', 'kdrives',]
+  items: string[] = ['moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives',]
 
   constructor() { }
 

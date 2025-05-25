@@ -15,6 +15,7 @@ import archwingJson from '../shared/jsons/archwings.json';
 import kDriveJson from '../shared/jsons/kdrives.json';
 import necramechJson from '../shared/jsons/necramech.json';
 import houndsJson from '../shared/jsons/hounds.json';
+import moasJson from '../shared/jsons/moas.json';
 
 
 @Component({
@@ -43,10 +44,21 @@ export class AppComponent {
     this.initKDrive();
     this.initNecramech();
     this.initHounds();
+    this.initMoas();
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
-    this.itemsCount = 1 + warframesJson.length + archwingJson.length + kDriveJson.length
-      + necramechJson.length + houndsJson.length;
+    this.sumItems();
+  }
+
+  sumItems() {
+    this.itemsCount = 1
+      + warframesJson.length
+      + archwingJson.length
+      + kDriveJson.length
+      + necramechJson.length
+      + houndsJson.length
+      + moasJson.length
+      ;
   }
 
   initWarframes() {
@@ -105,6 +117,18 @@ export class AppComponent {
 
       for (const hound of newHounds) {
         this.account.hounds.push(new Item(hound.name, 'Hound', hound.acquisition));
+      }
+    }
+  }
+
+  initMoas() {
+    if (this.account.moas.length != moasJson.length) {
+      const newMoas = moasJson.filter(moa => {
+        return !this.account.moas.some(m => m.name == moa.name);
+      });
+
+      for (const moa of newMoas) {
+        this.account.moas.push(new Item(moa.name, 'Moa', moa.acquisition));
       }
     }
   }

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Para",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Para#Acquisition"
+    },
+    {
+        "name": "Lambeo",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Lambeo#Acquisition"
+    },
+    {
+        "name": "Oloro",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Oloro#Acquisition"
+    },
+    {
+        "name": "Nychus",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Nychus#Acquisition"
+    }
+]
