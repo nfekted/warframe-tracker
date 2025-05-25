@@ -12,6 +12,9 @@ export class Account {
     plexus: Item[] = [];
     kdrives: Item[] = [];
     necramechs: Item[] = [];
+    hounds: Item[] = [];
+    moas: Item[] = [];
+    sentinels: Item[] = [];
 
     constructor() {
 

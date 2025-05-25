@@ -22,7 +22,8 @@ export abstract class Util {
         const mastered6000: number = account.warframes.filter(w => w.mastered).length
             + account.archwings.filter(a => a.mastered).length
             + account.plexus.filter(p => p.mastered).length
-            + account.kdrives.filter(k => k.mastered).length;
+            + account.kdrives.filter(k => k.mastered).length
+            + account.hounds.filter(h => h.mastered).length;
 
         //8000XP Items
         const mastered8000: number = account.necramechs.filter(n => n.mastered).length;
