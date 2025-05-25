@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Carrier",
+        "acquisition": "Market",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Carrier#Acquisition"
+    },
+    {
+        "name": "Carrier Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Carrier/Prime#Acquisition"
+    },
+    {
+        "name": "Dethcube",
+        "acquisition": "Market",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dethcube#Acquisition"
+    },
+    {
+        "name": "Dethcube Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dethcube/Prime#Acquisition"
+    },
+    {
+        "name": "Diriga",
+        "acquisition": "Market",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Diriga#Acquisition"
+    },
+    {
+        "name": "Djinn",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Djinn#Acquisition"
+    },
+    {
+        "name": "Helios",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Helios#Acquisition"
+    },
+    {
+        "name": "Helios Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Helios/Prime#Acquisition"
+    },
+    {
+        "name": "Nautilus",
+        "acquisition": "Proxima Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Nautilus#Acquisition"
+    },
+    {
+        "name": "Nautilus Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Nautilus/Prime#Acquisition"
+    },
+    {
+        "name": "Oxylus",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Oxylus#Acquisition"
+    },
+    {
+        "name": "Shade",
+        "acquisition": "Market",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Shade#Acquisition"
+    },
+    {
+        "name": "Shade Prime",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Shade/Prime#Acquisition"
+    },
+    {
+        "name": "Taxon",
+        "acquisition": "Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Taxon#Acquisition"
+    },
+    {
+        "name": "Wyrm",
+        "acquisition": "Markte",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Wyrm#Acquisition"
+    },
+    {
+        "name": "Wyrm",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Wyrm/Prime#Acquisition"
+    }
+]

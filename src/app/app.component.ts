@@ -16,6 +16,7 @@ import kDriveJson from '../shared/jsons/kdrives.json';
 import necramechJson from '../shared/jsons/necramech.json';
 import houndsJson from '../shared/jsons/hounds.json';
 import moasJson from '../shared/jsons/moas.json';
+import sentinelsJson from '../shared/jsons/sentinels.json';
 
 
 @Component({
@@ -45,8 +46,11 @@ export class AppComponent {
     this.initNecramech();
     this.initHounds();
     this.initMoas();
+    this.initSentinels();
+
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
+
     this.sumItems();
   }
 
@@ -58,6 +62,7 @@ export class AppComponent {
       + necramechJson.length
       + houndsJson.length
       + moasJson.length
+      + sentinelsJson.length
       ;
   }
 
@@ -129,6 +134,18 @@ export class AppComponent {
 
       for (const moa of newMoas) {
         this.account.moas.push(new Item(moa.name, 'Moa', moa.acquisition));
+      }
+    }
+  }
+
+  initSentinels() {
+    if (this.account.sentinels.length != sentinelsJson.length) {
+      const newSentinels = sentinelsJson.filter(sentinel => {
+        return !this.account.sentinels.some(s => s.name == sentinel.name);
+      });
+
+      for (const sentinel of newSentinels) {
+        this.account.sentinels.push(new Item(sentinel.name, 'Sentinel', sentinel.acquisition));
       }
     }
   }

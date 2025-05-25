@@ -25,6 +25,7 @@ export abstract class Util {
             + account.kdrives.filter(k => k.mastered).length
             + account.hounds.filter(h => h.mastered).length
             + account.moas.filter(m => m.mastered).length
+            + account.sentinels.filter(s => s.mastered).length
             ;
 
         //8000XP Items

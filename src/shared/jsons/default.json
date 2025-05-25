@@ -11,6 +11,8 @@
         "acquisition8": "Kahl's Garrison",
         "acquisition9": "Relic Drop",
         "acquisition10": "Standing",
+        "acquisition11": "Automatically acquired ",
+        "acquisition12": "Market ",
         "acquisitionDescription": "https://wiki.warframe.com/w/Ash#Acquisition"
     }
 ]
