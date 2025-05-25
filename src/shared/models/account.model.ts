@@ -15,6 +15,7 @@ export class Account {
     hounds: Item[] = [];
     moas: Item[] = [];
     sentinels: Item[] = [];
+    companion_weapon: Item[] = [];
 
     constructor() {
 

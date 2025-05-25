@@ -26,6 +26,7 @@ export abstract class Util {
             + account.hounds.filter(h => h.mastered).length
             + account.moas.filter(m => m.mastered).length
             + account.sentinels.filter(s => s.mastered).length
+            + account.companion_weapon.filter(cw => cw.mastered).length
             ;
 
         //8000XP Items

@@ -17,6 +17,7 @@ import necramechJson from '../shared/jsons/necramech.json';
 import houndsJson from '../shared/jsons/hounds.json';
 import moasJson from '../shared/jsons/moas.json';
 import sentinelsJson from '../shared/jsons/sentinels.json';
+import companionWeaponJson from '../shared/jsons/companion-weapon.json';
 
 
 @Component({
@@ -47,6 +48,7 @@ export class AppComponent {
     this.initHounds();
     this.initMoas();
     this.initSentinels();
+    this.initCompanionWeapons();
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
@@ -63,7 +65,8 @@ export class AppComponent {
       + houndsJson.length
       + moasJson.length
       + sentinelsJson.length
-      ;
+      + companionWeaponJson.length;
+    ;
   }
 
   initWarframes() {
@@ -146,6 +149,18 @@ export class AppComponent {
 
       for (const sentinel of newSentinels) {
         this.account.sentinels.push(new Item(sentinel.name, 'Sentinel', sentinel.acquisition));
+      }
+    }
+  }
+
+  initCompanionWeapons() {
+    if (this.account.companion_weapon.length != companionWeaponJson.length) {
+      const newCompWeapons = companionWeaponJson.filter(weapon => {
+        return !this.account.companion_weapon.some(cw => cw.name == weapon.name);
+      });
+
+      for (const cw of newCompWeapons) {
+        this.account.companion_weapon.push(new Item(cw.name, 'Companion Weapon', cw.acquisition));
       }
     }
   }
