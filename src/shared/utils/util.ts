@@ -32,6 +32,8 @@ export abstract class Util {
             + account.sentinels.filter(s => s.mastered).length
             + account.kubrows.filter(k => k.mastered).length
             + account.kavats.filter(k => k.mastered).length
+            + account.predasites.filter(p => p.mastered).length
+            + account.vulpaphylas.filter(v => v.mastered).length
             ;
 
         //8000XP Items

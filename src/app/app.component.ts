@@ -20,6 +20,8 @@ import sentinelsJson from '../shared/jsons/sentinels.json';
 import companionWeaponJson from '../shared/jsons/companion-weapon.json';
 import kubrowJson from '../shared/jsons/kubrows.json';
 import kavatsJson from '../shared/jsons/kavats.json';
+import predasiteJson from '../shared/jsons/predasites.json';
+import vulpaphylasJson from '../shared/jsons/vulpaphylas.json';
 
 
 @Component({
@@ -53,7 +55,8 @@ export class AppComponent {
     this.initCompanionWeapons();
     this.initKubrows();
     this.initKavats();
-
+    this.initPredasite();
+    this.initVulpaphylas();
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
 
@@ -177,6 +180,30 @@ export class AppComponent {
 
       for (const kubrow of newKubrows) {
         this.account.kubrows.push(new Item(kubrow.name, 'Kubrow', kubrow.acquisition));
+      }
+    }
+  }
+
+  initPredasite() {
+    if (this.account.predasites.length != predasiteJson.length) {
+      const newPredasite = predasiteJson.filter(predasite => {
+        return !this.account.predasites.some(p => p.name == predasite.name);
+      });
+
+      for (const predasite of newPredasite) {
+        this.account.predasites.push(new Item(predasite.name, 'Predasite', predasite.acquisition));
+      }
+    }
+  }
+
+  initVulpaphylas() {
+    if (this.account.vulpaphylas.length != vulpaphylasJson.length) {
+      const newVulpaphylas = vulpaphylasJson.filter(vulpaphylas => {
+        return !this.account.vulpaphylas.some(v => v.name == vulpaphylas.name);
+      });
+
+      for (const vulpaphylas of newVulpaphylas) {
+        this.account.vulpaphylas.push(new Item(vulpaphylas.name, 'Vulpaphylas', vulpaphylas.acquisition));
       }
     }
   }

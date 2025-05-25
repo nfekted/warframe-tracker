@@ -13,6 +13,8 @@ export class Account {
     kdrives: Item[] = [];
     necramechs: Item[] = [];
     kubrows: Item[] = [];
+    predasites: Item[] = [];
+    vulpaphylas: Item[] = [];
     kavats: Item[] = [];
     hounds: Item[] = [];
     moas: Item[] = [];
