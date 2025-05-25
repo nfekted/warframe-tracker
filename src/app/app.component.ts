@@ -18,6 +18,7 @@ import houndsJson from '../shared/jsons/hounds.json';
 import moasJson from '../shared/jsons/moas.json';
 import sentinelsJson from '../shared/jsons/sentinels.json';
 import companionWeaponJson from '../shared/jsons/companion-weapon.json';
+import kubrowJson from '../shared/jsons/kubrows.json';
 
 
 @Component({
@@ -49,6 +50,7 @@ export class AppComponent {
     this.initMoas();
     this.initSentinels();
     this.initCompanionWeapons();
+    this.initKubrows();
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
@@ -161,6 +163,18 @@ export class AppComponent {
 
       for (const cw of newCompWeapons) {
         this.account.companion_weapon.push(new Item(cw.name, 'Companion Weapon', cw.acquisition));
+      }
+    }
+  }
+
+  initKubrows() {
+    if (this.account.kubrows.length != kubrowJson.length) {
+      const newKubrows = kubrowJson.filter(kubrow => {
+        return !this.account.kubrows.some(k => k.name == kubrow.name);
+      });
+
+      for (const kubrow of newKubrows) {
+        this.account.kubrows.push(new Item(kubrow.name, 'Kubrow', kubrow.acquisition));
       }
     }
   }

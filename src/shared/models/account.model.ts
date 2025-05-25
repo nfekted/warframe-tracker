@@ -12,6 +12,7 @@ export class Account {
     plexus: Item[] = [];
     kdrives: Item[] = [];
     necramechs: Item[] = [];
+    kubrows: Item[] = [];
     hounds: Item[] = [];
     moas: Item[] = [];
     sentinels: Item[] = [];

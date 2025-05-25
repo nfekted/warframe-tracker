@@ -18,6 +18,10 @@ export abstract class Util {
     }
 
     static calculate(account: Account): Account {
+        //3000XP Items
+        const mastered3000: number = account.companion_weapon.filter(cw => cw.mastered).length
+            ;
+
         //6000XP Items
         const mastered6000: number = account.warframes.filter(w => w.mastered).length
             + account.archwings.filter(a => a.mastered).length
@@ -26,8 +30,7 @@ export abstract class Util {
             + account.hounds.filter(h => h.mastered).length
             + account.moas.filter(m => m.mastered).length
             + account.sentinels.filter(s => s.mastered).length
-            + account.companion_weapon.filter(cw => cw.mastered).length
-            ;
+            + account.kubrows.filter(k => k.mastered).length;
 
         //8000XP Items
         const mastered8000: number = account.necramechs.filter(n => n.mastered).length;
@@ -35,8 +38,8 @@ export abstract class Util {
         //Intrinsics
         const intrinsics: number = account.railjack + account.drifter;
 
-        account.xp = (1500 * intrinsics) + (6000 * mastered6000) + (8000 * mastered8000);
-        account.mastered = mastered6000;
+        account.xp = (1500 * intrinsics) + (3000 * mastered3000) + (6000 * mastered6000) + (8000 * mastered8000);
+        account.mastered = mastered3000 + mastered6000 + mastered8000;
         return account;
     }
 }
