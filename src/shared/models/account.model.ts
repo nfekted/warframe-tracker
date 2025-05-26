@@ -20,6 +20,7 @@ export class Account {
     moas: Item[] = [];
     sentinels: Item[] = [];
     companion_weapon: Item[] = [];
+    amps: Item[] = [];
 
     constructor() {
 

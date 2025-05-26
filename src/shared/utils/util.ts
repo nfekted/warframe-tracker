@@ -20,6 +20,7 @@ export abstract class Util {
     static calculate(account: Account): Account {
         //3000XP Items
         const mastered3000: number = account.companion_weapon.filter(cw => cw.mastered).length
+            + account.amps.filter(a => a.mastered).length
             ;
 
         //6000XP Items

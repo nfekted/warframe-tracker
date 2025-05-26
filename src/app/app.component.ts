@@ -22,6 +22,7 @@ import kubrowJson from '../shared/jsons/kubrows.json';
 import kavatsJson from '../shared/jsons/kavats.json';
 import predasiteJson from '../shared/jsons/predasites.json';
 import vulpaphylasJson from '../shared/jsons/vulpaphylas.json';
+import ampsJson from '../shared/jsons/amps.json';
 
 
 @Component({
@@ -57,6 +58,9 @@ export class AppComponent {
     this.initKavats();
     this.initPredasite();
     this.initVulpaphylas();
+    this.initAmps();
+
+
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
 
@@ -216,6 +220,18 @@ export class AppComponent {
 
       for (const kavat of newKavats) {
         this.account.kavats.push(new Item(kavat.name, 'Kavat', kavat.acquisition));
+      }
+    }
+  }
+
+  initAmps() {
+    if (this.account.amps.length != ampsJson.length) {
+      const newAmps = ampsJson.filter(amp => {
+        return !this.account.amps.some(a => a.name == amp.name);
+      });
+
+      for (const amp of newAmps) {
+        this.account.amps.push(new Item(amp.name, 'Amp', amp.acquisition));
       }
     }
   }

@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Sirocco",
+        "acquisition": "Quest",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sirocco#Acquisition"
+    },
+    {
+        "name": "Mote Amp",
+        "acquisition": "Automatically acquired",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Mote_Amp#Acquisition"
+    },
+    {
+        "name": "Raplak",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Raplak_Prism#Acquisition"
+    },
+    {
+        "name": "Shwaak",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Shwaak_Prism#Acquisition"
+    },
+    {
+        "name": "Granmu",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Granmu_Prism#Acquisition"
+    },
+    {
+        "name": "Rahn",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Rahn_Prism#Acquisition"
+    },
+    {
+        "name": "Cantic",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Cantic_Prism#Acquisition"
+    },
+    {
+        "name": "Lega",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Lega_Prism#Acquisition"
+    },
+    {
+        "name": "Klamora",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Klamora_Prism#Acquisition"
+    }
+]
