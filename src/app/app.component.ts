@@ -23,6 +23,8 @@ import kavatsJson from '../shared/jsons/kavats.json';
 import predasiteJson from '../shared/jsons/predasites.json';
 import vulpaphylasJson from '../shared/jsons/vulpaphylas.json';
 import ampsJson from '../shared/jsons/amps.json';
+import zawJson from '../shared/jsons/zaws.json';
+import kitgunJson from '../shared/jsons/kitguns.json';
 
 
 @Component({
@@ -59,7 +61,8 @@ export class AppComponent {
     this.initPredasite();
     this.initVulpaphylas();
     this.initAmps();
-
+    this.initZaws();
+    this.initKitGuns();
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
@@ -76,8 +79,15 @@ export class AppComponent {
       + houndsJson.length
       + moasJson.length
       + sentinelsJson.length
-      + companionWeaponJson.length;
-    ;
+      + companionWeaponJson.length
+      + kubrowJson.length
+      + kavatsJson.length
+      + predasiteJson.length
+      + vulpaphylasJson.length
+      + ampsJson.length
+      + zawJson.length
+      + kitgunJson.length
+      ;
   }
 
   initWarframes() {
@@ -232,6 +242,30 @@ export class AppComponent {
 
       for (const amp of newAmps) {
         this.account.amps.push(new Item(amp.name, 'Amp', amp.acquisition));
+      }
+    }
+  }
+
+  initZaws() {
+    if (this.account.zaws.length != zawJson.length) {
+      const newZaw = zawJson.filter(zaw => {
+        return !this.account.zaws.some(z => z.name == zaw.name);
+      });
+
+      for (const zaw of newZaw) {
+        this.account.zaws.push(new Item(zaw.name, 'Zaw', zaw.acquisition));
+      }
+    }
+  }
+
+  initKitGuns() {
+    if (this.account.kitguns.length != kitgunJson.length) {
+      const newKitgun = kitgunJson.filter(kitgun => {
+        return !this.account.kitguns.some(k => k.name == kitgun.name);
+      });
+
+      for (const kitgun of newKitgun) {
+        this.account.kitguns.push(new Item(kitgun.name, 'Kitgun', kitgun.acquisition));
       }
     }
   }

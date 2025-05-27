@@ -21,6 +21,8 @@ export abstract class Util {
         //3000XP Items
         const mastered3000: number = account.companion_weapon.filter(cw => cw.mastered).length
             + account.amps.filter(a => a.mastered).length
+            + account.zaws.filter(z => z.mastered).length
+            + account.kitguns.filter(k => k.mastered).length
             ;
 
         //6000XP Items

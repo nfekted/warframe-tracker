@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Balla",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Balla#Acquisition"
+    },
+    {
+        "name": "Cyath",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Cyath#Acquisition"
+    },
+    {
+        "name": "Dehtat",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dehtat#Acquisition"
+    },
+    {
+        "name": "Dokrahm",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dokrahm#Acquisition"
+    },
+    {
+        "name": "Kronsh",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kronsh#Acquisition"
+    },
+    {
+        "name": "Mewan",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Mewan#Acquisition"
+    },
+    {
+        "name": "Ooltha",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Ooltha#Acquisition"
+    },
+    {
+        "name": "Rabvee",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Rabvee#Acquisition"
+    },
+    {
+        "name": "Sepfahn",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sepfahn#Acquisition"
+    },
+    {
+        "name": "Plague Keewar",
+        "acquisition": "Events",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Plague_Keewar#Acquisition"
+    },
+    {
+        "name": "Plague Kripath",
+        "acquisition": "Events",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Plague_Kripath#Acquisition"
+    }
+]

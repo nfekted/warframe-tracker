@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Catchmoon",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Catchmoon#Acquisition"
+    },
+    {
+        "name": "Gaze",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Gaze#Acquisition"
+    },
+    {
+        "name": "Rattleguts",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Rattleguts#Acquisition"
+    },
+    {
+        "name": "Sporelacer",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sporelacer#Acquisition"
+    },
+    {
+        "name": "Tombfinger",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Tombfinger#Acquisition"
+    },
+    {
+        "name": "Vermisplicer",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vermisplicer#Acquisition"
+    }
+]
