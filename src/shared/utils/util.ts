@@ -2,7 +2,7 @@ import { Account } from "../models/account.model";
 
 export abstract class Util {
     static cookieName: string = 'wuteringcalculator-lang';
-    // static characters: Array<Character> = new Array<Character>();
+    static itemTypes: string[] = ['archwing_primary', 'archwing_melee', 'zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives'];
 
     static load(name?: string) {
         return JSON.parse(window.localStorage.getItem(name ? name : this.cookieName));
@@ -23,6 +23,8 @@ export abstract class Util {
             + account.amps.filter(a => a.mastered).length
             + account.zaws.filter(z => z.mastered).length
             + account.kitguns.filter(k => k.mastered).length
+            + account.archwing_melee.filter(k => k.mastered).length
+            + account.archwing_primary.filter(k => k.mastered).length
             ;
 
         //6000XP Items

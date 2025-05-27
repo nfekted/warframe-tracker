@@ -1,0 +1,97 @@
+[
+    {
+        "name": "Dual Decurion",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Decurion#Acquisition"
+    },
+    {
+        "name": "Prisma Dual Decurions",
+        "acquisition": "Baro Ki'Teer",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Dual_Decurions#Acquisition"
+    },
+    {
+        "name": "Kuva Ayanga",
+        "acquisition": "Kuva Lich",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Ayanga#Acquisition"
+    },
+    {
+        "name": "Kuva Grattler",
+        "acquisition": "Kuva Lich",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Grattler#Acquisition"
+    },
+    {
+        "name": "Morgha",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Morgha#Acquisition"
+    },
+    {
+        "name": "Grattler",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Grattler#Acquisition"
+    },
+    {
+        "name": "Imperator",
+        "acquisition": "Automatically acquired",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Imperator#Acquisition"
+    },
+    {
+        "name": "Mausolon",
+        "acquisition": "Automatically acquired",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Mausolon#Acquisition"
+    },
+    {
+        "name": "Imperator Vandal",
+        "acquisition": "Events",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Imperator_Vandal#Acquisition"
+    },
+    {
+        "name": "Phaedra",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Phaedra#Acquisition"
+    },
+    {
+        "name": "Cyngas",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Cyngas#Acquisition"
+    },
+    {
+        "name": "Velocitus",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Velocitus#Acquisition"
+    },
+    {
+        "name": "Cortege",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Cortege#Acquisition"
+    },
+    {
+        "name": "Larkspur",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Larkspur#Acquisition"
+    },
+    {
+        "name": "Larkspur Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Larkspur_Prime#Acquisition"
+    },
+    {
+        "name": "Fluctus",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Fluctus#Acquisition"
+    },
+    {
+        "name": "Corvas",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Corvas#Acquisition"
+    },
+    {
+        "name": "Corvas Prime",
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Corvas_Prime#Acquisition"
+    },
+    {
+        "name": "Mandonel",
+        "acquisition": "Bounty",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Mandonel#Acquisition"
+    }
+]

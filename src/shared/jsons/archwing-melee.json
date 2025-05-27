@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Agkuza",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Agkuza#Acquisition"
+    },
+    {
+        "name": "Centaur",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Centaur#Acquisition"
+    },
+    {
+        "name": "Kaszas",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kaszas#Acquisition"
+    },
+    {
+        "name": "Knux",
+        "acquisition": "Dojo",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Knux#Acquisition"
+    },
+    {
+        "name": "Onorix",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Onorix#Acquisition"
+    },
+    {
+        "name": "Prisma Veritux",
+        "acquisition": "Baro Ki'Teer",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Veritux#Acquisition"
+    },
+    {
+        "name": "Rathbone",
+        "acquisition": "Syndicates",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Rathbone#Acquisition"
+    },
+    {
+        "name": "Veritux",
+        "acquisition": "Automatically acquired ",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Veritux#Acquisition"
+    }
+]

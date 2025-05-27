@@ -23,6 +23,8 @@ export class Account {
     amps: Item[] = [];
     zaws: Item[] = [];
     kitguns: Item[] = [];
+    archwing_melee: Item[] = [];
+    archwing_primary: Item[] = [];
 
     constructor() {
 

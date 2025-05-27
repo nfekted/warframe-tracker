@@ -3,6 +3,7 @@ import { Account } from '../../shared/models/account.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './items/items.component';
+import { Util } from '../../shared/utils/util';
 
 @Component({
   selector: 'app-items-panel',
@@ -16,7 +17,7 @@ export class ItemsPanelComponent {
   @Input() account: Account;
   @Output() update = new EventEmitter<void>();
 
-  items: string[] = ['zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives',]
+  items: string[] = Util.itemTypes;
 
   constructor() { }
 
