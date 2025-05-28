@@ -16,6 +16,7 @@ import kitgunJson from '../jsons/kitguns.json';
 import archMeleeJson from '../jsons/archwing-melee.json';
 import archPrimaryJson from '../jsons/archwing-primary.json';
 import plexusJson from '../jsons/plexusJson.json';
+import meleeJson from '../jsons/melee.json';
 
 export class ItemJsons {
 
@@ -37,6 +38,7 @@ export class ItemJsons {
     archwing_melee = archMeleeJson;
     archwing_primary = archPrimaryJson;
     plexus = plexusJson;
+    melees = meleeJson;
 
     constructor() {
 

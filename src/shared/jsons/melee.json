@@ -1,0 +1,1077 @@
+[
+    {
+        "name": "Ghoulsaw",
+        "acquisition": "Events",
+        "desc": "https://wiki.warframe.com/w/Ghoulsaw#Acquisition"
+    },
+    {
+        "name": "Ceti Lacera",
+        "acquisition": "Events",
+        "desc": "https://wiki.warframe.com/w/Ceti_Lacera#Acquisition"
+    },
+    {
+        "name": "Dorrclave",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Dorrclave#Acquisition"
+    },
+    {
+        "name": "Jat Kusar",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Jat_Kusar#Acquisition"
+    },
+    {
+        "name": "Lacera",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Lacera#Acquisition"
+    },
+    {
+        "name": "Mios",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Mios#Acquisition"
+    },
+    {
+        "name": "Keratinos",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Keratinos#Acquisition"
+    },
+    {
+        "name": "Ripkas",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Ripkas#Acquisition"
+    },
+    {
+        "name": "Venka",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Venka#Acquisition"
+    },
+    {
+        "name": "Venka Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Venka_Prime#Acquisition"
+    },
+    {
+        "name": "Ceramic Dagger",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Ceramic_Dagger#Acquisition"
+    },
+    {
+        "name": "Dark Dagger",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Dark_Dagger#Acquisition"
+    },
+    {
+        "name": "Heat Dagger",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Heat_Dagger#Acquisition"
+    },
+    {
+        "name": "Innodem",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Innodem#Acquisition"
+    },
+    {
+        "name": "Karyst",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Karyst#Acquisition"
+    },
+    {
+        "name": "Karyst Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Karyst_Prime#Acquisition"
+    },
+    {
+        "name": "Rakta Dark Dagger",
+        "acquisition": "Syndicates",
+        "desc": "https://wiki.warframe.com/w/Rakta_Dark_Dagger#Acquisition"
+    },
+    {
+        "name": "Rumblejack",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Rumblejack#Acquisition"
+    },
+    {
+        "name": "Sheev",
+        "acquisition": "Invasion",
+        "desc": "https://wiki.warframe.com/w/Sheev#Acquisition"
+    },
+    {
+        "name": "Ether Daggers",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Ether_Daggers#Acquisition"
+    },
+    {
+        "name": "Fang",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Fang#Acquisition"
+    },
+    {
+        "name": "Fang Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Fang_Prime#Acquisition"
+    },
+    {
+        "name": "Nepheri",
+        "acquisition": "Bounty",
+        "desc": "https://wiki.warframe.com/w/Nepheri#Acquisition"
+    },
+    {
+        "name": "Okina",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Okina#Acquisition"
+    },
+    {
+        "name": "Okina Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Okina_Prime#Acquisition"
+    },
+    {
+        "name": "Sun & Moon",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Sun_%26_Moon#Acquisition"
+    },
+    {
+        "name": "Dark Split-Sword (Dual Swords)",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Dark_Split-Sword#Acquisition"
+    },
+    {
+        "name": "Dex Dakra",
+        "acquisition": "Events",
+        "desc": "https://wiki.warframe.com/w/Dex_Dakra#Acquisition"
+    },
+    {
+        "name": "Dual Cleavers",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Cleavers#Acquisition"
+    },
+    {
+        "name": "Dual Ether",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Ether#Acquisition"
+    },
+    {
+        "name": "Dual Heat Swords",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Heat_Swords#Acquisition"
+    },
+    {
+        "name": "Dual Ichor",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Dual_Ichor#Acquisition"
+    },
+    {
+        "name": "Dual Kamas",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Kamas#Acquisition"
+    },
+    {
+        "name": "Dual Kamas Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Dual_Kamas_Prime#Acquisition"
+    },
+    {
+        "name": "Dual Keres",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Keres#Acquisition"
+    },
+    {
+        "name": "Dual Keres Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Dual_Keres_Prime#Acquisition"
+    },
+    {
+        "name": "Dual Raza",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Dual_Raza#Acquisition"
+    },
+    {
+        "name": "Dual Skana",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Skana#Acquisition"
+    },
+    {
+        "name": "Dual Viciss",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Dual_Viciss#Acquisition"
+    },
+    {
+        "name": "Dual Zoren",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dual_Zoren#Acquisition"
+    },
+    {
+        "name": "Dual Zoren Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Dual_Zoren_Prime#Acquisition"
+    },
+    {
+        "name": "Nami Skyla",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Nami_Skyla#Acquisition"
+    },
+    {
+        "name": "Nami Skyla Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Nami_Skyla_Prime#Acquisition"
+    },
+    {
+        "name": "Prisma Dual Cleavers",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Prisma_Dual_Cleavers#Acquisition"
+    },
+    {
+        "name": "Twin Basolk",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Twin_Basolk#Acquisition"
+    },
+    {
+        "name": "Twin Krohkur",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Twin_Krohkur#Acquisition"
+    },
+    {
+        "name": "Ankyros",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Ankyros#Acquisition"
+    },
+    {
+        "name": "Ankyros Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Ankyros_Prime#Acquisition"
+    },
+    {
+        "name": "Furax",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Furax#Acquisition"
+    },
+    {
+        "name": "Furax Wraith",
+        "acquisition": "Events",
+        "desc": "https://wiki.warframe.com/w/Furax_Wraith#Acquisition"
+    },
+    {
+        "name": "MK1-Furax",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/MK1-Furax#Acquisition"
+    },
+    {
+        "name": "Ruvox",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Ruvox#Acquisition"
+    },
+    {
+        "name": "Tekko",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Tekko#Acquisition"
+    },
+    {
+        "name": "Tekko Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Tekko_Prime#Acquisition"
+    },
+    {
+        "name": "Cerata",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Cerata#Acquisition"
+    },
+    {
+        "name": "Coda Pathocyst",
+        "acquisition": "Eleanor",
+        "desc": "https://wiki.warframe.com/w/Coda_Pathocyst#Acquisition"
+    },
+    {
+        "name": "Falcor",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Falcor#Acquisition"
+    },
+    {
+        "name": "Glaive",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Glaive#Acquisition"
+    },
+    {
+        "name": "Glaive Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Glaive_Prime#Acquisition"
+    },
+    {
+        "name": "Halikar",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Halikar#Acquisition"
+    },
+    {
+        "name": "Halikar Wraith",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Halikar_Wraith#Acquisition"
+    },
+    {
+        "name": "Kestrel",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Kestrel#Acquisition"
+    },
+    {
+        "name": "Orvius",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Orvius#Acquisition"
+    },
+    {
+        "name": "Pathocyst",
+        "acquisition": "Boss Drop",
+        "desc": "https://wiki.warframe.com/w/Pathocyst#Acquisition"
+    },
+    {
+        "name": "Xoris",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Xoris#Acquisition"
+    },
+    {
+        "name": "Redeemer",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Redeemer#Acquisition"
+    },
+    {
+        "name": "Redeemer Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Redeemer_Prime#Acquisition"
+    },
+    {
+        "name": "Sarpa",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Sarpa#Acquisition"
+    },
+    {
+        "name": "Stropha",
+        "acquisition": "Boss Drop",
+        "desc": "https://wiki.warframe.com/w/Stropha#Acquisition"
+    },
+    {
+        "name": "Vastilok",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Vastilok#Acquisition"
+    },
+    {
+        "name": "Arca Titron",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Arca_Titron#Acquisition"
+    },
+    {
+        "name": "Coda Motovore",
+        "acquisition": "Eleanor",
+        "desc": "https://wiki.warframe.com/w/Coda_Motovore#Acquisition"
+    },
+    {
+        "name": "Ekhein",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Ekhein#Acquisition"
+    },
+    {
+        "name": "Fragor",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Fragor#Acquisition"
+    },
+    {
+        "name": "Fragor Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Fragor_Prime#Acquisition"
+    },
+    {
+        "name": "Heliocor",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Heliocor#Acquisition"
+    },
+    {
+        "name": "Jat Kittag",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Jat_Kittag#Acquisition"
+    },
+    {
+        "name": "Kuva Shildeg",
+        "acquisition": "Kuva Lich",
+        "desc": "https://wiki.warframe.com/w/Kuva_Shildeg#Acquisition"
+    },
+    {
+        "name": "Magistar",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Magistar#Acquisition"
+    },
+    {
+        "name": "Sampotes",
+        "acquisition": "Teshin's Cave",
+        "desc": "https://wiki.warframe.com/w/Sampotes#Acquisition"
+    },
+    {
+        "name": "Sancti Magistar",
+        "acquisition": "Syndicates",
+        "desc": "https://wiki.warframe.com/w/Sancti_Magistar#Acquisition"
+    },
+    {
+        "name": "Sibear",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Sibear#Acquisition"
+    },
+    {
+        "name": "Synoid Heliocor",
+        "acquisition": "Syndicates",
+        "desc": "https://wiki.warframe.com/w/Synoid_Heliocor#Acquisition"
+    },
+    {
+        "name": "Volnus",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Volnus#Acquisition"
+    },
+    {
+        "name": "Volnus Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Volnus_Prime#Acquisition"
+    },
+    {
+        "name": "Wolf Sledge",
+        "acquisition": "Boss Drop",
+        "desc": "https://wiki.warframe.com/w/Wolf_Sledge#Acquisition"
+    },
+    {
+        "name": "Dark Split-Sword (Heavy Blade)",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Dark_Split-Sword#Acquisition"
+    },
+    {
+        "name": "Galatine",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Galatine#Acquisition"
+    },
+    {
+        "name": "Galatine Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Galatine_Prime#Acquisition"
+    },
+    {
+        "name": "Gram",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Gram#Acquisition"
+    },
+    {
+        "name": "Gram Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Gram_Prime#Acquisition"
+    },
+    {
+        "name": "Masseter",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Masseter#Acquisition"
+    },
+    {
+        "name": "Masseter Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Masseter_Prime#Acquisition"
+    },
+    {
+        "name": "Paracesis",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Paracesis#Acquisition"
+    },
+    {
+        "name": "Sarofang",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Sarofang#Acquisition"
+    },
+    {
+        "name": "Scindo",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Scindo#Acquisition"
+    },
+    {
+        "name": "Scindo Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Scindo_Prime#Acquisition"
+    },
+    {
+        "name": "Tenet Exec",
+        "acquisition": "Ergo Glast",
+        "desc": "https://wiki.warframe.com/w/Tenet_Exec#Acquisition"
+    },
+    {
+        "name": "Vitrica",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Vitrica#Acquisition"
+    },
+    {
+        "name": "War",
+        "acquisition": "Boss Drop",
+        "desc": "https://wiki.warframe.com/w/War#Acquisition"
+    },
+    {
+        "name": "Zenistar",
+        "acquisition": "Daily Tribute",
+        "desc": "https://wiki.warframe.com/w/Zenistar#Acquisition"
+    },
+    {
+        "name": "Corufell",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Corufell#Acquisition"
+    },
+    {
+        "name": "Hespar",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Hespar#Acquisition"
+    },
+    {
+        "name": "Gazal Machete",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Gazal_Machete#Acquisition"
+    },
+    {
+        "name": "Kama",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Kama#Acquisition"
+    },
+    {
+        "name": "Kreska",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Kreska#Acquisition"
+    },
+    {
+        "name": "Machete",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Machete#Acquisition"
+    },
+    {
+        "name": "Machete Wraith",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Machete_Wraith#Acquisition"
+    },
+    {
+        "name": "Nami Solo",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Nami_Solo#Acquisition"
+    },
+    {
+        "name": "Prisma Machete",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Prisma_Machete#Acquisition"
+    },
+    {
+        "name": "Prova",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Prova#Acquisition"
+    },
+    {
+        "name": "Prova Vandal",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Prova_Vandal#Acquisition"
+    },
+    {
+        "name": "Slaytra",
+        "acquisition": "Kahl's Garrison",
+        "desc": "https://wiki.warframe.com/w/Slaytra#Acquisition"
+    },
+    {
+        "name": "Dex Nikana",
+        "acquisition": "Events",
+        "desc": "https://wiki.warframe.com/w/Dex_Nikana#Acquisition"
+    },
+    {
+        "name": "Dragon Nikana",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Dragon_Nikana#Acquisition"
+    },
+    {
+        "name": "Nikana",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Nikana#Acquisition"
+    },
+    {
+        "name": "Nikana Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Nikana_Prime#Acquisition"
+    },
+    {
+        "name": "Skiajati",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Skiajati#Acquisition"
+    },
+    {
+        "name": "Syam",
+        "acquisition": "Teshin's Cave",
+        "desc": "https://wiki.warframe.com/w/Syam#Acquisition"
+    },
+    {
+        "name": "Ninkondi",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Ninkondi#Acquisition"
+    },
+    {
+        "name": "Ninkondi Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Ninkondi_Prime#Acquisition"
+    },
+    {
+        "name": "Pulmonars",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Pulmonars#Acquisition"
+    },
+    {
+        "name": "Shaku",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Shaku#Acquisition"
+    },
+    {
+        "name": "Amanata",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Amanata#Acquisition"
+    },
+    {
+        "name": "Cassowar",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Cassowar#Acquisition"
+    },
+    {
+        "name": "Edun",
+        "acquisition": "Teshin's Cave",
+        "desc": "https://wiki.warframe.com/w/Edun#Acquisition"
+    },
+    {
+        "name": "Guandao",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Guandao#Acquisition"
+    },
+    {
+        "name": "Guandao Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Guandao_Prime#Acquisition"
+    },
+    {
+        "name": "Kesheg",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Kesheg#Acquisition"
+    },
+    {
+        "name": "Korumm",
+        "acquisition": "Bounty",
+        "desc": "https://wiki.warframe.com/w/Korumm#Acquisition"
+    },
+    {
+        "name": "Lesion",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Lesion#Acquisition"
+    },
+    {
+        "name": "Orthos",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Orthos#Acquisition"
+    },
+    {
+        "name": "Orthos Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Orthos_Prime#Acquisition"
+    },
+    {
+        "name": "Pupacyst",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Pupacyst#Acquisition"
+    },
+    {
+        "name": "Serro",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Serro#Acquisition"
+    },
+    {
+        "name": "Sydon",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Sydon#Acquisition"
+    },
+    {
+        "name": "Tonbo",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Tonbo#Acquisition"
+    },
+    {
+        "name": "Vaykor Sydon",
+        "acquisition": "Syndicates",
+        "desc": "https://wiki.warframe.com/w/Vaykor_Sydon#Acquisition"
+    },
+    {
+        "name": "Destreza",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Destreza#Acquisition"
+    },
+    {
+        "name": "Destreza Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Destreza_Prime#Acquisition"
+    },
+    {
+        "name": "Endura",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Endura#Acquisition"
+    },
+    {
+        "name": "Anku",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Anku#Acquisition"
+    },
+    {
+        "name": "Caustacyst",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Caustacyst#Acquisition"
+    },
+    {
+        "name": "Coda Caustacyst",
+        "acquisition": "Eleanor",
+        "desc": "https://wiki.warframe.com/w/Coda_Caustacyst#Acquisition"
+    },
+    {
+        "name": "Ether Reaper",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Ether_Reaper#Acquisition"
+    },
+    {
+        "name": "Harmony",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Harmony#Acquisition"
+    },
+    {
+        "name": "Hate",
+        "acquisition": "Boss Drop",
+        "desc": "https://wiki.warframe.com/w/Hate#Acquisition"
+    },
+    {
+        "name": "Reaper Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Reaper_Prime#Acquisition"
+    },
+    {
+        "name": "Tenet Grigori",
+        "acquisition": "Ergo Glast",
+        "desc": "https://wiki.warframe.com/w/Tenet_Grigori#Acquisition"
+    },
+    {
+        "name": "Venato",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Venato#Acquisition"
+    },
+    {
+        "name": "Coda Hirudo",
+        "acquisition": "Eleanor",
+        "desc": "https://wiki.warframe.com/w/Coda_Hirudo#Acquisition"
+    },
+    {
+        "name": "Hirudo",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Hirudo#Acquisition"
+    },
+    {
+        "name": "Kogake",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Kogake#Acquisition"
+    },
+    {
+        "name": "Kogake Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Kogake_Prime#Acquisition"
+    },
+    {
+        "name": "Korrudo",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Korrudo#Acquisition"
+    },
+    {
+        "name": "Obex",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Obex#Acquisition"
+    },
+    {
+        "name": "Prisma Obex",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Prisma_Obex#Acquisition"
+    },
+    {
+        "name": "Amphis",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Amphis#Acquisition"
+    },
+    {
+        "name": "Bo",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Bo#Acquisition"
+    },
+    {
+        "name": "Bo Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Bo_Prime#Acquisition"
+    },
+    {
+        "name": "Broken Scepter",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Broken_Scepter#Acquisition"
+    },
+    {
+        "name": "Cadus",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Cadus#Acquisition"
+    },
+    {
+        "name": "MK1-Bo",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/MK1-Bo#Acquisition"
+    },
+    {
+        "name": "Tipedo",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Tipedo#Acquisition"
+    },
+    {
+        "name": "Tipedo Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Tipedo_Prime#Acquisition"
+    },
+    {
+        "name": "Ack & Brunt",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Ack_%26_Brunt#Acquisition"
+    },
+    {
+        "name": "Argo & Vel",
+        "acquisition": "Teshin's Cave",
+        "desc": "https://wiki.warframe.com/w/Argo_%26_Vel#Acquisition"
+    },
+    {
+        "name": "Cobra & Crane",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Cobra_%26_Crane#Acquisition"
+    },
+    {
+        "name": "Cobra & Crane Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Cobra_%26_Crane_Prime#Acquisition"
+    },
+    {
+        "name": "Sigma & Octantis",
+        "acquisition": "Daily Tribute",
+        "desc": "https://wiki.warframe.com/w/Sigma_%26_Octantis#Acquisition"
+    },
+    {
+        "name": "Silva & Aegis",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Silva_%26_Aegis#Acquisition"
+    },
+    {
+        "name": "Silva & Aegis Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Silva_%26_Aegis_Prime#Acquisition"
+    },
+    {
+        "name": "Tak & Lug",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Tak_%26_Lug#Acquisition"
+    },
+    {
+        "name": "Tenet Agendus",
+        "acquisition": "Ergo Glast",
+        "desc": "https://wiki.warframe.com/w/Tenet_Agendus#Acquisition"
+    },
+    {
+        "name": "Broken War",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Broken_War#Acquisition"
+    },
+    {
+        "name": "Coda Mire",
+        "acquisition": "Eleanor",
+        "desc": "https://wiki.warframe.com/w/Coda_Mire#Acquisition"
+    },
+    {
+        "name": "Cronus",
+        "acquisition": "Boss Drop",
+        "desc": "https://wiki.warframe.com/w/Cronus#Acquisition"
+    },
+    {
+        "name": "Dakra Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Dakra_Prime#Acquisition"
+    },
+    {
+        "name": "Dark Sword",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Dark_Sword#Acquisition"
+    },
+    {
+        "name": "Ether Sword",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Ether_Sword#Acquisition"
+    },
+    {
+        "name": "Heat Sword",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Heat_Sword#Acquisition"
+    },
+    {
+        "name": "Jaw Sword",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Jaw_Sword#Acquisition"
+    },
+    {
+        "name": "Krohkur",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Krohkur#Acquisition"
+    },
+    {
+        "name": "Mire",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Mire#Acquisition"
+    },
+    {
+        "name": "Pangolin Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Pangolin_Prime#Acquisition"
+    },
+    {
+        "name": "Pangolin Sword",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Pangolin_Sword#Acquisition"
+    },
+    {
+        "name": "Plasma Sword",
+        "acquisition": "Nightwave",
+        "desc": "https://wiki.warframe.com/w/Plasma_Sword#Acquisition"
+    },
+    {
+        "name": "Prisma Skana",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Prisma_Skana#Acquisition"
+    },
+    {
+        "name": "Skana",
+        "acquisition": "Quest",
+        "desc": "https://wiki.warframe.com/w/Skana#Acquisition"
+    },
+    {
+        "name": "Skana Prime",
+        "acquisition": "Founders-exclusive",
+        "desc": "https://wiki.warframe.com/w/Skana_Prime#Acquisition"
+    },
+    {
+        "name": "Boltace",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Boltace#Acquisition"
+    },
+    {
+        "name": "Kronen",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Kronen#Acquisition"
+    },
+    {
+        "name": "Kronen Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Kronen_Prime#Acquisition"
+    },
+    {
+        "name": "Ohma",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Ohma#Acquisition"
+    },
+    {
+        "name": "Praedos",
+        "acquisition": "Standing",
+        "desc": "https://wiki.warframe.com/w/Praedos#Acquisition"
+    },
+    {
+        "name": "Prisma Ohma",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Prisma_Ohma#Acquisition"
+    },
+    {
+        "name": "Telos Boltace",
+        "acquisition": "Syndicates",
+        "desc": "https://wiki.warframe.com/w/Telos_Boltace#Acquisition"
+    },
+    {
+        "name": "Tonkkatt",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Tonkkatt#Acquisition"
+    },
+    {
+        "name": "Azothane",
+        "acquisition": "Teshin's Cave",
+        "desc": "https://wiki.warframe.com/w/Azothane#Acquisition"
+    },
+    {
+        "name": "Pennant",
+        "acquisition": "Proxima Star Chart",
+        "desc": "https://wiki.warframe.com/w/Pennant#Acquisition"
+    },
+    {
+        "name": "Tatsu",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Tatsu#Acquisition"
+    },
+    {
+        "name": "Tatsu Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Tatsu_Prime#Acquisition"
+    },
+    {
+        "name": "Tenet Livia",
+        "acquisition": "Ergo Glast",
+        "desc": "https://wiki.warframe.com/w/Tenet_Livia#Acquisition"
+    },
+    {
+        "name": "Arum Spinosa",
+        "acquisition": "Star Chart",
+        "desc": "https://wiki.warframe.com/w/Arum_Spinosa#Acquisition"
+    },
+    {
+        "name": "Gunsen",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Gunsen#Acquisition"
+    },
+    {
+        "name": "Gunsen Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Gunsen_Prime#Acquisition"
+    },
+    {
+        "name": "Quassus",
+        "acquisition": "Bounty",
+        "desc": "https://wiki.warframe.com/w/Quassus#Acquisition"
+    },
+    {
+        "name": "Quassus Prime",
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Quassus_Prime#Acquisition"
+    },
+    {
+        "name": "Vericres",
+        "acquisition": "Baro Ki'Teer",
+        "desc": "https://wiki.warframe.com/w/Vericres#Acquisition"
+    },
+    {
+        "name": "Atterax",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Atterax#Acquisition"
+    },
+    {
+        "name": "Galvacord",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Galvacord#Acquisition"
+    },
+    {
+        "name": "Lecta",
+        "acquisition": "Market",
+        "desc": "https://wiki.warframe.com/w/Lecta#Acquisition"
+    },
+    {
+        "name": "Scoliac",
+        "acquisition": "Dojo",
+        "desc": "https://wiki.warframe.com/w/Scoliac#Acquisition"
+    },
+    {
+        "name": "Secura Lecta",
+        "acquisition": "Syndicates",
+        "desc": "https://wiki.warframe.com/w/Secura_Lecta#Acquisition"
+    },
+    {
+        "name": "Verdilac",
+        "acquisition": "Bounty",
+        "desc": "https://wiki.warframe.com/w/Verdilac#Acquisition"
+    }
+]
