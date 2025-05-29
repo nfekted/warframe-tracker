@@ -2,7 +2,7 @@ import { Account } from "../models/account.model";
 
 export abstract class Util {
     static cookieName: string = 'wuteringcalculator-lang';
-    static itemTypes: string[] = ['pistols', 'melees', 'archwing_primary', 'archwing_melee', 'zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives'];
+    static itemTypes: string[] = ['rifles', 'pistols', 'melees', 'archwing_primary', 'archwing_melee', 'zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives'];
 
     static load(name?: string) {
         return JSON.parse(window.localStorage.getItem(name ? name : this.cookieName));
@@ -26,8 +26,8 @@ export abstract class Util {
             + account.archwing_melee.filter(am => am.mastered).length
             + account.archwing_primary.filter(ap => ap.mastered).length
             + account.melees.filter(m => m.mastered).length
-            + account.pistols.filter(p => p.mastered).length;
-        ;
+            + account.pistols.filter(p => p.mastered).length
+            + account.rifles.filter(r => r.mastered).length;
 
         //6000XP Items
         const mastered6000: number = account.warframes.filter(w => w.mastered).length
@@ -40,8 +40,7 @@ export abstract class Util {
             + account.kubrows.filter(k => k.mastered).length
             + account.kavats.filter(k => k.mastered).length
             + account.predasites.filter(p => p.mastered).length
-            + account.vulpaphylas.filter(v => v.mastered).length
-            ;
+            + account.vulpaphylas.filter(v => v.mastered).length;
 
         //8000XP Items
         const mastered8000: number = account.necramechs.filter(n => n.mastered).length;
