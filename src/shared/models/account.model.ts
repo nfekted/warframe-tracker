@@ -26,6 +26,7 @@ export class Account {
     archwing_melee: Item[] = [];
     archwing_primary: Item[] = [];
     melees: Item[] = [];
+    pistols: Item[] = [];
 
     constructor() {
 

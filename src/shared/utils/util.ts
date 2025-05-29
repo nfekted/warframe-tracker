@@ -2,7 +2,7 @@ import { Account } from "../models/account.model";
 
 export abstract class Util {
     static cookieName: string = 'wuteringcalculator-lang';
-    static itemTypes: string[] = ['melees', 'archwing_primary', 'archwing_melee', 'zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives'];
+    static itemTypes: string[] = ['pistols', 'melees', 'archwing_primary', 'archwing_melee', 'zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives'];
 
     static load(name?: string) {
         return JSON.parse(window.localStorage.getItem(name ? name : this.cookieName));
@@ -25,7 +25,8 @@ export abstract class Util {
             + account.kitguns.filter(k => k.mastered).length
             + account.archwing_melee.filter(am => am.mastered).length
             + account.archwing_primary.filter(ap => ap.mastered).length
-            + account.melees.filter(m => m.mastered).length;
+            + account.melees.filter(m => m.mastered).length
+            + account.pistols.filter(p => p.mastered).length;
         ;
 
         //6000XP Items

@@ -17,6 +17,7 @@ import archMeleeJson from '../jsons/archwing-melee.json';
 import archPrimaryJson from '../jsons/archwing-primary.json';
 import plexusJson from '../jsons/plexusJson.json';
 import meleeJson from '../jsons/melee.json';
+import pistolsJson from '../jsons/pistols.json';
 
 export class ItemJsons {
 
@@ -39,6 +40,7 @@ export class ItemJsons {
     archwing_primary = archPrimaryJson;
     plexus = plexusJson;
     melees = meleeJson;
+    pistols = pistolsJson;
 
     constructor() {
 

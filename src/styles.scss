@@ -72,6 +72,26 @@ input:focus {
     }
 }
 
+.kuva {
+    background-color: #2e404c !important;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #f75858, #d43737, #b80b0b);
+    border-image-slice: 1;
+    color: #b33a3a !important;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-box-shadow: inset 0 -3px 7px #f75858bf;
+    -moz-box-shadow: inset 0 -3px 7px #f75858bf;
+    box-shadow: inset 0 -3px 7px #f75858bf;
+
+    &:hover {
+        background-color: #172127 !important;
+        color: white !important;
+        border: solid 2px #d15454bf;
+
+    }
+}
+
 .w {
     width: 100%;
 }
