@@ -1,0 +1,110 @@
+[
+    {
+        "type": "Quest",
+        "description": "Quests are a set of interlinked missions that occasionally provide lore, quest acquisition items will be given as a reward for completion."
+    },
+    {
+        "type": "Dojo",
+        "description": "Items with Dojo acquisition will be in some laboratory to purchase the item blueprint, you need to be in a Clan to enter Dojo."
+    },
+    {
+        "type": "Market",
+        "description": "The blueprint of items with Market acquisition can be purchased directly from the in-game store."
+    },
+    {
+        "type": "Relic Drop",
+        "description": "Prime versions will 99% of the time they are dropped from Relics."
+    },
+    {
+        "type": "Duviri",
+        "description": "Acquired from Teshin's Cave, Acrithis NPC or from Enigmas by Duviri World."
+    },
+    {
+        "type": "Boss Drop",
+        "description": "Blueprint or weapon parts dropped from Bosses mission, or Boss invasion (Stalker, Grustrag or Zanuka)."
+    },
+    {
+        "type": "Star Chart",
+        "description": "Blueprint or item parts dropped in common missions or Star Chart."
+    },
+    {
+        "type": "Kuva Lich",
+        "description": "Exclusive drop from Kuva Lich enemies."
+    },
+    {
+        "type": "Baro Ki'Teer",
+        "description": "Item potentially sold by Baro Ki'Teer in relay, every Friday."
+    },
+    {
+        "type": "Syndicates",
+        "description": "Purchased from Syndicates with Standing."
+    },
+    {
+        "type": "Proxima Star Chart",
+        "description": "Blueprint or item parts dropped in Railjack missions."
+    },
+    {
+        "type": "Sisters of Parvos",
+        "description": "Exclusive drop from Sisters of Parvos."
+    },
+    {
+        "type": "Standing",
+        "description": "Purchased with Standing in Cetus, Fortuna, Necralisk among many others."
+    },
+    {
+        "type": "Invasion",
+        "description": "Exclusive items in Invasion missions."
+    },
+    {
+        "type": "Bounty",
+        "description": "Exclusive items in Bounty quests in Cetus, Fortuna, Necralisk among many others."
+    },
+    {
+        "type": "Events",
+        "description": "Exclusive rewards in special events."
+    },
+    {
+        "type": "Daily Tribute",
+        "description": "Login reward on day 100, 200, 300..."
+    },
+    {
+        "type": "Eleanor",
+        "description": "Special Technocyte Coda weapons, purchased from Eleanor in Höllvania."
+    },
+    {
+        "type": "Ergo Glast",
+        "description": "Purchased from Ergo Glast with Corrupted Holokey, obtained from Void Storm in Railjack missions or defeating a Sister of Parvos."
+    },
+    {
+        "type": "Kahl's Garrison",
+        "description": "Purchased in Kahl's Garrison item shop, in Drifter's Camp."
+    },
+    {
+        "type": "Höllvania",
+        "description": "Exclusive drop in Höllvania mission types."
+    },
+    {
+        "type": "Founder Exclusive",
+        "description": "Exclusive Founders Packages items, no longer obtainable for purchase."
+    },
+    {
+        "type": "Nightwave",
+        "description": "Items purchased on Nightwave shop, using nightwave credits."
+    },
+    {
+        "type": "Automatically acquired",
+        "description": "Automatically acquired when picking up a specific item, like sentinels."
+    },
+    {
+        "type": "Revivification",
+        "description": "Special mechanic from Son, in Necralisk."
+    },
+    {
+        "type": "Incubator",
+        "description": "Incube a egg on Orbit, pray for RNG."
+    },
+    {
+        "type": "Arbitration",
+        "description": "Traded with Arbitration resources in Arbiters of Hexis."
+    }
+]

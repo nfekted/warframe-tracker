@@ -31,7 +31,7 @@
     },
     {
         "name": "Baruuk",
-        "acquisition": "Standing Trade",
+        "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Baruuk#Acquisition"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "name": "Chroma",
-        "acquisition": "Junctions",
+        "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Chroma#Acquisition"
     },
     {
@@ -246,7 +246,7 @@
     },
     {
         "name": "Lavos",
-        "acquisition": "Standing Trade",
+        "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lavos#Acquisition"
     },
     {
