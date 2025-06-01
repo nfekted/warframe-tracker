@@ -65,6 +65,11 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Shade/Prime#Acquisition"
     },
     {
+        "name": "Shade Prisma",
+        "acquisition": "Baro Ki'Teer",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Shade/Prisma#Acquisition"
+    },
+    {
         "name": "Taxon",
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Taxon#Acquisition"

@@ -1,97 +1,122 @@
 [
     {
         "name": "Lacerten",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lacerten#Acquisition"
     },
     {
         "name": "Batoten",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Batoten#Acquisition"
     },
     {
         "name": "Akaten",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akaten#Acquisition"
     },
     {
         "name": "Sweeper",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sweeper#Acquisition"
     },
     {
         "name": "Sweeper Prime",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sweeper_Prime#Acquisition"
     },
     {
         "name": "Deth Machine Rifle",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deth_Machine_Rifle#Acquisition"
     },
     {
         "name": "Deth Machine Rifle Prime",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deth_Machine_Rifle_Prime#Acquisition"
     },
     {
         "name": "Vulklok",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vulklok#Acquisition"
     },
     {
         "name": "Stinger",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Stinger#Acquisition"
     },
     {
         "name": "Deconstructor",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deconstructor#Acquisition"
     },
     {
         "name": "Deconstructor Prime",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deconstructor_Prime#Acquisition"
     },
     {
         "name": "Verglas",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Verglas#Acquisition"
     },
     {
         "name": "Verglas Prime",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Verglas_Prime#Acquisition"
     },
     {
         "name": "Multron",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Multron#Acquisition"
     },
     {
         "name": "Burst Laser",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Burst_Laser#Acquisition"
     },
     {
         "name": "Burst Laser Prime",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Burst_Laser_Prime#Acquisition"
     },
     {
         "name": "Artax",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Artax#Acquisition"
     },
     {
         "name": "Laser Rifle",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Laser_Rifle#Acquisition"
     },
     {
         "name": "Laser Rifle Prime",
-        "acquisition": "Automatically acquired ",
+        "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Laser_Rifle_Prime#Acquisition"
+    },
+    {
+        "name": "Cryotra",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Cryotra#Acquisition"
+    },
+    {
+        "name": "Helstrum",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Helstrum#Acquisition"
+    },
+    {
+        "name": "Prisma Burst Laser",
+        "acquisition": "Automatically acquired",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Burst_Laser#Acquisition"
+    },
+    {
+        "name": "Tazicor",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Tazicor#Acquisition"
+    },
+    {
+        "name": "Vulcax",
+        "acquisition": "Standing",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vulcax#Acquisition"
     }
 ]
