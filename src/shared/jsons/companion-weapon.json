@@ -1,121 +1,145 @@
 [
     {
         "name": "Lacerten",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lacerten#Acquisition"
     },
     {
         "name": "Batoten",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Batoten#Acquisition"
     },
     {
         "name": "Akaten",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akaten#Acquisition"
     },
     {
         "name": "Sweeper",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sweeper#Acquisition"
     },
     {
         "name": "Sweeper Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sweeper_Prime#Acquisition"
     },
     {
         "name": "Deth Machine Rifle",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deth_Machine_Rifle#Acquisition"
     },
     {
         "name": "Deth Machine Rifle Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deth_Machine_Rifle_Prime#Acquisition"
     },
     {
         "name": "Vulklok",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vulklok#Acquisition"
     },
     {
         "name": "Stinger",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Stinger#Acquisition"
     },
     {
         "name": "Deconstructor",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deconstructor#Acquisition"
     },
     {
         "name": "Deconstructor Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Deconstructor_Prime#Acquisition"
     },
     {
         "name": "Verglas",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Verglas#Acquisition"
     },
     {
         "name": "Verglas Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Verglas_Prime#Acquisition"
     },
     {
         "name": "Multron",
+        "mastery_requirement": 3,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Multron#Acquisition"
     },
     {
         "name": "Burst Laser",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Burst_Laser#Acquisition"
     },
     {
         "name": "Burst Laser Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Burst_Laser_Prime#Acquisition"
     },
     {
         "name": "Artax",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Artax#Acquisition"
     },
     {
         "name": "Laser Rifle",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Laser_Rifle#Acquisition"
     },
     {
         "name": "Laser Rifle Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Laser_Rifle_Prime#Acquisition"
     },
     {
         "name": "Cryotra",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cryotra#Acquisition"
     },
     {
         "name": "Helstrum",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Helstrum#Acquisition"
     },
     {
         "name": "Prisma Burst Laser",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Burst_Laser#Acquisition"
     },
     {
         "name": "Tazicor",
+        "mastery_requirement": 3,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tazicor#Acquisition"
     },
     {
         "name": "Vulcax",
+        "mastery_requirement": 14,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vulcax#Acquisition"
     }

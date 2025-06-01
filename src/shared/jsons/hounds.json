@@ -1,17 +1,20 @@
 [
     {
         "name": "Bhaira",
+        "mastery_requirement": 0,
         "acquisition": "Sisters of Parvos",
-        "acquisitionDescription": "https://wiki.warframe.com/w/Bhaira#Acquisition"
+        "acquisitionDescription": "https://wiki.warframe.com/w/Model#Bhaira"
     },
     {
         "name": "Dorma",
+        "mastery_requirement": 0,
         "acquisition": "Sisters of Parvos",
-        "acquisitionDescription": "https://wiki.warframe.com/w/Dorma#Acquisition"
+        "acquisitionDescription": "https://wiki.warframe.com/w/Model#Dorma"
     },
     {
         "name": "Hec",
+        "mastery_requirement": 0,
         "acquisition": "Sisters of Parvos",
-        "acquisitionDescription": "https://wiki.warframe.com/w/Hec#Acquisition"
+        "acquisitionDescription": "https://wiki.warframe.com/w/Model#Hec"
     }
 ]

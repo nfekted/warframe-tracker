@@ -1,26 +1,31 @@
 [
     {
         "name": "Adarza",
+        "mastery_requirement": 0,
         "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Adarza_Kavat#Acquisition"
     },
     {
         "name": "Smeeta",
+        "mastery_requirement": 0,
         "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Smeeta_Kavat#Acquisition"
     },
     {
         "name": "Vasca",
+        "mastery_requirement": 0,
         "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vasca_Kavat#Acquisition"
     },
     {
         "name": "Venari",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired ",
         "acquisitionDescription": "https://wiki.warframe.com/w/Khora/Abilities#Passive"
     },
     {
         "name": "Venari Prime",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired ",
         "acquisitionDescription": "https://wiki.warframe.com/w/Khora/Abilities#Passive"
     }

@@ -1,26 +1,31 @@
 [
     {
         "name": "Amesha",
+        "mastery_requirement": 0,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Amesha#Acquisition"
     },
     {
         "name": "Elytron",
+        "mastery_requirement": 0,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Elytron#Acquisition"
     },
     {
         "name": "Itzal",
+        "mastery_requirement": 0,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Itzal#Acquisition"
     },
     {
         "name": "Odonata",
+        "mastery_requirement": 0,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Odonata#Acquisition"
     },
     {
         "name": "Odonata Prime",
+        "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Odonata/Prime#Acquisition"
     }

@@ -1,56 +1,67 @@
 [
     {
         "name": "Balla",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Balla#Acquisition"
     },
     {
         "name": "Cyath",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cyath#Acquisition"
     },
     {
         "name": "Dehtat",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dehtat#Acquisition"
     },
     {
         "name": "Dokrahm",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dokrahm#Acquisition"
     },
     {
         "name": "Kronsh",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kronsh#Acquisition"
     },
     {
         "name": "Mewan",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mewan#Acquisition"
     },
     {
         "name": "Ooltha",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Ooltha#Acquisition"
     },
     {
         "name": "Rabvee",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Rabvee#Acquisition"
     },
     {
         "name": "Sepfahn",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sepfahn#Acquisition"
     },
     {
         "name": "Plague Keewar",
+        "mastery_requirement": 0,
         "acquisition": "Events",
         "acquisitionDescription": "https://wiki.warframe.com/w/Plague_Keewar#Acquisition"
     },
     {
         "name": "Plague Kripath",
+        "mastery_requirement": 0,
         "acquisition": "Events",
         "acquisitionDescription": "https://wiki.warframe.com/w/Plague_Kripath#Acquisition"
     }

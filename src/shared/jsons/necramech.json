@@ -1,11 +1,13 @@
 [
     {
         "name": "Voidrig",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Voidrig#Acquisition"
     },
     {
         "name": "Bonewidow",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Bonewidow#Acquisition"
     }

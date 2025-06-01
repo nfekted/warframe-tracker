@@ -1,31 +1,37 @@
 [
     {
         "name": "Catchmoon",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Catchmoon#Acquisition"
     },
     {
         "name": "Gaze",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Gaze#Acquisition"
     },
     {
         "name": "Rattleguts",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Rattleguts#Acquisition"
     },
     {
         "name": "Sporelacer",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sporelacer#Acquisition"
     },
     {
         "name": "Tombfinger",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tombfinger#Acquisition"
     },
     {
         "name": "Vermisplicer",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vermisplicer#Acquisition"
     }

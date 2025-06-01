@@ -1,721 +1,865 @@
 [
     {
         "name": "Ballistica",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Ballistica#Acquisition"
     },
     {
         "name": "Rakta Ballistica",
+        "mastery_requirement": 6,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Rakta_Ballistica#Acquisition"
     },
     {
         "name": "Ballistica Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Ballistica_Prime#Acquisition"
     },
     {
         "name": "Afuris",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Afuris#Acquisition"
     },
     {
         "name": "Afuris Prime",
+        "mastery_requirement": 12,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Afuris_Prime#Acquisition"
     },
     {
         "name": "Akstiletto",
+        "mastery_requirement": 8,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akstiletto#Acquisition"
     },
     {
         "name": "Akstiletto Prime",
+        "mastery_requirement": 10,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akstiletto_Prime#Acquisition"
     },
     {
         "name": "Akzani",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akzani#Acquisition"
     },
     {
         "name": "Dex Furis",
+        "mastery_requirement": 10,
         "acquisition": "Events",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dex_Furis#Acquisition"
     },
     {
         "name": "Dual Cestra",
+        "mastery_requirement": 7,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Cestra#Acquisition"
     },
     {
         "name": "Dual Coda Torxica",
+        "mastery_requirement": 17,
         "acquisition": "Coda / Eleanor",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Coda_Torxica#Acquisition"
     },
     {
         "name": "Kuva Twin Stubbas",
+        "mastery_requirement": 13,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Twin_Stubbas#Acquisition"
     },
     {
         "name": "Prisma Twin Gremlins",
+        "mastery_requirement": 11,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Twin_Gremlins#Acquisition"
     },
     {
         "name": "Twin Grakatas",
+        "mastery_requirement": 9,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Twin_Grakatas#Acquisition"
     },
     {
         "name": "Twin Gremlins",
+        "mastery_requirement": 5,
         "acquisition": "Boss Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Twin_Gremlins#Acquisition"
     },
     {
         "name": "Twin Vipers",
+        "mastery_requirement": 5,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Twin_Vipers#Acquisition"
     },
     {
         "name": "Twin Vipers Wraith",
+        "mastery_requirement": 7,
         "acquisition": "Events",
         "acquisitionDescription": "https://wiki.warframe.com/w/Twin_Vipers_Wraith#Acquisition"
     },
     {
         "name": "Tenet Diplos",
+        "mastery_requirement": 16,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tenet_Diplos#Acquisition"
     },
     {
         "name": "Aksomati",
+        "mastery_requirement": 9,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Aksomati#Acquisition"
     },
     {
         "name": "Aksomati Prime",
+        "mastery_requirement": 12,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Aksomati_Prime#Acquisition"
     },
     {
         "name": "Secura Dual Cestra",
+        "mastery_requirement": 10,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Secura_Dual_Cestra#Acquisition"
     },
     {
         "name": "Akarius",
+        "mastery_requirement": 8,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akarius#Acquisition"
     },
     {
         "name": "Akarius Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akarius_Prime#Acquisition"
     },
     {
         "name": "Akjagara",
+        "mastery_requirement": 8,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akjagara#Acquisition"
     },
     {
         "name": "Akjagara Prime",
+        "mastery_requirement": 12,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akjagara_Prime#Acquisition"
     },
     {
         "name": "Akbolto",
+        "mastery_requirement": 8,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akbolto#Acquisition"
     },
     {
         "name": "Akbolto Prime",
+        "mastery_requirement": 13,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akbolto_Prime#Acquisition"
     },
     {
         "name": "Aklato",
+        "mastery_requirement": 3,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Aklato#Acquisition"
     },
     {
         "name": "Aklex",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Aklex#Acquisition"
     },
     {
         "name": "Aklex Prime",
+        "mastery_requirement": 15,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Aklex_Prime#Acquisition"
     },
     {
         "name": "Akmagnus",
+        "mastery_requirement": 12,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akmagnus#Acquisition"
     },
     {
         "name": "Akmagnus Prime",
+        "mastery_requirement": 15,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akmagnus_Prime#Acquisition"
     },
     {
         "name": "Akvasto",
+        "mastery_requirement": 8,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akvasto#Acquisition"
     },
     {
         "name": "Akvasto Prime",
+        "mastery_requirement": 12,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akvasto_Prime#Acquisition"
     },
     {
         "name": "Dual Toxocyst",
+        "mastery_requirement": 11,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Toxocyst#Acquisition"
     },
     {
         "name": "Telos Akbolto",
+        "mastery_requirement": 11,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Telos_Akbolto#Acquisition"
     },
     {
         "name": "Twin Kohmak",
+        "mastery_requirement": 10,
         "acquisition": "Boss Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Twin_Kohmak#Acquisition"
     },
     {
         "name": "Akbronco",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akbronco#Acquisition"
     },
     {
         "name": "Akbronco Prime",
+        "mastery_requirement": 10,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Akbronco_Prime#Acquisition"
     },
     {
         "name": "Twin Rogga",
+        "mastery_requirement": 9,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Twin_Rogga#Acquisition"
     },
     {
         "name": "Azima",
+        "mastery_requirement": 6,
         "acquisition": "Daily Tribute",
         "acquisitionDescription": "https://wiki.warframe.com/w/Azima#Acquisition"
     },
     {
         "name": "Cestra",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cestra#Acquisition"
     },
     {
         "name": "Furis",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Furis#Acquisition"
     },
     {
         "name": "Hystrix",
+        "mastery_requirement": 7,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Hystrix#Acquisition"
     },
     {
         "name": "Hystrix Prime",
+        "mastery_requirement": 12,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Hystrix_Primeocco#Acquisition"
     },
     {
         "name": "Knell",
+        "mastery_requirement": 10,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Knell#Acquisition"
     },
     {
         "name": "Knell Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Knell_Prime#Acquisition"
     },
     {
         "name": "Kompressa",
+        "mastery_requirement": 8,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kompressa#Acquisition"
     },
     {
         "name": "Kompressa Prime",
+        "mastery_requirement": 13,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kompressa_Prime#Acquisition"
     },
     {
         "name": "MK1-Furis",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/MK1-Furis#Acquisition"
     },
     {
         "name": "Onos",
+        "mastery_requirement": 14,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Onos#Acquisition"
     },
     {
         "name": "Riot-848",
+        "mastery_requirement": 14,
         "acquisition": "Höllvania",
         "acquisitionDescription": "https://wiki.warframe.com/w/Riot-848#Acquisition"
     },
     {
         "name": "Stubba",
+        "mastery_requirement": 7,
         "acquisition": "Bounty",
         "acquisitionDescription": "https://wiki.warframe.com/w/Stubba#Acquisition"
     },
     {
         "name": "Velox",
+        "mastery_requirement": 8,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Velox#Acquisition"
     },
     {
         "name": "Velox Prime",
+        "mastery_requirement": 13,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Velox_Prime#Acquisition"
     },
     {
         "name": "Viper",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Viper#Acquisition"
     },
     {
         "name": "Viper Wraith",
+        "mastery_requirement": 4,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Viper_Wraith#Acquisition"
     },
     {
         "name": "Quatz",
+        "mastery_requirement": 9,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Quatz#Acquisition"
     },
     {
         "name": "Stug",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Stug#Acquisition"
     },
     {
         "name": "Athodai",
+        "mastery_requirement": 10,
         "acquisition": "Proxima Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Athodai#Acquisition"
     },
     {
         "name": "Cyanex",
+        "mastery_requirement": 8,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cyanex#Acquisition"
     },
     {
         "name": "Kraken",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kraken#Acquisition"
     },
     {
         "name": "Sepulcrum",
+        "mastery_requirement": 14,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sepulcrum#Acquisition"
     },
     {
         "name": "Sicarus",
+        "mastery_requirement": 3,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sicarus#Acquisition"
     },
     {
         "name": "Sicarus Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sicarus_Prime#Acquisition"
     },
     {
         "name": "Kuva Kraken",
+        "mastery_requirement": 15,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Kraken#Acquisition"
     },
     {
         "name": "Angstrum",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Angstrum#Acquisition"
     },
     {
         "name": "Prisma Angstrum",
+        "mastery_requirement": 8,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Angstrum#Acquisition"
     },
     {
         "name": "Zylok",
+        "mastery_requirement": 6,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Zylok#Acquisition"
     },
     {
         "name": "Zylok Prime",
+        "mastery_requirement": 13,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Zylok_Prime#Acquisition"
     },
     {
         "name": "Atomos",
+        "mastery_requirement": 5,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Atomos#Acquisition"
     },
     {
         "name": "Catabolyst",
+        "mastery_requirement": 11,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Catabolyst#Acquisition"
     },
     {
         "name": "Coda Catabolyst",
+        "mastery_requirement": 17,
         "acquisition": "Coda / Eleanor",
         "acquisitionDescription": "https://wiki.warframe.com/w/Coda_Catabolyst#Acquisition"
     },
     {
         "name": "Cycron",
+        "mastery_requirement": 8,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cycron#Acquisition"
     },
     {
         "name": "Embolist",
+        "mastery_requirement": 9,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Embolist#Acquisition"
     },
     {
         "name": "Gammacor",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Gammacor#Acquisition"
     },
     {
         "name": "Kuva Nukor",
+        "mastery_requirement": 13,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Nukor#Acquisition"
     },
     {
         "name": "Nukor",
+        "mastery_requirement": 4,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Nukor#Acquisition"
     },
     {
         "name": "Ocucor",
+        "mastery_requirement": 8,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Ocucor#Acquisition"
     },
     {
         "name": "Spectra",
+        "mastery_requirement": 4,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Spectra#Acquisition"
     },
     {
         "name": "Spectra Vandal",
+        "mastery_requirement": 10,
         "acquisition": "Proxima Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Spectra_Vandal#Acquisition"
     },
     {
         "name": "Synoid Gammacor",
+        "mastery_requirement": 7,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Synoid_Gammacor#Acquisition"
     },
     {
         "name": "Tenet Cycron",
+        "mastery_requirement": 14,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tenet_Cycron#Acquisition"
     },
     {
         "name": "Laetum",
+        "mastery_requirement": 14,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Laetum#Acquisition"
     },
     {
         "name": "Epitaph",
+        "mastery_requirement": 8,
         "acquisition": "Proxima Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Epitaph#Acquisition"
     },
     {
         "name": "Epitaph Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sirocco#Acquisition"
     },
     {
         "name": "Tenet Plinx",
+        "mastery_requirement": 6,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tenet_Plinx#Acquisition"
     },
     {
         "name": "Acrid",
+        "mastery_requirement": 7,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Acrid#Acquisition"
     },
     {
         "name": "Arca Scisco",
+        "mastery_requirement": 10,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Arca_Scisco#Acquisition"
     },
     {
         "name": "Bolto",
+        "mastery_requirement": 7,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Bolto#Acquisition"
     },
     {
         "name": "Coda Tysis",
+        "mastery_requirement": 17,
         "acquisition": "Coda / Eleanor",
         "acquisitionDescription": "https://wiki.warframe.com/w/Coda_Tysis#Acquisition"
     },
     {
         "name": "EFV-8 Mars",
+        "mastery_requirement": 14,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/EFV-8_Mars#Acquisition"
     },
     {
         "name": "Kulstar",
+        "mastery_requirement": 5,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kulstar#Acquisition"
     },
     {
         "name": "Kuva Seer",
+        "mastery_requirement": 15,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Seer#Acquisition"
     },
     {
         "name": "Lato",
+        "mastery_requirement": 0,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lato#Acquisition"
     },
     {
         "name": "Lato Prime",
+        "mastery_requirement": 14,
         "acquisition": "Founders Exclusive",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lato_Prime#Acquisition"
     },
     {
         "name": "Lato Vandal",
+        "mastery_requirement": 7,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lato_Vandal#Acquisition"
     },
     {
         "name": "Lex",
+        "mastery_requirement": 3,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lex#Acquisition"
     },
     {
         "name": "Lex Prime",
+        "mastery_requirement": 8,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lex_Prime#Acquisition"
     },
     {
         "name": "Magnus",
+        "mastery_requirement": 10,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Magnus#Acquisition"
     },
     {
         "name": "Magnus Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Magnus_Prime#Acquisition"
     },
     {
         "name": "Marelok",
+        "mastery_requirement": 7,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Marelok#Acquisition"
     },
     {
         "name": "Plinx",
+        "mastery_requirement": 6,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Plinx#Acquisition"
     },
     {
         "name": "Seer",
+        "mastery_requirement": 0,
         "acquisition": "Boss Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Seer#Acquisition"
     },
     {
         "name": "Sonicor",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sonicor#Acquisition"
     },
     {
         "name": "Tenet Spirex",
+        "mastery_requirement": 14,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tenet_Spirex#Acquisition"
     },
     {
         "name": "Tysis",
+        "mastery_requirement": 9,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tysis#Acquisition"
     },
     {
         "name": "Vasto",
+        "mastery_requirement": 4,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vasto#Acquisition"
     },
     {
         "name": "Vasto Prime",
+        "mastery_requirement": 10,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vasto_Prime#Acquisition"
     },
     {
         "name": "Vaykor Marelok",
+        "mastery_requirement": 10,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vaykor_Marelok#Acquisition"
     },
     {
         "name": "Vesper 77",
+        "mastery_requirement": 14,
         "acquisition": "Bounty",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vesper_77#Acquisition"
     },
     {
         "name": "Zakti",
+        "mastery_requirement": 10,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Zakti#Acquisition"
     },
     {
         "name": "Zakti Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Zakti_Prime#Acquisition"
     },
     {
         "name": "Zymos",
+        "mastery_requirement": 11,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Zymos#Acquisition"
     },
     {
         "name": "Pandero",
+        "mastery_requirement": 8,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Pandero#Acquisition"
     },
     {
         "name": "Pandero Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Pandero_Prime#Acquisition"
     },
     {
         "name": "Pyrana",
+        "mastery_requirement": 12,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Pyrana#Acquisition"
     },
     {
         "name": "Pyrana Prime",
+        "mastery_requirement": 13,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Pyrana_Prime#Acquisition"
     },
     {
         "name": "Kohmak",
+        "mastery_requirement": 5,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kohmak#Acquisition"
     },
     {
         "name": "Brakk",
+        "mastery_requirement": 6,
         "acquisition": "Boss Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Brakk#Acquisition"
     },
     {
         "name": "Bronco",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Bronco#Acquisition"
     },
     {
         "name": "Bronco Prime",
+        "mastery_requirement": 4,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Bronco_Prime#Acquisition"
     },
     {
         "name": "Detron",
+        "mastery_requirement": 6,
         "acquisition": "Boss Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Detron#Acquisition"
     },
     {
         "name": "Euphona Prime",
+        "mastery_requirement": 14,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Euphona_Prime#Acquisition"
     },
     {
         "name": "Kuva Brakk",
+        "mastery_requirement": 13,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Brakk#Acquisition"
     },
     {
         "name": "Mara Detron",
+        "mastery_requirement": 9,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mara_Detron#Acquisition"
     },
     {
         "name": "Tenet Detron",
+        "mastery_requirement": 16,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Tenet_Detron#Acquisition"
     },
     {
         "name": "Aegrit",
+        "mastery_requirement": 11,
         "acquisition": "Kahl's Garrison",
         "acquisitionDescription": "https://wiki.warframe.com/w/Aegrit#Acquisition"
     },
     {
         "name": "Castanas",
+        "mastery_requirement": 3,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Castanas#Acquisition"
     },
     {
         "name": "Sancti Castanas",
+        "mastery_requirement": 10,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sancti_Castanas#Acquisition"
     },
     {
         "name": "Talons",
+        "mastery_requirement": 8,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Talons#Acquisition"
     },
     {
         "name": "Cantare",
+        "mastery_requirement": 10,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cantare#Acquisition"
     },
     {
         "name": "Coda Pox",
+        "mastery_requirement": 17,
         "acquisition": "Coda / Eleanor",
         "acquisitionDescription": "https://wiki.warframe.com/w/Coda_Pox#Acquisition"
     },
     {
         "name": "Despair",
+        "mastery_requirement": 4,
         "acquisition": "Boss Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Despair#Acquisition"
     },
     {
         "name": "Hikou",
+        "mastery_requirement": 2,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Hikou#Acquisition"
     },
     {
         "name": "Hikou Prime",
+        "mastery_requirement": 4,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Hikou_Prime#Acquisition"
     },
     {
         "name": "Kunai",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kunai#Acquisition"
     },
     {
         "name": "MK1-Kunai",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/MK1-Kunai#Acquisition"
     },
     {
         "name": "Pox",
+        "mastery_requirement": 9,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Pox#Acquisition"
     },
     {
         "name": "Spira",
+        "mastery_requirement": 8,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Spira#Acquisition"
     },
     {
         "name": "Spira Prime",
+        "mastery_requirement": 10,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Spira_Prime#Acquisition"
     },
     {
         "name": "Fusilai",
+        "mastery_requirement": 7,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Fusilai#Acquisition"
     },
     {
         "name": "Staticor",
+        "mastery_requirement": 10,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Staticor#Acquisition"
     },
     {
         "name": "Grimoire",
+        "mastery_requirement": 10,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Grimoire#Acquisition"
     }

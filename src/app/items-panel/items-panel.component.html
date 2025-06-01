@@ -15,6 +15,34 @@
                 <small *ngIf="acquisitionFilter" style="color: lightgray;">{{acquisitionFilter?.description}}</small>
             </div>
 
+            <!-- Show MR Available -->
+            <div class="col-12 col-md-3">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        Hide items unavailable with my Mastery Rank
+                    </div>
+                    <div class="col-12 text-center">
+                        <div class="btn-group" role="group" aria-label="Show or Hide MR locked itens">
+                            <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavaible"
+                                autocomplete="off" (change)="showOnlyMrAvailable = true" checked>
+                            <label class="btn btn-option btn-toggle" for="hideUnavaible">
+                                <span class="material-symbols-outlined">
+                                    check
+                                </span>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="showUnavaible"
+                                autocomplete="off" (change)="showOnlyMrAvailable = false">
+                            <label class="btn btn-option btn-toggle" for="showUnavaible">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Hide mastered -->
             <div class="col-12 col-md-3">
                 <div class="row">
@@ -31,9 +59,9 @@
                                 </span>
                             </label>
 
-                            <input type="radio" class="btn-check" name="hideMastered" id="hiedMastered"
+                            <input type="radio" class="btn-check" name="hideMastered" id="hideMastered"
                                 autocomplete="off" (change)="hideMastered = false" checked>
-                            <label class="btn btn-option btn-toggle" for="hiedMastered">
+                            <label class="btn btn-option btn-toggle" for="hideMastered">
                                 <span class="material-symbols-outlined">
                                     close
                                 </span>
@@ -48,7 +76,7 @@
     <ng-container *ngFor="let item of items">
         <div class="col-12 col-md-3" *ngIf="showCategory(item)">
             <app-items [image]="item" [items]="account[item]" (update)="calculate()"
-                [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"></app-items>
+                [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered" [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account"></app-items>
         </div>
     </ng-container>
 </div>

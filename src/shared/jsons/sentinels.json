@@ -1,86 +1,103 @@
 [
     {
         "name": "Carrier",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Carrier#Acquisition"
     },
     {
         "name": "Carrier Prime",
+        "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Carrier/Prime#Acquisition"
     },
     {
         "name": "Dethcube",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dethcube#Acquisition"
     },
     {
         "name": "Dethcube Prime",
+        "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dethcube/Prime#Acquisition"
     },
     {
         "name": "Diriga",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Diriga#Acquisition"
     },
     {
         "name": "Djinn",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Djinn#Acquisition"
     },
     {
         "name": "Helios",
+        "mastery_requirement": 0,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Helios#Acquisition"
     },
     {
         "name": "Helios Prime",
+        "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Helios/Prime#Acquisition"
     },
     {
         "name": "Nautilus",
+        "mastery_requirement": 0,
         "acquisition": "Proxima Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Nautilus#Acquisition"
     },
     {
         "name": "Nautilus Prime",
+        "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Nautilus/Prime#Acquisition"
     },
     {
         "name": "Oxylus",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Oxylus#Acquisition"
     },
     {
         "name": "Shade",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Shade#Acquisition"
     },
     {
         "name": "Shade Prime",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Shade/Prime#Acquisition"
     },
     {
         "name": "Shade Prisma",
+        "mastery_requirement": 0,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Shade/Prisma#Acquisition"
     },
     {
         "name": "Taxon",
+        "mastery_requirement": 0,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Taxon#Acquisition"
     },
     {
         "name": "Wyrm",
+        "mastery_requirement": 0,
         "acquisition": "Market",
         "acquisitionDescription": "https://wiki.warframe.com/w/Wyrm#Acquisition"
     },
     {
         "name": "Wyrm Prime",
+        "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Wyrm/Prime#Acquisition"
     }

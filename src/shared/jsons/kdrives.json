@@ -1,26 +1,31 @@
 [
     {
         "name": "Feverspine",
+        "mastery_requirement": 0,
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Feverspine#Acquisition"
     },
     {
         "name": "Bad Baby",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Bad_Baby#Acquisition"
     },
     {
         "name": "Flatbelly",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Flatbelly#Acquisition"
     },
     {
         "name": "Needlenose",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Needlenose#Acquisition"
     },
     {
         "name": "Runway",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Runway#Acquisition"
     }

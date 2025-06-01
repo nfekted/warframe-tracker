@@ -76,7 +76,7 @@ export class AppComponent {
       });
 
       for (const item of newItem) {
-        this.account[type].push(new Item(item.name, type, item.acquisition));
+        this.account[type].push(new Item(item.name, type, item.acquisition, item.mastery_requirement));
       }
     }
 

@@ -1,6 +1,7 @@
 [
     {
         "name": "Plexus",
+        "mastery_requirement": 0,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Plexus"
     }

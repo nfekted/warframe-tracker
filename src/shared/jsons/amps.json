@@ -1,46 +1,55 @@
 [
     {
         "name": "Sirocco",
+        "mastery_requirement": 0,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sirocco#Acquisition"
     },
     {
         "name": "Mote Amp",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mote_Amp#Acquisition"
     },
     {
         "name": "Raplak",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Raplak_Prism#Acquisition"
     },
     {
         "name": "Shwaak",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Shwaak_Prism#Acquisition"
     },
     {
         "name": "Granmu",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Granmu_Prism#Acquisition"
     },
     {
         "name": "Rahn",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Rahn_Prism#Acquisition"
     },
     {
         "name": "Cantic",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cantic_Prism#Acquisition"
     },
     {
         "name": "Lega",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Lega_Prism#Acquisition"
     },
     {
         "name": "Klamora",
+        "mastery_requirement": 0,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Klamora_Prism#Acquisition"
     }

@@ -1,41 +1,49 @@
 [
     {
         "name": "Agkuza",
+        "mastery_requirement": 3,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Agkuza#Acquisition"
     },
     {
         "name": "Centaur",
+        "mastery_requirement": 8,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Centaur#Acquisition"
     },
     {
         "name": "Kaszas",
+        "mastery_requirement": 4,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kaszas#Acquisition"
     },
     {
         "name": "Knux",
+        "mastery_requirement": 7,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Knux#Acquisition"
     },
     {
         "name": "Onorix",
+        "mastery_requirement": 1,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Onorix#Acquisition"
     },
     {
         "name": "Prisma Veritux",
+        "mastery_requirement": 8,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Veritux#Acquisition"
     },
     {
         "name": "Rathbone",
+        "mastery_requirement": 6,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Rathbone#Acquisition"
     },
     {
         "name": "Veritux",
+        "mastery_requirement": 0,
         "acquisition": "Automatically acquired ",
         "acquisitionDescription": "https://wiki.warframe.com/w/Veritux#Acquisition"
     }
