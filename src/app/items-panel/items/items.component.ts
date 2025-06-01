@@ -44,4 +44,17 @@ export class ItemsComponent {
     return (this.acquisitionFilter == null || this.acquisitionFilter == item.acquisition)
       && (!this.hideMastered || (this.hideMastered && !item.mastered))
   }
+
+  getStyles(item: Item): string {
+    let style = '';
+
+    if (item.mastered) style += 'mastered ';
+    if (item.name.includes('Prime')) style += 'prime ';
+    if (item.name.includes('Kuva')) style += 'kuva ';
+    if (item.name.includes('Coda')) style += 'coda ';
+    if (item.name.includes('Tenet')) style += 'tenet'
+    if (item.type == 'hounds') style += 'tenet'
+    //   [ngClass]="{'prime': item.name.includes('Prime'), 'mastered': item.mastered, 'kuva': item.name.includes('Kuva')}"
+    return style;
+  }
 }

@@ -102,6 +102,46 @@ input:focus {
     }
 }
 
+.coda {
+    background-color: #2e404c !important;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #f758ea, #d437bf, #b80ba1);
+    border-image-slice: 1;
+    color: #ffd1f7 !important;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-box-shadow: inset 0 -3px 7px #f758ddbf;
+    -moz-box-shadow: inset 0 -3px 7px #f758ddbf;
+    box-shadow: inset 0 -3px 7px #f758ddbf;
+
+    &:hover {
+        background-color: #172127 !important;
+        color: white !important;
+        border: solid 2px #d154c0bf;
+
+    }
+}
+
+.tenet {
+    background-color: #2e404c !important;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #58ecf7, #37cfd4, #0badb8);
+    border-image-slice: 1;
+    color: rgb(209, 252, 255) !important;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-box-shadow: inset 0 -3px 7px #58f2f7bf;
+    -moz-box-shadow: inset 0 -3px 7px #58f2f7bf;
+    box-shadow: inset 0 -3px 7px #58f2f7bf;
+
+    &:hover {
+        background-color: #172127 !important;
+        color: white !important;
+        border: solid 2px #54c9d1bf;
+
+    }
+}
+
 .w {
     width: 100%;
 }
