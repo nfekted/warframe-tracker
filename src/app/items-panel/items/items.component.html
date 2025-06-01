@@ -27,7 +27,7 @@
     <div class="col-12" *ngIf="show">
         <div class="row">
             <ng-container *ngFor="let item of items; let i=index">
-                <div class="col-12 mt-2" *ngIf="acquisitionFilter == null || acquisitionFilter == item.acquisition">
+                <div class="col-12 mt-2" *ngIf="showItem(item)">
                     <button class="btn btn-sm btn-primary btn-item w" [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
                         (click)="item.mastered = !item.mastered;calculate();mastered()"
                         [ngClass]="{'prime': item.name.includes('Prime'), 'mastered': item.mastered, 'kuva': item.name.includes('Kuva')}">

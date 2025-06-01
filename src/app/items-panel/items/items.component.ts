@@ -14,7 +14,10 @@ export class ItemsComponent {
 
   @Input() image: string = '';
   @Input() items: Item[] = [];
+
+  //Filters
   @Input() acquisitionFilter: string = null;
+  @Input() hideMastered: boolean = false;
 
   @Output() update = new EventEmitter<void>();
 
@@ -35,5 +38,10 @@ export class ItemsComponent {
 
   mastered() {
     this.itemMastered = this.items.filter(i => i.mastered).length;
+  }
+
+  showItem(item: Item): boolean {
+    return (this.acquisitionFilter == null || this.acquisitionFilter == item.acquisition)
+      && (!this.hideMastered || (this.hideMastered && !item.mastered))
   }
 }

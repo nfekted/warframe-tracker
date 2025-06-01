@@ -23,6 +23,7 @@ export class ItemsPanelComponent {
   acquisitionList: { type: string, description: string }[] = acquisitionJson.sort((a, b) => a.type.localeCompare(b.type));
 
   acquisitionFilter: { type: string, description: string } = null;
+  hideMastered: boolean = false;
 
   constructor() { }
 
@@ -33,6 +34,9 @@ export class ItemsPanelComponent {
   showCategory(type: string): boolean {
     if (this.acquisitionFilter != null) {
       return this.account[type].filter(i => i.acquisition == this.acquisitionFilter.type).length;
+    }
+    if (this.hideMastered) {
+      return this.account[type].filter(i => !i.mastered).length;
     }
 
     return true;
