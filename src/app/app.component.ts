@@ -61,30 +61,6 @@ export class AppComponent {
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[0];
-
-    this.sumItems();
-  }
-
-  sumItems() {
-    this.itemsCount = 1
-      + warframesJson.length
-      + archwingJson.length
-      + kDriveJson.length
-      + necramechJson.length
-      + houndsJson.length
-      + moasJson.length
-      + sentinelsJson.length
-      + companionWeaponJson.length
-      + kubrowJson.length
-      + kavatsJson.length
-      + predasiteJson.length
-      + vulpaphylasJson.length
-      + ampsJson.length
-      + zawJson.length
-      + kitgunJson.length
-      + archMeleeJson.length
-      + archPrimaryJson.length
-      ;
   }
 
   initItems(type: string) {
@@ -97,6 +73,8 @@ export class AppComponent {
         this.account[type].push(new Item(item.name, type, item.acquisition));
       }
     }
+
+    this.itemsCount += this.account[type].length;
   }
 
   calculate() {

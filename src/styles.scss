@@ -33,6 +33,16 @@ input:focus {
     border: 3px solid rgba(230, 209, 93, 0.75) !important;
 }
 
+.form-select {
+    background-color: #212e36;
+    color: white;
+    font-family: "Anta", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
 .btn-primary {
     // box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
     // -webkit-box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);

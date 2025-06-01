@@ -2,7 +2,31 @@ import { Account } from "../models/account.model";
 
 export abstract class Util {
     static cookieName: string = 'wuteringcalculator-lang';
-    static itemTypes: string[] = ['rifles', 'pistols', 'melees', 'archwing_primary', 'archwing_melee', 'zaws', 'kitguns', 'amps', 'predasites', 'vulpaphylas', 'kavats', 'kubrows', 'companion_weapon', 'sentinels', 'moas', 'hounds', 'necramechs', 'warframes', 'archwings', 'plexus', 'kdrives'];
+
+    static itemTypes: string[] = [
+        'plexus',
+        'necramechs',
+        'hounds',
+        'vulpaphylas',
+        'predasites',
+        'moas',
+        'kavats',
+        'archwings',
+        'kdrives',
+        'kubrows',
+        'kitguns',
+        'archwing_melee',
+        'amps',
+        'zaws',
+        'sentinels',
+        'companion_weapon',
+        'archwing_primary',
+        'warframes',
+        'pistols',
+        'rifles',
+        'melees'];
+
+
 
     static load(name?: string) {
         return JSON.parse(window.localStorage.getItem(name ? name : this.cookieName));
