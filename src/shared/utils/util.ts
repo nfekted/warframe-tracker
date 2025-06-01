@@ -1,7 +1,7 @@
 import { Account } from "../models/account.model";
 
 export abstract class Util {
-    static cookieName: string = 'wuteringcalculator-lang';
+    static cookieName: string = 'warframetracker';
 
     static itemTypes: string[] = [
         'plexus',
@@ -26,14 +26,21 @@ export abstract class Util {
         'rifles',
         'melees'];
 
-
-
-    static load(name?: string) {
-        return JSON.parse(window.localStorage.getItem(name ? name : this.cookieName));
+    static load() {
+        return JSON.parse(window.localStorage.getItem(this.cookieName));
     }
 
-    static save(object: any, name?: string) {
-        window.localStorage.setItem((name ? name : this.cookieName), JSON.stringify(object));
+    static save(account: Account) {
+        const obj: Account = Object.assign({}, account);
+
+        for (const type of this.itemTypes) {
+            obj[type] = obj[type].filter(i => i.mastered);
+        }
+
+        delete obj.masteryRank;
+        delete obj.xp;
+        delete obj.mastered;
+        window.localStorage.setItem(this.cookieName, JSON.stringify(obj));
     }
 
     static clear() {

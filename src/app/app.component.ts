@@ -55,12 +55,18 @@ export class AppComponent {
   constructor() { }
 
   ngOnInit(): void {
+    const load = Util.load();
+    if (load) {
+      this.account = load;
+      this.account = Util.calculate(this.account);
+    }
+
     for (const item of Util.itemTypes) {
       this.initItems(item);
     }
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
-    this.account.masteryRank = this.mrList[0];
+    this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
   }
 
   initItems(type: string) {
@@ -81,5 +87,6 @@ export class AppComponent {
     this.account = Util.calculate(this.account);
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
+    Util.save(this.account);
   }
 }
