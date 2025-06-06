@@ -3,6 +3,8 @@ import { Account } from '../../shared/models/account.model';
 import mrJson from '../../shared/jsons/mr.json';
 import { FormsModule } from '@angular/forms';
 import { MasteryRank } from '../../shared/models/mastery-rank.model';
+import Swal from 'sweetalert2';
+import { Util } from '../../shared/utils/util';
 
 @Component({
   selector: 'app-sidebar',
@@ -33,6 +35,18 @@ export class SidebarComponent {
 
   progress(): number {
     return (this.account.xp - this.account.masteryRank.xp) / (this.nextRank.xp - this.account.masteryRank.xp) * 100;
+  }
+
+  delete() {
+    Swal.fire({
+      text: 'Erase all data? Can\'t be undone',
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Util.clear();
+      }
+    });
   }
 
 }
