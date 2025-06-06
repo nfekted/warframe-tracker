@@ -4,27 +4,32 @@ export abstract class Util {
     static cookieName: string = 'warframetracker';
 
     static itemTypes: string[] = [
-        'plexus',
-        'necramechs',
-        'hounds',
-        'vulpaphylas',
-        'predasites',
-        'moas',
-        'kavats',
-        'archwings',
-        'kdrives',
+        'warframes',
+        'rifles',
+        'pistols',
+        'melees',
+
         'kubrows',
-        'kitguns',
-        'archwing_melee',
-        'amps',
-        'zaws',
+        'kavats',
+        'predasites',
+        'vulpaphylas',
+        'moas',
+        'hounds',
         'sentinels',
         'companion_weapon',
+
+        'plexus',
+        'necramechs',
+        'kdrives',
+        'amps',
+
+        'archwings',
+        'archwing_melee',
         'archwing_primary',
-        'warframes',
-        'pistols',
-        'rifles',
-        'melees'];
+
+        'zaws',
+        'kitguns',
+    ];
 
     static load() {
         return JSON.parse(window.localStorage.getItem(this.cookieName));
