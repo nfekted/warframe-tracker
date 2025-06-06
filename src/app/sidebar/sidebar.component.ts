@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { MasteryRank } from '../../shared/models/mastery-rank.model';
 import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
+import { ApiService } from '../../services/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-sidebar',
@@ -25,7 +27,7 @@ export class SidebarComponent {
   mrList = mrJson;
   maxXp: number = 3072038;
 
-  constructor() { }
+  constructor(private service: ApiService) { }
 
   ngOnInit(): void { }
 
@@ -46,6 +48,12 @@ export class SidebarComponent {
       if (result.isConfirmed) {
         Util.clear();
       }
+    });
+  }
+
+  teste() {
+    this.service.teste().subscribe((res) => {
+      console.log(res);
     });
   }
 

@@ -43,7 +43,8 @@
                                 check
                             </span>
                         </button>
-                        <button type="button" class="btn btn-primary" (click)="goToWiki(item)">
+                        <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
+                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}" [ngClass]="{'mastered': item.mastered}">
                             <span class="material-symbols-outlined">
                                 open_in_new
                             </span>

@@ -8,33 +8,15 @@ import { ItemsPanelComponent } from './items-panel/items-panel.component';
 import { Item } from '../shared/models/item.model';
 import { Util } from '../shared/utils/util';
 import { MasteryRank } from '../shared/models/mastery-rank.model';
-
 import mrJson from '../shared/jsons/mr.json';
-
-import warframesJson from '../shared/jsons/warframes.json';
-import archwingJson from '../shared/jsons/archwings.json';
-import kDriveJson from '../shared/jsons/kdrives.json';
-import necramechJson from '../shared/jsons/necramech.json';
-import houndsJson from '../shared/jsons/hounds.json';
-import moasJson from '../shared/jsons/moas.json';
-import sentinelsJson from '../shared/jsons/sentinels.json';
-import companionWeaponJson from '../shared/jsons/companion-weapon.json';
-import kubrowJson from '../shared/jsons/kubrows.json';
-import kavatsJson from '../shared/jsons/kavats.json';
-import predasiteJson from '../shared/jsons/predasites.json';
-import vulpaphylasJson from '../shared/jsons/vulpaphylas.json';
-import ampsJson from '../shared/jsons/amps.json';
-import zawJson from '../shared/jsons/zaws.json';
-import kitgunJson from '../shared/jsons/kitguns.json';
-import archMeleeJson from '../shared/jsons/archwing-melee.json';
-import archPrimaryJson from '../shared/jsons/archwing-primary.json';
 import { ItemJsons } from '../shared/models/item-jsons.model';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,
+  imports: [RouterOutlet,HttpClientModule,
     SidebarComponent, ItemsPanelComponent,
     FormsModule, CommonModule],
   templateUrl: './app.component.html',
