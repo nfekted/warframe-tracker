@@ -70,13 +70,20 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Name -->
+            <div class="col-12 col-md-3">
+                <label>Filter by name:</label>
+                <input class="form-control" placeholder="Enter item name" [(ngModel)]="nameFilter"/>
+            </div>
         </div>
     </div>
     <hr class="mt-4" />
     <ng-container *ngFor="let item of items">
         <div class="col-12 col-md-3" *ngIf="showCategory(item)">
             <app-items [image]="item" [items]="account[item]" (update)="calculate()"
-                [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered" [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account"></app-items>
+                [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"
+                [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"></app-items>
         </div>
     </ng-container>
 </div>

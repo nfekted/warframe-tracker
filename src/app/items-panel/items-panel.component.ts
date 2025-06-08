@@ -25,6 +25,7 @@ export class ItemsPanelComponent {
   acquisitionFilter: { type: string, description: string } = null;
   hideMastered: boolean = false;
   showOnlyMrAvailable: boolean = true;
+  nameFilter: string = '';
 
   constructor() { }
 
