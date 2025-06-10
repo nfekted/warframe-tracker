@@ -34,23 +34,36 @@
           <small>{{nextRank.xp - account.xp}} XP needed to next mastery rank</small>
         </div>
 
-        <hr />
+        <hr class="mt-4 mb-4" />
+
+        <div class="col-12 text-center">
+          <span>Extra options</span>
+        </div>
 
         <div class="col-12 text-center mt-4">
-          <button class="btn btn-sm btn-primary" (click)="delete()">
+          <!-- start page -->
+          <button class="btn btn-sm btn-secondary w" (click)="changeRenderEvent('items')" *ngIf="render != 'items'">
+            <span class="material-symbols-outlined" style="font-size: 15px;">
+              checklist
+            </span>
+            Items list
+          </button>
+          <!-- Scan mastery -->
+          <button class="btn btn-sm btn-secondary w" (click)="changeRenderEvent('mrscan')" *ngIf="render != 'mrscan'">
+            <span class="material-symbols-outlined" style="font-size: 15px;">
+              search
+            </span>
+            Scan my mastery rank
+          </button>
+        </div>
+
+        <!-- Delete data -->
+        <div class="col-12 text-center mt-4">
+          <button class="btn btn-sm btn-danger w" (click)="delete()">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               delete
             </span>
             Delete all data
-          </button>
-        </div>
-
-        <div class="col-12 text-center mt-4">
-          <button class="btn btn-sm btn-primary" (click)="teste()">
-            <span class="material-symbols-outlined" style="font-size: 15px;">
-              delete
-            </span>
-            Test connect
           </button>
         </div>
 

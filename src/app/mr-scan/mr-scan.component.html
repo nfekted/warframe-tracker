@@ -1,0 +1,23 @@
+<div class="row page">
+    <div class="col-12">
+        <p><u>Warframe</u> and <u>Developer Digital Extremes Ltd</u> do not have their own API for this,
+            that's why we have a tool that will analyze screenshots provided by you and try to find patterns to find
+            your items.</p>
+        <p><u>Click here to download</u> the tool and get instructions on how to use it.</p>
+    </div>
+    <hr />
+    <div class="col-12">
+        <button class="btn btn-sm btn-primary" (click)="startScan()">
+            <span class="material-symbols-outlined" style="font-size: 15px;">
+                search
+            </span>
+            Start scan
+        </button>
+    </div>
+    <div class="col-12">
+        <p *ngIf="text == null">nothing detected</p>
+        <p *ngIf="text != null">Detected:</p>
+        <p *ngIf="text != null">Searching for item: <span style="color:#f7d358">{{current}}</span>/{{itemsCount}} <span *ngIf="current == itemsCount">- DONE!</span></p>
+        {{text}}
+    </div>
+</div>

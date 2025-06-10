@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './items/items.component';
 import { Util } from '../../shared/utils/util';
 import acquisitionJson from '../../shared/jsons/acquisition.json';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-items-panel',

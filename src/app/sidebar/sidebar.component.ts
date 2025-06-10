@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Account } from '../../shared/models/account.model';
 import mrJson from '../../shared/jsons/mr.json';
 import { FormsModule } from '@angular/forms';
@@ -6,12 +6,12 @@ import { MasteryRank } from '../../shared/models/mastery-rank.model';
 import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
 import { ApiService } from '../../services/api.service';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -23,9 +23,11 @@ export class SidebarComponent {
 
 
   @Output() update = new EventEmitter<void>();
+  @Output() changeRender = new EventEmitter<string>();
 
   mrList = mrJson;
   maxXp: number = 3072038;
+  render: string = 'items';
 
   constructor(private service: ApiService) { }
 
@@ -44,6 +46,7 @@ export class SidebarComponent {
       text: 'Erase all data? Can\'t be undone',
       showCancelButton: true,
       confirmButtonText: "Delete",
+      confirmButtonColor: '#a7160c'
     }).then((result) => {
       if (result.isConfirmed) {
         Util.clear();
@@ -51,10 +54,9 @@ export class SidebarComponent {
     });
   }
 
-  teste() {
-    this.service.teste().subscribe((res) => {
-      console.log(res);
-    });
+  changeRenderEvent(type: string) {
+    this.render = type;
+    this.changeRender.emit(type);
   }
 
 }

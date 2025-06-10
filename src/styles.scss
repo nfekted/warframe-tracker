@@ -44,15 +44,36 @@ input:focus {
 
 
 .btn-primary {
-    // box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
-    // -webkit-box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
-    // -moz-box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
     background-color: #2e404c !important;
     color: white !important;
     border: solid 2px white;
 
     &:hover {
         background-color: #172127 !important;
+        color: white !important;
+        border: solid 2px white;
+    }
+}
+
+.btn-secondary {
+    background-color: #2e404c !important;
+    color: white !important;
+    border: solid 2px white;
+
+    &:hover {
+        background-color: #2e404c !important;
+        color: white !important;
+        border: solid 2px #d1bf54bf;
+    }
+}
+
+.btn-danger {
+    background-color: #2e404c !important;
+    color: white !important;
+    border: solid 2px #d43737;
+
+    &:hover {
+        background-color: #882525 !important;
         color: white !important;
         border: solid 2px white;
     }

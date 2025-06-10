@@ -11,13 +11,14 @@ import { MasteryRank } from '../shared/models/mastery-rank.model';
 import mrJson from '../shared/jsons/mr.json';
 import { ItemJsons } from '../shared/models/item-jsons.model';
 import { HttpClientModule } from '@angular/common/http';
+import { MrScanComponent } from './mr-scan/mr-scan.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HttpClientModule,
-    SidebarComponent, ItemsPanelComponent,
+  imports: [RouterOutlet, HttpClientModule,
+    SidebarComponent, ItemsPanelComponent, MrScanComponent,
     FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -33,6 +34,8 @@ export class AppComponent {
   maxXp: number = 0;
 
   jsonList: ItemJsons = new ItemJsons();
+
+  render: string = 'items';
 
   constructor() { }
 

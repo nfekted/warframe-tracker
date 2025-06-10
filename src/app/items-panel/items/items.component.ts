@@ -41,6 +41,7 @@ export class ItemsComponent {
 
   ngOnInit(): void {
     this.itemCount = this.items.length;
+    this.items.sort((a, b) => a.name.localeCompare(b.name));
     this.mastered();
   }
 
