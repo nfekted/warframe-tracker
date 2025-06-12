@@ -81,10 +81,14 @@ export abstract class Util {
         //8000XP Items
         const mastered8000: number = account.necramechs.filter(n => n.mastered).length;
 
+        const extra1000: number = account.rifles.filter(r => (r.name.toUpperCase().includes('KUVA ') || r.name.toUpperCase().includes('CODA ') || r.name.toUpperCase().includes('TENET ')) && r.mastered).length
+            + account.pistols.filter(r => (r.name.toUpperCase().includes('KUVA ') || r.name.toUpperCase().includes('CODA ') || r.name.toUpperCase().includes('TENET ')) && r.mastered).length
+            + account.melees.filter(r => (r.name == 'Paracesis' || r.name.toUpperCase().includes('KUVA ') || r.name.toUpperCase().includes('CODA ') || r.name.toUpperCase().includes('TENET ')) && r.mastered).length
+
         //Intrinsics
         const intrinsics: number = account.railjack + account.drifter;
 
-        account.xp = (1500 * intrinsics) + (3000 * mastered3000) + (6000 * mastered6000) + (8000 * mastered8000);
+        account.xp = (1500 * intrinsics) + (3000 * mastered3000) + (6000 * mastered6000) + (8000 * mastered8000) + (1000 * extra1000);
         account.mastered = mastered3000 + mastered6000 + mastered8000;
         return account;
     }
