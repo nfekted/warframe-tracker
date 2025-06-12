@@ -1,0 +1,31 @@
+# from flask import Flask
+# from flask_cors import CORS
+# import threading
+# import capture
+# import readImage
+
+# # Flask application
+# app = Flask(__name__)
+
+# # Disable CORS
+# CORS(app, origins="*")
+
+# # Endpoints
+# @app.route('/')
+# def hello_world():
+#     return 'Hello World'
+
+# @app.route('/mastery-rank', methods=['GET'])
+# def masteryRank():
+#     return readImage.get_text_from_img()
+
+# def run_api():
+#     app.run(debug=False, use_reloader=False, host='0.0.0.0', port=5000)
+
+# if __name__ == '__main__':
+#     # Thread for APP
+#     api_thread = threading.Thread(target=run_api)
+#     api_thread.daemon = True
+#     api_thread.start()
+
+#     capture.monitor_user_key()

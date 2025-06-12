@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -17,7 +17,7 @@ import { MrScanComponent } from './mr-scan/mr-scan.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule,
+  imports: [RouterOutlet, HttpClientModule, RouterModule,
     SidebarComponent, ItemsPanelComponent, MrScanComponent,
     FormsModule, CommonModule],
   templateUrl: './app.component.html',

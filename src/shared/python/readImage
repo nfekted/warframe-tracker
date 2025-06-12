@@ -1,0 +1,42 @@
+# import os
+# import sys
+# from PIL import Image
+# import pytesseract
+# import cv2
+
+# # Current DIR of app
+# if getattr(sys, 'frozen', False):
+#     CURRENT_DIR = os.path.dirname(sys.executable)
+# else:
+#     CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# # TESSERACT PATHS
+# TESSERACT_DIR = os.path.join(CURRENT_DIR, "tesseract", "tesseract.exe")
+# TESSERACT_DATA = os.path.join(CURRENT_DIR, "tesseract", "tessdata")
+
+# pytesseract.pytesseract.tesseract_cmd = TESSERACT_DIR
+
+# def get_text_from_img(diretorio='.'):
+#     full_path = os.path.join(CURRENT_DIR, diretorio)
+#     print(f"Starting image reading from {full_path}")
+#     text = ''
+#     images = os.listdir(full_path)
+#     item = 1
+#     for arquivo in images:
+#         print(f"Scanning {item}/{len(images)}")
+#         item += 1
+#         if arquivo.lower().endswith('.png'):
+#             image_path = os.path.join(full_path, arquivo)
+#             try:
+#                 img = cv2.imread(image_path)
+#                 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#                 img = cv2.resize(img, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
+#                 img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
+        
+#                 text += pytesseract.image_to_string(img, lang="eng",config=TESSERACT_DATA + ' --oem 3 --psm 6')  # OCR CONFIGS
+
+#                 os.remove(image_path)
+#             except Exception as e:
+#                 print(f"Failed to process {arquivo}: {e}")
+    
+#     return text

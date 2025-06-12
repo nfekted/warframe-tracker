@@ -3,7 +3,8 @@
         <p><u>Warframe</u> and <u>Developer Digital Extremes Ltd</u> do not have their own API for this,
             that's why we have a tool that will analyze screenshots provided by you and try to find patterns to find
             your items.</p>
-        <p><u>Click here to download</u> the tool and get instructions on how to use it.</p>
+        <p><u data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;">Click here to download</u>
+            the tool and get instructions on how to use it.</p>
     </div>
     <hr />
     <div class="col-12">
@@ -16,8 +17,24 @@
     </div>
     <div class="col-12">
         <p *ngIf="text == null">nothing detected</p>
-        <p *ngIf="text != null">Detected:</p>
-        <p *ngIf="text != null">Searching for item: <span style="color:#f7d358">{{current}}</span>/{{itemsCount}} <span *ngIf="current == itemsCount">- DONE!</span></p>
-        {{text}}
+        <p *ngIf="text != null">Searching for item: <span style="color:#f7d358">{{current}}</span>/{{itemsCount}} <span
+                *ngIf="current == itemsCount">- DONE!</span></p>
+        <ng-container *ngIf="text != null && current < itemsCount">
+            <p>Detected:</p>
+            <p>{{text}}</p>
+        </ng-container>
+        <ng-container *ngIf="current == itemsCount">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <p>Undetected words:</p>
+                    {{text}}
+                </div>
+                <div class="col-12 col-md-6">
+                    <p>Found words:</p>
+                    <p style="white-space: pre;">{{found}}</p>
+                </div>
+            </div>
+        </ng-container>
     </div>
 </div>
+<app-python-tool></app-python-tool>
