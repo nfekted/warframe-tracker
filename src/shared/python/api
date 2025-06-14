@@ -11,10 +11,6 @@
 # CORS(app, origins="*")
 
 # # Endpoints
-# @app.route('/')
-# def hello_world():
-#     return 'Hello World'
-
 # @app.route('/mastery-rank', methods=['GET'])
 # def masteryRank():
 #     return readImage.get_text_from_img()

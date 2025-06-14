@@ -63,6 +63,11 @@ export class MrScanComponent {
         });
       },
       error: (e) => {
+        if (e.status == 0) {
+          Swal.fire('API not found', 'Api is not online, see the information on the page to configure it', 'error');
+          return;
+        }
+
         Swal.fire('Error', e.message, 'error');
       }
     });
