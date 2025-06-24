@@ -25,6 +25,7 @@ export class ItemsComponent {
   @Input() hideMastered: boolean = false;
   @Input() showOnlyMrAvailable: boolean;
   @Input() nameFilter: string = '';
+  @Input() mr: number = null;
 
   @Output() update = new EventEmitter<void>();
 
@@ -54,6 +55,7 @@ export class ItemsComponent {
       && (!this.hideMastered || (this.hideMastered && !item.mastered))
       && (!this.showOnlyMrAvailable || (this.showOnlyMrAvailable && this.account.masteryRank.rank >= item.mastery_requirement))
       && (this.nameFilter == '' || item.name.toUpperCase().includes(this.nameFilter.toUpperCase()))
+      && (this.mr == null || (this.mr == item.mastery_requirement))
   }
 
   getStyles(item: Item): string {

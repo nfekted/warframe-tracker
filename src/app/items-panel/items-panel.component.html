@@ -8,7 +8,7 @@
             <div class="col-12 col-md-3" data-bs-theme="dark">
                 <label>Filter by acquisition method:</label>
                 <select class="form-select" [(ngModel)]="acquisitionFilter">
-                    <option [ngValue]="null">Show all</option>
+                    <option [ngValue]="null">Show all acquisition</option>
                     <hr />
                     <option *ngFor="let item of acquisitionList" [ngValue]="item">{{item.type}}</option>
                 </select>
@@ -74,7 +74,34 @@
             <!-- Name -->
             <div class="col-12 col-md-3">
                 <label>Filter by name:</label>
-                <input class="form-control" placeholder="Enter item name" [(ngModel)]="nameFilter"/>
+                <input class="form-control" placeholder="Enter item name" [(ngModel)]="nameFilter" />
+            </div>
+
+            <!-- MR -->
+            <div class="col-12 col-md-3" data-bs-theme="dark">
+                <label>Only on Mastery Rank:</label>
+                <select class="form-select" [(ngModel)]="mr">
+                    <option [ngValue]="null"></option>
+                    <hr />
+                    <option [ngValue]="0">MR 0</option>
+                    <option [ngValue]="1">MR 1</option>
+                    <option [ngValue]="2">MR 2</option>
+                    <option [ngValue]="3">MR 3</option>
+                    <option [ngValue]="4">MR 4</option>
+                    <option [ngValue]="5">MR 5</option>
+                    <option [ngValue]="6">MR 6</option>
+                    <option [ngValue]="7">MR 7</option>
+                    <option [ngValue]="8">MR 8</option>
+                    <option [ngValue]="9">MR 9</option>
+                    <option [ngValue]="10">MR 10</option>
+                    <option [ngValue]="11">MR 11</option>
+                    <option [ngValue]="12">MR 12</option>
+                    <option [ngValue]="13">MR 13</option>
+                    <option [ngValue]="14">MR 14</option>
+                    <option [ngValue]="15">MR 15</option>
+                    <option [ngValue]="16">MR 16</option>
+                    <option [ngValue]="17">MR 17</option>
+                </select>
             </div>
         </div>
     </div>
@@ -83,7 +110,8 @@
         <div class="col-12 col-md-3" *ngIf="showCategory(item)">
             <app-items [image]="item" [items]="account[item]" (update)="calculate()"
                 [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"
-                [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"></app-items>
+                [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"
+                [mr]="mr"></app-items>
         </div>
     </ng-container>
 </div>

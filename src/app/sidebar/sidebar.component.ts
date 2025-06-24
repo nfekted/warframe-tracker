@@ -59,4 +59,8 @@ export class SidebarComponent {
     this.changeRender.emit(type);
   }
 
+  test() {
+    Swal.fire(`In development`, ``, `info`);
+  }
+
 }

@@ -25,6 +25,7 @@ export class ItemsPanelComponent {
   hideMastered: boolean = false;
   showOnlyMrAvailable: boolean = true;
   nameFilter: string = '';
+  mr: number = null;
 
   constructor() { }
 
