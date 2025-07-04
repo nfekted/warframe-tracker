@@ -862,5 +862,11 @@
         "mastery_requirement": 10,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Grimoire#Acquisition"
+    },
+    {
+        "name": "Scyotid",
+        "mastery_requirement": 12,
+        "acquisition": "Duviri",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Scyotid#Acquisition"
     }
 ]

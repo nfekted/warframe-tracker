@@ -450,6 +450,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Octavia/Prime#Acquisition"
     },
     {
+        "name": "Oraxia",
+        "mastery_requirement": 0,
+        "acquisition": "Duviri",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Oraxia#Acquisition"
+    },
+    {
         "name": "Protea",
         "mastery_requirement": 0,
         "acquisition": "Star Chart",

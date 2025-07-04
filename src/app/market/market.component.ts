@@ -98,9 +98,6 @@ export class MarketComponent {
             }
           }
 
-          // const aux = this.tradeItem[0];
-          // this.tradeItem = [];
-          // this.tradeItem.push(aux);
           for (let i = 0; i < this.tradeItem.length; i++) {
             this.currentItem = this.tradeItem[i].name;
             let response = await firstValueFrom(this.service.getMarketPrices(this.tradeItem[i].url));

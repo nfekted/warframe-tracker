@@ -1288,5 +1288,17 @@
         "mastery_requirement": 8,
         "acquisition": "Bounty",
         "desc": "https://wiki.warframe.com/w/Verdilac#Acquisition"
+    },
+    {
+        "name": "Spinnerex",
+        "mastery_requirement": 12,
+        "acquisition": "Duviri",
+        "desc": "https://wiki.warframe.com/w/Spinnerex#Acquisition"
+    },
+    {
+        "name": "Thalys",
+        "mastery_requirement": 12,
+        "acquisition": "Duviri",
+        "desc": "https://wiki.warframe.com/w/Thalys#Acquisition"
     }
 ]
