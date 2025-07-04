@@ -12,13 +12,14 @@ import mrJson from '../shared/jsons/mr.json';
 import { ItemJsons } from '../shared/models/item-jsons.model';
 import { HttpClientModule } from '@angular/common/http';
 import { MrScanComponent } from './mr-scan/mr-scan.component';
+import { MarketComponent } from './market/market.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HttpClientModule, RouterModule,
-    SidebarComponent, ItemsPanelComponent, MrScanComponent,
+    SidebarComponent, ItemsPanelComponent, MrScanComponent, MarketComponent,
     FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

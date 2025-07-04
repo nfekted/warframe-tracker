@@ -8,5 +8,8 @@
         <div class="col-12 mt-5" *ngIf="render == 'mrscan'">
             <app-mr-scan [itemsCount]="itemsCount" [account]="account" (update)="calculate()"></app-mr-scan>
         </div>
+        <div class="col-12 mt-5" *ngIf="render == 'market'">
+            <app-market [itemsCount]="itemsCount" [account]="account" (update)="calculate()"></app-market>
+        </div>
     </div>
 </div>

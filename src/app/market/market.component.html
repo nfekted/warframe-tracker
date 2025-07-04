@@ -1,0 +1,107 @@
+<div class="row page">
+    <div class="col-12">
+        <h3>DISCLAIMER</h3>
+        <p><u>Warframe</u> and <u>Developer Digital Extremes Ltd</u> do not have their own API for this,
+            that's why we have a tool that will analyze screenshots provided by you and try to find patterns to find
+            your items.</p>
+        <p>
+            WarframeMarket has no official link with Digital Extremes Ltd or Warframe. All requests are sent through the
+            <a href="https://warframe.market/api_docs" target="_blank">Warframe Market public API</a>. All Platinum
+            values ​​are defined by the players themselves on the warframe.market website.
+        </p>
+        <h5 style="color: #d1bf54"><b>USE AT OWN RISK</b>, for more info click on the link below.</h5>
+        <p>
+            <u data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;color: #d1bf54">
+                CLICK HERE
+            </u>
+            to check the tool and get instructions on how to use it.
+        </p>
+    </div>
+    <hr />
+    <div class="col-12">
+        {{tradeableList.length}} items can currently be traded. (Warframe 38.6.3 of 2025-05-23: <a
+            href="https://forums.warframe.com/topic/1455575-yareli-prime-hotfix-3863/" target="_blank"
+            style="color: white;">Yareli Prime</a>)
+    </div>
+    <div class="col-12">
+        <button class="btn btn-sm btn-primary" (click)="scan()">
+            <span class="material-symbols-outlined" style="font-size: 15px;">
+                search
+            </span>
+            Scan my items.
+        </button>
+    </div>
+    <div class="col-12">
+        Only active users from WarframeMarket will be considered (last 3 months)
+    </div>
+    <hr />
+    <div class="col-12">
+        <ng-container *ngIf="!complete && current > 0">
+            Searching for item information: {{currentItem}}. {{current}} of {{tradeItem.length}}
+        </ng-container>
+
+        <table class="table table-dark" *ngIf="complete">
+            <thead>
+                <tr>
+                    <th scope="col" style="cursor: pointer;" (click)="sort('name')">
+                        Item
+                        <span class="material-symbols-outlined">
+                            {{lastSort == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                        </span>
+                    </th>
+                    <th scope="col" class="text-center" style="cursor: pointer;border-right: solid 1px white;"
+                        (click)="sort('lowest1')" colspan="3">
+                        3 Lowest Prices (all status)
+                        <span class="material-symbols-outlined">
+                            {{lastSort == 'lowest1' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                        </span>
+                    </th>
+                    <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('online1')" colspan="3">
+                        3 Lowest Prices (only Ingame players)
+                        <span class="material-symbols-outlined">
+                            {{lastSort == 'online1' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                        </span>
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of tradeItem; let i=index" class="text-center">
+                    <td scope="row" class="text-start">{{item.name}}</td>
+                    <td scope="row">
+                        {{item.lowest1 > 0 ? item.lowest1 : '-'}}
+                        <img *ngIf="item.lowest1 > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                    </td>
+                    <td scope="row">
+                        {{item.lowest2 > 0 ? item.lowest2 : '-'}}
+                        <img *ngIf="item.lowest2 > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                    </td>
+                    <td scope="row" style="border-right: solid 1px white;">
+                        {{item.lowest3 > 0 ? item.lowest3 : '-'}}
+                        <img *ngIf="item.lowest3 > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                    </td>
+                    <td scope="row">
+                        {{item.online1 > 0 ? item.online1 : '-'}}
+                        <img *ngIf="item.online1 > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                    </td>
+                    <td scope="row">
+                        {{item.online2 > 0 ? item.online2 : '-'}}
+                        <img *ngIf="item.online2 > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                    </td>
+                    <td scope="row">
+                        {{item.online3 > 0 ? item.online3 : '-'}}
+                        <img *ngIf="item.online3 > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                    </td>
+                    <td scope="row">
+                        <a [href]="'https://warframe.market/items/' + item.url" target="_blank" style="color: white;">
+                            <span class="material-symbols-outlined">
+                                open_in_new
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-python-tool></app-python-tool>

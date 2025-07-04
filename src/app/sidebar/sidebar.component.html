@@ -42,21 +42,21 @@
 
         <div class="col-12 text-center mt-4">
           <!-- start page -->
-          <button class="btn btn-sm btn-secondary w" (click)="changeRenderEvent('items')" *ngIf="render != 'items'">
+          <button class="btn btn-sm btn-secondary w mt-4" (click)="changeRenderEvent('items')" *ngIf="render != 'items'">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               checklist
             </span>
             Items list
           </button>
           <!-- Scan mastery -->
-          <button class="btn btn-sm btn-secondary w" (click)="changeRenderEvent('mrscan')" *ngIf="render != 'mrscan'">
+          <button class="btn btn-sm btn-secondary w mt-4" (click)="changeRenderEvent('mrscan')" *ngIf="render != 'mrscan'">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               search
             </span>
             Scan my mastery rank
           </button>
           <!-- Market -->
-          <button class="btn btn-sm btn-secondary prime w mt-4" (click)="test()" *ngIf="render != 'market'">
+          <button class="btn btn-sm btn-secondary w prime mt-4" (click)="changeRenderEvent('market')" *ngIf="render != 'market'">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               currency_exchange
             </span>

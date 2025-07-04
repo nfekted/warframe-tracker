@@ -19,4 +19,12 @@ export class ApiService {
         return this.http.get(`${this.url}mastery-rank`, { responseType: 'text' });
     }
 
+    scanMarket(): Observable<any> {
+        return this.http.get(`${this.url}market`, { responseType: 'text' });
+    }
+
+    getMarketPrices(url: string): Observable<any> {
+        return this.http.get(`${this.url}market/${url}`);
+    }
+
 }

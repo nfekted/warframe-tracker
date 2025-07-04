@@ -38,8 +38,7 @@ export class MrScanComponent {
       showCancelButton: false,
       showConfirmButton: false,
       allowOutsideClick: false,
-    }
-    );
+    });
     this.service.getMasteryRank().subscribe({
       next: (res) => {
         Swal.close();
