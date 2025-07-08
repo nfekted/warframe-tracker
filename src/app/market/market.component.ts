@@ -39,13 +39,21 @@ export class MarketComponent {
   filteredItems = [];
   myList: { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number }[] = [];
 
+  maxRender: number = 100;
+
   constructor() { }
 
   ngOnInit(): void {
     this.makeJson();
+    this.loadPrices();
     this.myList = Util.loadMarket();
     if (!this.myList) this.myList = [];
     else this.updateMyList();
+  }
+
+  loadPrices() {
+    this.tradeItem = itemPrices;
+    this.tradeItem.sort((a, b) => { return b.most_frequent - a.most_frequent });
   }
 
   updateMyList() {
