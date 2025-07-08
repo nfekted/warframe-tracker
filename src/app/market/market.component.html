@@ -34,96 +34,130 @@
         <p>
             {{tradeableList.length}} items can currently be traded. (Warframe 39.0.4 on 2025-07-03: <a
                 href="https://forums.warframe.com/topic/1461121-isleweaver-hotfix-3904/" target="_blank"
-                style="color: white;">Isleweaver</a>) {{myList.length}}
+                style="color: white;">Isleweaver</a>)
         </p>
     </div>
 
     <div class="col-12">
         <p>
-            Only active users from WarframeMarket will be considered (last 3 months), last price update on 2025-07-06
+            Prices based on <a href="https://relics.run/" target="_blank">Relic run</a>, last price update on 2025-07-06
         </p>
     </div>
     <hr />
-    <div class="col-12">
-        <div>
-            <input type="text" [(ngModel)]="searchTerm" (input)="onSearchChange($event)" class="form-control"
-                placeholder="Search and add item" step="color: white">
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="marketTab" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#myList" type="button" role="tab"
+                aria-controls="myList" aria-selected="true">My items</button>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Active</a>
+        </li>
+    </ul>
+    <!-- Content -->
+    <div class="tab-content" id="marketContent" style="padding: 0px;">
+        <!-- Itens list -->
+        <div class="tab-pane fade show active" id="myList" role="tabpanel" aria-labelledby="myList-tab">
+            <div class="p-3 border rounded-bottom">
+                <div class="col-12">
+                    <p>Your item list, check most and least valuable items</p>
+                    <div>
+                        <input type="text" [(ngModel)]="searchTerm" (input)="onSearchChange($event)"
+                            class="form-control" placeholder="Search and add item to list" step="color: white">
 
-            <div *ngIf="filteredItems.length > 0" class="autocomplete-list">
-                <div *ngFor="let item of filteredItems" (click)="selectItem(item)" class="autocomplete-item">
-                    {{item.item_en}}
+                        <div *ngIf="filteredItems.length > 0" class="autocomplete-list">
+                            <div *ngFor="let item of filteredItems" (click)="selectItem(item)"
+                                class="autocomplete-item">
+                                {{item.item_en}}
+                            </div>
+                        </div>
+                    </div>
+                    <ng-container *ngIf="!complete && current > 0">
+                        Searching for item information: {{currentItem}}. {{current}} of {{tradeItem.length}}
+                    </ng-container>
+
+                    <table class="table table-dark mt-4">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="cursor: pointer;" (click)="sort('name')">
+                                    Item
+                                    <span class="material-symbols-outlined">
+                                        {{lastSort == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                                    </span>
+                                </th>
+                                <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('lowest')">
+                                    Lowest price
+                                    <span class="material-symbols-outlined">
+                                        {{lastSort == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                                    </span>
+                                </th>
+                                <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('higher')">
+                                    Higher price
+                                    <span class="material-symbols-outlined">
+                                        {{lastSort == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                                    </span>
+                                </th>
+                                <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('average')">
+                                    Average price
+                                    <span class="material-symbols-outlined">
+                                        {{lastSort == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                                    </span>
+                                </th>
+                                <th scope="col" class="text-center" style="cursor: pointer;"
+                                    (click)="sort('most_frequent')">
+                                    Median price
+                                    <span class="material-symbols-outlined">
+                                        {{lastSort == 'most_frequent' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                                    </span>
+                                </th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of myList; let i=index" class="text-center">
+                                <td scope="row" class="text-start">{{item.name}}</td>
+                                <td scope="row">
+                                    {{item.lowest > 0 ? item.lowest : '-'}}
+                                    <img *ngIf="item.lowest > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                                </td>
+                                <td scope="row">
+                                    {{item.higher > 0 ? item.higher : '-'}}
+                                    <img *ngIf="item.higher > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                                </td>
+                                <td scope="row">
+                                    {{item.average > 0 ? item.average : '-'}}
+                                    <img *ngIf="item.average > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                                </td>
+                                <td scope="row">
+                                    {{item.most_frequent > 0 ? item.most_frequent : '-'}}
+                                    <img *ngIf="item.most_frequent > 0" [src]="'assets/img/icons/platinum.png'"
+                                        width="25" />
+                                </td>
+                                <td scope="row">
+                                    <a [href]="'https://warframe.market/items/' + item.url" target="_blank"
+                                        style="color: white;">
+                                        <span class="material-symbols-outlined">
+                                            open_in_new
+                                        </span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a style="color: red;cursor: pointer;" title="remove" (click)="removeItem(i)">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <ng-container *ngIf="!complete && current > 0">
-            Searching for item information: {{currentItem}}. {{current}} of {{tradeItem.length}}
-        </ng-container>
-
-        <table class="table table-dark">
-            <thead>
-                <tr>
-                    <th scope="col" style="cursor: pointer;" (click)="sort('name')">
-                        Item
-                        <span class="material-symbols-outlined">
-                            {{lastSort == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                        </span>
-                    </th>
-                    <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('lowest')">
-                        Lowest price
-                        <span class="material-symbols-outlined">
-                            {{lastSort == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                        </span>
-                    </th>
-                    <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('higher')">
-                        Higher price
-                        <span class="material-symbols-outlined">
-                            {{lastSort == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                        </span>
-                    </th>
-                    <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('average')">
-                        Average price
-                        <span class="material-symbols-outlined">
-                            {{lastSort == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                        </span>
-                    </th>
-                    <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('most_frequent')">
-                        Median price
-                        <span class="material-symbols-outlined">
-                            {{lastSort == 'most_frequent' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                        </span>
-                    </th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of myList; let i=index" class="text-center">
-                    <td scope="row" class="text-start">{{item.name}}</td>
-                    <td scope="row">
-                        {{item.lowest > 0 ? item.lowest : '-'}}
-                        <img *ngIf="item.lowest > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                    </td>
-                    <td scope="row">
-                        {{item.higher > 0 ? item.higher : '-'}}
-                        <img *ngIf="item.higher > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                    </td>
-                    <td scope="row">
-                        {{item.average > 0 ? item.average : '-'}}
-                        <img *ngIf="item.average > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                    </td>
-                    <td scope="row">
-                        {{item.most_frequent > 0 ? item.most_frequent : '-'}}
-                        <img *ngIf="item.most_frequent > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                    </td>
-                    <td scope="row">
-                        <a [href]="'https://warframe.market/items/' + item.url" target="_blank" style="color: white;">
-                            <span class="material-symbols-outlined">
-                                open_in_new
-                            </span>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </div>
 <app-python-tool></app-python-tool>

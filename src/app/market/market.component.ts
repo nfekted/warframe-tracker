@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Account } from '../../shared/models/account.model';
@@ -7,6 +6,7 @@ import { PythonToolComponent } from '../python-tool/python-tool.component';
 import itemEnJson from '../../shared/jsons/tradeable/tradeEn.json';
 import itemPtJson from '../../shared/jsons/tradeable/tradePt.json'
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
+import { Util } from '../../shared/utils/util';
 
 @Component({
   selector: 'app-market',
@@ -39,10 +39,21 @@ export class MarketComponent {
   filteredItems = [];
   myList: { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number }[] = [];
 
-  constructor(private service: ApiService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.makeJson();
+    this.myList = Util.loadMarket();
+    if (!this.myList) this.myList = [];
+    else this.updateMyList();
+  }
+
+  updateMyList() {
+    if (window.sessionStorage.getItem('updated')) return;
+    for (let i = 0; i < this.myList.length; i++) {
+      this.myList[i] = itemPrices.find(item => item.id == this.myList[i].id);
+    }
+    window.sessionStorage.setItem('updated', 'true');
   }
 
   makeJson() {
@@ -82,39 +93,57 @@ export class MarketComponent {
     if (this.myList.find(i => i.id == item.id)) return;
 
     const result = itemPrices.find(i => i.id == item.id);
-    if (result) this.myList.unshift(itemPrices.find(i => i.id == item.id));
+    if (result) {
+      this.myList.unshift(itemPrices.find(i => i.id == item.id));
+      Util.saveMarket(this.myList);
+    };
   }
 
+  removeItem(index: number) {
+    this.myList.splice(index, 1);
+    Util.saveMarket(this.myList);
+  }
+
+  sort(field: string) {
+    this.myList.sort((a, b) => {
+      if (!isNaN(+a[field])) return (this.lastSort == field ? +b[field] - +a[field] : +a[field] - +b[field]);
+
+      return (this.lastSort == field ? b[field].localeCompare(a[field]) : a[field].localeCompare(b[field]));
+    });
+
+    this.lastSort == field ? this.lastSort = '' : this.lastSort = field;
+  }
+
+  //Dev only codes
   scan() {
-    this.formatPriceJson();
+    // this.formatPriceJson();
     // this.getPrices();
   }
 
-  formatPriceJson() {
-    for (const key of Object.keys(itemPrices)) {
-       this.current += 1;
-      const value = itemPrices[key];
-      let item = value.filter(i => i.order_type == 'sell');
-      if (item.length > 1) item = item.filter(i => i.mod_rank == 0);
+  // formatPriceJson() {
+  //   for (const key of Object.keys(itemPrices)) {
+  //      this.current += 1;
+  //     const value = itemPrices[key];
+  //     let item = value.filter(i => i.order_type == 'sell');
+  //     if (item.length > 1) item = item.filter(i => i.mod_rank == 0);
 
-      if (item.length == 1) {
-        item = item[0];
-        const info = this.tradeableList.find(i => i.id == item.item_id);
-        this.tradeItem.push({
-          id: item.item_id,
-          url: info.url,
-          name: info.item_en,
-          lowest: +item.min_price,
-          higher: +item.max_price,
-          average: +item.avg_price.toFixed(0),
-          most_frequent: +item.median
-        });
-      }
-    }
+  //     if (item.length == 1) {
+  //       item = item[0];
+  //       const info = this.tradeableList.find(i => i.id == item.item_id);
+  //       this.tradeItem.push({
+  //         id: item.item_id,
+  //         url: info.url,
+  //         name: info.item_en,
+  //         lowest: +item.min_price,
+  //         higher: +item.max_price,
+  //         average: +item.avg_price.toFixed(0),
+  //         most_frequent: +item.median
+  //       });
+  //     }
+  //   }
 
-    this.downloadText();
-
-  }
+  //   this.downloadText();
+  // }
 
   //Old crawler for prices
   // async getPrices() {
@@ -185,27 +214,17 @@ export class MarketComponent {
   //   this.downloadText();
   // }
 
-  downloadText() {
-    const list = this.tradeItem.filter(i => i.average > 0 && i.higher > 0 && i.lowest > 0);
-    const data = JSON.stringify(list, null, 2);
-    const blob = new Blob([data], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'trade_items.txt';
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-  }
-
-  sort(field: string) {
-    this.myList.sort((a, b) => {
-      if (!isNaN(+a[field])) return (this.lastSort == field ? +b[field] - +a[field] : +a[field] - +b[field]);
-
-      return (this.lastSort == field ? b[field].localeCompare(a[field]) : a[field].localeCompare(b[field]));
-    });
-
-    this.lastSort == field ? this.lastSort = '' : this.lastSort = field;
-  }
+  // downloadText() {
+  //   const list = this.tradeItem.filter(i => i.average > 0 && i.higher > 0 && i.lowest > 0);
+  //   const data = JSON.stringify(list, null, 2);
+  //   const blob = new Blob([data], { type: 'text/plain' });
+  //   const url = window.URL.createObjectURL(blob);
+  //   const a = document.createElement('a');
+  //   a.href = url;
+  //   a.download = 'trade_items.txt';
+  //   document.body.appendChild(a);
+  //   a.click();
+  //   window.URL.revokeObjectURL(url);
+  //   document.body.removeChild(a);
+  // }
 }

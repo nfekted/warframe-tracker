@@ -48,6 +48,14 @@ export abstract class Util {
         window.localStorage.setItem(this.cookieName, JSON.stringify(obj));
     }
 
+    static loadMarket() {
+        return JSON.parse(window.localStorage.getItem('NKDTools-WTMarket'))
+    }
+
+    static saveMarket(itensList) {
+        window.localStorage.setItem('NKDTools-WTMarket', JSON.stringify(itensList));
+    }
+
     static clear() {
         window.localStorage.clear();
         window.location.reload();
