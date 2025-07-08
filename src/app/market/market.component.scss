@@ -7,3 +7,43 @@
 th {
     font-weight: normal !important;
 }
+
+.autocomplete-list {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 80vw;
+    background-color: white;
+    color: black;
+    position: absolute;
+    z-index: 1000;
+}
+
+.autocomplete-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+input::-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder {
+    color: white;
+    opacity: 1;
+}
