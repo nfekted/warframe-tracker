@@ -1,0 +1,80 @@
+<div class="col-12">
+    <p>Only radiant relics are displayed, the ratio remains the same in other versions of the relic.</p>
+</div>
+<div class="col-12">
+    <label>Filter by relic type:</label>
+    <select class="form-select" (change)="loadRelics()" [(ngModel)]="relicFilter">
+        <option [ngValue]="null">Show all</option>
+        <hr />
+        <option [ngValue]="'Lith'">Lith</option>
+        <option [ngValue]="'Meso'">Meso</option>
+        <option [ngValue]="'Neo'">Neo</option>
+        <option [ngValue]="'Axi'">Axi</option>
+        <option [ngValue]="'Requiem'">Requiem</option>
+    </select>
+</div>
+<div class="col-12">
+    <table class="table table-dark mt-4">
+        <thead>
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th scope="col">
+                    Relic
+                </th>
+                <th scope="col" class="text-left" colspan="3">
+                    Worst result
+                </th>
+                <th scope="col" class="text-left" colspan="3">
+                    Best result
+                </th>
+                <th scope="col" class="text-left">
+                    Expected price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of relics.slice(0, maxRelic); let i=index" class="text-left">
+                <td scope="row" class="text-start">{{i+1}}</td>
+                <td scope="row" class="text-start">{{item.name}}</td>
+                <td scope="row" style="color: #ff7575;">
+                    {{item.worst_name}}
+                </td>
+                <td style="color: #ff7575;">
+                    {{item.worst}}
+                    <img [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+                <td>
+                    <a [href]="'https://warframe.market/items/' + item.worst_url" target="_blank"
+                        style="color: #ff7575;">
+                        <span class="material-symbols-outlined">
+                            open_in_new
+                        </span>
+                    </a>
+                </td>
+                <td scope="row" style="color: #e6d15dbf;">
+                    {{item.best_name}}
+                </td>
+                <td style="color: #e6d15dbf;">
+                    {{item.best}}
+                    <img [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+                <td>
+                    <a [href]="'https://warframe.market/items/' + item.best_url" target="_blank"
+                        style="color: #e6d15dbf">
+                        <span class="material-symbols-outlined">
+                            open_in_new
+                        </span>
+                    </a>
+                </td>
+                <td scope="row">
+                    {{item.expected}}
+                    <img [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p><button class="btn btn-sm btn-primary" (click)="maxRelic=maxRelic+100">Show +100</button></p>
+    <p><button class="btn btn-sm btn-primary" (click)="maxRelic=5000">Load all</button></p>
+</div>

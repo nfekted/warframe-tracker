@@ -2,17 +2,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Account } from '../../shared/models/account.model';
-import { PythonToolComponent } from '../python-tool/python-tool.component';
 import itemEnJson from '../../shared/jsons/tradeable/tradeEn.json';
 import itemPtJson from '../../shared/jsons/tradeable/tradePt.json'
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
-import relicPrices from '../../shared/jsons/tradeable/relics.json';
 import { Util } from '../../shared/utils/util';
+import { BestRelicsComponent } from './best-relics/best-relics.component';
+import { BestItemsComponent } from './best-items/best-items.component';
 
 @Component({
   selector: 'app-market',
   standalone: true,
-  imports: [FormsModule, CommonModule, PythonToolComponent],
+  imports: [FormsModule, CommonModule, BestRelicsComponent,BestItemsComponent],
   templateUrl: './market.component.html',
   styleUrl: './market.component.scss'
 })
@@ -40,12 +40,6 @@ export class MarketComponent {
   filteredItems = [];
   myList: { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number }[] = [];
 
-  maxRender: number = 100;
-
-  relics: { name: string, worst: number, worst_name: string, worst_url: string, best: number, best_name: string, best_url: string, expected: number }[] = [];
-  maxRelic: number = 100;
-  relicFilter: string;
-
   constructor() { }
 
   ngOnInit(): void {
@@ -59,32 +53,6 @@ export class MarketComponent {
   loadPrices() {
     this.tradeItem = itemPrices;
     this.tradeItem.sort((a, b) => { return b.most_frequent - a.most_frequent });
-    this.loadRelics();
-  }
-
-  loadRelics() {
-    this.maxRelic = 100;
-    this.relics = relicPrices;
-
-    switch (this.relicFilter) {
-      case 'Lith':
-        this.relics = this.relics.filter(r => r.name.includes('Lith '));
-        break;
-      case 'Meso':
-        this.relics = this.relics.filter(r => r.name.includes('Meso '));
-        break;
-      case 'Neo':
-        this.relics = this.relics.filter(r => r.name.includes('Neo '));
-        break;
-      case 'Axi':
-        this.relics = this.relics.filter(r => r.name.includes('Axi '));
-        break;
-      case 'Requiem':
-        this.relics = this.relics.filter(r => r.name.includes('Requiem '));
-        break;
-    }
-
-    this.relics.sort((a, b) => { return b.expected - a.expected });
   }
 
   updateMyList() {

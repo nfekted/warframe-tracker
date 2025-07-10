@@ -1,24 +1,5 @@
 <div class="row page">
     <ng-container *ngIf="enableScan">
-        <div class="col-12">
-            <h3>DISCLAIMER</h3>
-            <p><u>Warframe</u> and <u>Developer Digital Extremes Ltd</u> do not have their own API for this,
-                that's why we have a tool that will analyze screenshots provided by you and try to find patterns to find
-                your items.</p>
-            <p>
-                WarframeMarket has no official link with Digital Extremes Ltd or Warframe. All requests are sent through
-                the
-                <a href="https://warframe.market/api_docs" target="_blank">Warframe Market public API</a>. All Platinum
-                values ​​are defined by the players themselves on the warframe.market website.
-            </p>
-            <h5 style="color: #d1bf54"><b>USE AT OWN RISK</b>, for more info click on the link below.</h5>
-            <p>
-                <u data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;color: #d1bf54">
-                    CLICK HERE
-                </u>
-                to check the tool and get instructions on how to use it.
-            </p>
-        </div>
         <div class="col-12 mt-4">
             <button class="btn btn-sm btn-primary" (click)="scan()">
                 <span class="material-symbols-outlined" style="font-size: 15px;">
@@ -37,7 +18,6 @@
                 style="color: white;">Isleweaver</a>)
         </p>
     </div>
-
     <div class="col-12">
         <p>
             Prices based on <a href="https://relics.run/" target="_blank">Relic run</a>, last price update on 2025-07-06
@@ -163,155 +143,14 @@
         <!-- Best items -->
         <div class="tab-pane fade show" id="bestItems" role="tabpanel" aria-labelledby="bestItems-tab">
             <div class="p-3 border rounded-bottom">
-                <div class="col-12">
-                    <table class="table table-dark mt-4">
-                        <thead>
-                            <tr>
-                                <th scope="col">
-                                    #
-                                </th>
-                                <th scope="col">
-                                    Item
-                                </th>
-                                <th scope="col" class="text-center">
-                                    Lowest price
-                                </th>
-                                <th scope="col" class="text-center">
-                                    Higher price
-                                </th>
-                                <th scope="col" class="text-center">
-                                    Average price
-                                </th>
-                                <th scope="col" class="text-center">
-                                    Median price
-                                </th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of tradeItem.slice(0, maxRender); let i=index" class="text-center">
-                                <td scope="row" class="text-start">{{i+1}}</td>
-                                <td scope="row" class="text-start">{{item.name}}</td>
-                                <td scope="row">
-                                    {{item.lowest > 0 ? item.lowest : '-'}}
-                                    <img *ngIf="item.lowest > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                                </td>
-                                <td scope="row">
-                                    {{item.higher > 0 ? item.higher : '-'}}
-                                    <img *ngIf="item.higher > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                                </td>
-                                <td scope="row">
-                                    {{item.average > 0 ? item.average : '-'}}
-                                    <img *ngIf="item.average > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
-                                </td>
-                                <td scope="row">
-                                    {{item.most_frequent > 0 ? item.most_frequent : '-'}}
-                                    <img *ngIf="item.most_frequent > 0" [src]="'assets/img/icons/platinum.png'"
-                                        width="25" />
-                                </td>
-                                <td scope="row">
-                                    <a [href]="'https://warframe.market/items/' + item.url" target="_blank"
-                                        style="color: white;">
-                                        <span class="material-symbols-outlined">
-                                            open_in_new
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><button class="btn btn-sm btn-primary" (click)="maxRender=maxRender+100">Show +100</button></p>
-                    <p><button class="btn btn-sm btn-primary" (click)="maxRender=5000">Load all</button></p>
-                </div>
+                <app-best-items></app-best-items>
             </div>
         </div>
         <!-- Best relics -->
         <div class="tab-pane fade show" id="bestRelics" role="tabpanel" aria-labelledby="bestRelics-tab">
             <div class="p-3 border rounded-bottom">
-                <div class="col-12">
-                    <p>Only radiant relics are displayed, the ratio remains the same in other versions of the relic.</p>
-                </div>
-                <div class="col-12">
-                    <label>Filter by relic type:</label>
-                    <select class="form-select" (change)="loadRelics()" [(ngModel)]="relicFilter">
-                        <option [ngValue]="null">Show all</option>
-                        <hr />
-                        <option [ngValue]="'Lith'">Lith</option>
-                        <option [ngValue]="'Meso'">Meso</option>
-                        <option [ngValue]="'Neo'">Neo</option>
-                        <option [ngValue]="'Axi'">Axi</option>
-                        <option [ngValue]="'Requiem'">Requiem</option>
-                    </select>
-                </div>
-                <div class="col-12">
-                    <!-- <p><b>Expected</b>: Average price considering the drop chance of each item and its % (exemple: 50pl
-                        item with 10% drop chance = 5pl expected)</p> -->
-                    <table class="table table-dark mt-4">
-                        <thead>
-                            <tr>
-                                <th scope="col">
-                                    #
-                                </th>
-                                <th scope="col">
-                                    Relic
-                                </th>
-                                <th scope="col" class="text-left" colspan="3">
-                                    Worst result
-                                </th>
-                                <th scope="col" class="text-left" colspan="3">
-                                    Best result
-                                </th>
-                                <th scope="col" class="text-left">
-                                    Expected price
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of relics.slice(0, maxRelic); let i=index" class="text-left">
-                                <td scope="row" class="text-start">{{i+1}}</td>
-                                <td scope="row" class="text-start">{{item.name}}</td>
-                                <td scope="row" style="color: #ff7575;">
-                                    {{item.worst_name}}
-                                </td>
-                                <td style="color: #ff7575;">
-                                    {{item.worst}}
-                                    <img [src]="'assets/img/icons/platinum.png'" width="25" />
-                                </td>
-                                <td>
-                                    <a [href]="'https://warframe.market/items/' + item.worst_url" target="_blank"
-                                        style="color: #ff7575;">
-                                        <span class="material-symbols-outlined">
-                                            open_in_new
-                                        </span>
-                                    </a>
-                                </td>
-                                <td scope="row" style="color: #e6d15dbf;">
-                                    {{item.best_name}}
-                                </td>
-                                <td style="color: #e6d15dbf;">
-                                    {{item.best}}
-                                    <img [src]="'assets/img/icons/platinum.png'" width="25" />
-                                </td>
-                                <td>
-                                    <a [href]="'https://warframe.market/items/' + item.best_url" target="_blank"
-                                        style="color: #e6d15dbf">
-                                        <span class="material-symbols-outlined">
-                                            open_in_new
-                                        </span>
-                                    </a>
-                                </td>
-                                <td scope="row">
-                                    {{item.expected}}
-                                    <img [src]="'assets/img/icons/platinum.png'" width="25" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><button class="btn btn-sm btn-primary" (click)="maxRelic=maxRelic+100">Show +100</button></p>
-                    <p><button class="btn btn-sm btn-primary" (click)="maxRelic=5000">Load all</button></p>
-                </div>
+                <app-best-relics></app-best-relics>
             </div>
         </div>
     </div>
 </div>
-<app-python-tool></app-python-tool>

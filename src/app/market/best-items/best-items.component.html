@@ -1,0 +1,199 @@
+<div class="col-12">
+    <div class="row">
+        <!-- Prime items -->
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Show prime items
+                </div>
+                <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide prime itens">
+                        <input type="radio" class="btn-check" name="showPrimeItems" id="showPrime" autocomplete="off"
+                            (change)="showPrimeItems = true;loadItems();" checked>
+                        <label class="btn btn-option btn-toggle" for="showPrime">
+                            <span class="material-symbols-outlined">
+                                check
+                            </span>
+                        </label>
+
+                        <input type="radio" class="btn-check" name="showPrimeItems" id="hidePrime" autocomplete="off"
+                            (change)="showPrimeItems = false;loadItems();">
+                        <label class="btn btn-option btn-toggle" for="hidePrime">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sets -->
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Show prime sets
+                </div>
+                <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide prime sets">
+                        <input type="radio" class="btn-check" name="showPrimeSets" id="showSets" autocomplete="off"
+                            (change)="showPrimeSets = true;loadItems();" checked>
+                        <label class="btn btn-option btn-toggle" for="showSets">
+                            <span class="material-symbols-outlined">
+                                check
+                            </span>
+                        </label>
+
+                        <input type="radio" class="btn-check" name="showPrimeSets" id="hideSets" autocomplete="off"
+                            (change)="showPrimeSets = false;loadItems();">
+                        <label class="btn btn-option btn-toggle" for="hideSets">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Relics -->
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Show relics
+                </div>
+                <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide prime sets">
+                        <input type="radio" class="btn-check" name="showRelics" id="showRelic" autocomplete="off"
+                            (change)="showRelics = true;loadItems();" checked>
+                        <label class="btn btn-option btn-toggle" for="showRelic">
+                            <span class="material-symbols-outlined">
+                                check
+                            </span>
+                        </label>
+
+                        <input type="radio" class="btn-check" name="showRelics" id="hideRelic" autocomplete="off"
+                            (change)="showRelics = false;loadItems();">
+                        <label class="btn btn-option btn-toggle" for="hideRelic">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Helmet -->
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Show Helmets
+                </div>
+                <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide helmets">
+                        <input type="radio" class="btn-check" name="showHelmet" id="showHelms" autocomplete="off"
+                            (change)="showHelmet = true;loadItems();" checked>
+                        <label class="btn btn-option btn-toggle" for="showHelms">
+                            <span class="material-symbols-outlined">
+                                check
+                            </span>
+                        </label>
+
+                        <input type="radio" class="btn-check" name="showHelmet" id="hideHelmet" autocomplete="off"
+                            (change)="showHelmet = false;loadItems();">
+                        <label class="btn btn-option btn-toggle" for="hideHelmet">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Misc -->
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Show Miscellaneous
+                </div>
+                <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide miscellaneous">
+                        <input type="radio" class="btn-check" name="showMiscellaneous" id="showMisc" autocomplete="off"
+                            (change)="showMiscellaneous = true;loadItems();" checked>
+                        <label class="btn btn-option btn-toggle" for="showMisc">
+                            <span class="material-symbols-outlined">
+                                check
+                            </span>
+                        </label>
+
+                        <input type="radio" class="btn-check" name="showMiscellaneous" id="hideMisc" autocomplete="off"
+                            (change)="showMiscellaneous = false;loadItems();">
+                        <label class="btn btn-option btn-toggle" for="hideMisc">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 mt-4">
+    {{tradeItem.length}} items on list. Displaying {{maxRender == 5000 ? 'All' : maxRender}}.
+    <table class="table table-dark mt-4">
+        <thead>
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th scope="col">
+                    Item
+                </th>
+                <th scope="col" class="text-center">
+                    Lowest price
+                </th>
+                <th scope="col" class="text-center">
+                    Higher price
+                </th>
+                <th scope="col" class="text-center">
+                    Average price
+                </th>
+                <th scope="col" class="text-center">
+                    Median price
+                </th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of tradeItem.slice(0, maxRender); let i=index" class="text-center">
+                <td scope="row" class="text-start">{{i+1}}</td>
+                <td scope="row" class="text-start">{{item.name}}</td>
+                <td scope="row">
+                    {{item.lowest > 0 ? item.lowest : '-'}}
+                    <img *ngIf="item.lowest > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+                <td scope="row">
+                    {{item.higher > 0 ? item.higher : '-'}}
+                    <img *ngIf="item.higher > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+                <td scope="row">
+                    {{item.average > 0 ? item.average : '-'}}
+                    <img *ngIf="item.average > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+                <td scope="row">
+                    {{item.most_frequent > 0 ? item.most_frequent : '-'}}
+                    <img *ngIf="item.most_frequent > 0" [src]="'assets/img/icons/platinum.png'" width="25" />
+                </td>
+                <td scope="row">
+                    <a [href]="'https://warframe.market/items/' + item.url" target="_blank" style="color: white;">
+                        <span class="material-symbols-outlined">
+                            open_in_new
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p><button class="btn btn-sm btn-primary" (click)="maxRender=maxRender+100">Show +100</button></p>
+    <p><button class="btn btn-sm btn-primary" (click)="maxRender=5000">Load all</button></p>
+</div>
