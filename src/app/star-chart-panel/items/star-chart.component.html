@@ -3,6 +3,11 @@
         <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
         <span style="font-size: 25px;">{{image.replace('_', ' ') | uppercase}}</span><br />
         <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+        <small style="margin-right: 10px;"> (Normal)</small>
+        <span style="font-size: 25px;">
+            <img src=" assets/img/icons/mastered.png" width="20" />
+            {{itemSteel}}/{{itemCount}}
+        </span><small>(Steel path)</small>
     </div>
     <div class="col-12">
         <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
@@ -30,21 +35,27 @@
                 <div class="col-12 mt-2" *ngIf="showItem(item)">
                     <div class="btn-group w" role="group">
                         <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-                            [ngClass]="{'mastered': item.mastered}" [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                            [ngClass]="{'mastered': item.mastered,'tenet': item.name.includes('Junction')}"
+                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
                             (click)="item.mastered = !item.mastered;calculate();mastered()">
-                            <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
+                            <small class="float-start" style="font-size: 0.6rem"
+                                title="MR awarded for complete de mission">
                                 <img src="assets/img/icons/mastered.png" width="15" />
                                 MR Exp {{item.mastery_exp}}
                             </small>
-                            <img src="assets/img/icons/mastered.png" width="20" class="mastered-icon"
-                                *ngIf="item.mastered" />
                             {{item.name | uppercase}}
                             <span class="material-symbols-outlined" style="font-size: 20px;" *ngIf="item.mastered">
                                 check
                             </span>
                         </button>
+                        <button class="btn btn-sm btn-primary btn-item" [ngStyle]="{'opacity': item.steel_path ? 0.9 : 1}"
+                            [ngClass]="{'mastered': item.steel_path}" title="Complete steel path version"
+                            (click)="item.steel_path = !item.steel_path;calculate();mastered()">
+                            <img src=" assets/img/icons/mastered.png" width="20" />
+                        </button>
                         <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
-                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}" [ngClass]="{'mastered': item.mastered}">
+                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                            [ngClass]="{'mastered': item.mastered && item.steel_path}">
                             <span class="material-symbols-outlined">
                                 open_in_new
                             </span>

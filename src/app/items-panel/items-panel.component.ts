@@ -31,8 +31,10 @@ export class ItemsPanelComponent {
 
   ngOnInit(): void {
     const options = Util.loadOptions();
-    this.hideMastered = options?.hideMastered;
-    this.showOnlyMrAvailable = options?.showOnlyMrAvailable;
+    if (options) {
+      this.hideMastered = options?.hideMastered;
+      this.showOnlyMrAvailable = options?.showOnlyMrAvailable;
+    }
   }
 
   calculate() {

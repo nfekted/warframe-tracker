@@ -106,7 +106,7 @@ export abstract class Util {
         const intrinsics: number = account.railjack + account.drifter;
 
         //Locations
-        const locations: number = account.locations.reduce((sum, item) => { return (item.mastered ? sum + item.mastery_exp : sum) }, 0);
+        const locations: number = account.locations.reduce((sum, item) => { return (item.mastered ? sum + item.mastery_exp + (item.steel_path ? item.mastery_exp : 0) : sum) }, 0);
 
         account.xp = (1500 * intrinsics) + (3000 * mastered3000) + (6000 * mastered6000) + (8000 * mastered8000) + (1000 * extra1000) + locations;
         account.mastered = mastered3000 + mastered6000 + mastered8000;

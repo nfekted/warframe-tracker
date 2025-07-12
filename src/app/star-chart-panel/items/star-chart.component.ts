@@ -31,6 +31,7 @@ export class StarChartComponent {
   show: boolean = true;
   itemCount: number = 0;
   itemMastered: number = 0;
+  itemSteel: number = 0;
 
   constructor() { }
 
@@ -45,10 +46,11 @@ export class StarChartComponent {
 
   mastered() {
     this.itemMastered = this.locations.filter(i => i.planet == this.image && i.mastered).length;
+    this.itemSteel = this.locations.filter(i => i.planet == this.image && i.steel_path).length;
   }
 
   showItem(item: StarChart): boolean {
-    return item.planet == this.image && (!this.hideComplete || (this.hideComplete && !item.mastered))
+    return item.planet == this.image && (!this.hideComplete || (this.hideComplete && (!item.mastered || !item.steel_path)))
   }
 
   goToWiki(item: StarChart) {

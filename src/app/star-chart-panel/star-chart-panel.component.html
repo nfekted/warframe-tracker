@@ -39,7 +39,7 @@
     </div>
     <hr class="mt-4" />
     <ng-container *ngFor="let item of locations">
-        <div class="col-12 col-md-3" *ngIf="showCategory()">
+        <div class="col-12 col-md-3" *ngIf="showCategory(item)">
             <app-star-chart [image]="item" [locations]="account.locations" (update)="calculate()"
                 [hideComplete]="hideComplete" [account]="account"></app-star-chart>
         </div>

@@ -31,10 +31,9 @@ export class StarChartPanelComponent {
     this.update.emit();
   }
 
-  showCategory(): boolean {
+  showCategory(item: string): boolean {
     if (this.hideComplete) {
-      // return this.account[type].filter(i => !i.mastered).length;
-      // this.account.locations.filter(i => !i.mastered)
+      return this.account.locations.filter(i => i.planet == item && (!i.mastered || !i.steel_path)).length > 0;
     }
 
     return true;

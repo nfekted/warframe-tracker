@@ -67,7 +67,7 @@ export class AppComponent {
       });
 
       for (const item of newStar) {
-        this.account.locations.push(new StarChart(item.name, false, item.mastery_exp, item.planet));
+        this.account.locations.push(new StarChart(item.name, item.mastery_exp, item.planet));
       }
     }
   }
