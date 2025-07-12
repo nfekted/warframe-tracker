@@ -1,5 +1,6 @@
 import { Item } from "./item.model";
 import { MasteryRank } from "./mastery-rank.model";
+import { StarChart } from "./star-chart.model";
 
 export class Account {
     masteryRank: MasteryRank;
@@ -28,6 +29,7 @@ export class Account {
     melees: Item[] = [];
     pistols: Item[] = [];
     rifles: Item[] = [];
+    locations: StarChart[] = [];
 
     constructor() {
 

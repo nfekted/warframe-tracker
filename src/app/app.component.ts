@@ -9,17 +9,19 @@ import { Item } from '../shared/models/item.model';
 import { Util } from '../shared/utils/util';
 import { MasteryRank } from '../shared/models/mastery-rank.model';
 import mrJson from '../shared/jsons/mr.json';
+import starChart from '../shared/jsons/locations.json';
 import { ItemJsons } from '../shared/models/item-jsons.model';
 import { HttpClientModule } from '@angular/common/http';
-import { MrScanComponent } from './mr-scan/mr-scan.component';
 import { MarketComponent } from './market/market.component';
+import { StarChart } from '../shared/models/star-chart.model';
+import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HttpClientModule, RouterModule,
-    SidebarComponent, ItemsPanelComponent, MrScanComponent, MarketComponent,
+    SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent,
     FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -51,8 +53,23 @@ export class AppComponent {
       this.initItems(item);
     }
 
+    this.initStarChart();
+
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
+  }
+
+  initStarChart() {
+    this.account.locations[0]
+    if (this.account.locations.length != starChart.length) {
+      const newStar = starChart.filter(item => {
+        return !this.account.locations.some(s => s.name == item.name)
+      });
+
+      for (const item of newStar) {
+        this.account.locations.push(new StarChart(item.name, false, item.mastery_exp, item.planet));
+      }
+    }
   }
 
   initItems(type: string) {

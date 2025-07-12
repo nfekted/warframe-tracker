@@ -1,0 +1,47 @@
+<div class="row items">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <h5>OPTIONS</h5>
+            </div>
+
+            <!-- Hide mastered -->
+            <div class="col-12 col-md-3">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        Hide completed locations
+                    </div>
+                    <div class="col-12 text-center">
+                        <div class="btn-group" role="group" aria-label="Show or Hide complete">
+                            <input type="radio" class="btn-check" name="hideComplete" id="showMastered"
+                                autocomplete="off" (change)="hideComplete = true">
+                            <label class="btn btn-option btn-toggle" for="showMastered">
+                                <span class="material-symbols-outlined">
+                                    check
+                                </span>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="hideComplete" id="hideComplete"
+                                autocomplete="off" (change)="hideComplete = false" checked>
+                            <label class="btn btn-option btn-toggle" for="hideComplete">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-2">
+        <small>On update: 39 Isleweaver</small>
+    </div>
+    <hr class="mt-4" />
+    <ng-container *ngFor="let item of locations">
+        <div class="col-12 col-md-3" *ngIf="showCategory()">
+            <app-star-chart [image]="item" [locations]="account.locations" (update)="calculate()"
+                [hideComplete]="hideComplete" [account]="account"></app-star-chart>
+        </div>
+    </ng-container>
+</div>

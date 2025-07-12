@@ -92,11 +92,15 @@ export abstract class Util {
         const extra1000: number = account.rifles.filter(r => (r.name.toUpperCase().includes('KUVA ') || r.name.toUpperCase().includes('CODA ') || r.name.toUpperCase().includes('TENET ')) && r.mastered).length
             + account.pistols.filter(r => (r.name.toUpperCase().includes('KUVA ') || r.name.toUpperCase().includes('CODA ') || r.name.toUpperCase().includes('TENET ')) && r.mastered).length
             + account.melees.filter(r => (r.name == 'Paracesis' || r.name.toUpperCase().includes('KUVA ') || r.name.toUpperCase().includes('CODA ') || r.name.toUpperCase().includes('TENET ')) && r.mastered).length
+            + account.archwing_primary.filter(r => r.name.toUpperCase().includes('KUVA ') && r.mastered).length;
 
         //Intrinsics
         const intrinsics: number = account.railjack + account.drifter;
 
-        account.xp = (1500 * intrinsics) + (3000 * mastered3000) + (6000 * mastered6000) + (8000 * mastered8000) + (1000 * extra1000);
+        //Locations
+        const locations: number = account.locations.reduce((sum, item) => { return (item.mastered ? sum + item.mastery_exp : sum) }, 0);
+
+        account.xp = (1500 * intrinsics) + (3000 * mastered3000) + (6000 * mastered6000) + (8000 * mastered8000) + (1000 * extra1000) + locations;
         account.mastered = mastered3000 + mastered6000 + mastered8000;
         return account;
     }

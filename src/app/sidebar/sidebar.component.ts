@@ -26,7 +26,7 @@ export class SidebarComponent {
   @Output() changeRender = new EventEmitter<string>();
 
   mrList = mrJson;
-  maxXp: number = 3072038;
+  maxXp: number = 3087038;
   render: string = 'items';
 
   constructor(private service: ApiService) { }

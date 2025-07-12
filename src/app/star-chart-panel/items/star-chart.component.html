@@ -1,6 +1,6 @@
 <div class="row text-center mt-5">
     <div class="col-12">
-        <img [src]="'assets/img/icons/'+image+'.png'" width="50" />&nbsp;
+        <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
         <span style="font-size: 25px;">{{image.replace('_', ' ') | uppercase}}</span><br />
         <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
     </div>
@@ -26,16 +26,15 @@
     <!-- ITEMS -->
     <div class="col-12" *ngIf="show">
         <div class="row">
-            <button (click)="masterAll()">masterAll</button>
-            <ng-container *ngFor="let item of items; let i=index">
+            <ng-container *ngFor="let item of locations; let i=index">
                 <div class="col-12 mt-2" *ngIf="showItem(item)">
                     <div class="btn-group w" role="group">
                         <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                            (click)="item.mastered = !item.mastered;calculate();mastered()" [class]="getStyles(item)">
+                            [ngClass]="{'mastered': item.mastered}" [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                            (click)="item.mastered = !item.mastered;calculate();mastered()">
                             <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
                                 <img src="assets/img/icons/mastered.png" width="15" />
-                                MR {{item.mastery_requirement}}
+                                MR Exp {{item.mastery_exp}}
                             </small>
                             <img src="assets/img/icons/mastered.png" width="20" class="mastered-icon"
                                 *ngIf="item.mastered" />

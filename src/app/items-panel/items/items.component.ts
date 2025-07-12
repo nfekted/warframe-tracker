@@ -46,6 +46,15 @@ export class ItemsComponent {
     this.mastered();
   }
 
+  masterAll() {
+    for (const item of this.items) {
+      item.mastered = !item.mastered
+    }
+
+    this.calculate();
+    this.mastered();
+  }
+
   mastered() {
     this.itemMastered = this.items.filter(i => i.mastered).length;
   }
@@ -67,7 +76,6 @@ export class ItemsComponent {
     if (item.name.includes('Coda')) style += 'coda ';
     if (item.name.includes('Tenet')) style += 'tenet'
     if (item.type == 'hounds') style += 'tenet'
-    //   [ngClass]="{'prime': item.name.includes('Prime'), 'mastered': item.mastered, 'kuva': item.name.includes('Kuva')}"
     return style;
   }
 

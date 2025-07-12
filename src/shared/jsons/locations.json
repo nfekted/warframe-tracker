@@ -1,0 +1,1347 @@
+[
+    {
+        "name": "Pantheon",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Caloris",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Apollodorus",
+        "mastery_exp": 0,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Odin",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Lares",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "M Prime",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Elion",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Terminus",
+        "mastery_exp": 0,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Suisei",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Boethius",
+        "mastery_exp": 3,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Tolstoj",
+        "mastery_exp": 25,
+        "planet": "Mercury"
+    },
+    {
+        "name": "Mercury Junction",
+        "mastery_exp": 1000,
+        "planet": "Venus"
+    },
+    {
+        "name": "E Gate",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Montes",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Tessera",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Cytherean",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "V Prime",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Kiliken",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Unda",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Linea",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Venera",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Aphrodite",
+        "mastery_exp": 18,
+        "planet": "Venus"
+    },
+    {
+        "name": "Ishtar",
+        "mastery_exp": 24,
+        "planet": "Venus"
+    },
+    {
+        "name": "Fossa",
+        "mastery_exp": 41,
+        "planet": "Venus"
+    },
+    {
+        "name": "Malva",
+        "mastery_exp": 0,
+        "planet": "Venus"
+    },
+    {
+        "name": "Romula",
+        "mastery_exp": 0,
+        "planet": "Venus"
+    },
+    {
+        "name": "Orb Vallis",
+        "mastery_exp": 24,
+        "planet": "Venus"
+    },
+    {
+        "name": "Mars Junction",
+        "mastery_exp": 1000,
+        "planet": "Earth"
+    },
+    {
+        "name": "Venus Junction",
+        "mastery_exp": 1000,
+        "planet": "Earth"
+    },
+    {
+        "name": "Mariana",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "E Prime",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Everest",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Gaia",
+        "mastery_exp": 20,
+        "planet": "Earth"
+    },
+    {
+        "name": "Lith",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Erpo",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Mantle",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Cambria",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Eurasia",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Pacific",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Cervantes",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Saya's Visions",
+        "mastery_exp": 0,
+        "planet": "Earth"
+    },
+    {
+        "name": "Tikal",
+        "mastery_exp": 0,
+        "planet": "Earth"
+    },
+    {
+        "name": "Coba",
+        "mastery_exp": 0,
+        "planet": "Earth"
+    },
+    {
+        "name": "Plains of Eidolon",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Oro",
+        "mastery_exp": 24,
+        "planet": "Earth"
+    },
+    {
+        "name": "Yuvarium",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Grimaldi",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Copernicus",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Pavlov",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Zeipel",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Plato",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Stöfler",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Tycho",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Apollo",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Circulus",
+        "mastery_exp": 0,
+        "planet": "Lua"
+    },
+    {
+        "name": "Ceres Junction",
+        "mastery_exp": 1000,
+        "planet": "Mars"
+    },
+    {
+        "name": "Phobos Junction",
+        "mastery_exp": 1000,
+        "planet": "Mars"
+    },
+    {
+        "name": "Tharsis",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Hellas",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Alator",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Syrtis",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Spear",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Arval",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Ares",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Gradivus",
+        "mastery_exp": 45,
+        "planet": "Mars"
+    },
+    {
+        "name": "Augustus",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Ara",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Martialis",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Kadesh",
+        "mastery_exp": 0,
+        "planet": "Mars"
+    },
+    {
+        "name": "Wahiba",
+        "mastery_exp": 0,
+        "planet": "Mars"
+    },
+    {
+        "name": "Ultor",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "War",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Vallis",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Olympus",
+        "mastery_exp": 51,
+        "planet": "Mars"
+    },
+    {
+        "name": "Tyana Pass",
+        "mastery_exp": 18,
+        "planet": "Mars"
+    },
+    {
+        "name": "Jupiter Junction",
+        "mastery_exp": 1000,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Horend",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Phlegyas",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Formido",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Dirus",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Hyf",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Magnacidium",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Cambion Drift",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Terrorem",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Exequias",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Effervo",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Armatus",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Persto",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Munio",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Cambire",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Nex",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Testudo",
+        "mastery_exp": 0,
+        "planet": "Deimos"
+    },
+    {
+        "name": "Roche",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Gulliver",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Stickney",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Sharpless",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Shklovsky",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Skyresh",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Kepler",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Monolith",
+        "mastery_exp": 157,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Iliad",
+        "mastery_exp": 100,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Memphis",
+        "mastery_exp": 0,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Zeugma",
+        "mastery_exp": 0,
+        "planet": "Phobos"
+    },
+    {
+        "name": "Pallas",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Bode",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Cinxia",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Draco",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Casta",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Kiste",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Nuovo",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Exta",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Ker",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Lex",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Thon",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Ludi",
+        "mastery_exp": 163,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Seimeni",
+        "mastery_exp": 0,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Gabii",
+        "mastery_exp": 0,
+        "planet": "Ceres"
+    },
+    {
+        "name": "Saturn Junction",
+        "mastery_exp": 1000,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Europa Junction",
+        "mastery_exp": 1000,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Metis",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Io",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Callisto",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Elara",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Galilea",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Ananke",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Carme",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Carpo",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Amalthea",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Adrastea",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Thebe",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Themisto",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Cameria",
+        "mastery_exp": 0,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Sinai",
+        "mastery_exp": 0,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Ganymede",
+        "mastery_exp": 51,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "The Ropalolyst",
+        "mastery_exp": 55,
+        "planet": "Jupiter"
+    },
+    {
+        "name": "Morax",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Armaros",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Valac",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Valefor",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Paimon",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Ose",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Sorath",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Kokabiel",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Orias",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Naamah",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Abaddon",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Baal",
+        "mastery_exp": 138,
+        "planet": "Europa"
+    },
+    {
+        "name": "Cholistan",
+        "mastery_exp": 0,
+        "planet": "Europa"
+    },
+    {
+        "name": "Larzac",
+        "mastery_exp": 0,
+        "planet": "Europa"
+    },
+    {
+        "name": "Archaeo-freighter",
+        "mastery_exp": 0,
+        "planet": "Europa"
+    },
+    {
+        "name": "Icefields of Riddah",
+        "mastery_exp": 0,
+        "planet": "Europa"
+    },
+    {
+        "name": "Mines of Karishh",
+        "mastery_exp": 0,
+        "planet": "Europa"
+    },
+    {
+        "name": "Uranus Junction",
+        "mastery_exp": 1000,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Pandora",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Cassini",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Dione",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Titan",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Rhea",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Helene",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Telesto",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Numa",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Anthe",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Enceladus",
+        "mastery_exp": 49,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Keeler",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Calypso",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Tethys",
+        "mastery_exp": 55,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Caracol",
+        "mastery_exp": 0,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Piscinas",
+        "mastery_exp": 0,
+        "planet": "Saturn"
+    },
+    {
+        "name": "Neptune Junction",
+        "mastery_exp": 1000,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Sycorax",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Umbriel",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Stephano",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Ophelia",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Caelus",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Ariel",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Caliban",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Assur",
+        "mastery_exp": 0,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Desdemona",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Titania",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Puck",
+        "mastery_exp": 44,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Cressida",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Rosalind",
+        "mastery_exp": 69,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Ur",
+        "mastery_exp": 0,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Brutus",
+        "mastery_exp": 0,
+        "planet": "Uranus"
+    },
+    {
+        "name": "Pluto Junction",
+        "mastery_exp": 1000,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Laomedeia",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Galatea",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Proteus",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Despina",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Salacia",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Triton",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Larissa",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Sao",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Neso",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "The Index: Endurance",
+        "mastery_exp": 0,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Nereid",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Psamathe",
+        "mastery_exp": 52,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Yursa",
+        "mastery_exp": 0,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Kelashin",
+        "mastery_exp": 0,
+        "planet": "Neptune"
+    },
+    {
+        "name": "Eris Junction",
+        "mastery_exp": 1000,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Sedna Junction",
+        "mastery_exp": 1000,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Minthe",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Hydra",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Cerberus",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Palus",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Outer Terminus",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Narcissus",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Oceanum",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Regna",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Cypress",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Acheron",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Hieracon",
+        "mastery_exp": 0,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Hades",
+        "mastery_exp": 51,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Sechura",
+        "mastery_exp": 0,
+        "planet": "Pluto"
+    },
+    {
+        "name": "Naga",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Hydron",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Selkie",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Berehynia",
+        "mastery_exp": 50,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Rusalka",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Adaro",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Kappa",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Charybdis",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Marid",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Merrow",
+        "mastery_exp": 100,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Kelpie",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Amarna",
+        "mastery_exp": 0,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Sangeru",
+        "mastery_exp": 0,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Nakki",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Yam",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Vodyanoi",
+        "mastery_exp": 177,
+        "planet": "Sedna"
+    },
+    {
+        "name": "Naeglar",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Mutalist Alad V Assassinate",
+        "mastery_exp": 0,
+        "planet": "Eris"
+    },
+    {
+        "name": "Xini",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Kala-azar",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Nimus",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Jordas Golem Assassinate",
+        "mastery_exp": 0,
+        "planet": "Eris"
+    },
+    {
+        "name": "Isos",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Brugia",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Oestrus",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Saxis",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Solium",
+        "mastery_exp": 279,
+        "planet": "Eris"
+    },
+    {
+        "name": "Zabala",
+        "mastery_exp": 0,
+        "planet": "Eris"
+    },
+    {
+        "name": "Akkad",
+        "mastery_exp": 0,
+        "planet": "Eris"
+    },
+    {
+        "name": "Dakata",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Koro",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Nabuk",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Rotuma",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Pago",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Garus",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Taveuni",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Tamu",
+        "mastery_exp": 0,
+        "planet": "Kuva_Fortress"
+    },
+    {
+        "name": "Teshub",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Hepit",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Taranis",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Ani",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Stribog",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Tiwaz",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Belenus",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Ukko",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Oxomoco",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Marduk",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Aten",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Mithra",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Mot",
+        "mastery_exp": 0,
+        "planet": "Void"
+    },
+    {
+        "name": "Tuvul Commons",
+        "mastery_exp": 0,
+        "planet": "Zariman"
+    },
+    {
+        "name": "Halako Perimeter",
+        "mastery_exp": 0,
+        "planet": "Zariman"
+    },
+    {
+        "name": "Everview Arc",
+        "mastery_exp": 0,
+        "planet": "Zariman"
+    },
+    {
+        "name": "The Greenway",
+        "mastery_exp": 0,
+        "planet": "Zariman"
+    },
+    {
+        "name": "Oro Works",
+        "mastery_exp": 0,
+        "planet": "Zariman"
+    }
+]
