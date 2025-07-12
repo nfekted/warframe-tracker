@@ -6,12 +6,11 @@ import { CommonModule } from '@angular/common';
 import { Account } from '../../shared/models/account.model';
 import { timer } from 'rxjs';
 import { Util } from '../../shared/utils/util';
-import { PythonToolComponent } from '../python-tool/python-tool.component';
 
 @Component({
   selector: 'app-mr-scan',
   standalone: true,
-  imports: [FormsModule, CommonModule, PythonToolComponent],
+  imports: [FormsModule, CommonModule],
   templateUrl: './mr-scan.component.html',
   styleUrl: './mr-scan.component.scss'
 })
