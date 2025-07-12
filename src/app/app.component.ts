@@ -39,7 +39,6 @@ export class AppComponent {
   jsonList: ItemJsons = new ItemJsons();
 
   render: string = 'items';
-
   constructor() { }
 
   ngOnInit(): void {
@@ -91,5 +90,12 @@ export class AppComponent {
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
     Util.save(this.account);
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 }
