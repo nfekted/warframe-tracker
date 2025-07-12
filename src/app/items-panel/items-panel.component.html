@@ -24,7 +24,8 @@
                     <div class="col-12 text-center">
                         <div class="btn-group" role="group" aria-label="Show or Hide MR locked itens">
                             <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavaible"
-                                autocomplete="off" (change)="showOnlyMrAvailable = true" checked>
+                                autocomplete="off" (change)="showOnlyMrAvailable = true;saveOptions()"
+                                [attr.checked]="showOnlyMrAvailable ? 'checked' : null">
                             <label class="btn btn-option btn-toggle" for="hideUnavaible">
                                 <span class="material-symbols-outlined">
                                     check
@@ -32,7 +33,8 @@
                             </label>
 
                             <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="showUnavaible"
-                                autocomplete="off" (change)="showOnlyMrAvailable = false">
+                                autocomplete="off" (change)="showOnlyMrAvailable = false;saveOptions()"
+                                [attr.checked]="!showOnlyMrAvailable ? 'checked' : null">
                             <label class="btn btn-option btn-toggle" for="showUnavaible">
                                 <span class="material-symbols-outlined">
                                     close
@@ -52,7 +54,8 @@
                     <div class="col-12 text-center">
                         <div class="btn-group" role="group" aria-label="Show or Hide mastered">
                             <input type="radio" class="btn-check" name="hideMastered" id="showMastered"
-                                autocomplete="off" (change)="hideMastered = true">
+                                autocomplete="off" (change)="hideMastered = true;saveOptions()"
+                                [attr.checked]="hideMastered ? 'checked': null">
                             <label class="btn btn-option btn-toggle" for="showMastered">
                                 <span class="material-symbols-outlined">
                                     check
@@ -60,7 +63,8 @@
                             </label>
 
                             <input type="radio" class="btn-check" name="hideMastered" id="hideMastered"
-                                autocomplete="off" (change)="hideMastered = false" checked>
+                                autocomplete="off" (change)="hideMastered = false;saveOptions()"
+                                [attr.checked]="!hideMastered ? 'checked': null">
                             <label class="btn btn-option btn-toggle" for="hideMastered">
                                 <span class="material-symbols-outlined">
                                     close

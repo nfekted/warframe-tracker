@@ -26,7 +26,6 @@
     <!-- ITEMS -->
     <div class="col-12" *ngIf="show">
         <div class="row">
-            <button (click)="masterAll()">masterAll</button>
             <ng-container *ngFor="let item of items; let i=index">
                 <div class="col-12 mt-2" *ngIf="showItem(item)">
                     <div class="btn-group w" role="group">

@@ -29,6 +29,12 @@ export class ItemsPanelComponent {
 
   constructor() { }
 
+  ngOnInit(): void {
+    const options = Util.loadOptions();
+    this.hideMastered = options?.hideMastered;
+    this.showOnlyMrAvailable = options?.showOnlyMrAvailable;
+  }
+
   calculate() {
     this.update.emit();
   }
@@ -42,5 +48,9 @@ export class ItemsPanelComponent {
     }
 
     return true;
+  }
+
+  saveOptions() {
+    Util.saveOptions({ showOnlyMrAvailable: this.showOnlyMrAvailable, hideMastered: this.hideMastered });
   }
 }

@@ -56,6 +56,14 @@ export abstract class Util {
         window.localStorage.setItem('NKDTools-WTMarket', JSON.stringify(itensList));
     }
 
+    static saveOptions(options) {
+        window.localStorage.setItem('NFDTools-WTOptions', JSON.stringify(options));
+    }
+
+    static loadOptions() {
+        return JSON.parse(window.localStorage.getItem('NFDTools-WTOptions'));
+    }
+
     static clear() {
         window.localStorage.clear();
         window.location.reload();
