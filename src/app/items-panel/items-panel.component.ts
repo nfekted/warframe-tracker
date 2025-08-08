@@ -31,12 +31,6 @@ export class ItemsPanelComponent {
   constructor() { }
 
   ngOnInit(): void {
-    const teste = {};
-    for (const s of this.acquisitionList) {
-      teste[s.type] = s.description;
-    }
-
-    console.log(JSON.stringify(teste))
     const options = Util.loadOptions();
     if (options) {
       this.hideMastered = options?.hideMastered;
