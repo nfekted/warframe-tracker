@@ -30,6 +30,7 @@ export class Account {
     pistols: Item[] = [];
     rifles: Item[] = [];
     locations: StarChart[] = [];
+    lang: string = 'en';
 
     constructor() {
 

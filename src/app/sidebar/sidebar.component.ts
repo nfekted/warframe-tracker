@@ -7,11 +7,12 @@ import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslocoModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MarketComponent } from './market/market.component';
 import { StarChart } from '../shared/models/star-chart.model';
 import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.component';
+import { TranslocoService } from '@jsverse/transloco';
 
 
 @Component({
@@ -29,6 +30,7 @@ import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.com
 export class AppComponent {
 
   account: Account = new Account();
+  lang: string = 'en';
 
   mrList: MasteryRank[] = mrJson;
   nextRank: MasteryRank = new MasteryRank();
@@ -39,13 +41,15 @@ export class AppComponent {
   jsonList: ItemJsons = new ItemJsons();
 
   render: string = 'items';
-  constructor() { }
+  constructor(private translocoService: TranslocoService) { }
 
   ngOnInit(): void {
     const load = Util.load();
+    this.lang = this.translocoService.getActiveLang();
     if (load) {
-      this.account = load;
+      this.account = Object.assign(new Account(), load);
       this.account = Util.calculate(this.account);
+      this.changeLang(this.account.lang);
     }
 
     for (const item of Util.itemTypes) {
@@ -56,6 +60,14 @@ export class AppComponent {
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
+  }
+
+  changeLang(lang: string) {
+    this.translocoService.setActiveLang(lang);
+    this.lang = lang;
+    this.account.lang = this.lang;
+
+    Util.save(this.account);
   }
 
   initStarChart() {

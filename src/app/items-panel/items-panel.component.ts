@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './items/items.component';
 import { Util } from '../../shared/utils/util';
 import acquisitionJson from '../../shared/jsons/acquisition.json';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-items-panel',
   standalone: true,
-  imports: [FormsModule, CommonModule, ItemsComponent],
+  imports: [FormsModule, CommonModule, ItemsComponent, TranslocoModule],
   templateUrl: './items-panel.component.html',
   styleUrl: './items-panel.component.scss'
 })
@@ -30,6 +31,12 @@ export class ItemsPanelComponent {
   constructor() { }
 
   ngOnInit(): void {
+    const teste = {};
+    for (const s of this.acquisitionList) {
+      teste[s.type] = s.description;
+    }
+
+    console.log(JSON.stringify(teste))
     const options = Util.loadOptions();
     if (options) {
       this.hideMastered = options?.hideMastered;

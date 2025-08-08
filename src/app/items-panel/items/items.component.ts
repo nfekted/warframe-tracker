@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Item } from '../../../shared/models/item.model';
 import { Account } from '../../../shared/models/account.model';
 import { ItemJsons } from '../../../shared/models/item-jsons.model';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-items',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslocoModule],
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss'
 })

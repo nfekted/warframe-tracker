@@ -14,24 +14,24 @@
           <h4><u>{{mrList[account.masteryRank.rank].name}}</u></h4>
         </div>
         <div class="col-12 text-center mt-4">
-          <h5>{{account.mastered}} of {{itemsCount}} items.</h5>
-          <h5>{{account.xp}} of {{maxXp}} XP</h5>
+          <h5>{{account.mastered}} {{'sidebar.of' | transloco}} {{itemsCount}} items.</h5>
+          <h5>{{account.xp}} {{'sidebar.of' | transloco}} {{maxXp}} XP</h5>
         </div>
         <div class="col-12 text-center mt-4">
-          <h5>Railjack Intrinsics:</h5>
+          <h5>Railjack {{'sidebar.intrinsics' |transloco}}:</h5>
           <input class="form-control text-center" type="number" min="0" max="50" step="1"
             oninput="validity.valid||(value='');" [(ngModel)]="account.railjack" (input)="calculate()" />
-          <h5>Drifter Intrinsics:</h5>
+          <h5>Drifter {{'sidebar.intrinsics' |transloco}}:</h5>
           <input class="form-control text-center" type="number" min="0" max="40" step="1"
             oninput="validity.valid||(value='');" [(ngModel)]="account.drifter" (input)="calculate()" />
         </div>
         <div class="col-12 text-center mt-4">
-          <h5>Your next rank is <u>{{nextRank.name}}</u>, with {{nextRank.xp}}XP</h5>
+          <h5 [innerHtml]="'sidebar.next_mr' | transloco: {nextRank: nextRank.name, xp: nextRank.xp}"></h5>
           <div class="progress" role="progressbar" aria-label="Current XP" aria-valuenow="0" aria-valuemin="0"
             aria-valuemax="100">
             <div class="progress-bar bg-warning" [style]="'width: '+progress()+'%'"></div>
           </div>
-          <small>{{nextRank.xp - account.xp}} XP needed to next mastery rank</small>
+          <small>{{nextRank.xp - account.xp}} XP {{'sidebar.xp_needed' | transloco}}</small>
         </div>
 
         <hr class="mt-4" />
@@ -50,7 +50,7 @@
             <span class="material-symbols-outlined" style="font-size: 15px;">
               search
             </span>
-            Show Star Chart
+            {{'sidebar.star_chart' | transloco}}
           </button>
           <!-- Market -->
           <button class="btn btn-sm btn-secondary w prime mt-4" (click)="changeRenderEvent('market')"
@@ -58,7 +58,7 @@
             <span class="material-symbols-outlined" style="font-size: 15px;">
               currency_exchange
             </span>
-            Check warframe.market prices
+            {{'sidebar.market' | transloco}}
           </button>
         </div>
 
@@ -68,13 +68,12 @@
             <span class="material-symbols-outlined" style="font-size: 15px;">
               delete
             </span>
-            Delete all data
+            {{'sidebar.delete_all' | transloco}}
           </button>
         </div>
 
         <div class="col-12 text-center mt-4">
-          This website and application(s) do not have any official affiliation with Digital Extremes Ltd or Warframe.
-          All content is saved in browser cookies. By continuing, you understand and agree to the above text.
+          {{'sidebar.disclaimer' | transloco}}
         </div>
 
       </div>

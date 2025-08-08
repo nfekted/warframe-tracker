@@ -13,6 +13,25 @@
         </div>
     </div>
 </div>
+<!-- <button id="language" title="Go to top" class="btn btn-sm btn-info" (click)="scrollToTop()">
+    <span class="material-symbols-outlined">
+        arrow_circle_up
+    </span>
+</button> -->
+<div class="btn-group" id="language">
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <img [src]="'assets/img/' + account.lang + 'flag.png'" width="55" />
+    </button>
+    <ul class="dropdown-menu">
+        <li>
+            <img class="dropdown-item" [src]="'assets/img/enflag.png'" width="55" (click)="changeLang('en')" />
+        </li>
+        <li>
+            <img class="dropdown-item" [src]="'assets/img/ptflag.png'" width="55" (click)="changeLang('pt')" />
+        </li>
+    </ul>
+</div>
 <button id="myBtn" title="Go to top" class="btn btn-sm btn-info" (click)="scrollToTop()">
     <span class="material-symbols-outlined">
         arrow_circle_up
