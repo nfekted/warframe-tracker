@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-sidebar',
@@ -30,7 +30,7 @@ export class SidebarComponent {
   maxXp: number = 3087038;
   render: string = 'items';
 
-  constructor(private service: ApiService) { }
+  constructor(private transloco: TranslocoService) { }
 
   ngOnInit(): void { }
 
@@ -44,9 +44,10 @@ export class SidebarComponent {
 
   delete() {
     Swal.fire({
-      text: 'Erase all data? Can\'t be undone',
+      text: this.transloco.translate('erase'),
       showCancelButton: true,
-      confirmButtonText: "Delete",
+      confirmButtonText: this.transloco.translate('delete'),
+      cancelButtonText: this.transloco.translate('cancel'),
       confirmButtonColor: '#a7160c'
     }).then((result) => {
       if (result.isConfirmed) {
