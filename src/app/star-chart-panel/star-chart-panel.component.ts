@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { StarChartComponent } from './items/star-chart.component';
 import starChart from '../../shared/jsons/locations.json';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-star-chart-panel',
   standalone: true,
-  imports: [FormsModule, CommonModule, StarChartComponent],
+  imports: [FormsModule, CommonModule, StarChartComponent, TranslocoModule],
   templateUrl: './star-chart-panel.component.html',
   styleUrl: './star-chart-panel.component.scss'
 })

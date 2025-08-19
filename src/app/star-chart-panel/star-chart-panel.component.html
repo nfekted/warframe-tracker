@@ -2,14 +2,14 @@
     <div class="col-12">
         <div class="row">
             <div class="col-12">
-                <h5>OPTIONS</h5>
+                <h5>{{'planets.options' | transloco}}</h5>
             </div>
 
             <!-- Hide mastered -->
             <div class="col-12 col-md-3">
                 <div class="row">
                     <div class="col-12 text-center">
-                        Hide completed locations
+                        {{'planets.hide' | transloco}}
                     </div>
                     <div class="col-12 text-center">
                         <div class="btn-group" role="group" aria-label="Show or Hide complete">
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="col-12 mt-2">
-        <small>On update: 39 Isleweaver</small>
+        <small>{{'on_update' | transloco}}: 39 Isleweaver</small>
     </div>
     <hr class="mt-4" />
     <ng-container *ngFor="let item of locations">

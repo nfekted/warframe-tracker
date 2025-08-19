@@ -1,15 +1,15 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Item } from '../../../shared/models/item.model';
 import { Account } from '../../../shared/models/account.model';
 import { ItemJsons } from '../../../shared/models/item-jsons.model';
 import { StarChart } from '../../../shared/models/star-chart.model';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-star-chart',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslocoModule],
   templateUrl: './star-chart.component.html',
   styleUrl: './star-chart.component.scss'
 })

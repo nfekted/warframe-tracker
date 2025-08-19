@@ -43,6 +43,29 @@
             "kitguns": "KITGUNS"
         }
     },
+    "planets": {
+        "options": "OPÇÕES",
+        "hide": "Ocultar mapas completos",
+        "Mercury": "MERCÚRIO",
+        "Venus": "VÊNUS",
+        "Earth": "TERRA",
+        "Lua": "LUA",
+        "Mars": "MARTE",
+        "Deimos": "DEIMOS",
+        "Phobos": "PHOBOS",
+        "Ceres": "CERES",
+        "Jupiter": "JÚPITER",
+        "Europa": "EUROPA",
+        "Saturn": "SATURNO",
+        "Uranus": "URANO",
+        "Neptune": "NETUNO",
+        "Pluto": "PLUTÃO",
+        "Sedna": "SEDNA",
+        "Eris": "ERIS",
+        "Kuva_Fortress": "FORTALEZA KUVA",
+        "Void": "VOID",
+        "Zariman": "ZARIMAN"
+    },
     "acquisiton": {
         "types": {
             "Arbitration": "Arbitragem ",

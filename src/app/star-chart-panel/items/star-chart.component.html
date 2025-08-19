@@ -1,7 +1,7 @@
 <div class="row text-center mt-5">
     <div class="col-12">
         <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
-        <span style="font-size: 25px;">{{image.replace('_', ' ') | uppercase}}</span><br />
+        <span style="font-size: 25px;">{{'planets.'+image | transloco}}</span><br />
         <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
         <small style="margin-right: 10px;"> (Normal)</small>
         <span style="font-size: 25px;">
