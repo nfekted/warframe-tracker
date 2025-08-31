@@ -54,6 +54,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Caliban#Acquisition"
     },
     {
+        "name": "Caliban Prime",
+        "mastery_requirement": 0,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Caliban/Prime#Acquisition"
+    },
+    {
         "name": "Chroma",
         "mastery_requirement": 0,
         "acquisition": "Star Chart",

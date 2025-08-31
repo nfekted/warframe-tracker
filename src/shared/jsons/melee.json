@@ -900,6 +900,12 @@
         "desc": "https://wiki.warframe.com/w/Venato#Acquisition"
     },
     {
+        "name": "Venato Prime",
+        "mastery_requirement": 14,
+        "acquisition": "Relic Drop",
+        "desc": "https://wiki.warframe.com/w/Venato_Prime#Acquisition"
+    },
+    {
         "name": "Coda Hirudo",
         "mastery_requirement": 17,
         "acquisition": "Coda / Eleanor",

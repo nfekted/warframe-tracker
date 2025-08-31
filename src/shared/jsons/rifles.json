@@ -24,6 +24,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Cernos_Prime#Acquisition"
     },
     {
+        "name": "Vadarya Prime",
+        "mastery_requirement": 15,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vadarya_Prime#Acquisition"
+    },
+    {
         "name": "Cinta",
         "mastery_requirement": 6,
         "acquisition": "Duviri",
