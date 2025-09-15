@@ -18,6 +18,7 @@
         "acquisition": "Filtrar por meio de aquisição",
         "hide_mr": "Ocultar itens não disponíveis no meu Mastery Rank",
         "hide_mastered": "Esconder itens/categorias masterizadas",
+        "hide_founder": "Esconder item de fundador",
         "name_filter": "Filtrar por nome",
         "mr_only": "Apenas itens do MR",
         "all_acquisition": "Todo tipo de aquisição",

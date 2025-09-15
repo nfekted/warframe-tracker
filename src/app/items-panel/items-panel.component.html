@@ -110,10 +110,40 @@
                     <option [ngValue]="17">MR 17</option>
                 </select>
             </div>
+
+            <!-- Remove exclusive -->
+            <div class="col-12 col-md-3">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        {{'items.hide_founder' | transloco}}
+                    </div>
+                    <div class="col-12 text-center">
+                        <div class="btn-group" role="group" aria-label="Show or Hide Founders">
+                            <input type="radio" class="btn-check" name="hideFounders" id="showFounders"
+                                autocomplete="off" (change)="hideFounders = true;saveOptions()"
+                                [attr.checked]="hideFounders ? 'checked': null">
+                            <label class="btn btn-option btn-toggle" for="showFounders">
+                                <span class="material-symbols-outlined">
+                                    check
+                                </span>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="hideFounders" id="hideFounders"
+                                autocomplete="off" (change)="hideFounders = false;saveOptions()"
+                                [attr.checked]="!hideFounders ? 'checked': null">
+                            <label class="btn btn-option btn-toggle" for="hideFounders">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-12">
-        <small>{{'on_update' | transloco}}: 39.1 Caliban Prime</small>
+        <small>{{'on_update' | transloco}}: 39.1 Caliban Prime (2025-09-14)</small>
     </div>
     <hr class="mt-4" />
     <ng-container *ngFor="let item of items">
@@ -121,7 +151,7 @@
             <app-items [image]="item" [items]="account[item]" (update)="calculate()"
                 [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"
                 [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"
-                [mr]="mr"></app-items>
+                [hideFounders]="hideFounders" [mr]="mr"></app-items>
         </div>
     </ng-container>
 </div>

@@ -24,6 +24,7 @@ export class ItemsPanelComponent {
 
   acquisitionFilter: { type: string, description: string } = null;
   hideMastered: boolean = false;
+  hideFounders: boolean = true;
   showOnlyMrAvailable: boolean = true;
   nameFilter: string = '';
   mr: number = null;
@@ -35,6 +36,7 @@ export class ItemsPanelComponent {
     if (options) {
       this.hideMastered = options?.hideMastered;
       this.showOnlyMrAvailable = options?.showOnlyMrAvailable;
+      this.hideFounders = options?.hideFounders;
     }
   }
 
@@ -54,6 +56,6 @@ export class ItemsPanelComponent {
   }
 
   saveOptions() {
-    Util.saveOptions({ showOnlyMrAvailable: this.showOnlyMrAvailable, hideMastered: this.hideMastered });
+    Util.saveOptions({ showOnlyMrAvailable: this.showOnlyMrAvailable, hideMastered: this.hideMastered, hideFounders: this.hideFounders });
   }
 }

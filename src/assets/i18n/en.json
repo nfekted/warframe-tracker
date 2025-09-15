@@ -18,6 +18,7 @@
         "acquisition": "Filter by acquisition method:",
         "hide_mr": "Hide items unavailable with my Mastery Rank",
         "hide_mastered": "Hide mastered items/categories",
+        "hide_founder": "Hide founders items",
         "name_filter": "Filter by name",
         "mr_only": "Only on Mastery Rank",
         "all_acquisition": "Show all acquisition",

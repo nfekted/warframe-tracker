@@ -24,6 +24,7 @@ export class ItemsComponent {
   //Filters
   @Input() acquisitionFilter: string = null;
   @Input() hideMastered: boolean = false;
+  @Input() hideFounders: boolean = true;
   @Input() showOnlyMrAvailable: boolean;
   @Input() nameFilter: string = '';
   @Input() mr: number = null;
@@ -66,6 +67,7 @@ export class ItemsComponent {
       && (!this.showOnlyMrAvailable || (this.showOnlyMrAvailable && this.account.masteryRank.rank >= item.mastery_requirement))
       && (this.nameFilter == '' || item.name.toUpperCase().includes(this.nameFilter.toUpperCase()))
       && (this.mr == null || (this.mr == item.mastery_requirement))
+      && (!this.hideFounders || (this.hideFounders && item.acquisition != 'Founder Exclusive'))
   }
 
   getStyles(item: Item): string {
