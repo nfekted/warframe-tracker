@@ -1,0 +1,36 @@
+@media (min-width: 991px) {
+    .items {
+        margin-left: 20em;
+    }
+}
+
+.btn-toggle {
+    height: 2.5rem;
+}
+
+.btn-check:checked+.btn,
+:not(.btn-check)+.btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+    border: solid 2px rgba(209, 191, 84, 0.75);
+    color: rgba(209, 191, 84);
+    background-color: #172127;
+}
+
+.btn-option {
+    background-color: #2e404c;
+    border: solid 2px white;
+    color: white;
+
+    &:hover {
+        background-color: #172127;
+        border: solid 2px white;
+        color: white;
+    }
+}
+
+input::placeholder {
+    opacity: 0.8;
+    color: white;
+}

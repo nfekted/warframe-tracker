@@ -38,15 +38,23 @@
         <hr class="mt-4" />
         <div class="col-12 text-center">
           <!-- start page -->
-          <button class="btn btn-sm btn-secondary w mt-4" (click)="changeRenderEvent('items')"
+          <button class="btn btn-sm btn-secondary w mt-2" (click)="changeRenderEvent('items')"
             *ngIf="render != 'items'">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               checklist
             </span>
-            Items list
+            {{'sidebar.list' | transloco}}
+          </button>
+          <!-- Incarnation -->
+          <button class="btn btn-sm btn-secondary w mt-2" (click)="changeRenderEvent('incarnon')"
+            *ngIf="render != 'incarnon'">
+            <span class="material-symbols-outlined" style="font-size: 15px;">
+              checklist
+            </span>
+            Incarnon
           </button>
           <!-- Locations -->
-          <button class="btn btn-sm btn-secondary w mt-4" (click)="changeRenderEvent('locations')"
+          <button class="btn btn-sm btn-secondary w mt-2" (click)="changeRenderEvent('locations')"
             *ngIf="render != 'locations'">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               search
@@ -54,7 +62,7 @@
             {{'sidebar.star_chart' | transloco}}
           </button>
           <!-- Market -->
-          <button class="btn btn-sm btn-secondary w prime mt-4" (click)="changeRenderEvent('market')"
+          <button class="btn btn-sm btn-secondary w prime mt-2" (click)="changeRenderEvent('market')"
             *ngIf="render != 'market'">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               currency_exchange
@@ -64,7 +72,7 @@
         </div>
 
         <!-- Delete data -->
-        <div class="col-12 text-center mt-4">
+        <div class="col-12 text-center mt-2">
           <button class="btn btn-sm btn-danger w" (click)="delete()">
             <span class="material-symbols-outlined" style="font-size: 15px;">
               delete
@@ -74,7 +82,7 @@
         </div>
 
         <div class="col-12 text-center mt-4">
-          {{'sidebar.disclaimer' | transloco}}
+          <small style="font-size: 10px">{{'sidebar.disclaimer' | transloco}}</small>
         </div>
 
       </div>

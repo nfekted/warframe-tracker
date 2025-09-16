@@ -1,0 +1,242 @@
+[
+    {
+        "name": "Felarx",
+        "acquisition": "Zariman",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Felarx#Acquisition"
+    },
+    {
+        "name": "Innodem",
+        "acquisition": "Zariman",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Innodem#Acquisition"
+    },
+    {
+        "name": "Laetum",
+        "acquisition": "Zariman",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Laetum#Acquisition"
+    },
+    {
+        "name": "Phenmor",
+        "acquisition": "Zariman",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Phenmor#Acquisition"
+    },
+    {
+        "name": "Praedos",
+        "acquisition": "Zariman",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Praedos#Acquisition"
+    },
+    {
+        "name": "Onos",
+        "acquisition": "Sanctum Anatomica",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Onos#Acquisition"
+    },
+    {
+        "name": "Ruvox",
+        "acquisition": "Sanctum Anatomica",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Ruvox#Acquisition"
+    },
+    {
+        "name": "Thalys",
+        "acquisition": "Isleweaver",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Thalys#Acquisition"
+    },
+    {
+        "name": "Boar",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Boar_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Boltor",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Boltor_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Braton",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Braton_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Burston",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Burston_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Dera",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dera_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Dread",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dread_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Gorgon",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Gorgon_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Latron",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Latron_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Miter",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Miter_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Paris",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Paris_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Soma",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Soma_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Strun",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Strun_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Sybaris",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sybaris_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Torid",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Torid_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Angstrum",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Angstrum_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Atomos",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Atomos_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Bronco",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Bronco_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Cestra",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Cestra_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Despair",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Despair_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Dual Toxocyst",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Toxocyst_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Furis",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Furis_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Gammacor",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Gammacor_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Kunai",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kunai_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Lato",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Lato_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Lex",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Lex_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Sicarus",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sicarus_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Vasto",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vasto_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Zylok",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Zylok_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Ack & Brunt",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Ack_%26_Brunt_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Anku",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Anku_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Bo",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Bo_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Ceramic Dagger",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Ceramic_Dagger_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Dual Ichor",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Ichor_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Furax",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Furax_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Hate",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Hate_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Magistar",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Magistar_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Nami",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Nami_Solo_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Okina",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Okina_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Sibear",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sibear_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Skana",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Skana_Incarnon_Genesis#Evolutions"
+    }
+]

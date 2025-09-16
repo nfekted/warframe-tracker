@@ -1,0 +1,49 @@
+<div class="row text-center mt-5">
+    <div class="col-12">
+        <span style="font-size: 25px;">{{'incarnon.'+image | transloco}}</span><br />
+        <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+    </div>
+    <div class="col-12">
+        <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
+            <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
+                (change)="show = true" checked>
+            <label class="btn btn-option btn-toggle" [for]="'show'+image">
+                <span class="material-symbols-outlined">
+                    check
+                </span>
+            </label>
+
+            <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
+                (change)="show = false">
+            <label class="btn btn-option btn-toggle" [for]="'hide'+image">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </label>
+        </div>
+    </div>
+    <!-- ITEMS -->
+    <div class="col-12" *ngIf="show">
+        <div class="row">
+            <ng-container *ngFor="let item of incarnons; let i=index">
+                <div class="col-12 mt-2">
+                    <div class="btn-group w" role="group">
+                        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
+                            [ngClass]="{'mastered': item.acquired, 'prime': item.acquired}"
+                            [ngStyle]="{'opacity': item.acquired ? 0.9 : 1}"
+                            (click)="item.acquired = !item.acquired;calculate();mastered()">
+                            <img [src]="'assets/img/incarnon/'+(item.name.toLowerCase())+'.png'" /><br />
+                            {{item.name | uppercase}}
+                        </button>
+                        <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
+                            [ngStyle]="{'opacity': item.acquired ? 0.9 : 1}" [ngClass]="{'mastered': item.acquired}">
+                            <span class="material-symbols-outlined">
+                                open_in_new
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+import { Incarnons } from "./incarnons.model";
 import { Item } from "./item.model";
 import { MasteryRank } from "./mastery-rank.model";
 import { StarChart } from "./star-chart.model";
@@ -30,6 +31,7 @@ export class Account {
     pistols: Item[] = [];
     rifles: Item[] = [];
     locations: StarChart[] = [];
+    incarnons: Incarnons[] = [];
     lang: string = 'en';
 
     constructor() {

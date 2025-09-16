@@ -5,6 +5,9 @@
         <div class="col-12 mt-5" *ngIf="render == 'items'">
             <app-items-panel [account]="account" (update)="calculate()"></app-items-panel>
         </div>
+        <div class="col-12 mt-5" *ngIf="render == 'incarnon'">
+            <app-incarnon-panel [account]="account" (update)="calculate()"></app-incarnon-panel>
+        </div>
         <div class="col-12 mt-5" *ngIf="render == 'locations'">
             <app-star-chart-panel [account]="account" (update)="calculate()"></app-star-chart-panel>
         </div>
@@ -13,11 +16,6 @@
         </div>
     </div>
 </div>
-<!-- <button id="language" title="Go to top" class="btn btn-sm btn-info" (click)="scrollToTop()">
-    <span class="material-symbols-outlined">
-        arrow_circle_up
-    </span>
-</button> -->
 <div class="btn-group" id="language">
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
         aria-expanded="false">

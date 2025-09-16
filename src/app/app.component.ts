@@ -8,21 +8,25 @@ import { ItemsPanelComponent } from './items-panel/items-panel.component';
 import { Item } from '../shared/models/item.model';
 import { Util } from '../shared/utils/util';
 import { MasteryRank } from '../shared/models/mastery-rank.model';
-import mrJson from '../shared/jsons/mr.json';
-import starChart from '../shared/jsons/locations.json';
 import { ItemJsons } from '../shared/models/item-jsons.model';
 import { HttpClientModule } from '@angular/common/http';
 import { MarketComponent } from './market/market.component';
 import { StarChart } from '../shared/models/star-chart.model';
 import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.component';
 import { TranslocoService } from '@jsverse/transloco';
+import { IncarnonPanelComponent } from './incarnon-panel/incarnon-panel.component';
+import mrJson from '../shared/jsons/mr.json';
+import starChart from '../shared/jsons/locations.json';
+import incarnon from '../shared/jsons/incarnon.json';
+import { Incarnons } from '../shared/models/incarnons.model';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HttpClientModule, RouterModule,
-    SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent,
+    SidebarComponent, ItemsPanelComponent, MarketComponent,
+    StarChartPanelComponent, IncarnonPanelComponent,
     FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -57,6 +61,7 @@ export class AppComponent {
     }
 
     this.initStarChart();
+    this.initIncarnon();
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
@@ -71,7 +76,6 @@ export class AppComponent {
   }
 
   initStarChart() {
-    this.account.locations[0]
     if (this.account.locations.length != starChart.length) {
       const newStar = starChart.filter(item => {
         return !this.account.locations.some(s => s.name == item.name)
@@ -79,6 +83,18 @@ export class AppComponent {
 
       for (const item of newStar) {
         this.account.locations.push(new StarChart(item.name, item.mastery_exp, item.planet));
+      }
+    }
+  }
+
+  initIncarnon() {
+    if (this.account.incarnons.length != incarnon.length) {
+      const newItem = incarnon.filter(item => {
+        return !this.account.incarnons.some(s => s.name == item.name)
+      });
+
+      for (const item of newItem) {
+        this.account.incarnons.push(new Incarnons(item.name, item.acquisition));
       }
     }
   }

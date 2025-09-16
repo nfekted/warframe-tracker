@@ -4,6 +4,7 @@
     "delete": "Delete",
     "cancel": "Cancel",
     "sidebar": {
+        "list": "Items list",
         "delete_all": "Delete all data",
         "disclaimer": " This website and application(s) do not have any official affiliation with Digital Extremes Ltd or Warframe. All content is saved in browser cookies. By continuing, you understand and agree to the above text.",
         "star_chart": "Show Star Chart",
@@ -46,6 +47,15 @@
             "zaws": "ZAWS",
             "kitguns": "KITGUNS"
         }
+    },
+    "incarnon": {
+        "description": "Current items with Incarnon system",
+        "Zariman": "Zariman",
+        "Sanctum Anatomica": "Sanctum Anatomica",
+        "Isleweaver": "Isleweaver",
+        "Genesis Primary": "Genesis Primary",
+        "Genesis Secondary": "Genesis Secondary",
+        "Genesis Melee": "Genesis Melee"
     },
     "planets": {
         "options": "OPÇÕES",
