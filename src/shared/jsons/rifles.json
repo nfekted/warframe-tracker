@@ -1108,5 +1108,11 @@
         "mastery_requirement": 8,
         "acquisition": "Kahl's Garrison",
         "acquisitionDescription": "https://wiki.warframe.com/w/Afentis#Acquisition"
+    },
+    {
+        "name": "Thornbak",
+        "mastery_requirement": 0,
+        "acquisition": "Quest",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Thornbak#Acquisition"
     }
 ]

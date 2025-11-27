@@ -112,5 +112,11 @@
         "mastery_requirement": 10,
         "acquisition": "Bounty",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mandonel#Acquisition"
+    },
+    {
+        "name": "Arbucep",
+        "mastery_requirement": 0,
+        "acquisition": "Bounty",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Arbucep#Acquisition"
     }
 ]

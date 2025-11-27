@@ -408,6 +408,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Nidus/Prime#Acquisition"
     },
     {
+        "name": "Nokko",
+        "mastery_requirement": 0,
+        "acquisition": "Bounty",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Nokko#Acquisition"
+    },
+    {
         "name": "Nova",
         "mastery_requirement": 0,
         "acquisition": "Boss Drop",
