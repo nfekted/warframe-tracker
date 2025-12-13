@@ -106,5 +106,9 @@
     {
         "type": "Arbitration",
         "description": "Traded with Arbitration resources in Arbiters of Hexis."
+    },
+        {
+        "type": "Old Peace",
+        "description": "Dropped in The Descendia game mode or The Perita Rebellion game mode."
     }
 ]

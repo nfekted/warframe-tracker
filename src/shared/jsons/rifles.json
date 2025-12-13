@@ -378,6 +378,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Alternox#Acquisition"
     },
     {
+        "name": "Alternox Prime",
+        "mastery_requirement": 13,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Alternox_Prime#Acquisition"
+    },
+    {
         "name": "Kuva Quartakk",
         "mastery_requirement": 13,
         "acquisition": "Kuva Lich",
@@ -1114,5 +1120,11 @@
         "mastery_requirement": 0,
         "acquisition": "Quest",
         "acquisitionDescription": "https://wiki.warframe.com/w/Thornbak#Acquisition"
+    },
+    {
+        "name": "Vinquibus",
+        "mastery_requirement": 14,
+        "acquisition": "Old Peace",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vinquibus#Acquisition"
     }
 ]

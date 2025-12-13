@@ -108,7 +108,8 @@
             "Sisters of Parvos": "Sisters of Parvos",
             "Standing": "Standing",
             "Star Chart": "Star Chart",
-            "Syndicates": "Syndicates"
+            "Syndicates": "Syndicates",
+            "Old Peace": "Old Peace"
         },
         "descriptions": {
             "Arbitration": "Traded with Arbitration resources in Arbiters of Hexis.",
@@ -137,7 +138,8 @@
             "Sisters of Parvos": "Exclusive drop from Sisters of Parvos.",
             "Standing": "Purchased with Standing in Cetus, Fortuna, Necralisk among many others.",
             "Star Chart": "Blueprint or item parts dropped in common missions or Star Chart.",
-            "Syndicates": "Purchased from Syndicates with Standing."
+            "Syndicates": "Purchased from Syndicates with Standing.",
+            "Old Peace": "Dropped in The Descendia game mode or The Perita Rebellion game mode."
         }
     },
     "mr": {

@@ -372,6 +372,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Kestrel#Acquisition"
     },
     {
+        "name": "Kestrel Prime",
+        "mastery_requirement": 11,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kestrel_Prime#Acquisition"
+    },
+    {
         "name": "Orvius",
         "mastery_requirement": 5,
         "acquisition": "Quest",
@@ -418,6 +424,12 @@
         "mastery_requirement": 9,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vastilok#Acquisition"
+    },
+    {
+        "name": "Vinquibus",
+        "mastery_requirement": 9,
+        "acquisition": "Baro Ki'Teer",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vinquibus#Acquisition"
     },
     {
         "name": "Arca Titron",
@@ -532,6 +544,12 @@
         "mastery_requirement": 13,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Galatine_Prime#Acquisition"
+    },
+    {
+        "name": "Galariak Prime",
+        "mastery_requirement": 14,
+        "acquisition": "Old Peace",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Galariak_Prime#Acquisition"
     },
     {
         "name": "Gram",

@@ -779,6 +779,12 @@
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sancti_Castanas#Acquisition"
     },
+        {
+        "name": "Sagek Prime",
+        "mastery_requirement": 14,
+        "acquisition": "Old Peace",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sagek_Prime#Acquisition"
+    },
     {
         "name": "Talons",
         "mastery_requirement": 8,

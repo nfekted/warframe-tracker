@@ -108,7 +108,8 @@
             "Sisters of Parvos": "Irmãs de Parvos",
             "Standing": "Reputação",
             "Star Chart": "Mapa estelar",
-            "Syndicates": "Sindicatos"
+            "Syndicates": "Sindicatos",
+            "Old Peace": "Old Peace"
         },
         "descriptions": {
             "Arbitration": "Trocado por recursos da  Arbitragem nos Árbitros do Hexis.",
@@ -137,7 +138,8 @@
             "Sisters of Parvos": "Exclusivo ao derrotar uma Irmão de Parvos.",
             "Standing": "Comprado por recompensa em cetus, Furtuna, Necralisk e outros.",
             "Star Chart": "Diagrama ou parte de arma, encontrado em missões do mapa estelar.",
-            "Syndicates": "Comprado com reputação nos sindicatos."
+            "Syndicates": "Comprado com reputação nos sindicatos.",
+            "Old Peace": "Adquirido nos modos de jogo Descêndia e Rebelião de Perita"
         }
     },
     "mr": {

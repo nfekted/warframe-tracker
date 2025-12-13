@@ -210,6 +210,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Gyre#Acquisition"
     },
     {
+        "name": "Gyre Prime",
+        "mastery_requirement": 0,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Gyre/Prime#Acquisition"
+    },
+    {
         "name": "Harrow",
         "mastery_requirement": 0,
         "acquisition": "Star Chart",
@@ -568,6 +574,12 @@
         "mastery_requirement": 0,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Trinity/Prime#Acquisition"
+    },
+        {
+        "name": "Uriel",
+        "mastery_requirement": 0,
+        "acquisition": "Old Peace",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Uriel#Acquisition"
     },
     {
         "name": "Valkyr",
