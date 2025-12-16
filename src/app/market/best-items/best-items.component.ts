@@ -20,6 +20,7 @@ export class BestItemsComponent {
     showRelics: boolean = true;
     showHelmet: boolean = true;
     showMiscellaneous: boolean = true;
+    showArcanes: boolean = true;
 
     ngOnInit(): void {
         this.loadItems();
@@ -46,6 +47,8 @@ export class BestItemsComponent {
         if (!this.showRelics) this.tradeItem = this.tradeItem.filter(i => !i.name.includes('Lith') && !i.name.includes('Meso') && !i.name.includes('Neo') && !i.name.includes('Axi') && !i.name.includes('Requiem'));
 
         if (!this.showHelmet) this.tradeItem = this.tradeItem.filter(i => !i.name.includes(' Helmet'));
+
+        if(!this.showArcanes) this.tradeItem = this.tradeItem.filter(i => !i.name.includes('Arcane '));
 
         this.tradeItem.sort((a, b) => { return b.most_frequent - a.most_frequent });
     }

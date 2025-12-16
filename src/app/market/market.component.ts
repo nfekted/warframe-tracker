@@ -9,6 +9,7 @@ import { Util } from '../../shared/utils/util';
 import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
 // import priceRaw from '../../shared/jsons/tradeable/trade-raw.json';
+// import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 
 @Component({
   selector: 'app-market',
@@ -124,10 +125,27 @@ export class MarketComponent {
 
   //Dev only codes
   scan() {
+    // this.formatTrades();
     // this.formatPriceJson();
     // this.formatRelics();
   }
 
+  // formatTrades() {
+  //   const list = [];
+  //   for (const i of tradeables.data) {
+  //     const item = {}
+
+  //     item['url_name'] = i.slug;
+  //     item['id'] = i.id;
+  //     item['item_name'] = i.i18n.pt.name;
+  //     item['thumb'] = i.i18n.pt.thumb;
+
+  //     list.push(item);
+  //   }
+
+  //   this.downloadText(list)
+  // }
+  
   // formatRelics() {
   //   const lines = this.relicsData.split('\n');
   //   let relics = [];
@@ -161,6 +179,7 @@ export class MarketComponent {
   //         const name = drops[j][0].split('Common').join('|').split('Uncommon').join('|').split('Rare').join('|').split('|')[0].trim();
   //         items.push(this.tradeItem.find(item => item.name.toLocaleLowerCase() == name.toLocaleLowerCase()));
   //       }
+
 
   //       items = items.filter(i => i != undefined);
   //       items.sort((a, b) => a.most_frequent - b.most_frequent);
@@ -218,11 +237,11 @@ export class MarketComponent {
   //     }
   //   }
 
-  //   this.downloadText();
+  //   this.tradeItem = this.tradeItem.filter(i => i.average > 0 && i.higher > 0 && i.lowest > 0);
+  //   this.downloadText(this.tradeItem);
   // }
 
-  // downloadText() {
-  //   const list = this.tradeItem.filter(i => i.average > 0 && i.higher > 0 && i.lowest > 0);
+  // downloadText(list: any) {
   //   const data = JSON.stringify(list, null, 2);
   //   const blob = new Blob([data], { type: 'text/plain' });
   //   const url = window.URL.createObjectURL(blob);

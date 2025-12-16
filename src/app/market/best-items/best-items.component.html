@@ -135,6 +135,33 @@
                 </div>
             </div>
         </div>
+        <!-- Misc -->
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Show Arcanes
+                </div>
+                <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide arcanes">
+                        <input type="radio" class="btn-check" name="showArcanes" id="showArc" autocomplete="off"
+                            (change)="showArcanes = true;loadItems();" checked>
+                        <label class="btn btn-option btn-toggle" for="showArc">
+                            <span class="material-symbols-outlined">
+                                check
+                            </span>
+                        </label>
+
+                        <input type="radio" class="btn-check" name="showArcanes" id="hideArc" autocomplete="off"
+                            (change)="showArcanes = false;loadItems();">
+                        <label class="btn btn-option btn-toggle" for="hideArc">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
