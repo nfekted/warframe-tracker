@@ -132,6 +132,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Excalibur/Prime#Acquisition"
     },
     {
+        "name": "Folie",
+        "mastery_requirement": 0,
+        "acquisition": "Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Follie#Acquisition"
+    },
+    {
         "name": "Excalibur Umbra",
         "mastery_requirement": 0,
         "acquisition": "Quest",
@@ -575,7 +581,7 @@
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Trinity/Prime#Acquisition"
     },
-        {
+    {
         "name": "Uriel",
         "mastery_requirement": 0,
         "acquisition": "Old Peace",

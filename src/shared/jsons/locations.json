@@ -145,6 +145,11 @@
         "planet": "Earth"
     },
     {
+        "name": "Follie's Hunt",
+        "mastery_exp": 0,
+        "planet": "Venus"
+    },
+    {
         "name": "Mariana",
         "mastery_exp": 24,
         "planet": "Earth"

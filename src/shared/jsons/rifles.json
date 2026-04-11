@@ -1126,5 +1126,29 @@
         "mastery_requirement": 14,
         "acquisition": "Old Peace",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vinquibus#Acquisition"
+    },
+    {
+        "name": "Enkaus",
+        "mastery_requirement": 12,
+        "acquisition": "Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Enkaus#Acquisition"
+    },
+    {
+        "name": "Kuva Ghoulsaw",
+        "mastery_requirement": 13,
+        "acquisition": "Kuva Lich",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Ghoulsaw#Acquisition"
+    },
+    {
+        "name": "Tenet Quanta",
+        "mastery_requirement": 16,
+        "acquisition": "Sisters of Parvos",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Tenet_Quanta#Acquisition"
+    },
+    {
+        "name": "Coda Bubonico",
+        "mastery_requirement": 17,
+        "acquisition": "Coda / Eleanor",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Coda_Bubonico#Acquisition"
     }
 ]
