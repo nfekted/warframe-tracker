@@ -1008,6 +1008,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Perigale#Acquisition"
     },
     {
+        "name": "Perigale Prime",
+        "mastery_requirement": 14,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Perigale_Prime#Acquisition"
+    },
+    {
         "name": "Lanka",
         "mastery_requirement": 10,
         "acquisition": "Dojo",

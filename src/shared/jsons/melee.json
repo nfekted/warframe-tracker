@@ -588,6 +588,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Sarofang#Acquisition"
     },
     {
+        "name": "Sarofang Prime",
+        "mastery_requirement": 16,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sarofang_Prime#Acquisition"
+    },
+    {
         "name": "Scindo",
         "mastery_requirement": 2,
         "acquisition": "Market",
