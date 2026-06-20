@@ -678,6 +678,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Nami_Solo#Acquisition"
     },
     {
+        "name": "Pride",
+        "mastery_requirement": 14,
+        "acquisition": "Proxima Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Pride#Acquisition"
+    },
+    {
         "name": "Prisma Machete",
         "mastery_requirement": 7,
         "acquisition": "Baro Ki'Teer",
@@ -1330,5 +1336,11 @@
         "mastery_requirement": 12,
         "acquisition": "Duviri",
         "acquisitionDescription": "https://wiki.warframe.com/w/Thalys#Acquisition"
+    },
+    {
+        "name": "Wrath",
+        "mastery_requirement": 14,
+        "acquisition": "Proxima Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Wrath#Acquisition"
     }
 ]

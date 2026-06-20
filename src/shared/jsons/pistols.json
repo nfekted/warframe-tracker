@@ -360,6 +360,12 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Athodai#Acquisition"
     },
     {
+        "name": "Athodai Prime",
+        "mastery_requirement": 10,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Athodai_Prime#Acquisition"
+    },
+    {
         "name": "Cyanex",
         "mastery_requirement": 8,
         "acquisition": "Dojo",
@@ -779,7 +785,7 @@
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sancti_Castanas#Acquisition"
     },
-        {
+    {
         "name": "Sagek Prime",
         "mastery_requirement": 14,
         "acquisition": "Old Peace",

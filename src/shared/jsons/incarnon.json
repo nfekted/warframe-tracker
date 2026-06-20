@@ -110,6 +110,11 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Torid_Incarnon_Genesis#Evolutions"
     },
     {
+        "name": "Vectis",
+        "acquisition": "Genesis Primary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Vectis#Incarnon#Evolutions"
+    },
+    {
         "name": "Angstrum",
         "acquisition": "Genesis Secondary",
         "acquisitionDescription": "https://wiki.warframe.com/w/Angstrum_Incarnon_Genesis#Evolutions"
@@ -180,6 +185,16 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Zylok_Incarnon_Genesis#Evolutions"
     },
     {
+        "name": "Stug",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Stug_Incarnon_Genesis"
+    },
+    {
+        "name": "Ballistica ",
+        "acquisition": "Genesis Secondary",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Ballistica_Incarnon_Genesis"
+    },
+    {
         "name": "Ack & Brunt",
         "acquisition": "Genesis Melee",
         "acquisitionDescription": "https://wiki.warframe.com/w/Ack_%26_Brunt_Incarnon_Genesis#Evolutions"
@@ -238,5 +253,15 @@
         "name": "Skana",
         "acquisition": "Genesis Melee",
         "acquisitionDescription": "https://wiki.warframe.com/w/Skana_Incarnon_Genesis#Evolutions"
+    },
+    {
+        "name": "Destreza",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Destreza_Incarnon_Genesis"
+    },
+    {
+        "name": "Obex",
+        "acquisition": "Genesis Melee",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Obex_Incarnon_Genesis"
     }
 ]

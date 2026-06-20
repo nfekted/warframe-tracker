@@ -546,10 +546,22 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Sevagoth/Prime#Acquisition"
     },
     {
+        "name": "Sirius & Orion",
+        "mastery_requirement": 0,
+        "acquisition": "Proxima Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Sirius_%26_Orion#Acquisition"
+    },
+    {
         "name": "Styanax",
         "mastery_requirement": 0,
         "acquisition": "Kahl's Garrison",
         "acquisitionDescription": "https://wiki.warframe.com/w/Styanax#Acquisition"
+    },
+    {
+        "name": "Styanax Prime",
+        "mastery_requirement": 0,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Styanax/Prime#Acquisition"
     },
     {
         "name": "Temple",
@@ -629,7 +641,7 @@
         "acquisition": "Star Chart",
         "acquisitionDescription": "https://wiki.warframe.com/w/Voruna/Prime#Acquisition"
     },
-        {
+    {
         "name": "Voruna Prime",
         "mastery_requirement": 0,
         "acquisition": "Relic Drop",
