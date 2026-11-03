@@ -17,7 +17,7 @@
     "@angular/forms": "^22.2.4",
     "@angular/platform-browser": "^22.2.4",
     "@angular/router": "^22.2.4",
-    "@jsverse/transloco": "^7.6.1",
+    "@jsverse/transloco": "^8.4.0",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.10.5",
