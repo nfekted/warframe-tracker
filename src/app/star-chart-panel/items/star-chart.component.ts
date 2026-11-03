@@ -7,11 +7,10 @@ import { StarChart } from '../../../shared/models/star-chart.model';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-star-chart',
-  standalone: true,
-  imports: [FormsModule, CommonModule, TranslocoModule],
-  templateUrl: './star-chart.component.html',
-  styleUrl: './star-chart.component.scss'
+    selector: 'app-star-chart',
+    imports: [FormsModule, CommonModule, TranslocoModule],
+    templateUrl: './star-chart.component.html',
+    styleUrl: './star-chart.component.scss'
 })
 export class StarChartComponent {
 

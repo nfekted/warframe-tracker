@@ -7,11 +7,10 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { IncarnonComponent } from './items/incarnon.component';
 
 @Component({
-  selector: 'app-incarnon-panel',
-  standalone: true,
-  imports: [FormsModule, CommonModule, TranslocoModule, IncarnonComponent],
-  templateUrl: './incarnon-panel.component.html',
-  styleUrl: './incarnon-panel.component.scss'
+    selector: 'app-incarnon-panel',
+    imports: [FormsModule, CommonModule, TranslocoModule, IncarnonComponent],
+    templateUrl: './incarnon-panel.component.html',
+    styleUrl: './incarnon-panel.component.scss'
 })
 export class IncarnonPanelComponent {
 

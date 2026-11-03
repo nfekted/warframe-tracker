@@ -7,11 +7,10 @@ import { ItemJsons } from '../../../shared/models/item-jsons.model';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-items',
-  standalone: true,
-  imports: [FormsModule, CommonModule, TranslocoModule],
-  templateUrl: './items.component.html',
-  styleUrl: './items.component.scss'
+    selector: 'app-items',
+    imports: [FormsModule, CommonModule, TranslocoModule],
+    templateUrl: './items.component.html',
+    styleUrl: './items.component.scss'
 })
 export class ItemsComponent {
 

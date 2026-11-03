@@ -7,11 +7,10 @@ import { Incarnons } from '../../../shared/models/incarnons.model';
 import incarnons from '../../../shared/jsons/incarnon.json';
 
 @Component({
-  selector: 'app-incarnon',
-  standalone: true,
-  imports: [FormsModule, CommonModule, TranslocoModule],
-  templateUrl: './incarnon.component.html',
-  styleUrl: './incarnon.component.scss'
+    selector: 'app-incarnon',
+    imports: [FormsModule, CommonModule, TranslocoModule],
+    templateUrl: './incarnon.component.html',
+    styleUrl: './incarnon.component.scss'
 })
 export class IncarnonComponent {
 

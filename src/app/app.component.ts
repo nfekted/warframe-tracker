@@ -22,15 +22,14 @@ import { Incarnons } from '../shared/models/incarnons.model';
 
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,
-    RouterModule,
-    SidebarComponent, ItemsPanelComponent, MarketComponent,
-    StarChartPanelComponent, IncarnonPanelComponent,
-    FormsModule, CommonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet,
+        RouterModule,
+        SidebarComponent, ItemsPanelComponent, MarketComponent,
+        StarChartPanelComponent, IncarnonPanelComponent,
+        FormsModule, CommonModule],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
 

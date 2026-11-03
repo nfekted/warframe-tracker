@@ -7,11 +7,10 @@ import starChart from '../../shared/jsons/locations.json';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-star-chart-panel',
-  standalone: true,
-  imports: [FormsModule, CommonModule, StarChartComponent, TranslocoModule],
-  templateUrl: './star-chart-panel.component.html',
-  styleUrl: './star-chart-panel.component.scss'
+    selector: 'app-star-chart-panel',
+    imports: [FormsModule, CommonModule, StarChartComponent, TranslocoModule],
+    templateUrl: './star-chart-panel.component.html',
+    styleUrl: './star-chart-panel.component.scss'
 })
 export class StarChartPanelComponent {
 

@@ -5,7 +5,6 @@ import relicPrices from '../../../shared/jsons/tradeable/relics.json';
 
 @Component({
     selector: 'app-best-relics',
-    standalone: true,
     imports: [FormsModule, CommonModule],
     templateUrl: './best-relics.component.html',
     styleUrl: './best-relics.component.scss'

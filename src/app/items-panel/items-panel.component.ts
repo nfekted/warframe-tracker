@@ -8,11 +8,10 @@ import acquisitionJson from '../../shared/jsons/acquisition.json';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-items-panel',
-  standalone: true,
-  imports: [FormsModule, CommonModule, ItemsComponent, TranslocoModule],
-  templateUrl: './items-panel.component.html',
-  styleUrl: './items-panel.component.scss'
+    selector: 'app-items-panel',
+    imports: [FormsModule, CommonModule, ItemsComponent, TranslocoModule],
+    templateUrl: './items-panel.component.html',
+    styleUrl: './items-panel.component.scss'
 })
 export class ItemsPanelComponent {
 

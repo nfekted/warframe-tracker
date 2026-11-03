@@ -12,11 +12,10 @@ import { BestItemsComponent } from './best-items/best-items.component';
 // import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 
 @Component({
-  selector: 'app-market',
-  standalone: true,
-  imports: [FormsModule, CommonModule, BestRelicsComponent, BestItemsComponent],
-  templateUrl: './market.component.html',
-  styleUrl: './market.component.scss'
+    selector: 'app-market',
+    imports: [FormsModule, CommonModule, BestRelicsComponent, BestItemsComponent],
+    templateUrl: './market.component.html',
+    styleUrl: './market.component.scss'
 })
 export class MarketComponent {
 

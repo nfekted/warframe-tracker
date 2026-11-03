@@ -5,7 +5,6 @@ import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
 
 @Component({
     selector: 'app-best-items',
-    standalone: true,
     imports: [FormsModule, CommonModule],
     templateUrl: './best-items.component.html',
     styleUrl: './best-items.component.scss'
