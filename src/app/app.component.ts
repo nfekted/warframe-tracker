@@ -9,7 +9,7 @@ import { Item } from '../shared/models/item.model';
 import { Util } from '../shared/utils/util';
 import { MasteryRank } from '../shared/models/mastery-rank.model';
 import { ItemJsons } from '../shared/models/item-jsons.model';
-import { HttpClientModule } from '@angular/common/http';
+import { } from '@angular/common/http';
 import { MarketComponent } from './market/market.component';
 import { StarChart } from '../shared/models/star-chart.model';
 import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.component';
@@ -24,7 +24,8 @@ import { Incarnons } from '../shared/models/incarnons.model';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule, RouterModule,
+  imports: [RouterOutlet,
+    RouterModule,
     SidebarComponent, ItemsPanelComponent, MarketComponent,
     StarChartPanelComponent, IncarnonPanelComponent,
     FormsModule, CommonModule],
