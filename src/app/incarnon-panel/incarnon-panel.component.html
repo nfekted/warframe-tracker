@@ -1,16 +1,16 @@
 <div class="row items">
-    <div class="col-12 mt-4">
-        <h3>{{'incarnon.description' | transloco}}</h3>
-    </div>
-    <div class="col-12 mt-2">
-        <small>{{'on_update' | transloco}}: Update 43:  Jade Shadows: Constellations (2026-06-19)</small>
-    </div>
-    <hr class="mt-4" />
-    <div class="row">
-        <ng-container *ngFor="let item of incarnons">
-            <div class="col-12 col-md-4">
-                <app-incarnon [image]="item" [incarnons]="account.incarnons" [account]="account"></app-incarnon>
-            </div>
-        </ng-container>
-    </div>
+  <div class="col-12 mt-4">
+    <h3>{{'incarnon.description' | transloco}}</h3>
+  </div>
+  <div class="col-12 mt-2">
+    <small>{{'on_update' | transloco}}: Update 43:  Jade Shadows: Constellations (2026-06-19)</small>
+  </div>
+  <hr class="mt-4" />
+  <div class="row">
+    @for (item of incarnons; track item) {
+      <div class="col-12 col-md-4">
+        <app-incarnon [image]="item" [incarnons]="account.incarnons" [account]="account"></app-incarnon>
+      </div>
+    }
+  </div>
 </div>

@@ -6,12 +6,12 @@ import { MasteryRank } from '../../shared/models/mastery-rank.model';
 import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
 import { ApiService } from '../../services/api.service';
-import { CommonModule } from '@angular/common';
+
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-sidebar',
-    imports: [FormsModule, CommonModule, TranslocoModule],
+    imports: [FormsModule, TranslocoModule],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss'
 })

@@ -1,37 +1,45 @@
 <app-sidebar [account]="account" [nextRank]="nextRank" [itemsCount]="itemsCount" (update)="calculate()"
-    (changeRender)="render = $event"></app-sidebar>
+(changeRender)="render = $event"></app-sidebar>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-5" *ngIf="render == 'items'">
-            <app-items-panel [account]="account" (update)="calculate()"></app-items-panel>
-        </div>
-        <div class="col-12 mt-5" *ngIf="render == 'incarnon'">
-            <app-incarnon-panel [account]="account" (update)="calculate()"></app-incarnon-panel>
-        </div>
-        <div class="col-12 mt-5" *ngIf="render == 'locations'">
-            <app-star-chart-panel [account]="account" (update)="calculate()"></app-star-chart-panel>
-        </div>
-        <div class="col-12 mt-5" *ngIf="render == 'market'">
-            <app-market [itemsCount]="itemsCount" [account]="account" (update)="calculate()"></app-market>
-        </div>
-    </div>
+  <div class="row">
+    @if (render == 'items') {
+      <div class="col-12 mt-5">
+        <app-items-panel [account]="account" (update)="calculate()"></app-items-panel>
+      </div>
+    }
+    @if (render == 'incarnon') {
+      <div class="col-12 mt-5">
+        <app-incarnon-panel [account]="account" (update)="calculate()"></app-incarnon-panel>
+      </div>
+    }
+    @if (render == 'locations') {
+      <div class="col-12 mt-5">
+        <app-star-chart-panel [account]="account" (update)="calculate()"></app-star-chart-panel>
+      </div>
+    }
+    @if (render == 'market') {
+      <div class="col-12 mt-5">
+        <app-market [itemsCount]="itemsCount" [account]="account" (update)="calculate()"></app-market>
+      </div>
+    }
+  </div>
 </div>
 <div class="btn-group" id="language">
-    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        <img [src]="'assets/img/' + account.lang + 'flag.png'" width="55" />
-    </button>
-    <ul class="dropdown-menu">
-        <li>
-            <img class="dropdown-item" [src]="'assets/img/enflag.png'" width="55" (click)="changeLang('en')" />
-        </li>
-        <li>
-            <img class="dropdown-item" [src]="'assets/img/ptflag.png'" width="55" (click)="changeLang('pt')" />
-        </li>
-    </ul>
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+    aria-expanded="false">
+    <img [src]="'assets/img/' + account.lang + 'flag.png'" width="55" />
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+      <img class="dropdown-item" [src]="'assets/img/enflag.png'" width="55" (click)="changeLang('en')" />
+    </li>
+    <li>
+      <img class="dropdown-item" [src]="'assets/img/ptflag.png'" width="55" (click)="changeLang('pt')" />
+    </li>
+  </ul>
 </div>
 <button id="myBtn" title="Go to top" class="btn btn-sm btn-info" (click)="scrollToTop()">
-    <span class="material-symbols-outlined">
-        arrow_circle_up
-    </span>
+  <span class="material-symbols-outlined">
+    arrow_circle_up
+  </span>
 </button>

@@ -1,157 +1,163 @@
 <div class="row items">
-    <div class="col-12">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12">
+        <h5>{{'items.options'| transloco}}</h5>
+      </div>
+      <!-- Acquisition -->
+      <div class="col-12 col-md-3" data-bs-theme="dark">
+        <label>{{'items.acquisition' | transloco}}:</label>
+        <select class="form-select" [(ngModel)]="acquisitionFilter">
+          <option [ngValue]="null">{{'items.all_acquisition' | transloco}}</option>
+          <hr />
+          @for (item of acquisitionList; track item) {
+            <option [ngValue]="item">{{('acquisiton.types.'+item.type) |
+            transloco}}</option>
+          }
+        </select>
+        @if (acquisitionFilter) {
+          <small
+            style="color: lightgray;">{{('acquisiton.descriptions.'+acquisitionFilter.type) |
+          transloco}}</small>
+        }
+      </div>
+
+      <!-- Show MR Available -->
+      <div class="col-12 col-md-3">
         <div class="row">
-            <div class="col-12">
-                <h5>{{'items.options'| transloco}}</h5>
-            </div>
-            <!-- Acquisition -->
-            <div class="col-12 col-md-3" data-bs-theme="dark">
-                <label>{{'items.acquisition' | transloco}}:</label>
-                <select class="form-select" [(ngModel)]="acquisitionFilter">
-                    <option [ngValue]="null">{{'items.all_acquisition' | transloco}}</option>
-                    <hr />
-                    <option *ngFor="let item of acquisitionList" [ngValue]="item">{{('acquisiton.types.'+item.type) |
-                        transloco}}</option>
-                </select>
-                <small *ngIf="acquisitionFilter"
-                    style="color: lightgray;">{{('acquisiton.descriptions.'+acquisitionFilter.type) |
-                    transloco}}</small>
-            </div>
+          <div class="col-12 text-center">
+            {{'items.hide_mr' | transloco}}
+          </div>
+          <div class="col-12 text-center">
+            <div class="btn-group" role="group" aria-label="Show or Hide MR locked itens">
+              <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavaible"
+                autocomplete="off" (change)="showOnlyMrAvailable = true;saveOptions()"
+                [attr.checked]="showOnlyMrAvailable ? 'checked' : null">
+                <label class="btn btn-option btn-toggle" for="hideUnavaible">
+                  <span class="material-symbols-outlined">
+                    check
+                  </span>
+                </label>
 
-            <!-- Show MR Available -->
-            <div class="col-12 col-md-3">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        {{'items.hide_mr' | transloco}}
-                    </div>
-                    <div class="col-12 text-center">
-                        <div class="btn-group" role="group" aria-label="Show or Hide MR locked itens">
-                            <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavaible"
-                                autocomplete="off" (change)="showOnlyMrAvailable = true;saveOptions()"
-                                [attr.checked]="showOnlyMrAvailable ? 'checked' : null">
-                            <label class="btn btn-option btn-toggle" for="hideUnavaible">
-                                <span class="material-symbols-outlined">
-                                    check
-                                </span>
-                            </label>
-
-                            <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="showUnavaible"
-                                autocomplete="off" (change)="showOnlyMrAvailable = false;saveOptions()"
-                                [attr.checked]="!showOnlyMrAvailable ? 'checked' : null">
-                            <label class="btn btn-option btn-toggle" for="showUnavaible">
-                                <span class="material-symbols-outlined">
-                                    close
-                                </span>
-                            </label>
-                        </div>
-                    </div>
+                <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="showUnavaible"
+                  autocomplete="off" (change)="showOnlyMrAvailable = false;saveOptions()"
+                  [attr.checked]="!showOnlyMrAvailable ? 'checked' : null">
+                  <label class="btn btn-option btn-toggle" for="showUnavaible">
+                    <span class="material-symbols-outlined">
+                      close
+                    </span>
+                  </label>
                 </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Hide mastered -->
-            <div class="col-12 col-md-3">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        {{'items.hide_mastered' | transloco}}
-                    </div>
-                    <div class="col-12 text-center">
-                        <div class="btn-group" role="group" aria-label="Show or Hide mastered">
-                            <input type="radio" class="btn-check" name="hideMastered" id="showMastered"
-                                autocomplete="off" (change)="hideMastered = true;saveOptions()"
-                                [attr.checked]="hideMastered ? 'checked': null">
-                            <label class="btn btn-option btn-toggle" for="showMastered">
-                                <span class="material-symbols-outlined">
-                                    check
-                                </span>
-                            </label>
+          <!-- Hide mastered -->
+          <div class="col-12 col-md-3">
+            <div class="row">
+              <div class="col-12 text-center">
+                {{'items.hide_mastered' | transloco}}
+              </div>
+              <div class="col-12 text-center">
+                <div class="btn-group" role="group" aria-label="Show or Hide mastered">
+                  <input type="radio" class="btn-check" name="hideMastered" id="showMastered"
+                    autocomplete="off" (change)="hideMastered = true;saveOptions()"
+                    [attr.checked]="hideMastered ? 'checked': null">
+                    <label class="btn btn-option btn-toggle" for="showMastered">
+                      <span class="material-symbols-outlined">
+                        check
+                      </span>
+                    </label>
 
-                            <input type="radio" class="btn-check" name="hideMastered" id="hideMastered"
-                                autocomplete="off" (change)="hideMastered = false;saveOptions()"
-                                [attr.checked]="!hideMastered ? 'checked': null">
-                            <label class="btn btn-option btn-toggle" for="hideMastered">
-                                <span class="material-symbols-outlined">
-                                    close
-                                </span>
-                            </label>
-                        </div>
+                    <input type="radio" class="btn-check" name="hideMastered" id="hideMastered"
+                      autocomplete="off" (change)="hideMastered = false;saveOptions()"
+                      [attr.checked]="!hideMastered ? 'checked': null">
+                      <label class="btn btn-option btn-toggle" for="hideMastered">
+                        <span class="material-symbols-outlined">
+                          close
+                        </span>
+                      </label>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <!-- Name -->
-            <div class="col-12 col-md-3">
+              <!-- Name -->
+              <div class="col-12 col-md-3">
                 <label>{{'items.name_filter' | transloco}}</label>
                 <input class="form-control" placeholder="{{'items.item_name' | transloco}}" [(ngModel)]="nameFilter" />
-            </div>
+              </div>
 
-            <!-- MR -->
-            <div class="col-12 col-md-3" data-bs-theme="dark">
+              <!-- MR -->
+              <div class="col-12 col-md-3" data-bs-theme="dark">
                 <label>{{'items.mr_only' | transloco}}</label>
                 <select class="form-select" [(ngModel)]="mr">
-                    <option [ngValue]="null"></option>
-                    <hr />
-                    <option [ngValue]="0">MR 0</option>
-                    <option [ngValue]="1">MR 1</option>
-                    <option [ngValue]="2">MR 2</option>
-                    <option [ngValue]="3">MR 3</option>
-                    <option [ngValue]="4">MR 4</option>
-                    <option [ngValue]="5">MR 5</option>
-                    <option [ngValue]="6">MR 6</option>
-                    <option [ngValue]="7">MR 7</option>
-                    <option [ngValue]="8">MR 8</option>
-                    <option [ngValue]="9">MR 9</option>
-                    <option [ngValue]="10">MR 10</option>
-                    <option [ngValue]="11">MR 11</option>
-                    <option [ngValue]="12">MR 12</option>
-                    <option [ngValue]="13">MR 13</option>
-                    <option [ngValue]="14">MR 14</option>
-                    <option [ngValue]="15">MR 15</option>
-                    <option [ngValue]="16">MR 16</option>
-                    <option [ngValue]="17">MR 17</option>
+                  <option [ngValue]="null"></option>
+                  <hr />
+                  <option [ngValue]="0">MR 0</option>
+                  <option [ngValue]="1">MR 1</option>
+                  <option [ngValue]="2">MR 2</option>
+                  <option [ngValue]="3">MR 3</option>
+                  <option [ngValue]="4">MR 4</option>
+                  <option [ngValue]="5">MR 5</option>
+                  <option [ngValue]="6">MR 6</option>
+                  <option [ngValue]="7">MR 7</option>
+                  <option [ngValue]="8">MR 8</option>
+                  <option [ngValue]="9">MR 9</option>
+                  <option [ngValue]="10">MR 10</option>
+                  <option [ngValue]="11">MR 11</option>
+                  <option [ngValue]="12">MR 12</option>
+                  <option [ngValue]="13">MR 13</option>
+                  <option [ngValue]="14">MR 14</option>
+                  <option [ngValue]="15">MR 15</option>
+                  <option [ngValue]="16">MR 16</option>
+                  <option [ngValue]="17">MR 17</option>
                 </select>
-            </div>
+              </div>
 
-            <!-- Remove exclusive -->
-            <div class="col-12 col-md-3">
+              <!-- Remove exclusive -->
+              <div class="col-12 col-md-3">
                 <div class="row">
-                    <div class="col-12 text-center">
-                        {{'items.hide_founder' | transloco}}
-                    </div>
-                    <div class="col-12 text-center">
-                        <div class="btn-group" role="group" aria-label="Show or Hide Founders">
-                            <input type="radio" class="btn-check" name="hideFounders" id="showFounders"
-                                autocomplete="off" (change)="hideFounders = true;saveOptions()"
-                                [attr.checked]="hideFounders ? 'checked': null">
-                            <label class="btn btn-option btn-toggle" for="showFounders">
-                                <span class="material-symbols-outlined">
-                                    check
-                                </span>
-                            </label>
+                  <div class="col-12 text-center">
+                    {{'items.hide_founder' | transloco}}
+                  </div>
+                  <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Show or Hide Founders">
+                      <input type="radio" class="btn-check" name="hideFounders" id="showFounders"
+                        autocomplete="off" (change)="hideFounders = true;saveOptions()"
+                        [attr.checked]="hideFounders ? 'checked': null">
+                        <label class="btn btn-option btn-toggle" for="showFounders">
+                          <span class="material-symbols-outlined">
+                            check
+                          </span>
+                        </label>
 
-                            <input type="radio" class="btn-check" name="hideFounders" id="hideFounders"
-                                autocomplete="off" (change)="hideFounders = false;saveOptions()"
-                                [attr.checked]="!hideFounders ? 'checked': null">
-                            <label class="btn btn-option btn-toggle" for="hideFounders">
-                                <span class="material-symbols-outlined">
-                                    close
-                                </span>
-                            </label>
+                        <input type="radio" class="btn-check" name="hideFounders" id="hideFounders"
+                          autocomplete="off" (change)="hideFounders = false;saveOptions()"
+                          [attr.checked]="!hideFounders ? 'checked': null">
+                          <label class="btn btn-option btn-toggle" for="hideFounders">
+                            <span class="material-symbols-outlined">
+                              close
+                            </span>
+                          </label>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-12">
+                <small>{{'on_update' | transloco}}: Update 43:  Jade Shadows: Constellations (2026-06-19)</small>
+              </div>
+              <hr class="mt-4" />
+              @for (item of items; track item) {
+                @if (showCategory(item)) {
+                  <div class="col-12 col-md-3">
+                    <app-items [image]="item" [items]="account[item]" (update)="calculate()"
+                      [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"
+                      [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"
+                    [hideFounders]="hideFounders" [mr]="mr"></app-items>
+                  </div>
+                }
+              }
             </div>
-        </div>
-    </div>
-    <div class="col-12">
-          <small>{{'on_update' | transloco}}: Update 43:  Jade Shadows: Constellations (2026-06-19)</small>
-    </div>
-    <hr class="mt-4" />
-    <ng-container *ngFor="let item of items">
-        <div class="col-12 col-md-3" *ngIf="showCategory(item)">
-            <app-items [image]="item" [items]="account[item]" (update)="calculate()"
-                [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"
-                [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"
-                [hideFounders]="hideFounders" [mr]="mr"></app-items>
-        </div>
-    </ng-container>
-</div>

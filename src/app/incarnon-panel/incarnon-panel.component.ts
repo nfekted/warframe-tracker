@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Account } from '../../shared/models/account.model';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import incarnons from '../../shared/jsons/incarnon.json';
 import { TranslocoModule } from '@jsverse/transloco';
 import { IncarnonComponent } from './items/incarnon.component';
 
 @Component({
     selector: 'app-incarnon-panel',
-    imports: [FormsModule, CommonModule, TranslocoModule, IncarnonComponent],
+    imports: [FormsModule, TranslocoModule, IncarnonComponent],
     templateUrl: './incarnon-panel.component.html',
     styleUrl: './incarnon-panel.component.scss'
 })

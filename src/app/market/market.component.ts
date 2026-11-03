@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { Account } from '../../shared/models/account.model';
 import itemEnJson from '../../shared/jsons/tradeable/tradeEn.json';
 import itemPtJson from '../../shared/jsons/tradeable/tradePt.json'
@@ -13,7 +13,7 @@ import { BestItemsComponent } from './best-items/best-items.component';
 
 @Component({
     selector: 'app-market',
-    imports: [FormsModule, CommonModule, BestRelicsComponent, BestItemsComponent],
+    imports: [FormsModule, BestRelicsComponent, BestItemsComponent],
     templateUrl: './market.component.html',
     styleUrl: './market.component.scss'
 })

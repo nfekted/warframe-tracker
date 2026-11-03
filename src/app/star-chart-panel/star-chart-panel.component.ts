@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Account } from '../../shared/models/account.model';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { StarChartComponent } from './items/star-chart.component';
 import starChart from '../../shared/jsons/locations.json';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-star-chart-panel',
-    imports: [FormsModule, CommonModule, StarChartComponent, TranslocoModule],
+    imports: [FormsModule, StarChartComponent, TranslocoModule],
     templateUrl: './star-chart-panel.component.html',
     styleUrl: './star-chart-panel.component.scss'
 })

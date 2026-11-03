@@ -1,11 +1,11 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
 
 @Component({
     selector: 'app-best-items',
-    imports: [FormsModule, CommonModule],
+    imports: [FormsModule],
     templateUrl: './best-items.component.html',
     styleUrl: './best-items.component.scss'
 })

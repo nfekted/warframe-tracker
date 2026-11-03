@@ -1,55 +1,61 @@
 <div class="row text-center mt-5">
-    <div class="col-12">
-        <img [src]="'assets/img/icons/'+image+'.png'" width="50" />&nbsp;
-        <span style="font-size: 25px;">{{('items.types.'+image | transloco)}}</span><br />
-        <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
-    </div>
-    <div class="col-12">
-        <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
-            <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
-                (change)="show = true" checked>
-            <label class="btn btn-option btn-toggle" [for]="'show'+image">
-                <span class="material-symbols-outlined">
-                    check
-                </span>
-            </label>
+  <div class="col-12">
+    <img [src]="'assets/img/icons/'+image+'.png'" width="50" />&nbsp;
+    <span style="font-size: 25px;">{{('items.types.'+image | transloco)}}</span><br />
+    <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+  </div>
+  <div class="col-12">
+    <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
+      <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
+        (change)="show = true" checked>
+        <label class="btn btn-option btn-toggle" [for]="'show'+image">
+          <span class="material-symbols-outlined">
+            check
+          </span>
+        </label>
 
-            <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
-                (change)="show = false">
-            <label class="btn btn-option btn-toggle" [for]="'hide'+image">
-                <span class="material-symbols-outlined">
-                    close
-                </span>
-            </label>
+        <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
+          (change)="show = false">
+          <label class="btn btn-option btn-toggle" [for]="'hide'+image">
+            <span class="material-symbols-outlined">
+              close
+            </span>
+          </label>
         </div>
-    </div>
-    <!-- ITEMS -->
-    <div class="col-12" *ngIf="show">
-        <div class="row">
-            <ng-container *ngFor="let item of items; let i=index">
-                <div class="col-12 mt-2" *ngIf="showItem(item)">
-                    <div class="btn-group w" role="group">
-                        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                            (click)="item.mastered = !item.mastered;calculate();mastered()" [class]="getStyles(item)">
-                            <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
-                                <img src="assets/img/icons/mastered.png" width="15" />
-                                MR {{item.mastery_requirement}}
-                            </small>
-                            {{item.name | uppercase}}
-                            <span class="material-symbols-outlined" style="font-size: 20px;" *ngIf="item.mastered">
-                                check
-                            </span>
-                        </button>
-                        <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
-                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}" [ngClass]="{'mastered': item.mastered}">
-                            <span class="material-symbols-outlined">
-                                open_in_new
-                            </span>
-                        </button>
-                    </div>
+      </div>
+      <!-- ITEMS -->
+      @if (show) {
+        <div class="col-12">
+          <div class="row">
+            @for (item of items; track item; let i = $index) {
+              @if (showItem(item)) {
+                <div class="col-12 mt-2">
+                  <div class="btn-group w" role="group">
+                    <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
+                      [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                      (click)="item.mastered = !item.mastered;calculate();mastered()" [class]="getStyles(item)">
+                      <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
+                        <img src="assets/img/icons/mastered.png" width="15" />
+                        MR {{item.mastery_requirement}}
+                      </small>
+                      {{item.name | uppercase}}
+                      @if (item.mastered) {
+                        <span class="material-symbols-outlined" style="font-size: 20px;">
+                          check
+                        </span>
+                      }
+                    </button>
+                    <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
+                      [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}" [ngClass]="{'mastered': item.mastered}">
+                      <span class="material-symbols-outlined">
+                        open_in_new
+                      </span>
+                    </button>
+                  </div>
                 </div>
-            </ng-container>
+              }
+            }
+          </div>
         </div>
+      }
     </div>
-</div>

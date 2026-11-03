@@ -1,68 +1,74 @@
 <div class="row text-center mt-5">
-    <div class="col-12">
-        <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
-        <span style="font-size: 25px;">{{'planets.'+image | transloco}}</span><br />
-        <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
-        <small style="margin-right: 10px;"> (Normal)</small>
-        <span style="font-size: 25px;">
-            <img src=" assets/img/icons/mastered.png" width="20" />
-            {{itemSteel}}/{{itemCount}}
-        </span><small>(Steel path)</small>
+  <div class="col-12">
+    <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
+    <span style="font-size: 25px;">{{'planets.'+image | transloco}}</span><br />
+    <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+    <small style="margin-right: 10px;"> (Normal)</small>
+    <span style="font-size: 25px;">
+      <img src=" assets/img/icons/mastered.png" width="20" />
+      {{itemSteel}}/{{itemCount}}
+      </span><small>(Steel path)</small>
     </div>
     <div class="col-12">
-        <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
-            <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
-                (change)="show = true" checked>
-            <label class="btn btn-option btn-toggle" [for]="'show'+image">
-                <span class="material-symbols-outlined">
-                    check
-                </span>
-            </label>
+      <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
+        <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
+          (change)="show = true" checked>
+          <label class="btn btn-option btn-toggle" [for]="'show'+image">
+            <span class="material-symbols-outlined">
+              check
+            </span>
+          </label>
 
-            <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
-                (change)="show = false">
+          <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
+            (change)="show = false">
             <label class="btn btn-option btn-toggle" [for]="'hide'+image">
-                <span class="material-symbols-outlined">
-                    close
-                </span>
+              <span class="material-symbols-outlined">
+                close
+              </span>
             </label>
+          </div>
         </div>
-    </div>
-    <!-- ITEMS -->
-    <div class="col-12" *ngIf="show">
-        <div class="row">
-            <ng-container *ngFor="let item of locations; let i=index">
-                <div class="col-12 mt-2" *ngIf="showItem(item)">
+        <!-- ITEMS -->
+        @if (show) {
+          <div class="col-12">
+            <div class="row">
+              @for (item of locations; track item; let i = $index) {
+                @if (showItem(item)) {
+                  <div class="col-12 mt-2">
                     <div class="btn-group w" role="group">
-                        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-                            [ngClass]="{'mastered': item.mastered,'tenet': item.name.includes('Junction')}"
-                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                            (click)="item.mastered = !item.mastered;calculate();mastered()">
-                            <small class="float-start" style="font-size: 0.6rem"
-                                title="MR awarded for complete de mission">
-                                <img src="assets/img/icons/mastered.png" width="15" />
-                                MR Exp {{item.mastery_exp}}
-                            </small>
-                            {{item.name | uppercase}}
-                            <span class="material-symbols-outlined" style="font-size: 20px;" *ngIf="item.mastered">
-                                check
-                            </span>
-                        </button>
-                        <button class="btn btn-sm btn-primary btn-item" [ngStyle]="{'opacity': item.steel_path ? 0.9 : 1}"
-                            [ngClass]="{'mastered': item.steel_path}" title="Complete steel path version"
-                            (click)="item.steel_path = !item.steel_path;calculate();mastered()">
-                            <img src=" assets/img/icons/mastered.png" width="20" />
-                        </button>
-                        <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
-                            [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                            [ngClass]="{'mastered': item.mastered && item.steel_path}">
-                            <span class="material-symbols-outlined">
-                                open_in_new
-                            </span>
-                        </button>
+                      <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
+                        [ngClass]="{'mastered': item.mastered,'tenet': item.name.includes('Junction')}"
+                        [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                        (click)="item.mastered = !item.mastered;calculate();mastered()">
+                        <small class="float-start" style="font-size: 0.6rem"
+                          title="MR awarded for complete de mission">
+                          <img src="assets/img/icons/mastered.png" width="15" />
+                          MR Exp {{item.mastery_exp}}
+                        </small>
+                        {{item.name | uppercase}}
+                        @if (item.mastered) {
+                          <span class="material-symbols-outlined" style="font-size: 20px;">
+                            check
+                          </span>
+                        }
+                      </button>
+                      <button class="btn btn-sm btn-primary btn-item" [ngStyle]="{'opacity': item.steel_path ? 0.9 : 1}"
+                        [ngClass]="{'mastered': item.steel_path}" title="Complete steel path version"
+                        (click)="item.steel_path = !item.steel_path;calculate();mastered()">
+                        <img src=" assets/img/icons/mastered.png" width="20" />
+                      </button>
+                      <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
+                        [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
+                        [ngClass]="{'mastered': item.mastered && item.steel_path}">
+                        <span class="material-symbols-outlined">
+                          open_in_new
+                        </span>
+                      </button>
                     </div>
-                </div>
-            </ng-container>
-        </div>
-    </div>
-</div>
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        }
+      </div>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { Account } from '../shared/models/account.model';
 import { ItemsPanelComponent } from './items-panel/items-panel.component';
 import { Item } from '../shared/models/item.model';
@@ -23,11 +23,7 @@ import { Incarnons } from '../shared/models/incarnons.model';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet,
-        RouterModule,
-        SidebarComponent, ItemsPanelComponent, MarketComponent,
-        StarChartPanelComponent, IncarnonPanelComponent,
-        FormsModule, CommonModule],
+    imports: [RouterOutlet, RouterModule, SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent, IncarnonPanelComponent, FormsModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

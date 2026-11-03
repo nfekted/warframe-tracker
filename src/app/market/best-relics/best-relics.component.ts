@@ -1,11 +1,11 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import relicPrices from '../../../shared/jsons/tradeable/relics.json';
 
 @Component({
     selector: 'app-best-relics',
-    imports: [FormsModule, CommonModule],
+    imports: [FormsModule],
     templateUrl: './best-relics.component.html',
     styleUrl: './best-relics.component.scss'
 })
