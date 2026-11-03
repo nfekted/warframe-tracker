@@ -154,7 +154,7 @@
                 @if (showCategory(item)) {
                   <div class="col-12 col-md-3">
                     <app-items [image]="item" [items]="account[item]" (update)="calculate()"
-                      [acquisitionFilter]="acquisitionFilter?.type" [hideMastered]="hideMastered"
+                      [acquisitionFilter]="$safeNavigationMigration(acquisitionFilter?.type)" [hideMastered]="hideMastered"
                       [showOnlyMrAvailable]="showOnlyMrAvailable" [account]="account" [nameFilter]="nameFilter"
                     [hideFounders]="hideFounders" [mr]="mr"></app-items>
                   </div>

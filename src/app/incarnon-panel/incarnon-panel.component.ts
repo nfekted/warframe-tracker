@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Account } from '../../shared/models/account.model';
 import { FormsModule } from '@angular/forms';
 
@@ -10,6 +10,7 @@ import { IncarnonComponent } from './items/incarnon.component';
     selector: 'app-incarnon-panel',
     imports: [FormsModule, TranslocoModule, IncarnonComponent],
     templateUrl: './incarnon-panel.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './incarnon-panel.component.scss'
 })
 export class IncarnonPanelComponent {

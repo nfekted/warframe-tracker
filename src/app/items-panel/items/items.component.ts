@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Item } from '../../../shared/models/item.model';
@@ -10,6 +10,7 @@ import { TranslocoModule } from '@jsverse/transloco';
     selector: 'app-items',
     imports: [FormsModule, CommonModule, TranslocoModule],
     templateUrl: './items.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './items.component.scss'
 })
 export class ItemsComponent {

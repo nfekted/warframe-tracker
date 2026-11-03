@@ -1,5 +1,5 @@
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import relicPrices from '../../../shared/jsons/tradeable/relics.json';
 
@@ -7,6 +7,7 @@ import relicPrices from '../../../shared/jsons/tradeable/relics.json';
     selector: 'app-best-relics',
     imports: [FormsModule],
     templateUrl: './best-relics.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './best-relics.component.scss'
 })
 export class BestRelicsComponent {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Account } from '../../../shared/models/account.model';
@@ -10,6 +10,7 @@ import incarnons from '../../../shared/jsons/incarnon.json';
     selector: 'app-incarnon',
     imports: [FormsModule, CommonModule, TranslocoModule],
     templateUrl: './incarnon.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './incarnon.component.scss'
 })
 export class IncarnonComponent {

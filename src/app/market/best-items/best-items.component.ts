@@ -1,5 +1,5 @@
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
 
@@ -7,6 +7,7 @@ import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
     selector: 'app-best-items',
     imports: [FormsModule],
     templateUrl: './best-items.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './best-items.component.scss'
 })
 export class BestItemsComponent {

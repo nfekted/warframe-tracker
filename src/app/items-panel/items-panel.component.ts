@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Account } from '../../shared/models/account.model';
 import { FormsModule } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { TranslocoModule } from '@jsverse/transloco';
     selector: 'app-items-panel',
     imports: [FormsModule, ItemsComponent, TranslocoModule],
     templateUrl: './items-panel.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './items-panel.component.scss'
 })
 export class ItemsPanelComponent {

@@ -2,12 +2,12 @@ import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@jsverse/transloco';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(), provideHttpClient(), provideTransloco({
+  providers: [provideRouter(routes), provideHttpClient(withXhr()), provideHttpClient(withXhr()), provideTransloco({
     config: {
       availableLangs: ['en', 'pt'],
       defaultLang: 'en',

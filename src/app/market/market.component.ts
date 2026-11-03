@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { Account } from '../../shared/models/account.model';
@@ -15,6 +15,7 @@ import { BestItemsComponent } from './best-items/best-items.component';
     selector: 'app-market',
     imports: [FormsModule, BestRelicsComponent, BestItemsComponent],
     templateUrl: './market.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './market.component.scss'
 })
 export class MarketComponent {

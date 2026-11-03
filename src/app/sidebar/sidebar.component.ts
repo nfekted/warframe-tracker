@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Account } from '../../shared/models/account.model';
 import mrJson from '../../shared/jsons/mr.json';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
     selector: 'app-sidebar',
     imports: [FormsModule, TranslocoModule],
     templateUrl: './sidebar.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {

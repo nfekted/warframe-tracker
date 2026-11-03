@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
@@ -25,6 +25,7 @@ import { Incarnons } from '../shared/models/incarnons.model';
     selector: 'app-root',
     imports: [RouterOutlet, RouterModule, SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent, IncarnonPanelComponent, FormsModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
 })
 export class AppComponent {

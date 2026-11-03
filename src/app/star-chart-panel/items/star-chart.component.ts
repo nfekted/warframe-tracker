@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Account } from '../../../shared/models/account.model';
@@ -10,6 +10,7 @@ import { TranslocoModule } from '@jsverse/transloco';
     selector: 'app-star-chart',
     imports: [FormsModule, CommonModule, TranslocoModule],
     templateUrl: './star-chart.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './star-chart.component.scss'
 })
 export class StarChartComponent {
