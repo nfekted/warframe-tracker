@@ -82,19 +82,23 @@ src/
 ├── shared/
 │   ├── jsons/                 # Static game data: items, MR table, locations, incarnons, market data
 │   ├── models/                # Account, Item, StarChart, Incarnons, MasteryRank, ItemJsons
+│   ├── metadata.ts            # Current game update, market data dates, intrinsic limits
 │   └── utils/util.ts          # Item categories, XP calculation, localStorage helpers
 └── assets/
     ├── i18n/                  # en.json, pt.json
     └── img/                   # Icons, flags, MR badges, location images
+scripts/
+└── market-data.mjs            # Generates the market JSONs from raw exports
 ```
 
 ## Updating game data
 
 The data is static and bundled at build time. Nothing is fetched from game or market APIs at runtime.
 
-- **New items, nodes or Incarnons**: add them to the JSON files in `src/shared/jsons/`. When the app starts, entries that are missing from the user's saved data are added automatically, so existing progress is kept.
-- **New item category**: add the JSON to `ItemJsons` (`shared/models/item-jsons.model.ts`), the property to `Account`, the key to `Util.itemTypes`, and the XP rule to `Util.calculate`.
-- **Market prices**: `src/shared/jsons/tradeable/` holds the item lists (`tradeEn.json`, `tradePt.json`), prices (`tradePrices.json`) and relic values (`relics.json`).
+- **New items, nodes or Incarnons**: add them to the JSON files in `src/shared/jsons/`. Each item has its own `mastery_xp` (3000, 4000 for Kuva/Tenet/Coda weapons, 6000 or 8000). Items are always built from the JSON and only the mastered flag comes from the saved data, so changes in the JSON reach existing users. The tests check that every item's `mastery_xp` matches its category.
+- **New game update**: update `GAME_UPDATE` in `src/shared/metadata.ts`. The max XP and the MR filter options are calculated from the JSONs.
+- **New item category**: add the JSON to `ItemJsons` (`shared/models/item-jsons.model.ts`), the property to `Account` and the key to `Util.itemTypes`.
+- **Market data**: `src/shared/jsons/tradeable/` holds the tradeable items with English and Portuguese names (`tradeables.json`), prices (`tradePrices.json`) and relic values (`relics.json`). Regenerate them with `node scripts/market-data.mjs <tradeables|prices|relics> <input file>` (input formats are described at the top of the script), then update `MARKET_DATA` in `src/shared/metadata.ts`.
 - **Translations**: edit `src/assets/i18n/en.json` and `pt.json`.
 
 ## Saved data

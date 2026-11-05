@@ -19,10 +19,10 @@
         </div>
         <div class="col-12 text-center mt-4">
           <h5>Railjack {{'sidebar.intrinsics' |transloco}}:</h5>
-          <input class="form-control text-center" type="number" min="0" max="50" step="1"
+          <input class="form-control text-center" type="number" min="0" [max]="intrinsics.railjackMax" step="1"
             oninput="validity.valid||(value='');" [(ngModel)]="account.railjack" (input)="calculate()" />
             <h5>Drifter {{'sidebar.intrinsics' |transloco}}:</h5>
-            <input class="form-control text-center" type="number" min="0" max="40" step="1"
+            <input class="form-control text-center" type="number" min="0" [max]="intrinsics.drifterMax" step="1"
               oninput="validity.valid||(value='');" [(ngModel)]="account.drifter" (input)="calculate()" />
             </div>
             <div class="col-12 text-center mt-4">

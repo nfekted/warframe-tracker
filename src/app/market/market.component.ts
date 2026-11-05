@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import itemEnJson from '../../shared/jsons/tradeable/tradeEn.json';
-import itemPtJson from '../../shared/jsons/tradeable/tradePt.json'
+import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
 import { Util } from '../../shared/utils/util';
+import { MARKET_DATA } from '../../shared/metadata';
 import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
 
@@ -17,7 +17,8 @@ import { BestItemsComponent } from './best-items/best-items.component';
 })
 export class MarketComponent {
 
-  tradeableList: { id: string, url: string, item_en: string, item_pt: string }[] = [];
+  tradeableList: { id: string, url: string, name_en: string, name_pt: string }[] = tradeables;
+  marketData = MARKET_DATA;
 
   lastSort: string = '';
 
@@ -28,7 +29,6 @@ export class MarketComponent {
   constructor() { }
 
   ngOnInit(): void {
-    this.makeJson();
     this.myList = Util.loadMarket();
     if (!this.myList) this.myList = [];
     else this.updateMyList();
@@ -40,21 +40,6 @@ export class MarketComponent {
       this.myList[i] = itemPrices.find(item => item.id == this.myList[i].id);
     }
     window.sessionStorage.setItem('updated', 'true');
-  }
-
-  makeJson() {
-    this.tradeableList = [];
-
-    const itemEn = new Map<string, { id: string, name: string }>();
-    const itemPt = new Map<string, { id: string, name: string }>();
-    itemEnJson.payload.items.forEach((item) => itemEn.set(item.url_name, { id: item.id, name: item.item_name.replace(':', '') }));
-    itemPtJson.payload.items.forEach((item) => itemPt.set(item.url_name, { id: item.id, name: item.item_name.replace(':', '') }));
-
-
-    itemEn.forEach((item, url) => {
-      const pt = itemPt.get(url);
-      this.tradeableList.push({ id: item.id, url: url, item_en: item.name, item_pt: pt.name });
-    });
   }
 
   onSearchChange(event: any) {
@@ -69,7 +54,7 @@ export class MarketComponent {
     }
     const filterValue = this.searchTerm.toLowerCase();
     this.filteredItems = this.tradeableList.filter(item =>
-      item.item_en.toLowerCase().includes(filterValue) || item.item_pt.toLocaleLowerCase().includes(filterValue)
+      item.name_en.toLowerCase().includes(filterValue) || item.name_pt.toLocaleLowerCase().includes(filterValue)
     );
   }
 

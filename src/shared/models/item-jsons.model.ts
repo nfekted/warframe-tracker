@@ -1,3 +1,4 @@
+import { ItemData } from './item.model';
 import warframesJson from '../jsons/warframes.json';
 import archwingJson from '../jsons/archwings.json';
 import kDriveJson from '../jsons/kdrives.json';
@@ -22,27 +23,27 @@ import riflesJson from '../jsons/rifles.json';
 
 export class ItemJsons {
 
-    warframes = warframesJson;
-    archwings = archwingJson;
-    kdrives = kDriveJson;
-    necramechs = necramechJson;
-    hounds = houndsJson;
-    moas = moasJson;
-    sentinels = sentinelsJson;
-    companion_weapon = companionWeaponJson;
-    kubrows = kubrowJson;
-    kavats = kavatsJson;
-    vulpaphylas = vulpaphylasJson;
-    predasites = predasiteJson;
-    amps = ampsJson;
-    kitguns = kitgunJson;
-    zaws = zawJson;
-    archwing_melee = archMeleeJson;
-    archwing_primary = archPrimaryJson;
-    plexus = plexusJson;
-    melees = meleeJson;
-    pistols = pistolsJson;
-    rifles = riflesJson;
+    warframes: ItemData[] = warframesJson;
+    archwings: ItemData[] = archwingJson;
+    kdrives: ItemData[] = kDriveJson;
+    necramechs: ItemData[] = necramechJson;
+    hounds: ItemData[] = houndsJson;
+    moas: ItemData[] = moasJson;
+    sentinels: ItemData[] = sentinelsJson;
+    companion_weapon: ItemData[] = companionWeaponJson;
+    kubrows: ItemData[] = kubrowJson;
+    kavats: ItemData[] = kavatsJson;
+    vulpaphylas: ItemData[] = vulpaphylasJson;
+    predasites: ItemData[] = predasiteJson;
+    amps: ItemData[] = ampsJson;
+    kitguns: ItemData[] = kitgunJson;
+    zaws: ItemData[] = zawJson;
+    archwing_melee: ItemData[] = archMeleeJson;
+    archwing_primary: ItemData[] = archPrimaryJson;
+    plexus: ItemData[] = plexusJson;
+    melees: ItemData[] = meleeJson;
+    pistols: ItemData[] = pistolsJson;
+    rifles: ItemData[] = riflesJson;
 
     constructor() {
 

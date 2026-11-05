@@ -1,17 +1,23 @@
 [
     {
         "name": "Vizier",
-                "mastery_requirement": 0, "acquisition": "Revivification",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Revivification",
         "acquisitionDescription": "https://wiki.warframe.com/w/Vizier_Predasite#Acquisition"
     },
     {
         "name": "Pharaoh",
-                "mastery_requirement": 0, "acquisition": "Revivification",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Revivification",
         "acquisitionDescription": "https://wiki.warframe.com/w/Pharaoh_Predasite#Acquisition"
     },
     {
         "name": "Medjay",
-                "mastery_requirement": 0, "acquisition": "Revivification",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Revivification",
         "acquisitionDescription": "https://wiki.warframe.com/w/Medjay_Predasite#Acquisition"
     }
 ]

@@ -94,6 +94,27 @@ describe('AppComponent initial load', () => {
       expect(new Set(app.account.warframes.map(i => i.name)).size).toBe(warframesJson.length);
     });
 
+    it('drops saved items that no longer exist in the JSON', () => {
+      save({ warframes: [{ name: 'Removed Frame', type: 'warframes', acquisition: '', mastery_requirement: 0, mastered: true }] });
+
+      const app = create();
+
+      expect(app.account.warframes.some(i => i.name == 'Removed Frame')).toBe(false);
+      expect(app.account.xp).toBe(0);
+    });
+
+    it('takes item data from the JSON instead of the saved copy', () => {
+      save({ warframes: [{ name: ash.name, type: 'warframes', acquisition: 'Old', mastery_requirement: 99, mastered: true }] });
+
+      const app = create();
+      const built = app.account.warframes.find(i => i.name == ash.name);
+
+      expect(built.mastered).toBe(true);
+      expect(built.acquisition).toBe(ash.acquisition);
+      expect(built.mastery_requirement).toBe(ash.mastery_requirement);
+      expect(built.mastery_xp).toBe(ash.mastery_xp);
+    });
+
     it('calculates XP from the saved progress', () => {
       const app = create();
 

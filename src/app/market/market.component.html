@@ -1,13 +1,13 @@
 <div class="row page">
   <div class="col-12">
     <p>
-      {{tradeableList.length}} items can currently be traded. (Warframe 39.1 on 2025-09-14: <a
-    href="https://wiki.warframe.com/w/Update_41" target="_blank" style="color: white;">The Old Peace</a>)
+      {{tradeableList.length}} items can currently be traded. ({{marketData.tradeables.version}} on {{marketData.tradeables.date}}: <a
+    [href]="marketData.tradeables.wiki" target="_blank" style="color: white;">{{marketData.tradeables.update}}</a>)
   </p>
 </div>
 <div class="col-12">
   <p>
-    Prices based on <a href="https://relics.run/" target="_blank">Relic run</a>, last price update on 2026-04-11
+    Prices based on <a [href]="marketData.prices.url" target="_blank">{{marketData.prices.source}}</a>, last price update on {{marketData.prices.date}}
   </p>
 </div>
 <hr />
@@ -42,7 +42,7 @@
                 @for (item of filteredItems; track item) {
                   <div (click)="selectItem(item)"
                     class="autocomplete-item">
-                    {{item.item_en}}
+                    {{item.name_en}}
                   </div>
                 }
               </div>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Item } from '../../../shared/models/item.model';
 import { Account } from '../../../shared/models/account.model';
 import { ItemJsons } from '../../../shared/models/item-jsons.model';
+import { ItemType } from '../../../shared/utils/util';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
@@ -18,7 +19,7 @@ export class ItemsComponent {
   jsons: ItemJsons = new ItemJsons();
 
   @Input() account: Account;
-  @Input() image: string = '';
+  @Input() image: ItemType;
   @Input() items: Item[] = [];
 
   //Filters

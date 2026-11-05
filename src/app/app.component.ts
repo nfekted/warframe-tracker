@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Account } from '../shared/models/account.model';
 import { ItemsPanelComponent } from './items-panel/items-panel.component';
 import { Item } from '../shared/models/item.model';
-import { Util } from '../shared/utils/util';
+import { ItemType, Util } from '../shared/utils/util';
 import { MasteryRank } from '../shared/models/mastery-rank.model';
 import { ItemJsons } from '../shared/models/item-jsons.model';
 import { MarketComponent } from './market/market.component';
@@ -46,7 +46,6 @@ export class AppComponent {
     this.lang = this.translocoService.getActiveLang();
     if (load) {
       this.account = Object.assign(new Account(), load);
-      this.account = Util.calculate(this.account);
       this.changeLang(this.account.lang);
     }
 
@@ -56,6 +55,7 @@ export class AppComponent {
 
     this.initStarChart();
     this.initIncarnon();
+    this.account = Util.calculate(this.account);
 
     this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
     this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
@@ -93,16 +93,15 @@ export class AppComponent {
     }
   }
 
-  initItems(type: string) {
-    if (this.account[type].length != this.jsonList[type].length) {
-      const newItem = this.jsonList[type].filter(item => {
-        return !this.account[type].some(s => s.name == item.name);
-      });
+  //Items always come from the JSON; only the mastered flag comes from the saved data
+  initItems(type: ItemType) {
+    const mastered = new Set(this.account[type].filter(i => i.mastered).map(i => i.name));
 
-      for (const item of newItem) {
-        this.account[type].push(new Item(item.name, type, item.acquisition, item.mastery_requirement));
-      }
-    }
+    this.account[type] = this.jsonList[type].map(data => {
+      const item = new Item(data.name, type, data.acquisition, data.mastery_requirement, data.mastery_xp);
+      item.mastered = mastered.has(data.name);
+      return item;
+    });
 
     this.itemsCount += this.account[type].length;
   }

@@ -2,18 +2,21 @@
     {
         "name": "Bhaira",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Bhaira"
     },
     {
         "name": "Dorma",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Dorma"
     },
     {
         "name": "Hec",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Sisters of Parvos",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Hec"
     }

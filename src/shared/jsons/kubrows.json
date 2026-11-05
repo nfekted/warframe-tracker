@@ -1,32 +1,44 @@
 [
     {
         "name": "Chesa",
-                "mastery_requirement": 0, "acquisition": "Incubator",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Chesa_Kubrow#Acquisition"
     },
     {
         "name": "Huras",
-                "mastery_requirement": 0, "acquisition": "Incubator",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Huras_Kubrow#Acquisition"
     },
     {
         "name": "Raksa",
-                "mastery_requirement": 0, "acquisition": "Incubator",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Raksa_Kubrow#Acquisition"
     },
     {
         "name": "Sahasa",
-                "mastery_requirement": 0, "acquisition": "Incubator",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sahasa_Kubrow#Acquisition"
     },
     {
         "name": "Sunika",
-                "mastery_requirement": 0, "acquisition": "Incubator",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Sunika_Kubrow#Acquisition"
     },
     {
         "name": "Helminth Charger",
-                "mastery_requirement": 0, "acquisition": "Incubator",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Incubator",
         "acquisitionDescription": "https://wiki.warframe.com/w/Helminth_Charger#Acquisition"
     }
 ]

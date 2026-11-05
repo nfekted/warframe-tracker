@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MasteryRank } from '../../shared/models/mastery-rank.model';
 import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
+import { INTRINSICS } from '../../shared/metadata';
 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
@@ -26,7 +27,8 @@ export class SidebarComponent {
   @Output() changeRender = new EventEmitter<string>();
 
   mrList = mrJson;
-  maxXp: number = 3087038;
+  maxXp: number = Util.maxXp();
+  intrinsics = INTRINSICS;
   render: string = 'items';
 
   constructor(private transloco: TranslocoService) { }

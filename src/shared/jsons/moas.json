@@ -2,24 +2,28 @@
     {
         "name": "Para",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Para"
     },
     {
         "name": "Lambeo",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Lambeo"
     },
     {
         "name": "Oloro",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Oloro"
     },
     {
         "name": "Nychus",
         "mastery_requirement": 0,
+        "mastery_xp": 6000,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Model#Nychus"
     }

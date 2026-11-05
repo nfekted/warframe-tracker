@@ -2,120 +2,140 @@
     {
         "name": "Dual Decurion",
         "mastery_requirement": 1,
+        "mastery_xp": 3000,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Dual_Decurion#Acquisition"
     },
     {
         "name": "Prisma Dual Decurions",
         "mastery_requirement": 1,
+        "mastery_xp": 3000,
         "acquisition": "Baro Ki'Teer",
         "acquisitionDescription": "https://wiki.warframe.com/w/Prisma_Dual_Decurions#Acquisition"
     },
     {
         "name": "Kuva Ayanga",
         "mastery_requirement": 13,
+        "mastery_xp": 4000,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Ayanga#Acquisition"
     },
     {
         "name": "Kuva Grattler",
         "mastery_requirement": 15,
+        "mastery_xp": 4000,
         "acquisition": "Kuva Lich",
         "acquisitionDescription": "https://wiki.warframe.com/w/Kuva_Grattler#Acquisition"
     },
     {
         "name": "Morgha",
         "mastery_requirement": 15,
+        "mastery_xp": 3000,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Morgha#Acquisition"
     },
     {
         "name": "Grattler",
         "mastery_requirement": 4,
+        "mastery_xp": 3000,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Grattler#Acquisition"
     },
     {
         "name": "Imperator",
         "mastery_requirement": 0,
+        "mastery_xp": 3000,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Imperator#Acquisition"
     },
     {
         "name": "Mausolon",
         "mastery_requirement": 14,
+        "mastery_xp": 3000,
         "acquisition": "Automatically acquired",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mausolon#Acquisition"
     },
     {
         "name": "Imperator Vandal",
         "mastery_requirement": 5,
+        "mastery_xp": 3000,
         "acquisition": "Events",
         "acquisitionDescription": "https://wiki.warframe.com/w/Imperator_Vandal#Acquisition"
     },
     {
         "name": "Phaedra",
         "mastery_requirement": 3,
+        "mastery_xp": 3000,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Phaedra#Acquisition"
     },
     {
         "name": "Cyngas",
         "mastery_requirement": 4,
+        "mastery_xp": 3000,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cyngas#Acquisition"
     },
     {
         "name": "Velocitus",
         "mastery_requirement": 0,
+        "mastery_xp": 3000,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Velocitus#Acquisition"
     },
     {
         "name": "Cortege",
         "mastery_requirement": 14,
+        "mastery_xp": 3000,
         "acquisition": "Standing",
         "acquisitionDescription": "https://wiki.warframe.com/w/Cortege#Acquisition"
     },
     {
         "name": "Larkspur",
         "mastery_requirement": 8,
+        "mastery_xp": 3000,
         "acquisition": "Dojo",
         "acquisitionDescription": "https://wiki.warframe.com/w/Larkspur#Acquisition"
     },
     {
         "name": "Larkspur Prime",
         "mastery_requirement": 8,
+        "mastery_xp": 3000,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Larkspur_Prime#Acquisition"
     },
     {
         "name": "Fluctus",
         "mastery_requirement": 2,
+        "mastery_xp": 3000,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Fluctus#Acquisition"
     },
     {
         "name": "Corvas",
         "mastery_requirement": 14,
+        "mastery_xp": 3000,
         "acquisition": "Syndicates",
         "acquisitionDescription": "https://wiki.warframe.com/w/Corvas#Acquisition"
     },
     {
         "name": "Corvas Prime",
         "mastery_requirement": 14,
+        "mastery_xp": 3000,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Corvas_Prime#Acquisition"
     },
     {
         "name": "Mandonel",
         "mastery_requirement": 10,
+        "mastery_xp": 3000,
         "acquisition": "Bounty",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mandonel#Acquisition"
     },
     {
         "name": "Arbucep",
         "mastery_requirement": 0,
+        "mastery_xp": 3000,
         "acquisition": "Bounty",
         "acquisitionDescription": "https://wiki.warframe.com/w/Arbucep#Acquisition"
     }
