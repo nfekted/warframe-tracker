@@ -3,6 +3,7 @@ import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@a
 import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
 import { MARKET_DATA } from '../../shared/metadata';
+import { TranslocoModule } from '@jsverse/transloco';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
@@ -21,7 +22,7 @@ const SEARCH_INDEX = tradeables.map(item => ({ item, text: normalize(item.name_e
 
 @Component({
     selector: 'app-market',
-    imports: [BestRelicsComponent, BestItemsComponent],
+    imports: [BestRelicsComponent, BestItemsComponent, TranslocoModule],
     templateUrl: './market.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './market.component.scss'

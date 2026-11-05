@@ -32,10 +32,10 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
 
 | | |
 |---|---|
-| Framework | Angular 22 (standalone components, `@if`/`@for` control flow, lazy-loaded routes) |
+| Framework | Angular 22 (standalone components, signals, OnPush, zoneless, `@if`/`@for` control flow, lazy-loaded routes) |
 | i18n | [Transloco](https://jsverse.github.io/transloco/) 8 |
 | Storage | IndexedDB via [idb](https://github.com/jakearchibald/idb) |
-| UI | Bootstrap 5 (dark theme, bundled with Popper), Material Symbols, SweetAlert2 |
+| UI | Bootstrap 5 (dark theme, bundled with Popper), Material Symbols, native `<dialog>` |
 | Language | TypeScript 6 |
 | Build | `@angular/build` (application builder) |
 | Tests | Vitest + jsdom via `@angular/build:unit-test` |
@@ -77,6 +77,7 @@ src/
 │   ├── app.routes.ts          # #/items, #/incarnon, #/star-chart, #/market, each loaded on demand
 │   ├── transloco-loader.ts    # Loads assets/i18n/{lang}.json
 │   ├── sidebar/               # MR, XP, intrinsics, navigation, export/import, delete data
+│   ├── dialog/                # Confirmation and message dialog (DialogService + native <dialog>)
 │   ├── tracker-card/          # Card shared by the panels: header, counters, show/hide, list
 │   ├── items-panel/           # Mastery checklist + filters (items-filter.ts; items/ = one category card)
 │   ├── star-chart-panel/      # Star Chart nodes per planet (items/ = one planet card)

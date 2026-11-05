@@ -7,7 +7,7 @@
     <ng-content select="[counter]" />
   </div>
   <div class="col-12">
-    <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + id()">
+    <div class="btn-group" role="group" [attr.aria-label]="'show_hide' | transloco: {name: title()}">
       <input type="radio" class="btn-check" [name]="id()" [id]="'show'+id()" autocomplete="off"
         (change)="show.set(true)" [checked]="show()">
       <label class="btn btn-option btn-toggle" [for]="'show'+id()">

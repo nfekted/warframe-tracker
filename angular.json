@@ -20,9 +20,6 @@
             "outputPath": "dist/warframe-tracker",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -68,11 +65,7 @@
               "aot": false,
               "optimization": false,
               "extractLicenses": false,
-              "scripts": [],
-              "polyfills": [
-                "zone.js",
-                "zone.js/testing"
-              ]
+              "scripts": []
             }
           },
           "defaultConfiguration": "production"

@@ -1,13 +1,13 @@
 <div class="row page">
   <div class="col-12">
     <p>
-      {{tradeableCount}} items can currently be traded. ({{marketData.tradeables.version}} on {{marketData.tradeables.date}}: <a
+      {{'market.tradeable' | transloco: {count: tradeableCount} }} ({{marketData.tradeables.version}} {{'market.on' | transloco}} {{marketData.tradeables.date}}: <a
     [href]="marketData.tradeables.wiki" target="_blank" style="color: white;">{{marketData.tradeables.update}}</a>)
   </p>
 </div>
 <div class="col-12">
   <p>
-    Prices based on <a [href]="marketData.prices.url" target="_blank">{{marketData.prices.source}}</a>, last price update on {{marketData.prices.date}}
+    {{'market.prices_based' | transloco}} <a [href]="marketData.prices.url" target="_blank">{{marketData.prices.source}}</a>, {{'market.last_update' | transloco}} {{marketData.prices.date}}
   </p>
 </div>
 <hr />
@@ -15,15 +15,15 @@
 <ul class="nav nav-tabs" id="marketTab" role="tablist">
   <li class="nav-item">
     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#myList" type="button" role="tab"
-    aria-controls="myList" aria-selected="true">My items</button>
+    aria-controls="myList" aria-selected="true">{{'market.my_items' | transloco}}</button>
   </li>
   <li class="nav-item">
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bestItems" type="button" role="tab"
-    aria-controls="bestItems" aria-selected="true">Most valuable items</button>
+    aria-controls="bestItems" aria-selected="true">{{'market.best_items' | transloco}}</button>
   </li>
   <li class="nav-item">
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bestRelics" type="button" role="tab"
-    aria-controls="bestRelics" aria-selected="true">Best farm relics</button>
+    aria-controls="bestRelics" aria-selected="true">{{'market.best_relics' | transloco}}</button>
   </li>
 </ul>
 <!-- Content -->
@@ -32,10 +32,10 @@
   <div class="tab-pane fade show active" id="myList" role="tabpanel" aria-labelledby="myList-tab">
     <div class="p-3 border rounded-bottom">
       <div class="col-12">
-        <p>Your item list, check most and least valuable items</p>
+        <p>{{'market.my_list' | transloco}}</p>
         <div>
           <input #search type="text" (input)="onSearchChange(search.value)"
-            class="form-control" placeholder="Search and add item to list" step="color: white">
+            class="form-control" [placeholder]="'market.search' | transloco" step="color: white">
 
             @if (filteredItems().length > 0) {
               <div class="autocomplete-list">
@@ -53,32 +53,32 @@
             <thead>
               <tr>
                 <th scope="col" style="cursor: pointer;" (click)="sort('name')">
-                  Item
+                  {{'market.item' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('lowest')">
-                  Lowest price
+                  {{'market.lowest' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('higher')">
-                  Highest price
+                  {{'market.highest' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('average')">
-                  Average price
+                  {{'market.average' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;"
                   (click)="sort('most_frequent')">
-                  Median price
+                  {{'market.median' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'most_frequent' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
@@ -117,15 +117,15 @@
                     }
                   </td>
                   <td scope="row">
-                    <a [href]="'https://warframe.market/items/' + item.url" target="_blank"
-                      style="color: white;">
+                    <a [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"
+                      [title]="'market.open' | transloco" style="color: white;">
                       <span class="material-symbols-outlined">
                         open_in_new
                       </span>
                     </a>
                   </td>
                   <td>
-                    <a style="color: red;cursor: pointer;" title="remove" (click)="removeItem(item)">
+                    <a style="color: red;cursor: pointer;" [title]="'market.remove' | transloco" (click)="removeItem(item)">
                       <span class="material-symbols-outlined">
                         delete
                       </span>

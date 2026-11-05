@@ -1,0 +1,18 @@
+<dialog #dialog class="text-center" (close)="onClose(dialog)">
+  @if (service.current(); as options) {
+    @if (options.icon) {
+      <span class="material-symbols-outlined icon" [class.text-success]="options.icon == 'success'"
+        [class.text-danger]="options.icon == 'error'">
+        {{options.icon == 'success' ? 'check_circle' : 'error'}}
+      </span>
+    }
+    <p>{{options.text}}</p>
+    <div class="actions">
+      @if (options.cancel) {
+        <button type="button" class="btn btn-secondary" value="cancel" (click)="dialog.close('cancel')">{{options.cancel}}</button>
+      }
+      <button type="button" class="btn" [class.btn-danger]="options.danger" [class.btn-primary]="!options.danger"
+        value="confirm" (click)="dialog.close('confirm')" autofocus>{{options.confirm}}</button>
+    </div>
+  }
+</dialog>

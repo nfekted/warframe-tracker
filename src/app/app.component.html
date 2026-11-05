@@ -1,4 +1,5 @@
 <app-sidebar></app-sidebar>
+<app-dialog></app-dialog>
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 mt-5">
@@ -20,7 +21,7 @@
     </li>
   </ul>
 </div>
-<button id="myBtn" title="Go to top" class="btn btn-sm btn-info" (click)="scrollToTop()">
+<button id="myBtn" [title]="'go_to_top' | transloco" class="btn btn-sm btn-info" (click)="scrollToTop()">
   <span class="material-symbols-outlined">
     arrow_circle_up
   </span>

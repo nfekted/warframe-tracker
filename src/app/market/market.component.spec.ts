@@ -1,5 +1,6 @@
 import 'fake-indexeddb/auto';
 import { TestBed } from '@angular/core/testing';
+import { TranslocoTestingModule } from '@jsverse/transloco';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { tradeCategory } from './best-items/best-items.component';
 import { MarketComponent, normalize } from './market.component';
@@ -24,6 +25,7 @@ describe('MarketComponent search', () => {
 
   beforeEach(() => {
     vi.useFakeTimers();
+    TestBed.configureTestingModule({ imports: [TranslocoTestingModule.forRoot({ langs: { en: {} } })] });
     market = TestBed.createComponent(MarketComponent).componentInstance;
   });
 

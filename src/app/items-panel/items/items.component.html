@@ -6,7 +6,7 @@
         <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
           [style.opacity]="row.item.mastered ? 0.9 : 1"
           (click)="toggle(row.item)" [class]="row.classes">
-          <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
+          <small class="float-start" style="font-size: 0.6rem" [title]="'items.mr_needed' | transloco">
             <img src="assets/img/icons/mastered.png" width="15" />
             MR {{row.item.mastery_requirement}}
           </small>

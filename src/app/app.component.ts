@@ -1,15 +1,16 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { TranslocoService } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { RouterOutlet } from '@angular/router';
+import { DialogComponent } from './dialog/dialog.component';
 import { ProgressStore } from '../shared/store/progress.store';
 
 
 @Component({
     selector: 'app-root',
-    imports: [SidebarComponent, RouterOutlet],
+    imports: [SidebarComponent, RouterOutlet, DialogComponent, TranslocoModule],
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './app.component.scss'
 })
 export class AppComponent {

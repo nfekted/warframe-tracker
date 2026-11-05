@@ -15,7 +15,11 @@
         "of": "of",
         "export": "Export my data",
         "import": "Import data",
-        "data": "My data"
+        "data": "My data",
+        "mastery_rank": "MASTERY RANK",
+        "items": "items",
+        "current_xp": "Current XP",
+        "toggle_navigation": "Toggle navigation"
     },
     "import": {
         "confirm": "Replace your current progress with the imported file? Can't be undone",
@@ -55,7 +59,8 @@
             "archwing_primary": "ARCHWING PRIMARY",
             "zaws": "ZAWS",
             "kitguns": "KITGUNS"
-        }
+        },
+        "mr_needed": "MR needed to equip item"
     },
     "incarnon": {
         "description": "Current items with Incarnon system",
@@ -67,7 +72,7 @@
         "Genesis Melee": "Genesis Melee"
     },
     "planets": {
-        "options": "OPÇÕES",
+        "options": "OPTIONS",
         "hide": "Hide completed locations",
         "Mercury": "MERCURY",
         "Venus": "VENUS",
@@ -87,7 +92,11 @@
         "Eris": "ERIS",
         "Kuva_Fortress": "KUVA FORTRESS",
         "Void": "VOID",
-        "Zariman": "ZARIMAN"
+        "Zariman": "ZARIMAN",
+        "normal": "Normal",
+        "steel_path": "Steel Path",
+        "mr_awarded": "Mastery XP awarded for completing the mission",
+        "complete_steel_path": "Complete the Steel Path version"
     },
     "acquisition": {
         "types": {
@@ -204,5 +213,45 @@
         "Legendary 19": "Legendary 19",
         "Legendary 20": "Legendary 20",
         "Legendary 21": "Legendary 21"
+    },
+    "ok": "OK",
+    "go_to_top": "Go to top",
+    "show_hide": "Show or hide {{name}}",
+    "market": {
+        "tradeable": "{{count}} items can currently be traded.",
+        "on": "on",
+        "prices_based": "Prices based on",
+        "last_update": "last price update on",
+        "my_items": "My items",
+        "best_items": "Most valuable items",
+        "best_relics": "Best farm relics",
+        "my_list": "Your item list, check most and least valuable items",
+        "search": "Search and add item to list",
+        "item": "Item",
+        "lowest": "Lowest price",
+        "highest": "Highest price",
+        "average": "Average price",
+        "median": "Median price",
+        "open": "Open on warframe.market",
+        "remove": "Remove",
+        "show": {
+            "primeItems": "Show prime items",
+            "primeSets": "Show prime sets",
+            "relics": "Show relics",
+            "helmets": "Show helmets",
+            "miscellaneous": "Show miscellaneous",
+            "arcanes": "Show arcanes"
+        },
+        "items_on_list": "{{count}} items on list. Displaying {{shown}}.",
+        "all": "all",
+        "show_more": "Show +100",
+        "load_all": "Load all",
+        "radiant_only": "Only radiant relics are displayed, the ratio remains the same in other versions of the relic.",
+        "relic_filter": "Filter by relic type:",
+        "show_all": "Show all",
+        "relic": "Relic",
+        "worst": "Worst result",
+        "best": "Best result",
+        "expected": "Expected price"
     }
 }

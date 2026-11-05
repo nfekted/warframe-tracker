@@ -1,5 +1,6 @@
 
 import { Component, ChangeDetectionStrategy, computed, signal } from "@angular/core";
+import { TranslocoModule } from '@jsverse/transloco';
 import relicPrices from '../../../shared/jsons/tradeable/relics.json';
 
 //Era (Lith, Meso, Neo, Axi, Requiem) taken from the name and sorted by expected price once
@@ -9,6 +10,7 @@ const RELICS = relicPrices
 
 @Component({
     selector: 'app-best-relics',
+    imports: [TranslocoModule],
     templateUrl: './best-relics.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './best-relics.component.scss'

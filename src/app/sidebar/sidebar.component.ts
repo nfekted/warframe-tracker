@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import Swal from 'sweetalert2';
 import { INTRINSICS } from '../../shared/metadata';
 import { ProgressStore } from '../../shared/store/progress.store';
+import { DialogService } from '../dialog/dialog.service';
 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
@@ -10,19 +10,22 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
     selector: 'app-sidebar',
     imports: [TranslocoModule, RouterLink, RouterLinkActive],
     templateUrl: './sidebar.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
   private transloco = inject(TranslocoService);
+  private dialog = inject(DialogService);
   store = inject(ProgressStore);
 
   intrinsics = INTRINSICS;
 
-  progress(): number {
+  //Percentage of the way to the next rank; full at the last rank
+  progress = computed(() => {
     const current = this.store.masteryRank().xp;
-    return (this.store.account().xp - current) / (this.store.nextRank().xp - current) * 100;
-  }
+    const next = this.store.nextRank().xp;
+    return next > current ? (this.store.account().xp - current) / (next - current) * 100 : 100;
+  });
 
   //The store clamps the value; the input is rewritten so it never shows a value that is not counted
   setIntrinsic(kind: 'railjack' | 'drifter', input: HTMLInputElement) {
@@ -32,18 +35,14 @@ export class SidebarComponent {
     if (input.value != '') input.value = String(this.store[kind]());
   }
 
-  delete() {
-    Swal.fire({
+  async delete() {
+    const confirmed = await this.dialog.open({
       text: this.transloco.translate('erase'),
-      showCancelButton: true,
-      confirmButtonText: this.transloco.translate('delete'),
-      cancelButtonText: this.transloco.translate('cancel'),
-      confirmButtonColor: '#a7160c'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.store.reset();
-      }
+      confirm: this.transloco.translate('delete'),
+      cancel: this.transloco.translate('cancel'),
+      danger: true,
     });
+    if (confirmed) await this.store.reset();
   }
 
   exportData() {
@@ -61,20 +60,19 @@ export class SidebarComponent {
     input.value = '';
     if (!file) return;
 
-    const result = await Swal.fire({
+    const confirmed = await this.dialog.open({
       text: this.transloco.translate('import.confirm'),
-      showCancelButton: true,
-      confirmButtonText: this.transloco.translate('sidebar.import'),
-      cancelButtonText: this.transloco.translate('cancel'),
+      confirm: this.transloco.translate('sidebar.import'),
+      cancel: this.transloco.translate('cancel'),
     });
-    if (!result.isConfirmed) return;
+    if (!confirmed) return;
 
     try {
       await this.store.importData(await file.text());
-      Swal.fire({ text: this.transloco.translate('import.success'), icon: 'success' });
+      this.dialog.open({ text: this.transloco.translate('import.success'), confirm: this.transloco.translate('ok'), icon: 'success' });
     } catch (error) {
       const reason = error instanceof Error && error.message == 'newer_version' ? 'newer_version' : 'invalid_file';
-      Swal.fire({ text: this.transloco.translate('import.' + reason), icon: 'error' });
+      this.dialog.open({ text: this.transloco.translate('import.' + reason), confirm: this.transloco.translate('ok'), icon: 'error' });
     }
   }
 }

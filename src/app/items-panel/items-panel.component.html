@@ -29,7 +29,7 @@
             {{'items.hide_mr' | transloco}}
           </div>
           <div class="col-12 text-center">
-            <div class="btn-group" role="group" aria-label="Show or Hide MR locked items">
+            <div class="btn-group" role="group" [attr.aria-label]="'items.hide_mr' | transloco">
               <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavailable"
                 autocomplete="off" (change)="setOption({showOnlyMrAvailable: true})"
                 [checked]="options().showOnlyMrAvailable">
@@ -59,7 +59,7 @@
                 {{'items.hide_mastered' | transloco}}
               </div>
               <div class="col-12 text-center">
-                <div class="btn-group" role="group" aria-label="Show or Hide mastered">
+                <div class="btn-group" role="group" [attr.aria-label]="'items.hide_mastered' | transloco">
                   <input type="radio" class="btn-check" name="hideMastered" id="showMastered"
                     autocomplete="off" (change)="setOption({hideMastered: true})"
                     [checked]="options().hideMastered">
@@ -108,7 +108,7 @@
                     {{'items.hide_founder' | transloco}}
                   </div>
                   <div class="col-12 text-center">
-                    <div class="btn-group" role="group" aria-label="Show or Hide Founders">
+                    <div class="btn-group" role="group" [attr.aria-label]="'items.hide_founder' | transloco">
                       <input type="radio" class="btn-check" name="hideFounders" id="showFounders"
                         autocomplete="off" (change)="setOption({hideFounders: true})"
                         [checked]="options().hideFounders">

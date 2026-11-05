@@ -1,8 +1,8 @@
 {
     "on_update": "Atualização",
     "erase": "Apagar dados? Não poderá ser desfeito",
-    "delete": "Delete",
-    "cancel": "Cancel",
+    "delete": "Apagar",
+    "cancel": "Cancelar",
     "sidebar": {
         "list": "Lista items",
         "delete_all": "Apagar meus dados",
@@ -15,7 +15,11 @@
         "of": "de",
         "export": "Exportar meus dados",
         "import": "Importar dados",
-        "data": "Meus dados"
+        "data": "Meus dados",
+        "mastery_rank": "MASTERY RANK",
+        "items": "itens",
+        "current_xp": "XP atual",
+        "toggle_navigation": "Abrir ou fechar o menu"
     },
     "import": {
         "confirm": "Substituir seu progresso atual pelo arquivo importado? Não poderá ser desfeito",
@@ -55,7 +59,8 @@
             "archwing_primary": "ARCH-ARMA",
             "zaws": "ZAWS",
             "kitguns": "KITGUNS"
-        }
+        },
+        "mr_needed": "MR necessário para equipar o item"
     },
     "incarnon": {
         "description": "Items atuais com sistema Incarnon",
@@ -87,7 +92,11 @@
         "Eris": "ERIS",
         "Kuva_Fortress": "FORTALEZA KUVA",
         "Void": "VOID",
-        "Zariman": "ZARIMAN"
+        "Zariman": "ZARIMAN",
+        "normal": "Normal",
+        "steel_path": "Steel Path",
+        "mr_awarded": "XP de maestria ganho ao completar a missão",
+        "complete_steel_path": "Completar a versão Steel Path"
     },
     "acquisition": {
         "types": {
@@ -204,5 +213,45 @@
         "Legendary 19": "Lendário 19",
         "Legendary 20": "Lendário 20",
         "Legendary 21": "Lendário 21"
+    },
+    "ok": "OK",
+    "go_to_top": "Voltar ao topo",
+    "show_hide": "Mostrar ou ocultar {{name}}",
+    "market": {
+        "tradeable": "{{count}} itens podem ser negociados atualmente.",
+        "on": "em",
+        "prices_based": "Preços baseados em",
+        "last_update": "última atualização de preços em",
+        "my_items": "Meus itens",
+        "best_items": "Itens mais valiosos",
+        "best_relics": "Melhores relíquias para farmar",
+        "my_list": "Sua lista de itens, veja os mais e os menos valiosos",
+        "search": "Busque e adicione itens à lista",
+        "item": "Item",
+        "lowest": "Menor preço",
+        "highest": "Maior preço",
+        "average": "Preço médio",
+        "median": "Preço mediano",
+        "open": "Abrir no warframe.market",
+        "remove": "Remover",
+        "show": {
+            "primeItems": "Mostrar itens prime",
+            "primeSets": "Mostrar sets prime",
+            "relics": "Mostrar relíquias",
+            "helmets": "Mostrar capacetes",
+            "miscellaneous": "Mostrar diversos",
+            "arcanes": "Mostrar arcanos"
+        },
+        "items_on_list": "{{count}} itens na lista. Exibindo {{shown}}.",
+        "all": "todos",
+        "show_more": "Mostrar +100",
+        "load_all": "Carregar todos",
+        "radiant_only": "Apenas relíquias radiantes são exibidas; a proporção é a mesma nas outras versões da relíquia.",
+        "relic_filter": "Filtrar por tipo de relíquia:",
+        "show_all": "Mostrar todas",
+        "relic": "Relíquia",
+        "worst": "Pior resultado",
+        "best": "Melhor resultado",
+        "expected": "Preço esperado"
     }
 }

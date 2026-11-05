@@ -12,7 +12,7 @@
             {{'planets.hide' | transloco}}
           </div>
           <div class="col-12 text-center">
-            <div class="btn-group" role="group" aria-label="Show or Hide complete">
+            <div class="btn-group" role="group" [attr.aria-label]="'planets.hide' | transloco">
               <input type="radio" class="btn-check" name="hideComplete" id="showMastered"
                 autocomplete="off" (change)="hideComplete.set(true)" [checked]="hideComplete()">
                 <label class="btn btn-option btn-toggle" for="showMastered">

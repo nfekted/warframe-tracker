@@ -1,10 +1,10 @@
 <div class="col-12">
-  <p>Only radiant relics are displayed, the ratio remains the same in other versions of the relic.</p>
+  <p>{{'market.radiant_only' | transloco}}</p>
 </div>
 <div class="col-12">
-  <label>Filter by relic type:</label>
+  <label>{{'market.relic_filter' | transloco}}</label>
   <select class="form-select" (change)="setFilter($any($event.target).value)">
-    <option value="">Show all</option>
+    <option value="">{{'market.show_all' | transloco}}</option>
     <hr />
     @for (era of eras; track era) {
       <option [value]="era">{{era}}</option>
@@ -19,16 +19,16 @@
           #
         </th>
         <th scope="col">
-          Relic
+          {{'market.relic' | transloco}}
         </th>
         <th scope="col" class="text-left" colspan="3">
-          Worst result
+          {{'market.worst' | transloco}}
         </th>
         <th scope="col" class="text-left" colspan="3">
-          Best result
+          {{'market.best' | transloco}}
         </th>
         <th scope="col" class="text-left">
-          Expected price
+          {{'market.expected' | transloco}}
         </th>
       </tr>
     </thead>
@@ -45,8 +45,8 @@
             <img [src]="'assets/img/icons/platinum.png'" width="25" />
           </td>
           <td>
-            <a [href]="'https://warframe.market/items/' + item.worst_url" target="_blank"
-              style="color: #ff7575;">
+            <a [href]="'https://warframe.market/items/' + item.worst_url" target="_blank" rel="noopener"
+              [title]="'market.open' | transloco" style="color: #ff7575;">
               <span class="material-symbols-outlined">
                 open_in_new
               </span>
@@ -60,8 +60,8 @@
             <img [src]="'assets/img/icons/platinum.png'" width="25" />
           </td>
           <td>
-            <a [href]="'https://warframe.market/items/' + item.best_url" target="_blank"
-              style="color: #e6d15dbf">
+            <a [href]="'https://warframe.market/items/' + item.best_url" target="_blank" rel="noopener"
+              [title]="'market.open' | transloco" style="color: #e6d15dbf">
               <span class="material-symbols-outlined">
                 open_in_new
               </span>
@@ -75,6 +75,6 @@
       }
     </tbody>
   </table>
-  <p><button class="btn btn-sm btn-primary" (click)="maxRelic.set(maxRelic() + 100)">Show +100</button></p>
-  <p><button class="btn btn-sm btn-primary" (click)="showAll()">Load all</button></p>
+  <p><button class="btn btn-sm btn-primary" (click)="maxRelic.set(maxRelic() + 100)">{{'market.show_more' | transloco}}</button></p>
+  <p><button class="btn btn-sm btn-primary" (click)="showAll()">{{'market.load_all' | transloco}}</button></p>
 </div>

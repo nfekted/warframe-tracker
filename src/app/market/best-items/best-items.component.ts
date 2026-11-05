@@ -1,5 +1,6 @@
 
 import { Component, ChangeDetectionStrategy, computed, signal } from "@angular/core";
+import { TranslocoModule } from '@jsverse/transloco';
 import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
 
 export type TradeCategory = 'primeItems' | 'primeSets' | 'relics' | 'helmets' | 'arcanes' | 'miscellaneous';
@@ -21,6 +22,7 @@ const ITEMS = itemPrices
 
 @Component({
     selector: 'app-best-items',
+    imports: [TranslocoModule],
     templateUrl: './best-items.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './best-items.component.scss'

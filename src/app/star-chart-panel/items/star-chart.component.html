@@ -1,11 +1,11 @@
 <app-tracker-card [id]="planet()" [title]="'planets.'+planet() | transloco" [icon]="'assets/img/locations/'+planet()+'.webp'">
   <ng-container counter>
     <span style="font-size: 25px;">{{mastered()}}/{{locations().length}}</span>
-    <small style="margin-right: 10px;"> (Normal)</small>
+    <small style="margin-right: 10px;"> ({{'planets.normal' | transloco}})</small>
     <span style="font-size: 25px;">
       <img src="assets/img/icons/mastered.png" width="20" />
       {{steelPath()}}/{{locations().length}}
-    </span><small>(Steel path)</small>
+    </span><small>({{'planets.steel_path' | transloco}})</small>
   </ng-container>
   @for (item of visible(); track item.name) {
     <div class="col-12 mt-2">
@@ -15,7 +15,7 @@
           [style.opacity]="item.mastered ? 0.9 : 1"
           (click)="store.toggleLocation(item.name)">
           <small class="float-start" style="font-size: 0.6rem"
-            title="MR awarded for completing the mission">
+            [title]="'planets.mr_awarded' | transloco">
             <img src="assets/img/icons/mastered.png" width="15" />
             MR Exp {{item.mastery_exp}}
           </small>
@@ -27,7 +27,7 @@
           }
         </button>
         <button class="btn btn-sm btn-primary btn-item" [style.opacity]="item.steel_path ? 0.9 : 1"
-          [class.mastered]="item.steel_path" title="Complete steel path version"
+          [class.mastered]="item.steel_path" [title]="'planets.complete_steel_path' | transloco"
           (click)="store.toggleSteelPath(item.name)">
           <img src="assets/img/icons/mastered.png" width="20" />
         </button>

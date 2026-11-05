@@ -1,4 +1,4 @@
-import { ApplicationConfig, inject, isDevMode, provideAppInitializer } from '@angular/core';
+import { ApplicationConfig, inject, isDevMode, provideAppInitializer, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -16,7 +16,7 @@ async function loadProgress() {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, withHashLocation()), provideHttpClient(withXhr()), provideTransloco({
+  providers: [provideZonelessChangeDetection(), provideRouter(routes, withHashLocation()), provideHttpClient(withXhr()), provideTransloco({
     config: {
       availableLangs: ['en', 'pt'],
       defaultLang: 'en',

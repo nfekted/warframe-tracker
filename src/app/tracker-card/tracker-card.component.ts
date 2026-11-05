@@ -1,8 +1,10 @@
 import { Component, ChangeDetectionStrategy, input, signal } from '@angular/core';
+import { TranslocoModule } from '@jsverse/transloco';
 
 //Card shared by the Items, Star Chart and Incarnon panels: header, counters, show/hide toggle and the list
 @Component({
     selector: 'app-tracker-card',
+    imports: [TranslocoModule],
     templateUrl: './tracker-card.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './tracker-card.component.scss'

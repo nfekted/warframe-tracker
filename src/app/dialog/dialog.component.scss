@@ -1,0 +1,22 @@
+dialog {
+    max-width: 26rem;
+    padding: 1.5rem;
+    border: solid 2px rgba(255, 255, 255, 0.75);
+    border-radius: 0.5rem;
+    background-color: #202e37;
+    color: white;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.icon {
+    font-size: 4rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
