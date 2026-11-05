@@ -10,7 +10,7 @@ import warframesJson from '../jsons/warframes.json';
 
 describe('ProgressStore', () => {
   const jsons = new ItemJsons();
-  const ash = warframesJson.find(w => w.name == 'Ash');
+  const ash = warframesJson.find(w => w.name == 'Ash')!;
   const node = starChart[0];
   let store: ProgressStore;
 
@@ -58,7 +58,7 @@ describe('ProgressStore', () => {
     });
 
     it('copies item data from the JSON', () => {
-      const built = store.account().warframes.find(i => i.name == ash.name);
+      const built = store.account().warframes.find(i => i.name == ash.name)!;
 
       expect(built.type).toBe('warframes');
       expect(built.acquisition).toBe(ash.acquisition);
@@ -115,11 +115,11 @@ describe('ProgressStore', () => {
   describe('actions', () => {
     it('toggles an item', () => {
       store.toggleItem('warframes', ash.name);
-      expect(store.account().warframes.find(i => i.name == ash.name).mastered).toBe(true);
+      expect(store.account().warframes.find(i => i.name == ash.name)!.mastered).toBe(true);
       expect(store.account().xp).toBe(ash.mastery_xp);
 
       store.toggleItem('warframes', ash.name);
-      expect(store.account().warframes.find(i => i.name == ash.name).mastered).toBe(false);
+      expect(store.account().warframes.find(i => i.name == ash.name)!.mastered).toBe(false);
       expect(store.account().xp).toBe(0);
     });
 
@@ -127,7 +127,7 @@ describe('ProgressStore', () => {
       store.toggleLocation(node.name);
       store.toggleSteelPath(node.name);
 
-      const built = store.account().locations.find(l => l.name == node.name);
+      const built = store.account().locations.find(l => l.name == node.name)!;
       expect(built.mastered).toBe(true);
       expect(built.steel_path).toBe(true);
       expect(store.account().xp).toBe(node.mastery_exp * 2);
@@ -136,7 +136,7 @@ describe('ProgressStore', () => {
     it('toggles an Incarnon', () => {
       store.toggleIncarnon(incarnon[0].name);
 
-      expect(store.account().incarnons.find(i => i.name == incarnon[0].name).acquired).toBe(true);
+      expect(store.account().incarnons.find(i => i.name == incarnon[0].name)!.acquired).toBe(true);
     });
 
     it.each([
@@ -228,8 +228,8 @@ describe('ProgressStore', () => {
 
       await store.importData(file);
 
-      expect(store.account().warframes.find(i => i.name == ash.name).mastered).toBe(true);
-      expect(store.account().incarnons.find(i => i.name == incarnon[0].name).acquired).toBe(true);
+      expect(store.account().warframes.find(i => i.name == ash.name)!.mastered).toBe(true);
+      expect(store.account().incarnons.find(i => i.name == incarnon[0].name)!.acquired).toBe(true);
       expect(store.drifter()).toBe(5);
     });
 

@@ -26,7 +26,7 @@ describe('DialogComponent', () => {
     el = fixture.nativeElement;
   });
 
-  const dialog = () => el.querySelector('dialog');
+  const dialog = () => el.querySelector('dialog')!;
   const button = (value: string) => el.querySelector<HTMLButtonElement>(`button[value="${value}"]`);
 
   async function open(cancel?: string) {
@@ -41,9 +41,9 @@ describe('DialogComponent', () => {
 
     expect(dialog().open).toBe(true);
     expect(dialog().textContent).toContain('Erase all data?');
-    expect(button('confirm').textContent).toBe('Delete');
-    expect(button('confirm').classList).toContain('btn-danger');
-    expect(button('cancel').textContent).toBe('Cancel');
+    expect(button('confirm')!.textContent).toBe('Delete');
+    expect(button('confirm')!.classList).toContain('btn-danger');
+    expect(button('cancel')!.textContent).toBe('Cancel');
   });
 
   it('shows a single button for messages', async () => {
@@ -60,7 +60,7 @@ describe('DialogComponent', () => {
     const result = open('Cancel');
     await TestBed.tick();
 
-    button(value).click();
+    button(value)!.click();
 
     expect(await result).toBe(expected);
     expect(dialog().open).toBe(false);

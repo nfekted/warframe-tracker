@@ -57,7 +57,7 @@ export class MarketComponent {
 
   //Saved ids that are no longer in the price list are skipped
   myList = computed(() => {
-    const list = this.store.marketIds().map(id => this.prices.get(id)).filter(p => p);
+    const list = this.store.marketIds().map(id => this.prices.get(id)).filter(p => p !== undefined);
     const sort = this.sortState();
     if (!sort) return list;
 

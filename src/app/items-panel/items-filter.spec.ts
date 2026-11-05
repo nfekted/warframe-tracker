@@ -26,13 +26,13 @@ describe('filterCategories', () => {
     account.rifles = [item('rifles', 'Braton', 'Market', 0, true)];
   });
 
-  function visible(filters: Partial<ItemFilters>, type: ItemType = 'warframes'): string[] {
+  function visible(filters: Partial<ItemFilters>, type: ItemType = 'warframes'): string[] | undefined {
     const category = filterCategories(account, { ...noFilters, ...filters }).find(c => c.type == type);
     return category?.visible.map(i => i.name);
   }
 
   it('shows every item without filters and keeps all items for the counter', () => {
-    const warframes = filterCategories(account, noFilters).find(c => c.type == 'warframes');
+    const warframes = filterCategories(account, noFilters).find(c => c.type == 'warframes')!;
 
     expect(warframes.visible.length).toBe(3);
     expect(warframes.items.length).toBe(3);

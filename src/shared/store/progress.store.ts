@@ -34,7 +34,7 @@ export class ProgressStore {
 
     readonly account = computed(() => this.buildAccount(this.progress()));
     readonly masteryRank = computed(() => this.mrList.filter(mr => mr.xp <= this.account().xp).at(-1) ?? this.mrList[0]);
-    readonly nextRank = computed(() => this.mrList.find(mr => mr.xp > this.account().xp) ?? this.mrList.at(-1));
+    readonly nextRank = computed(() => this.mrList.find(mr => mr.xp > this.account().xp) ?? this.mrList[this.mrList.length - 1]);
     readonly railjack = computed(() => this.progress().railjack);
     readonly drifter = computed(() => this.progress().drifter);
     readonly lang = computed(() => this.progress().lang);

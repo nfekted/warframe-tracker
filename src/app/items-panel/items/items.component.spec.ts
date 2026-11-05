@@ -35,8 +35,8 @@ describe('ItemsComponent', () => {
   it('counts every item but lists only the visible ones', () => {
     const el = render([ash, excalibur]);
 
-    expect(el.querySelector('[counter]').textContent).toBe('1/3');
-    expect([...el.querySelectorAll('button.btn-item')].map(b => b.textContent.replace(/\s+/g, ' ').trim()))
+    expect(el.querySelector('[counter]')!.textContent).toBe('1/3');
+    expect([...el.querySelectorAll('button.btn-item')].map(b => b.textContent!.replace(/\s+/g, ' ').trim()))
       .toEqual(['MR 0 ASH check', 'MR 0 EXCALIBUR PRIME']);
   });
 
@@ -50,7 +50,7 @@ describe('ItemsComponent', () => {
   });
 
   it('links to the wiki in a new tab', () => {
-    const link = render([wisp]).querySelector('a');
+    const link = render([wisp]).querySelector('a')!;
 
     expect(link.href).toBe('https://wiki.warframe.com/w/Wisp');
     expect(link.target).toBe('_blank');
@@ -58,20 +58,20 @@ describe('ItemsComponent', () => {
   });
 
   it('toggles the item in the store', () => {
-    render([wisp]).querySelector<HTMLButtonElement>('button.btn-item').click();
+    render([wisp]).querySelector<HTMLButtonElement>('button.btn-item')!.click();
 
-    expect(TestBed.inject(ProgressStore).account().warframes.find(i => i.name == 'Wisp').mastered).toBe(true);
+    expect(TestBed.inject(ProgressStore).account().warframes.find(i => i.name == 'Wisp')!.mastered).toBe(true);
   });
 
   it('hides and shows the list', () => {
     const el = render([wisp]);
-    const list = el.querySelector('button.btn-item').closest('.row').parentElement;
+    const list = el.querySelector('button.btn-item')!.closest('.row')!.parentElement!;
 
-    el.querySelector<HTMLInputElement>('#hidewarframes').dispatchEvent(new Event('change'));
+    el.querySelector<HTMLInputElement>('#hidewarframes')!.dispatchEvent(new Event('change'));
     TestBed.tick();
     expect(list.hidden).toBe(true);
 
-    el.querySelector<HTMLInputElement>('#showwarframes').dispatchEvent(new Event('change'));
+    el.querySelector<HTMLInputElement>('#showwarframes')!.dispatchEvent(new Event('change'));
     TestBed.tick();
     expect(list.hidden).toBe(false);
   });

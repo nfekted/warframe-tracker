@@ -53,7 +53,7 @@ describe('Item JSON mastery XP', () => {
     ['melees', 'Paracesis'],
     ['archwing_primary', 'Kuva Ayanga'],
   ] as [ItemType, string][])('%s "%s" gives 4000 XP', (type, name) => {
-    expect(jsons[type].find(i => i.name == name).mastery_xp).toBe(4000);
+    expect(jsons[type].find(i => i.name == name)!.mastery_xp).toBe(4000);
   });
 });
 
