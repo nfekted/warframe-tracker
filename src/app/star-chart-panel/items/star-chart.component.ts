@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Account } from '../../../shared/models/account.model';
-import { ItemJsons } from '../../../shared/models/item-jsons.model';
 import { StarChart } from '../../../shared/models/star-chart.model';
 import { TranslocoModule } from '@jsverse/transloco';
 
@@ -14,8 +13,6 @@ import { TranslocoModule } from '@jsverse/transloco';
     styleUrl: './star-chart.component.scss'
 })
 export class StarChartComponent {
-
-  jsons: ItemJsons = new ItemJsons();
 
   @Input() account: Account;
   @Input() image: string = '';

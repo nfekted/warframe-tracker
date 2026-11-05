@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +8,6 @@ import { Item } from '../shared/models/item.model';
 import { Util } from '../shared/utils/util';
 import { MasteryRank } from '../shared/models/mastery-rank.model';
 import { ItemJsons } from '../shared/models/item-jsons.model';
-import { } from '@angular/common/http';
 import { MarketComponent } from './market/market.component';
 import { StarChart } from '../shared/models/star-chart.model';
 import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.component';
@@ -23,7 +21,7 @@ import { Incarnons } from '../shared/models/incarnons.model';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, RouterModule, SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent, IncarnonPanelComponent, FormsModule],
+    imports: [SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent, IncarnonPanelComponent, FormsModule],
     templateUrl: './app.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
@@ -37,7 +35,6 @@ export class AppComponent {
   nextRank: MasteryRank = new MasteryRank();
 
   itemsCount: number = 0;
-  maxXp: number = 0;
 
   jsonList: ItemJsons = new ItemJsons();
 

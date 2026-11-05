@@ -11,13 +11,13 @@
           <option [ngValue]="null">{{'items.all_acquisition' | transloco}}</option>
           <hr />
           @for (item of acquisitionList; track item) {
-            <option [ngValue]="item">{{('acquisiton.types.'+item.type) |
+            <option [ngValue]="item">{{('acquisition.types.'+item.type) |
             transloco}}</option>
           }
         </select>
         @if (acquisitionFilter) {
           <small
-            style="color: lightgray;">{{('acquisiton.descriptions.'+acquisitionFilter.type) |
+            style="color: lightgray;">{{('acquisition.descriptions.'+acquisitionFilter.type) |
           transloco}}</small>
         }
       </div>
@@ -29,20 +29,20 @@
             {{'items.hide_mr' | transloco}}
           </div>
           <div class="col-12 text-center">
-            <div class="btn-group" role="group" aria-label="Show or Hide MR locked itens">
-              <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavaible"
+            <div class="btn-group" role="group" aria-label="Show or Hide MR locked items">
+              <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="hideUnavailable"
                 autocomplete="off" (change)="showOnlyMrAvailable = true;saveOptions()"
                 [attr.checked]="showOnlyMrAvailable ? 'checked' : null">
-                <label class="btn btn-option btn-toggle" for="hideUnavaible">
+                <label class="btn btn-option btn-toggle" for="hideUnavailable">
                   <span class="material-symbols-outlined">
                     check
                   </span>
                 </label>
 
-                <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="showUnavaible"
+                <input type="radio" class="btn-check" name="showOnlyMrAvailable" id="showUnavailable"
                   autocomplete="off" (change)="showOnlyMrAvailable = false;saveOptions()"
                   [attr.checked]="!showOnlyMrAvailable ? 'checked' : null">
-                  <label class="btn btn-option btn-toggle" for="showUnavaible">
+                  <label class="btn btn-option btn-toggle" for="showUnavailable">
                     <span class="material-symbols-outlined">
                       close
                     </span>

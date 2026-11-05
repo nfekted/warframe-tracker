@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { MasteryRank } from '../../shared/models/mastery-rank.model';
 import Swal from 'sweetalert2';
 import { Util } from '../../shared/utils/util';
-import { ApiService } from '../../services/api.service';
 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 

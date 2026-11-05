@@ -7,7 +7,7 @@ import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@jsverse/transloco';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(withXhr()), provideHttpClient(withXhr()), provideTransloco({
+  providers: [provideRouter(routes), provideHttpClient(withXhr()),provideTransloco({
     config: {
       availableLangs: ['en', 'pt'],
       defaultLang: 'en',

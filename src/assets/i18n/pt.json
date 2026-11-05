@@ -80,7 +80,7 @@
         "Void": "VOID",
         "Zariman": "ZARIMAN"
     },
-    "acquisiton": {
+    "acquisition": {
         "types": {
             "Arbitration": "Arbitragem ",
             "Automatically acquired": "Adiquirido automáticamente",
