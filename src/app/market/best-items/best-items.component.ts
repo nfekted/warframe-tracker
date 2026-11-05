@@ -1,55 +1,52 @@
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { Component, ChangeDetectionStrategy, computed, signal } from "@angular/core";
 import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
+
+export type TradeCategory = 'primeItems' | 'primeSets' | 'relics' | 'helmets' | 'arcanes' | 'miscellaneous';
+
+//Each item belongs to a single category, worked out from its name
+export function tradeCategory(name: string): TradeCategory {
+    if (name.includes(' Prime Set')) return 'primeSets';
+    if (name.includes(' Prime ')) return 'primeItems';
+    if (/^(Lith|Meso|Neo|Axi|Requiem) /.test(name)) return 'relics';
+    if (name.includes(' Helmet')) return 'helmets';
+    if (name.includes('Arcane ')) return 'arcanes';
+    return 'miscellaneous';
+}
+
+//Classified and sorted by median price once
+const ITEMS = itemPrices
+    .map(item => ({ ...item, category: tradeCategory(item.name) }))
+    .sort((a, b) => b.most_frequent - a.most_frequent);
 
 @Component({
     selector: 'app-best-items',
-    imports: [FormsModule],
     templateUrl: './best-items.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './best-items.component.scss'
 })
 export class BestItemsComponent {
 
-    maxRender: number = 100;
-    tradeItem: { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number }[] = [];
+    maxRender = signal(100);
+    hidden = signal(new Set<TradeCategory>());
 
-    showPrimeItems: boolean = true;
-    showPrimeSets: boolean = true;
-    showRelics: boolean = true;
-    showHelmet: boolean = true;
-    showMiscellaneous: boolean = true;
-    showArcanes: boolean = true;
+    tradeItem = computed(() => {
+        const hidden = this.hidden();
+        return ITEMS.filter(item => !hidden.has(item.category));
+    });
 
-    ngOnInit(): void {
-        this.loadItems();
+    rendered = computed(() => this.tradeItem().slice(0, this.maxRender()));
+
+    showAll() {
+        this.maxRender.set(Infinity);
     }
 
-    loadItems() {
-        this.tradeItem = [...itemPrices];
-
-        if (!this.showMiscellaneous) this.tradeItem = this.tradeItem.filter(i =>
-            i.name.includes(' Prime ')
-            || i.name.includes(' Prime Set')
-            || i.name.includes(' Helmet')
-            || i.name.includes('Lith')
-            || i.name.includes('Meso')
-            || i.name.includes('Neo')
-            || i.name.includes('Axi')
-            || i.name.includes('Requiem')
-        );
-
-        if (!this.showPrimeItems) this.tradeItem = this.tradeItem.filter(i => !i.name.includes(' Prime ') || i.name.includes(' Prime Set'));
-
-        if (!this.showPrimeSets) this.tradeItem = this.tradeItem.filter(i => !i.name.includes(' Prime Set'));
-
-        if (!this.showRelics) this.tradeItem = this.tradeItem.filter(i => !i.name.includes('Lith') && !i.name.includes('Meso') && !i.name.includes('Neo') && !i.name.includes('Axi') && !i.name.includes('Requiem'));
-
-        if (!this.showHelmet) this.tradeItem = this.tradeItem.filter(i => !i.name.includes(' Helmet'));
-
-        if(!this.showArcanes) this.tradeItem = this.tradeItem.filter(i => !i.name.includes('Arcane '));
-
-        this.tradeItem.sort((a, b) => { return b.most_frequent - a.most_frequent });
+    show(category: TradeCategory, show: boolean) {
+        this.hidden.update(hidden => {
+            const next = new Set(hidden);
+            if (show) next.delete(category);
+            else next.add(category);
+            return next;
+        });
     }
 }

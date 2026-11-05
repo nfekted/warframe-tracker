@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
@@ -9,19 +8,29 @@ import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
 
 type ItemPrice = { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number };
+type Tradeable = { id: string, url: string, name_en: string, name_pt: string };
+
+const SEARCH_DELAY = 150;
+const MAX_RESULTS = 50;
+
+//Lower case and without accents, so "lamina" finds "Lâmina"
+export const normalize = (text: string) => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+
+//English and Portuguese names normalized once
+const SEARCH_INDEX = tradeables.map(item => ({ item, text: normalize(item.name_en + '\n' + item.name_pt) }));
 
 @Component({
     selector: 'app-market',
-    imports: [FormsModule, BestRelicsComponent, BestItemsComponent],
+    imports: [BestRelicsComponent, BestItemsComponent],
     templateUrl: './market.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './market.component.scss'
 })
 export class MarketComponent {
   private store = inject(ProgressStore);
   private prices = new Map<string, ItemPrice>(itemPrices.map(p => [p.id, p]));
 
-  tradeableList: { id: string, url: string, name_en: string, name_pt: string }[] = tradeables;
+  tradeableCount = tradeables.length;
   marketData = MARKET_DATA;
 
   //Clicking the same column again reverses the order
@@ -31,8 +40,19 @@ export class MarketComponent {
     return sort && !sort.desc ? sort.field : '';
   });
 
-  searchTerm: string = '';
-  filteredItems = [];
+  private searchTimer: ReturnType<typeof setTimeout> | undefined;
+  private searchTerm = signal('');
+
+  filteredItems = computed(() => {
+    const term = normalize(this.searchTerm().trim());
+    if (!term) return [];
+    const results: Tradeable[] = [];
+    for (const entry of SEARCH_INDEX) {
+      if (entry.text.includes(term)) results.push(entry.item);
+      if (results.length == MAX_RESULTS) break;
+    }
+    return results;
+  });
 
   //Saved ids that are no longer in the price list are skipped
   myList = computed(() => {
@@ -47,25 +67,15 @@ export class MarketComponent {
     });
   });
 
-  onSearchChange(event: any) {
-    this.searchTerm = event.target.value;
-    this.filterItems();
+  onSearchChange(value: string) {
+    clearTimeout(this.searchTimer);
+    this.searchTimer = setTimeout(() => this.searchTerm.set(value), SEARCH_DELAY);
   }
 
-  filterItems() {
-    if (!this.searchTerm) {
-      this.filteredItems = [];
-      return;
-    }
-    const filterValue = this.searchTerm.toLowerCase();
-    this.filteredItems = this.tradeableList.filter(item =>
-      item.name_en.toLowerCase().includes(filterValue) || item.name_pt.toLocaleLowerCase().includes(filterValue)
-    );
-  }
-
-  selectItem(item: { id: string }) {
-    this.searchTerm = '';
-    this.filteredItems = [];
+  selectItem(item: Tradeable, input: HTMLInputElement) {
+    clearTimeout(this.searchTimer);
+    input.value = '';
+    this.searchTerm.set('');
     if (this.prices.has(item.id)) this.store.addMarketItem(item.id);
   }
 

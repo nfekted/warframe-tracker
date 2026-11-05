@@ -1,49 +1,37 @@
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { Component, ChangeDetectionStrategy, computed, signal } from "@angular/core";
 import relicPrices from '../../../shared/jsons/tradeable/relics.json';
+
+//Era (Lith, Meso, Neo, Axi, Requiem) taken from the name and sorted by expected price once
+const RELICS = relicPrices
+    .map(relic => ({ ...relic, era: relic.name.split(' ')[0] }))
+    .sort((a, b) => b.expected - a.expected);
 
 @Component({
     selector: 'app-best-relics',
-    imports: [FormsModule],
     templateUrl: './best-relics.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './best-relics.component.scss'
 })
 export class BestRelicsComponent {
 
-    relics: { name: string, worst: number, worst_name: string, worst_url: string, best: number, best_name: string, best_url: string, expected: number }[] = [];
-    maxRelic: number = 100;
-    relicFilter: string;
+    eras = ['Lith', 'Meso', 'Neo', 'Axi', 'Requiem'];
+    maxRelic = signal(100);
+    relicFilter = signal('');
 
-    ngOnInit(): void {
-        this.loadRelics();
+    relics = computed(() => {
+        const era = this.relicFilter();
+        return era ? RELICS.filter(r => r.era == era) : RELICS;
+    });
+
+    rendered = computed(() => this.relics().slice(0, this.maxRelic()));
+
+    setFilter(era: string) {
+        this.relicFilter.set(era);
+        this.maxRelic.set(100);
     }
 
-    loadRelics() {
-        this.maxRelic = 100;
-        this.relics = [...relicPrices];
-
-        switch (this.relicFilter) {
-            case 'Lith':
-                this.relics = this.relics.filter(r => r.name.includes('Lith '));
-                break;
-            case 'Meso':
-                this.relics = this.relics.filter(r => r.name.includes('Meso '));
-                break;
-            case 'Neo':
-                this.relics = this.relics.filter(r => r.name.includes('Neo '));
-                break;
-            case 'Axi':
-                this.relics = this.relics.filter(r => r.name.includes('Axi '));
-                break;
-            case 'Requiem':
-                this.relics = this.relics.filter(r => r.name.includes('Requiem '));
-                break;
-        }
-
-        this.relics.sort((a, b) => { return b.expected - a.expected });
+    showAll() {
+        this.maxRelic.set(Infinity);
     }
-
 }
-

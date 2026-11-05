@@ -9,7 +9,7 @@
         <div class="col-12 text-center">
           <div class="btn-group" role="group" aria-label="Show or Hide prime items">
             <input type="radio" class="btn-check" name="showPrimeItems" id="showPrime" autocomplete="off"
-              (change)="showPrimeItems = true;loadItems();" checked>
+              (change)="show('primeItems', true)" [checked]="!hidden().has('primeItems')">
               <label class="btn btn-option btn-toggle" for="showPrime">
                 <span class="material-symbols-outlined">
                   check
@@ -17,7 +17,7 @@
               </label>
 
               <input type="radio" class="btn-check" name="showPrimeItems" id="hidePrime" autocomplete="off"
-                (change)="showPrimeItems = false;loadItems();">
+                (change)="show('primeItems', false)" [checked]="hidden().has('primeItems')">
                 <label class="btn btn-option btn-toggle" for="hidePrime">
                   <span class="material-symbols-outlined">
                     close
@@ -36,7 +36,7 @@
             <div class="col-12 text-center">
               <div class="btn-group" role="group" aria-label="Show or Hide prime sets">
                 <input type="radio" class="btn-check" name="showPrimeSets" id="showSets" autocomplete="off"
-                  (change)="showPrimeSets = true;loadItems();" checked>
+                  (change)="show('primeSets', true)" [checked]="!hidden().has('primeSets')">
                   <label class="btn btn-option btn-toggle" for="showSets">
                     <span class="material-symbols-outlined">
                       check
@@ -44,7 +44,7 @@
                   </label>
 
                   <input type="radio" class="btn-check" name="showPrimeSets" id="hideSets" autocomplete="off"
-                    (change)="showPrimeSets = false;loadItems();">
+                    (change)="show('primeSets', false)" [checked]="hidden().has('primeSets')">
                     <label class="btn btn-option btn-toggle" for="hideSets">
                       <span class="material-symbols-outlined">
                         close
@@ -63,7 +63,7 @@
                 <div class="col-12 text-center">
                   <div class="btn-group" role="group" aria-label="Show or Hide prime sets">
                     <input type="radio" class="btn-check" name="showRelics" id="showRelic" autocomplete="off"
-                      (change)="showRelics = true;loadItems();" checked>
+                      (change)="show('relics', true)" [checked]="!hidden().has('relics')">
                       <label class="btn btn-option btn-toggle" for="showRelic">
                         <span class="material-symbols-outlined">
                           check
@@ -71,7 +71,7 @@
                       </label>
 
                       <input type="radio" class="btn-check" name="showRelics" id="hideRelic" autocomplete="off"
-                        (change)="showRelics = false;loadItems();">
+                        (change)="show('relics', false)" [checked]="hidden().has('relics')">
                         <label class="btn btn-option btn-toggle" for="hideRelic">
                           <span class="material-symbols-outlined">
                             close
@@ -90,7 +90,7 @@
                     <div class="col-12 text-center">
                       <div class="btn-group" role="group" aria-label="Show or Hide helmets">
                         <input type="radio" class="btn-check" name="showHelmet" id="showHelms" autocomplete="off"
-                          (change)="showHelmet = true;loadItems();" checked>
+                          (change)="show('helmets', true)" [checked]="!hidden().has('helmets')">
                           <label class="btn btn-option btn-toggle" for="showHelms">
                             <span class="material-symbols-outlined">
                               check
@@ -98,7 +98,7 @@
                           </label>
 
                           <input type="radio" class="btn-check" name="showHelmet" id="hideHelmet" autocomplete="off"
-                            (change)="showHelmet = false;loadItems();">
+                            (change)="show('helmets', false)" [checked]="hidden().has('helmets')">
                             <label class="btn btn-option btn-toggle" for="hideHelmet">
                               <span class="material-symbols-outlined">
                                 close
@@ -117,7 +117,7 @@
                         <div class="col-12 text-center">
                           <div class="btn-group" role="group" aria-label="Show or Hide miscellaneous">
                             <input type="radio" class="btn-check" name="showMiscellaneous" id="showMisc" autocomplete="off"
-                              (change)="showMiscellaneous = true;loadItems();" checked>
+                              (change)="show('miscellaneous', true)" [checked]="!hidden().has('miscellaneous')">
                               <label class="btn btn-option btn-toggle" for="showMisc">
                                 <span class="material-symbols-outlined">
                                   check
@@ -125,7 +125,7 @@
                               </label>
 
                               <input type="radio" class="btn-check" name="showMiscellaneous" id="hideMisc" autocomplete="off"
-                                (change)="showMiscellaneous = false;loadItems();">
+                                (change)="show('miscellaneous', false)" [checked]="hidden().has('miscellaneous')">
                                 <label class="btn btn-option btn-toggle" for="hideMisc">
                                   <span class="material-symbols-outlined">
                                     close
@@ -144,7 +144,7 @@
                             <div class="col-12 text-center">
                               <div class="btn-group" role="group" aria-label="Show or Hide arcanes">
                                 <input type="radio" class="btn-check" name="showArcanes" id="showArc" autocomplete="off"
-                                  (change)="showArcanes = true;loadItems();" checked>
+                                  (change)="show('arcanes', true)" [checked]="!hidden().has('arcanes')">
                                   <label class="btn btn-option btn-toggle" for="showArc">
                                     <span class="material-symbols-outlined">
                                       check
@@ -152,7 +152,7 @@
                                   </label>
 
                                   <input type="radio" class="btn-check" name="showArcanes" id="hideArc" autocomplete="off"
-                                    (change)="showArcanes = false;loadItems();">
+                                    (change)="show('arcanes', false)" [checked]="hidden().has('arcanes')">
                                     <label class="btn btn-option btn-toggle" for="hideArc">
                                       <span class="material-symbols-outlined">
                                         close
@@ -166,7 +166,7 @@
                         </div>
 
                         <div class="col-12 mt-4">
-                          {{tradeItem.length}} items on list. Displaying {{maxRender == 5000 ? 'All' : maxRender}}.
+                          {{tradeItem().length}} items on list. Displaying {{maxRender() >= tradeItem().length ? 'All' : maxRender()}}.
                           <table class="table table-dark mt-4">
                             <thead>
                               <tr>
@@ -192,7 +192,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                              @for (item of tradeItem.slice(0, maxRender); track item; let i = $index) {
+                              @for (item of rendered(); track item.id; let i = $index) {
                                 <tr class="text-center">
                                   <td scope="row" class="text-start">{{i+1}}</td>
                                   <td scope="row" class="text-start">{{item.name}}</td>
@@ -231,6 +231,6 @@
                               }
                             </tbody>
                           </table>
-                          <p><button class="btn btn-sm btn-primary" (click)="maxRender=maxRender+100">Show +100</button></p>
-                          <p><button class="btn btn-sm btn-primary" (click)="maxRender=5000">Load all</button></p>
+                          <p><button class="btn btn-sm btn-primary" (click)="maxRender.set(maxRender() + 100)">Show +100</button></p>
+                          <p><button class="btn btn-sm btn-primary" (click)="showAll()">Load all</button></p>
                         </div>

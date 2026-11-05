@@ -3,14 +3,12 @@
 </div>
 <div class="col-12">
   <label>Filter by relic type:</label>
-  <select class="form-select" (change)="loadRelics()" [(ngModel)]="relicFilter">
-    <option [ngValue]="null">Show all</option>
+  <select class="form-select" (change)="setFilter($any($event.target).value)">
+    <option value="">Show all</option>
     <hr />
-    <option [ngValue]="'Lith'">Lith</option>
-    <option [ngValue]="'Meso'">Meso</option>
-    <option [ngValue]="'Neo'">Neo</option>
-    <option [ngValue]="'Axi'">Axi</option>
-    <option [ngValue]="'Requiem'">Requiem</option>
+    @for (era of eras; track era) {
+      <option [value]="era">{{era}}</option>
+    }
   </select>
 </div>
 <div class="col-12">
@@ -35,7 +33,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (item of relics.slice(0, maxRelic); track item; let i = $index) {
+      @for (item of rendered(); track item.name; let i = $index) {
         <tr class="text-left">
           <td scope="row" class="text-start">{{i+1}}</td>
           <td scope="row" class="text-start">{{item.name}}</td>
@@ -77,6 +75,6 @@
       }
     </tbody>
   </table>
-  <p><button class="btn btn-sm btn-primary" (click)="maxRelic=maxRelic+100">Show +100</button></p>
-  <p><button class="btn btn-sm btn-primary" (click)="maxRelic=5000">Load all</button></p>
+  <p><button class="btn btn-sm btn-primary" (click)="maxRelic.set(maxRelic() + 100)">Show +100</button></p>
+  <p><button class="btn btn-sm btn-primary" (click)="showAll()">Load all</button></p>
 </div>

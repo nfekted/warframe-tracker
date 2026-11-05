@@ -1,7 +1,7 @@
 <div class="row page">
   <div class="col-12">
     <p>
-      {{tradeableList.length}} items can currently be traded. ({{marketData.tradeables.version}} on {{marketData.tradeables.date}}: <a
+      {{tradeableCount}} items can currently be traded. ({{marketData.tradeables.version}} on {{marketData.tradeables.date}}: <a
     [href]="marketData.tradeables.wiki" target="_blank" style="color: white;">{{marketData.tradeables.update}}</a>)
   </p>
 </div>
@@ -34,13 +34,13 @@
       <div class="col-12">
         <p>Your item list, check most and least valuable items</p>
         <div>
-          <input type="text" [(ngModel)]="searchTerm" (input)="onSearchChange($event)"
+          <input #search type="text" (input)="onSearchChange(search.value)"
             class="form-control" placeholder="Search and add item to list" step="color: white">
 
-            @if (filteredItems.length > 0) {
+            @if (filteredItems().length > 0) {
               <div class="autocomplete-list">
-                @for (item of filteredItems; track item) {
-                  <div (click)="selectItem(item)"
+                @for (item of filteredItems(); track item.id) {
+                  <div (click)="selectItem(item, search)"
                     class="autocomplete-item">
                     {{item.name_en}}
                   </div>
