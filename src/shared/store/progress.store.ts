@@ -145,7 +145,7 @@ export class ProgressStore {
             const mastered = new Set(progress.mastered[type] ?? []);
             account[type] = this.jsons[type]
                 .map(data => {
-                    const item = new Item(data.name, type, data.acquisition, data.mastery_requirement, data.mastery_xp);
+                    const item = new Item(data.name, type, data.acquisition, data.mastery_requirement, data.mastery_xp, data.acquisitionDescription);
                     item.mastered = mastered.has(data.name);
                     return item;
                 })
@@ -163,7 +163,7 @@ export class ProgressStore {
 
         const acquired = new Set(progress.incarnons);
         account.incarnons = incarnon.map(data => {
-            const item = new Incarnons(data.name, data.acquisition);
+            const item = new Incarnons(data.name, data.acquisition, data.acquisitionDescription);
             item.acquired = acquired.has(data.name);
             return item;
         });

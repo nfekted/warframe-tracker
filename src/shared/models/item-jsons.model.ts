@@ -44,8 +44,4 @@ export class ItemJsons {
     melees: ItemData[] = meleeJson;
     pistols: ItemData[] = pistolsJson;
     rifles: ItemData[] = riflesJson;
-
-    constructor() {
-
-    }
 }

@@ -77,7 +77,8 @@ src/
 │   ├── app.routes.ts          # #/items, #/incarnon, #/star-chart, #/market, each loaded on demand
 │   ├── transloco-loader.ts    # Loads assets/i18n/{lang}.json
 │   ├── sidebar/               # MR, XP, intrinsics, navigation, export/import, delete data
-│   ├── items-panel/           # Mastery checklist + filters (items/ = one category card)
+│   ├── tracker-card/          # Card shared by the panels: header, counters, show/hide, list
+│   ├── items-panel/           # Mastery checklist + filters (items-filter.ts; items/ = one category card)
 │   ├── star-chart-panel/      # Star Chart nodes per planet (items/ = one planet card)
 │   ├── incarnon-panel/        # Incarnon adapters per source (items/ = one group card)
 │   └── market/                # Watchlist, best-items/, best-relics/

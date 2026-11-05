@@ -14,7 +14,7 @@
           <div class="col-12 text-center">
             <div class="btn-group" role="group" aria-label="Show or Hide complete">
               <input type="radio" class="btn-check" name="hideComplete" id="showMastered"
-                autocomplete="off" (change)="hideComplete = true">
+                autocomplete="off" (change)="hideComplete.set(true)" [checked]="hideComplete()">
                 <label class="btn btn-option btn-toggle" for="showMastered">
                   <span class="material-symbols-outlined">
                     check
@@ -22,7 +22,7 @@
                 </label>
 
                 <input type="radio" class="btn-check" name="hideComplete" id="hideComplete"
-                  autocomplete="off" (change)="hideComplete = false" checked>
+                  autocomplete="off" (change)="hideComplete.set(false)" [checked]="!hideComplete()">
                   <label class="btn btn-option btn-toggle" for="hideComplete">
                     <span class="material-symbols-outlined">
                       close
@@ -38,12 +38,9 @@
         <small>{{'on_update' | transloco}}: {{gameUpdate.name}} ({{gameUpdate.date}})</small>
       </div>
       <hr class="mt-4" />
-      @for (item of locations; track item) {
-        @if (showCategory(item)) {
-          <div class="col-12 col-md-3">
-            <app-star-chart [image]="item" [locations]="store.account().locations"
-            [hideComplete]="hideComplete"></app-star-chart>
-          </div>
-        }
+      @for (group of planets(); track group.planet) {
+        <div class="col-12 col-md-3">
+          <app-star-chart [planet]="group.planet" [locations]="group.locations" [visible]="group.visible"></app-star-chart>
+        </div>
       }
     </div>

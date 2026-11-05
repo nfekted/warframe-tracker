@@ -1,74 +1,44 @@
-<div class="row text-center mt-5">
-  <div class="col-12">
-    <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
-    <span style="font-size: 25px;">{{'planets.'+image | transloco}}</span><br />
-    <span style="font-size: 25px;">{{itemMastered}}/{{planetLocations.length}}</span>
+<app-tracker-card [id]="planet()" [title]="'planets.'+planet() | transloco" [icon]="'assets/img/locations/'+planet()+'.webp'">
+  <ng-container counter>
+    <span style="font-size: 25px;">{{mastered()}}/{{locations().length}}</span>
     <small style="margin-right: 10px;"> (Normal)</small>
     <span style="font-size: 25px;">
-      <img src=" assets/img/icons/mastered.png" width="20" />
-      {{itemSteel}}/{{planetLocations.length}}
-      </span><small>(Steel path)</small>
-    </div>
-    <div class="col-12">
-      <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
-        <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
-          (change)="show = true" checked>
-          <label class="btn btn-option btn-toggle" [for]="'show'+image">
-            <span class="material-symbols-outlined">
+      <img src="assets/img/icons/mastered.png" width="20" />
+      {{steelPath()}}/{{locations().length}}
+    </span><small>(Steel path)</small>
+  </ng-container>
+  @for (item of visible(); track item.name) {
+    <div class="col-12 mt-2">
+      <div class="btn-group w" role="group">
+        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
+          [class.mastered]="item.mastered" [class.tenet]="item.name.includes('Junction')"
+          [style.opacity]="item.mastered ? 0.9 : 1"
+          (click)="store.toggleLocation(item.name)">
+          <small class="float-start" style="font-size: 0.6rem"
+            title="MR awarded for completing the mission">
+            <img src="assets/img/icons/mastered.png" width="15" />
+            MR Exp {{item.mastery_exp}}
+          </small>
+          {{item.name | uppercase}}
+          @if (item.mastered) {
+            <span class="material-symbols-outlined" style="font-size: 20px;">
               check
             </span>
-          </label>
-
-          <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
-            (change)="show = false">
-            <label class="btn btn-option btn-toggle" [for]="'hide'+image">
-              <span class="material-symbols-outlined">
-                close
-              </span>
-            </label>
-          </div>
-        </div>
-        <!-- ITEMS -->
-        @if (show) {
-          <div class="col-12">
-            <div class="row">
-              @for (item of locations; track item; let i = $index) {
-                @if (showItem(item)) {
-                  <div class="col-12 mt-2">
-                    <div class="btn-group w" role="group">
-                      <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-                        [ngClass]="{'mastered': item.mastered,'tenet': item.name.includes('Junction')}"
-                        [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                        (click)="store.toggleLocation(item.name)">
-                        <small class="float-start" style="font-size: 0.6rem"
-                          title="MR awarded for completing the mission">
-                          <img src="assets/img/icons/mastered.png" width="15" />
-                          MR Exp {{item.mastery_exp}}
-                        </small>
-                        {{item.name | uppercase}}
-                        @if (item.mastered) {
-                          <span class="material-symbols-outlined" style="font-size: 20px;">
-                            check
-                          </span>
-                        }
-                      </button>
-                      <button class="btn btn-sm btn-primary btn-item" [ngStyle]="{'opacity': item.steel_path ? 0.9 : 1}"
-                        [ngClass]="{'mastered': item.steel_path}" title="Complete steel path version"
-                        (click)="store.toggleSteelPath(item.name)">
-                        <img src=" assets/img/icons/mastered.png" width="20" />
-                      </button>
-                      <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
-                        [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                        [ngClass]="{'mastered': item.mastered && item.steel_path}">
-                        <span class="material-symbols-outlined">
-                          open_in_new
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                }
-              }
-            </div>
-          </div>
-        }
+          }
+        </button>
+        <button class="btn btn-sm btn-primary btn-item" [style.opacity]="item.steel_path ? 0.9 : 1"
+          [class.mastered]="item.steel_path" title="Complete steel path version"
+          (click)="store.toggleSteelPath(item.name)">
+          <img src="assets/img/icons/mastered.png" width="20" />
+        </button>
+        <a class="btn btn-primary btn-item" [href]="item.wiki" target="_blank" rel="noopener"
+          [style.opacity]="item.mastered ? 0.9 : 1"
+          [class.mastered]="item.mastered && item.steel_path">
+          <span class="material-symbols-outlined">
+            open_in_new
+          </span>
+        </a>
       </div>
+    </div>
+  }
+</app-tracker-card>

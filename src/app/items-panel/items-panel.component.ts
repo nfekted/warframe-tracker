@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
 
 import { ItemsComponent } from './items/items.component';
-import { ItemType, Util } from '../../shared/utils/util';
+import { filterCategories } from './items-filter';
+import { Util } from '../../shared/utils/util';
 import { ItemJsons } from '../../shared/models/item-jsons.model';
 import { GAME_UPDATE } from '../../shared/metadata';
 import { ItemOptions } from '../../shared/store/progress.model';
@@ -12,47 +12,44 @@ import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-items-panel',
-    imports: [FormsModule, ItemsComponent, TranslocoModule],
+    imports: [ItemsComponent, TranslocoModule],
     templateUrl: './items-panel.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './items-panel.component.scss'
 })
 export class ItemsPanelComponent {
-  store = inject(ProgressStore);
+  private store = inject(ProgressStore);
 
-  items: readonly ItemType[] = Util.itemTypes;
   gameUpdate = GAME_UPDATE;
   mrOptions: number[] = this.buildMrOptions();
-  acquisitionList: { type: string, description: string }[] = [...acquisitionJson].sort((a, b) => a.type.localeCompare(b.type));
+  acquisitionList: string[] = acquisitionJson.map(a => a.type).sort((a, b) => a.localeCompare(b));
 
-  acquisitionFilter: { type: string, description: string } = null;
-  nameFilter: string = '';
-  mr: number = null;
+  options = this.store.options;
+  acquisition = signal<string | null>(null);
+  nameFilter = signal('');
+  mr = signal<number | null>(null);
 
-  get options(): ItemOptions {
-    return this.store.options();
-  }
+  categories = computed(() => filterCategories(this.store.account(), {
+    ...this.options(),
+    acquisition: this.acquisition(),
+    name: this.nameFilter(),
+    mr: this.mr(),
+    rank: this.store.masteryRank().rank,
+  }));
 
   //0 up to the highest MR required by any item
   buildMrOptions(): number[] {
     const jsons = new ItemJsons();
-    const max = Math.max(...this.items.flatMap(type => jsons[type].map(item => item.mastery_requirement)));
+    const max = Math.max(...Util.itemTypes.flatMap(type => jsons[type].map(item => item.mastery_requirement)));
     return Array.from({ length: max + 1 }, (_, mr) => mr);
-  }
-
-  showCategory(type: ItemType): boolean {
-    const items = this.store.account()[type];
-    if (this.acquisitionFilter != null) {
-      return items.some(i => i.acquisition == this.acquisitionFilter.type);
-    }
-    if (this.options.hideMastered) {
-      return items.some(i => !i.mastered);
-    }
-
-    return true;
   }
 
   setOption(option: Partial<ItemOptions>) {
     this.store.setOptions(option);
+  }
+
+  //Empty value means no filter
+  setMr(value: string) {
+    this.mr.set(value == '' ? null : Number(value));
   }
 }

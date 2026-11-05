@@ -7,9 +7,9 @@
   </div>
   <hr class="mt-4" />
   <div class="row">
-    @for (item of incarnons; track item) {
+    @for (group of groups(); track group[0]) {
       <div class="col-12 col-md-4">
-        <app-incarnon [image]="item" [incarnons]="groups().get(item)"></app-incarnon>
+        <app-incarnon [group]="group[0]" [incarnons]="group[1]"></app-incarnon>
       </div>
     }
   </div>

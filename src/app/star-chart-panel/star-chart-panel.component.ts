@@ -1,32 +1,40 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
 
 import { StarChartComponent } from './items/star-chart.component';
-import starChart from '../../shared/jsons/locations.json';
 import { GAME_UPDATE } from '../../shared/metadata';
+import { StarChart } from '../../shared/models/star-chart.model';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { TranslocoModule } from '@jsverse/transloco';
 
+const incomplete = (node: StarChart) => !node.mastered || !node.steel_path;
+
 @Component({
     selector: 'app-star-chart-panel',
-    imports: [FormsModule, StarChartComponent, TranslocoModule],
+    imports: [StarChartComponent, TranslocoModule],
     templateUrl: './star-chart-panel.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './star-chart-panel.component.scss'
 })
 export class StarChartPanelComponent {
-  store = inject(ProgressStore);
+  private store = inject(ProgressStore);
 
-  locations: string[] = [...new Set(starChart.map(loc => loc.planet))];
   gameUpdate = GAME_UPDATE;
 
-  hideComplete: boolean = false;
+  hideComplete = signal(false);
 
-  showCategory(item: string): boolean {
-    if (this.hideComplete) {
-      return this.store.account().locations.some(i => i.planet == item && (!i.mastered || !i.steel_path));
+  //Nodes grouped by planet, in the JSON order
+  private groups = computed(() => {
+    const groups = new Map<string, StarChart[]>();
+    for (const node of this.store.account().locations) {
+      groups.set(node.planet, [...(groups.get(node.planet) ?? []), node]);
     }
+    return groups;
+  });
 
-    return true;
-  }
+  planets = computed(() => {
+    const hide = this.hideComplete();
+    return [...this.groups()]
+      .map(([planet, locations]) => ({ planet, locations, visible: hide ? locations.filter(incomplete) : locations }))
+      .filter(group => !hide || group.visible.length > 0);
+  });
 }

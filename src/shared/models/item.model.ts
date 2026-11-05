@@ -13,12 +13,14 @@ export class Item {
     acquisition: string;
     mastery_requirement: number = 0;
     mastery_xp: number = 0;
+    wiki: string;
 
-    constructor(name: string, type: string, acquisition: string, mastery_requirement: number, mastery_xp: number) {
+    constructor(name: string, type: string, acquisition: string, mastery_requirement: number, mastery_xp: number, wiki: string = '') {
         this.name = name;
         this.type = type;
         this.acquisition = acquisition;
         this.mastery_requirement = mastery_requirement;
         this.mastery_xp = mastery_xp;
+        this.wiki = wiki;
     }
 }

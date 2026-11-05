@@ -10,7 +10,7 @@ import { IncarnonComponent } from './items/incarnon.component';
     selector: 'app-incarnon-panel',
     imports: [TranslocoModule, IncarnonComponent],
     templateUrl: './incarnon-panel.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './incarnon-panel.component.scss'
 })
 export class IncarnonPanelComponent {
@@ -24,8 +24,6 @@ export class IncarnonPanelComponent {
     for (const item of this.store.account().incarnons) {
       groups.set(item.acquisition, [...(groups.get(item.acquisition) ?? []), item]);
     }
-    return groups;
+    return [...groups];
   });
-
-  incarnons: string[] = [...this.groups().keys()];
 }

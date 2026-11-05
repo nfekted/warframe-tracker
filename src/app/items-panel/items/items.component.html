@@ -1,61 +1,29 @@
-<div class="row text-center mt-5">
-  <div class="col-12">
-    <img [src]="'assets/img/icons/'+image+'.png'" width="50" />&nbsp;
-    <span style="font-size: 25px;">{{('items.types.'+image | transloco)}}</span><br />
-    <span style="font-size: 25px;">{{itemMastered}}/{{items.length}}</span>
-  </div>
-  <div class="col-12">
-    <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
-      <input type="radio" class="btn-check" [name]="image" [id]="'show'+image" autocomplete="off"
-        (change)="show = true" checked>
-        <label class="btn btn-option btn-toggle" [for]="'show'+image">
-          <span class="material-symbols-outlined">
-            check
-          </span>
-        </label>
-
-        <input type="radio" class="btn-check" [name]="image" [id]="'hide'+image" autocomplete="off"
-          (change)="show = false">
-          <label class="btn btn-option btn-toggle" [for]="'hide'+image">
-            <span class="material-symbols-outlined">
-              close
+<app-tracker-card [id]="type()" [title]="'items.types.'+type() | transloco" [icon]="'assets/img/icons/'+type()+'.png'">
+  <span counter style="font-size: 25px;">{{mastered()}}/{{items().length}}</span>
+  @for (row of rows(); track row.item.name) {
+    <div class="col-12 mt-2">
+      <div class="btn-group w" role="group">
+        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
+          [style.opacity]="row.item.mastered ? 0.9 : 1"
+          (click)="toggle(row.item)" [class]="row.classes">
+          <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
+            <img src="assets/img/icons/mastered.png" width="15" />
+            MR {{row.item.mastery_requirement}}
+          </small>
+          {{row.item.name | uppercase}}
+          @if (row.item.mastered) {
+            <span class="material-symbols-outlined" style="font-size: 20px;">
+              check
             </span>
-          </label>
-        </div>
+          }
+        </button>
+        <a class="btn btn-primary btn-item" [href]="row.item.wiki" target="_blank" rel="noopener"
+          [style.opacity]="row.item.mastered ? 0.9 : 1" [class.mastered]="row.item.mastered">
+          <span class="material-symbols-outlined">
+            open_in_new
+          </span>
+        </a>
       </div>
-      <!-- ITEMS -->
-      @if (show) {
-        <div class="col-12">
-          <div class="row">
-            @for (item of items; track item; let i = $index) {
-              @if (showItem(item)) {
-                <div class="col-12 mt-2">
-                  <div class="btn-group w" role="group">
-                    <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-                      [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                      (click)="toggle(item)" [class]="getStyles(item)">
-                      <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
-                        <img src="assets/img/icons/mastered.png" width="15" />
-                        MR {{item.mastery_requirement}}
-                      </small>
-                      {{item.name | uppercase}}
-                      @if (item.mastered) {
-                        <span class="material-symbols-outlined" style="font-size: 20px;">
-                          check
-                        </span>
-                      }
-                    </button>
-                    <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"
-                      [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}" [ngClass]="{'mastered': item.mastered}">
-                      <span class="material-symbols-outlined">
-                        open_in_new
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              }
-            }
-          </div>
-        </div>
-      }
     </div>
+  }
+</app-tracker-card>

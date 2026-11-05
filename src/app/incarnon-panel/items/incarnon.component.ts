@@ -1,33 +1,24 @@
-import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, computed, inject, input } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { Incarnons } from '../../../shared/models/incarnons.model';
 import { ProgressStore } from '../../../shared/store/progress.store';
-import incarnons from '../../../shared/jsons/incarnon.json';
+import { TrackerCardComponent } from '../../tracker-card/tracker-card.component';
 
 @Component({
     selector: 'app-incarnon',
-    imports: [CommonModule, TranslocoModule],
+    imports: [UpperCasePipe, TranslocoModule, TrackerCardComponent],
     templateUrl: './incarnon.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './incarnon.component.scss'
 })
 export class IncarnonComponent {
   store = inject(ProgressStore);
 
-  @Input() image: string = '';
+  group = input.required<string>();
 
   //Incarnons of this group only
-  @Input() incarnons: Incarnons[] = [];
+  incarnons = input.required<Incarnons[]>();
 
-  show: boolean = true;
-
-  get itemMastered(): number {
-    return this.incarnons.filter(i => i.acquired).length;
-  }
-
-  goToWiki(item: Incarnons) {
-    window.open(incarnons.find(i => i.name == item.name).acquisitionDescription, '_blank')
-    window.focus();
-  }
+  acquired = computed(() => this.incarnons().filter(i => i.acquired).length);
 }
