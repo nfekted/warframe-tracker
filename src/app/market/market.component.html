@@ -1,8 +1,8 @@
 <div class="row page">
   <div class="col-12">
     <p>
-      {{'market.tradeable' | transloco: {count: tradeableCount} }} ({{marketData.tradeables.version}} {{'market.on' | transloco}} {{marketData.tradeables.date}}: <a
-    [href]="marketData.tradeables.wiki" target="_blank" style="color: white;">{{marketData.tradeables.update}}</a>)
+      {{'market.tradeable' | transloco: {count: tradeableCount} }} ({{marketData.tradeables.version}} {{'market.on' | transloco}} {{marketData.tradeables.date}}: <a class="text-white"
+    [href]="marketData.tradeables.wiki" target="_blank">{{marketData.tradeables.update}}</a>)
   </p>
 </div>
 <div class="col-12">
@@ -27,7 +27,7 @@
   </li>
 </ul>
 <!-- Content -->
-<div class="tab-content" id="marketContent" style="padding: 0px;">
+<div class="tab-content p-0" id="marketContent">
   <!-- Items list -->
   <div class="tab-pane fade show active" id="myList" role="tabpanel" aria-labelledby="myList-tab">
     <div class="p-3 border rounded-bottom">
@@ -52,31 +52,31 @@
           <table class="table table-dark mt-4">
             <thead>
               <tr>
-                <th scope="col" style="cursor: pointer;" (click)="sort('name')">
+                <th class="sortable" scope="col" (click)="sort('name')">
                   {{'market.item' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
-                <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('lowest')">
+                <th scope="col" class="text-center sortable" (click)="sort('lowest')">
                   {{'market.lowest' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
-                <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('higher')">
+                <th scope="col" class="text-center sortable" (click)="sort('higher')">
                   {{'market.highest' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
-                <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('average')">
+                <th scope="col" class="text-center sortable" (click)="sort('average')">
                   {{'market.average' | transloco}}
                   <span class="material-symbols-outlined">
                     {{lastSort() == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
-                <th scope="col" class="text-center" style="cursor: pointer;"
+                <th scope="col" class="text-center sortable"
                   (click)="sort('most_frequent')">
                   {{'market.median' | transloco}}
                   <span class="material-symbols-outlined">
@@ -117,15 +117,15 @@
                     }
                   </td>
                   <td scope="row">
-                    <a [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"
-                      [title]="'market.open' | transloco" style="color: white;">
+                    <a class="text-white" [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"
+                      [title]="'market.open' | transloco">
                       <span class="material-symbols-outlined">
                         open_in_new
                       </span>
                     </a>
                   </td>
                   <td>
-                    <a style="color: red;cursor: pointer;" [title]="'market.remove' | transloco" (click)="removeItem(item)">
+                    <a class="remove" [title]="'market.remove' | transloco" (click)="removeItem(item)">
                       <span class="material-symbols-outlined">
                         delete
                       </span>

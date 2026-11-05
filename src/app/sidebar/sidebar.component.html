@@ -39,28 +39,28 @@
             <div class="col-12 text-center">
               <!-- start page -->
               <a class="btn btn-sm btn-secondary w mt-2" routerLink="/items" routerLinkActive="d-none">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
+                <span class="material-symbols-outlined icon-sm">
                   checklist
                 </span>
                 {{'sidebar.list' | transloco}}
               </a>
               <!-- Incarnation -->
               <a class="btn btn-sm btn-secondary w mt-2" routerLink="/incarnon" routerLinkActive="d-none">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
+                <span class="material-symbols-outlined icon-sm">
                   checklist
                 </span>
                 Incarnon
               </a>
               <!-- Locations -->
               <a class="btn btn-sm btn-secondary w mt-2" routerLink="/star-chart" routerLinkActive="d-none">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
+                <span class="material-symbols-outlined icon-sm">
                   search
                 </span>
                 {{'sidebar.star_chart' | transloco}}
               </a>
               <!-- Market -->
               <a class="btn btn-sm btn-secondary w prime mt-2" routerLink="/market" routerLinkActive="d-none">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
+                <span class="material-symbols-outlined icon-sm">
                   currency_exchange
                 </span>
                 {{'sidebar.market' | transloco}}
@@ -71,7 +71,7 @@
             <div class="col-12 text-center mt-2 dropdown">
               <button class="btn btn-sm btn-secondary w dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
+                <span class="material-symbols-outlined icon-sm">
                   settings
                 </span>
                 {{'sidebar.data' | transloco}}
@@ -79,7 +79,7 @@
               <ul class="dropdown-menu w">
                 <li>
                   <button class="dropdown-item" type="button" (click)="exportData()">
-                    <span class="material-symbols-outlined" style="font-size: 15px;">
+                    <span class="material-symbols-outlined icon-sm">
                       download
                     </span>
                     {{'sidebar.export' | transloco}}
@@ -87,7 +87,7 @@
                 </li>
                 <li>
                   <button class="dropdown-item" type="button" (click)="importInput.click()">
-                    <span class="material-symbols-outlined" style="font-size: 15px;">
+                    <span class="material-symbols-outlined icon-sm">
                       upload
                     </span>
                     {{'sidebar.import' | transloco}}
@@ -96,7 +96,7 @@
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <button class="dropdown-item text-danger" type="button" (click)="delete()">
-                    <span class="material-symbols-outlined" style="font-size: 15px;">
+                    <span class="material-symbols-outlined icon-sm">
                       delete
                     </span>
                     {{'sidebar.delete_all' | transloco}}
@@ -108,7 +108,7 @@
             </div>
 
             <div class="col-12 text-center mt-4">
-              <small style="font-size: 10px">{{'sidebar.disclaimer' | transloco}}</small>
+              <small class="disclaimer">{{'sidebar.disclaimer' | transloco}}</small>
             </div>
 
           </div>

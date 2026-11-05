@@ -1,20 +1,4 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
-
-.teste {
-    border: solid 2px red;
-}
-
-.teste2 {
-    border: solid 2px blue;
-}
-
-.teste3 {
-    border: solid 2px green;
-}
-
-.teste4 {
-    border: solid 2px purple;
-}
+@use "bootstrap/scss/bootstrap";
 
 body {
     background-color: #2e404c;
@@ -165,4 +149,28 @@ input:focus {
 
 .w {
     width: 100%;
+}
+
+//Content area next to the fixed sidebar
+@media (min-width: 991px) {
+    .page {
+        margin-left: 20em;
+    }
+}
+
+//Text and icon sizes
+.card-heading {
+    font-size: 25px;
+}
+
+.item-tag {
+    font-size: 0.6rem;
+}
+
+.material-symbols-outlined.icon-sm {
+    font-size: 15px;
+}
+
+.material-symbols-outlined.icon-md {
+    font-size: 20px;
 }

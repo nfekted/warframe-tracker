@@ -37,31 +37,31 @@
         <tr class="text-left">
           <td scope="row" class="text-start">{{i+1}}</td>
           <td scope="row" class="text-start">{{item.name}}</td>
-          <td scope="row" style="color: #ff7575;">
+          <td class="worst" scope="row">
             {{item.worst_name}}
           </td>
-          <td style="color: #ff7575;">
+          <td class="worst">
             {{item.worst}}
             <img [src]="'assets/img/icons/platinum.png'" width="25" />
           </td>
           <td>
-            <a [href]="'https://warframe.market/items/' + item.worst_url" target="_blank" rel="noopener"
-              [title]="'market.open' | transloco" style="color: #ff7575;">
+            <a class="worst" [href]="'https://warframe.market/items/' + item.worst_url" target="_blank" rel="noopener"
+              [title]="'market.open' | transloco">
               <span class="material-symbols-outlined">
                 open_in_new
               </span>
             </a>
           </td>
-          <td scope="row" style="color: #e6d15dbf;">
+          <td class="best" scope="row">
             {{item.best_name}}
           </td>
-          <td style="color: #e6d15dbf;">
+          <td class="best">
             {{item.best}}
             <img [src]="'assets/img/icons/platinum.png'" width="25" />
           </td>
           <td>
-            <a [href]="'https://warframe.market/items/' + item.best_url" target="_blank" rel="noopener"
-              [title]="'market.open' | transloco" style="color: #e6d15dbf">
+            <a class="best" [href]="'https://warframe.market/items/' + item.best_url" target="_blank" rel="noopener"
+              [title]="'market.open' | transloco">
               <span class="material-symbols-outlined">
                 open_in_new
               </span>

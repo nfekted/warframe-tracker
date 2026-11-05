@@ -1,8 +1,8 @@
 <app-tracker-card [id]="planet()" [title]="'planets.'+planet() | transloco" [icon]="'assets/img/locations/'+planet()+'.webp'">
   <ng-container counter>
-    <span style="font-size: 25px;">{{mastered()}}/{{locations().length}}</span>
-    <small style="margin-right: 10px;"> ({{'planets.normal' | transloco}})</small>
-    <span style="font-size: 25px;">
+    <span class="card-heading">{{mastered()}}/{{locations().length}}</span>
+    <small class="normal-label"> ({{'planets.normal' | transloco}})</small>
+    <span class="card-heading">
       <img src="assets/img/icons/mastered.png" width="20" />
       {{steelPath()}}/{{locations().length}}
     </span><small>({{'planets.steel_path' | transloco}})</small>
@@ -10,23 +10,22 @@
   @for (item of visible(); track item.name) {
     <div class="col-12 mt-2">
       <div class="btn-group w" role="group">
-        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
+        <button class="btn btn-sm btn-primary btn-item w"
           [class.mastered]="item.mastered" [class.tenet]="item.name.includes('Junction')"
-          [style.opacity]="item.mastered ? 0.9 : 1"
           (click)="store.toggleLocation(item.name)">
-          <small class="float-start" style="font-size: 0.6rem"
+          <small class="float-start item-tag"
             [title]="'planets.mr_awarded' | transloco">
             <img src="assets/img/icons/mastered.png" width="15" />
             MR Exp {{item.mastery_exp}}
           </small>
           {{item.name | uppercase}}
           @if (item.mastered) {
-            <span class="material-symbols-outlined" style="font-size: 20px;">
+            <span class="material-symbols-outlined icon-md">
               check
             </span>
           }
         </button>
-        <button class="btn btn-sm btn-primary btn-item" [style.opacity]="item.steel_path ? 0.9 : 1"
+        <button class="btn btn-sm btn-primary btn-item"
           [class.mastered]="item.steel_path" [title]="'planets.complete_steel_path' | transloco"
           (click)="store.toggleSteelPath(item.name)">
           <img src="assets/img/icons/mastered.png" width="20" />

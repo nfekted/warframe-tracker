@@ -3,7 +3,7 @@
     @if (icon()) {
       <img [src]="icon()" width="50" />&nbsp;
     }
-    <span style="font-size: 25px;">{{title()}}</span><br />
+    <span class="card-heading">{{title()}}</span><br />
     <ng-content select="[counter]" />
   </div>
   <div class="col-12">

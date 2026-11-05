@@ -10,8 +10,7 @@ import { IncarnonComponent } from './items/incarnon.component';
     selector: 'app-incarnon-panel',
     imports: [TranslocoModule, IncarnonComponent],
     templateUrl: './incarnon-panel.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    styleUrl: './incarnon-panel.component.scss'
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IncarnonPanelComponent {
   private store = inject(ProgressStore);

@@ -1,24 +1,22 @@
 <app-tracker-card [id]="type()" [title]="'items.types.'+type() | transloco" [icon]="'assets/img/icons/'+type()+'.png'">
-  <span counter style="font-size: 25px;">{{mastered()}}/{{items().length}}</span>
+  <span class="card-heading" counter>{{mastered()}}/{{items().length}}</span>
   @for (row of rows(); track row.item.name) {
     <div class="col-12 mt-2">
       <div class="btn-group w" role="group">
-        <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
-          [style.opacity]="row.item.mastered ? 0.9 : 1"
+        <button class="btn btn-sm btn-primary btn-item w"
           (click)="toggle(row.item)" [class]="row.classes">
-          <small class="float-start" style="font-size: 0.6rem" [title]="'items.mr_needed' | transloco">
+          <small class="float-start item-tag" [title]="'items.mr_needed' | transloco">
             <img src="assets/img/icons/mastered.png" width="15" />
             MR {{row.item.mastery_requirement}}
           </small>
           {{row.item.name | uppercase}}
           @if (row.item.mastered) {
-            <span class="material-symbols-outlined" style="font-size: 20px;">
+            <span class="material-symbols-outlined icon-md">
               check
             </span>
           }
         </button>
-        <a class="btn btn-primary btn-item" [href]="row.item.wiki" target="_blank" rel="noopener"
-          [style.opacity]="row.item.mastered ? 0.9 : 1" [class.mastered]="row.item.mastered">
+        <a class="btn btn-primary btn-item" [href]="row.item.wiki" target="_blank" rel="noopener" [class.mastered]="row.item.mastered">
           <span class="material-symbols-outlined">
             open_in_new
           </span>

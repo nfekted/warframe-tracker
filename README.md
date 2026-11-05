@@ -92,6 +92,7 @@ src/
 │   │   ├── progress-db.ts     # IndexedDB access
 │   │   └── progress.store.ts  # Signals store: user progress, actions, account built from the JSONs
 │   └── utils/util.ts          # Item categories, XP calculation
+├── styles/_mixins.scss        # Toggle and mastered styles included by components (@use 'mixins')
 └── assets/
     ├── i18n/                  # en.json, pt.json
     └── img/                   # Icons, flags, MR badges, location images
