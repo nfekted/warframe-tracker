@@ -32,7 +32,7 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
 
 | | |
 |---|---|
-| Framework | Angular 22 (standalone components, `@if`/`@for` control flow) |
+| Framework | Angular 22 (standalone components, `@if`/`@for` control flow, lazy-loaded routes) |
 | i18n | [Transloco](https://jsverse.github.io/transloco/) 8 |
 | Storage | IndexedDB via [idb](https://github.com/jakearchibald/idb) |
 | UI | Bootstrap 5 (dark theme, bundled with Popper), Material Symbols, SweetAlert2 |
@@ -72,8 +72,9 @@ Assets and translations are loaded with relative paths (`assets/...`), so the sa
 ```
 src/
 ├── app/
-│   ├── app.component.*        # Root layout: sidebar, current view, language switch
-│   ├── app.config.ts          # Providers: router, HttpClient, Transloco; loads the saved progress at startup
+│   ├── app.component.*        # Root layout: sidebar, router outlet, language switch
+│   ├── app.config.ts          # Providers: router (hash URLs), HttpClient, Transloco; loads the saved progress at startup
+│   ├── app.routes.ts          # #/items, #/incarnon, #/star-chart, #/market, each loaded on demand
 │   ├── transloco-loader.ts    # Loads assets/i18n/{lang}.json
 │   ├── sidebar/               # MR, XP, intrinsics, navigation, export/import, delete data
 │   ├── items-panel/           # Mastery checklist + filters (items/ = one category card)

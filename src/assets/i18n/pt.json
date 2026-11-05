@@ -14,7 +14,8 @@
         "intrinsics": "Intrínsecos",
         "of": "de",
         "export": "Exportar meus dados",
-        "import": "Importar dados"
+        "import": "Importar dados",
+        "data": "Meus dados"
     },
     "import": {
         "confirm": "Substituir seu progresso atual pelo arquivo importado? Não poderá ser desfeito",

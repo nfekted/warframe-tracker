@@ -1,26 +1,9 @@
-<app-sidebar (changeRender)="render = $event"></app-sidebar>
+<app-sidebar></app-sidebar>
 <div class="container-fluid">
   <div class="row">
-    @if (render == 'items') {
-      <div class="col-12 mt-5">
-        <app-items-panel></app-items-panel>
-      </div>
-    }
-    @if (render == 'incarnon') {
-      <div class="col-12 mt-5">
-        <app-incarnon-panel></app-incarnon-panel>
-      </div>
-    }
-    @if (render == 'locations') {
-      <div class="col-12 mt-5">
-        <app-star-chart-panel></app-star-chart-panel>
-      </div>
-    }
-    @if (render == 'market') {
-      <div class="col-12 mt-5">
-        <app-market></app-market>
-      </div>
-    }
+    <div class="col-12 mt-5">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
 <div class="btn-group" id="language">

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import Swal from 'sweetalert2';
 import { INTRINSICS } from '../../shared/metadata';
 import { ProgressStore } from '../../shared/store/progress.store';
@@ -7,7 +8,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-sidebar',
-    imports: [TranslocoModule],
+    imports: [TranslocoModule, RouterLink, RouterLinkActive],
     templateUrl: './sidebar.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './sidebar.component.scss'
@@ -16,10 +17,7 @@ export class SidebarComponent {
   private transloco = inject(TranslocoService);
   store = inject(ProgressStore);
 
-  @Output() changeRender = new EventEmitter<string>();
-
   intrinsics = INTRINSICS;
-  render: string = 'items';
 
   progress(): number {
     const current = this.store.masteryRank().xp;
@@ -78,10 +76,5 @@ export class SidebarComponent {
       const reason = error instanceof Error && error.message == 'newer_version' ? 'newer_version' : 'invalid_file';
       Swal.fire({ text: this.transloco.translate('import.' + reason), icon: 'error' });
     }
-  }
-
-  changeRenderEvent(type: string) {
-    this.render = type;
-    this.changeRender.emit(type);
   }
 }

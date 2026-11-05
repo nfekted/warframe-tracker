@@ -14,7 +14,8 @@
         "intrinsics": "Intrinsics",
         "of": "of",
         "export": "Export my data",
-        "import": "Import data"
+        "import": "Import data",
+        "data": "My data"
     },
     "import": {
         "confirm": "Replace your current progress with the imported file? Can't be undone",

@@ -38,73 +38,73 @@
             <hr class="mt-4" />
             <div class="col-12 text-center">
               <!-- start page -->
-              @if (render != 'items') {
-                <button class="btn btn-sm btn-secondary w mt-2" (click)="changeRenderEvent('items')"
-                  >
-                  <span class="material-symbols-outlined" style="font-size: 15px;">
-                    checklist
-                  </span>
-                  {{'sidebar.list' | transloco}}
-                </button>
-              }
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/items" routerLinkActive="d-none">
+                <span class="material-symbols-outlined" style="font-size: 15px;">
+                  checklist
+                </span>
+                {{'sidebar.list' | transloco}}
+              </a>
               <!-- Incarnation -->
-              @if (render != 'incarnon') {
-                <button class="btn btn-sm btn-secondary w mt-2" (click)="changeRenderEvent('incarnon')"
-                  >
-                  <span class="material-symbols-outlined" style="font-size: 15px;">
-                    checklist
-                  </span>
-                  Incarnon
-                </button>
-              }
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/incarnon" routerLinkActive="d-none">
+                <span class="material-symbols-outlined" style="font-size: 15px;">
+                  checklist
+                </span>
+                Incarnon
+              </a>
               <!-- Locations -->
-              @if (render != 'locations') {
-                <button class="btn btn-sm btn-secondary w mt-2" (click)="changeRenderEvent('locations')"
-                  >
-                  <span class="material-symbols-outlined" style="font-size: 15px;">
-                    search
-                  </span>
-                  {{'sidebar.star_chart' | transloco}}
-                </button>
-              }
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/star-chart" routerLinkActive="d-none">
+                <span class="material-symbols-outlined" style="font-size: 15px;">
+                  search
+                </span>
+                {{'sidebar.star_chart' | transloco}}
+              </a>
               <!-- Market -->
-              @if (render != 'market') {
-                <button class="btn btn-sm btn-secondary w prime mt-2" (click)="changeRenderEvent('market')"
-                  >
-                  <span class="material-symbols-outlined" style="font-size: 15px;">
-                    currency_exchange
-                  </span>
-                  {{'sidebar.market' | transloco}}
-                </button>
-              }
+              <a class="btn btn-sm btn-secondary w prime mt-2" routerLink="/market" routerLinkActive="d-none">
+                <span class="material-symbols-outlined" style="font-size: 15px;">
+                  currency_exchange
+                </span>
+                {{'sidebar.market' | transloco}}
+              </a>
             </div>
 
-            <!-- Backup -->
-            <div class="col-12 text-center mt-2">
-              <button class="btn btn-sm btn-secondary w" (click)="exportData()">
+            <!-- My data: export, import, delete -->
+            <div class="col-12 text-center mt-2 dropdown">
+              <button class="btn btn-sm btn-secondary w dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <span class="material-symbols-outlined" style="font-size: 15px;">
-                  download
+                  settings
                 </span>
-                {{'sidebar.export' | transloco}}
+                {{'sidebar.data' | transloco}}
               </button>
-              <button class="btn btn-sm btn-secondary w mt-2" (click)="importInput.click()">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
-                  upload
-                </span>
-                {{'sidebar.import' | transloco}}
-              </button>
+              <ul class="dropdown-menu w">
+                <li>
+                  <button class="dropdown-item" type="button" (click)="exportData()">
+                    <span class="material-symbols-outlined" style="font-size: 15px;">
+                      download
+                    </span>
+                    {{'sidebar.export' | transloco}}
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button" (click)="importInput.click()">
+                    <span class="material-symbols-outlined" style="font-size: 15px;">
+                      upload
+                    </span>
+                    {{'sidebar.import' | transloco}}
+                  </button>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <button class="dropdown-item text-danger" type="button" (click)="delete()">
+                    <span class="material-symbols-outlined" style="font-size: 15px;">
+                      delete
+                    </span>
+                    {{'sidebar.delete_all' | transloco}}
+                  </button>
+                </li>
+              </ul>
               <input #importInput type="file" accept="application/json,.json" hidden
                 (change)="importData(importInput)" />
-            </div>
-
-            <!-- Delete data -->
-            <div class="col-12 text-center mt-2">
-              <button class="btn btn-sm btn-danger w" (click)="delete()">
-                <span class="material-symbols-outlined" style="font-size: 15px;">
-                  delete
-                </span>
-                {{'sidebar.delete_all' | transloco}}
-              </button>
             </div>
 
             <div class="col-12 text-center mt-4">
