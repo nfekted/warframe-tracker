@@ -1,10 +1,9 @@
 import { Incarnons } from "./incarnons.model";
 import { Item } from "./item.model";
-import { MasteryRank } from "./mastery-rank.model";
 import { StarChart } from "./star-chart.model";
 
+// View of the user's progress, built by ProgressStore from the JSONs and the saved data
 export class Account {
-    masteryRank: MasteryRank;
     xp: number = 0;
     mastered: number = 0;
     railjack: number = 0;
@@ -32,9 +31,4 @@ export class Account {
     rifles: Item[] = [];
     locations: StarChart[] = [];
     incarnons: Incarnons[] = [];
-    lang: string = 'en';
-
-    constructor() {
-
-    }
 }

@@ -2,11 +2,11 @@
   <div class="col-12">
     <img [src]="'assets/img/locations/'+image+'.webp'" width="50" />&nbsp;
     <span style="font-size: 25px;">{{'planets.'+image | transloco}}</span><br />
-    <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+    <span style="font-size: 25px;">{{itemMastered}}/{{planetLocations.length}}</span>
     <small style="margin-right: 10px;"> (Normal)</small>
     <span style="font-size: 25px;">
       <img src=" assets/img/icons/mastered.png" width="20" />
-      {{itemSteel}}/{{itemCount}}
+      {{itemSteel}}/{{planetLocations.length}}
       </span><small>(Steel path)</small>
     </div>
     <div class="col-12">
@@ -39,7 +39,7 @@
                       <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
                         [ngClass]="{'mastered': item.mastered,'tenet': item.name.includes('Junction')}"
                         [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                        (click)="item.mastered = !item.mastered;calculate();mastered()">
+                        (click)="store.toggleLocation(item.name)">
                         <small class="float-start" style="font-size: 0.6rem"
                           title="MR awarded for completing the mission">
                           <img src="assets/img/icons/mastered.png" width="15" />
@@ -54,7 +54,7 @@
                       </button>
                       <button class="btn btn-sm btn-primary btn-item" [ngStyle]="{'opacity': item.steel_path ? 0.9 : 1}"
                         [ngClass]="{'mastered': item.steel_path}" title="Complete steel path version"
-                        (click)="item.steel_path = !item.steel_path;calculate();mastered()">
+                        (click)="store.toggleSteelPath(item.name)">
                         <img src=" assets/img/icons/mastered.png" width="20" />
                       </button>
                       <button type="button" class="btn btn-primary btn-item" (click)="goToWiki(item)"

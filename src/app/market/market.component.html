@@ -55,32 +55,32 @@
                 <th scope="col" style="cursor: pointer;" (click)="sort('name')">
                   Item
                   <span class="material-symbols-outlined">
-                    {{lastSort == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                    {{lastSort() == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('lowest')">
                   Lowest price
                   <span class="material-symbols-outlined">
-                    {{lastSort == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                    {{lastSort() == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('higher')">
                   Highest price
                   <span class="material-symbols-outlined">
-                    {{lastSort == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                    {{lastSort() == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;" (click)="sort('average')">
                   Average price
                   <span class="material-symbols-outlined">
-                    {{lastSort == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                    {{lastSort() == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col" class="text-center" style="cursor: pointer;"
                   (click)="sort('most_frequent')">
                   Median price
                   <span class="material-symbols-outlined">
-                    {{lastSort == 'most_frequent' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
+                    {{lastSort() == 'most_frequent' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
                   </span>
                 </th>
                 <th scope="col"></th>
@@ -88,7 +88,7 @@
               </tr>
             </thead>
             <tbody>
-              @for (item of myList; track item; let i = $index) {
+              @for (item of myList(); track item.id) {
                 <tr class="text-center">
                   <td scope="row" class="text-start">{{item.name}}</td>
                   <td scope="row">
@@ -125,7 +125,7 @@
                     </a>
                   </td>
                   <td>
-                    <a style="color: red;cursor: pointer;" title="remove" (click)="removeItem(i)">
+                    <a style="color: red;cursor: pointer;" title="remove" (click)="removeItem(item)">
                       <span class="material-symbols-outlined">
                         delete
                       </span>

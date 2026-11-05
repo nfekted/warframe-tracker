@@ -27,7 +27,7 @@ export class BestItemsComponent {
     }
 
     loadItems() {
-        this.tradeItem = itemPrices;
+        this.tradeItem = [...itemPrices];
 
         if (!this.showMiscellaneous) this.tradeItem = this.tradeItem.filter(i =>
             i.name.includes(' Prime ')

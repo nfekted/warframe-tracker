@@ -6,8 +6,6 @@ import starChart from '../jsons/locations.json';
 export type ItemType = (typeof Util.itemTypes)[number];
 
 export abstract class Util {
-    static cookieName: string = 'warframetracker';
-
     static readonly itemTypes = [
         'warframes',
         'rifles',
@@ -35,44 +33,6 @@ export abstract class Util {
         'zaws',
         'kitguns',
     ] as const;
-
-    static load() {
-        return JSON.parse(window.localStorage.getItem(this.cookieName));
-    }
-
-    static save(account: Account) {
-        const obj: Account = Object.assign({}, account);
-
-        for (const type of this.itemTypes) {
-            obj[type] = obj[type].filter(i => i.mastered);
-        }
-
-        delete obj.masteryRank;
-        delete obj.xp;
-        delete obj.mastered;
-        window.localStorage.setItem(this.cookieName, JSON.stringify(obj));
-    }
-
-    static loadMarket() {
-        return JSON.parse(window.localStorage.getItem('NKDTools-WTMarket'))
-    }
-
-    static saveMarket(itensList) {
-        window.localStorage.setItem('NKDTools-WTMarket', JSON.stringify(itensList));
-    }
-
-    static saveOptions(options) {
-        window.localStorage.setItem('NFDTools-WTOptions', JSON.stringify(options));
-    }
-
-    static loadOptions() {
-        return JSON.parse(window.localStorage.getItem('NFDTools-WTOptions'));
-    }
-
-    static clear() {
-        window.localStorage.clear();
-        window.location.reload();
-    }
 
     static calculate(account: Account): Account {
         let itemsXp = 0;

@@ -1,7 +1,7 @@
 <div class="row text-center mt-5">
   <div class="col-12">
     <span style="font-size: 25px;">{{'incarnon.'+image | transloco}}</span><br />
-    <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+    <span style="font-size: 25px;">{{itemMastered}}/{{incarnons.length}}</span>
   </div>
   <div class="col-12">
     <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
@@ -32,7 +32,7 @@
                   <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
                     [ngClass]="{'mastered': item.acquired, 'prime': item.acquired}"
                     [ngStyle]="{'opacity': item.acquired ? 0.9 : 1}"
-                    (click)="item.acquired = !item.acquired;calculate();mastered()">
+                    (click)="store.toggleIncarnon(item.name)">
                     <img [src]="'assets/img/incarnon/'+(item.name.toLowerCase())+'.png'" /><br />
                     {{item.name | uppercase}}
                   </button>

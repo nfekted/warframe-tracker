@@ -2,7 +2,7 @@
   <div class="col-12">
     <img [src]="'assets/img/icons/'+image+'.png'" width="50" />&nbsp;
     <span style="font-size: 25px;">{{('items.types.'+image | transloco)}}</span><br />
-    <span style="font-size: 25px;">{{itemMastered}}/{{itemCount}}</span>
+    <span style="font-size: 25px;">{{itemMastered}}/{{items.length}}</span>
   </div>
   <div class="col-12">
     <div class="btn-group" role="group" [attr.aria-label]="'Show or Hide ' + image">
@@ -33,7 +33,7 @@
                   <div class="btn-group w" role="group">
                     <button class="btn btn-sm btn-primary btn-item w" style="margin-left: 0px;"
                       [ngStyle]="{'opacity': item.mastered ? 0.9 : 1}"
-                      (click)="item.mastered = !item.mastered;calculate();mastered()" [class]="getStyles(item)">
+                      (click)="toggle(item)" [class]="getStyles(item)">
                       <small class="float-start" style="font-size: 0.6rem" title="MR needed to equip item">
                         <img src="assets/img/icons/mastered.png" width="15" />
                         MR {{item.mastery_requirement}}

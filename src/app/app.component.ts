@@ -1,116 +1,29 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { FormsModule } from '@angular/forms';
-
-import { Account } from '../shared/models/account.model';
 import { ItemsPanelComponent } from './items-panel/items-panel.component';
-import { Item } from '../shared/models/item.model';
-import { ItemType, Util } from '../shared/utils/util';
-import { MasteryRank } from '../shared/models/mastery-rank.model';
-import { ItemJsons } from '../shared/models/item-jsons.model';
 import { MarketComponent } from './market/market.component';
-import { StarChart } from '../shared/models/star-chart.model';
 import { StarChartPanelComponent } from './star-chart-panel/star-chart-panel.component';
 import { TranslocoService } from '@jsverse/transloco';
 import { IncarnonPanelComponent } from './incarnon-panel/incarnon-panel.component';
-import mrJson from '../shared/jsons/mr.json';
-import starChart from '../shared/jsons/locations.json';
-import incarnon from '../shared/jsons/incarnon.json';
-import { Incarnons } from '../shared/models/incarnons.model';
+import { ProgressStore } from '../shared/store/progress.store';
 
 
 @Component({
     selector: 'app-root',
-    imports: [SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent, IncarnonPanelComponent, FormsModule],
+    imports: [SidebarComponent, ItemsPanelComponent, MarketComponent, StarChartPanelComponent, IncarnonPanelComponent],
     templateUrl: './app.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
-  account: Account = new Account();
-  lang: string = 'en';
-
-  mrList: MasteryRank[] = mrJson;
-  nextRank: MasteryRank = new MasteryRank();
-
-  itemsCount: number = 0;
-
-  jsonList: ItemJsons = new ItemJsons();
+  private translocoService = inject(TranslocoService);
+  store = inject(ProgressStore);
 
   render: string = 'items';
-  constructor(private translocoService: TranslocoService) { }
-
-  ngOnInit(): void {
-    const load = Util.load();
-    this.lang = this.translocoService.getActiveLang();
-    if (load) {
-      this.account = Object.assign(new Account(), load);
-      this.changeLang(this.account.lang);
-    }
-
-    for (const item of Util.itemTypes) {
-      this.initItems(item);
-    }
-
-    this.initStarChart();
-    this.initIncarnon();
-    this.account = Util.calculate(this.account);
-
-    this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
-    this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
-  }
 
   changeLang(lang: string) {
     this.translocoService.setActiveLang(lang);
-    this.lang = lang;
-    this.account.lang = this.lang;
-
-    Util.save(this.account);
-  }
-
-  initStarChart() {
-    if (this.account.locations.length != starChart.length) {
-      const newStar = starChart.filter(item => {
-        return !this.account.locations.some(s => s.name == item.name)
-      });
-
-      for (const item of newStar) {
-        this.account.locations.push(new StarChart(item.name, item.mastery_exp, item.planet));
-      }
-    }
-  }
-
-  initIncarnon() {
-    if (this.account.incarnons.length != incarnon.length) {
-      const newItem = incarnon.filter(item => {
-        return !this.account.incarnons.some(s => s.name == item.name)
-      });
-
-      for (const item of newItem) {
-        this.account.incarnons.push(new Incarnons(item.name, item.acquisition));
-      }
-    }
-  }
-
-  //Items always come from the JSON; only the mastered flag comes from the saved data
-  initItems(type: ItemType) {
-    const mastered = new Set(this.account[type].filter(i => i.mastered).map(i => i.name));
-
-    this.account[type] = this.jsonList[type].map(data => {
-      const item = new Item(data.name, type, data.acquisition, data.mastery_requirement, data.mastery_xp);
-      item.mastered = mastered.has(data.name);
-      return item;
-    });
-
-    this.itemsCount += this.account[type].length;
-  }
-
-  calculate() {
-    this.account = Util.calculate(this.account);
-    this.nextRank = this.mrList.find(mr => mr.xp > this.account.xp);
-    this.account.masteryRank = this.mrList[this.nextRank.rank - 1];
-    Util.save(this.account);
+    this.store.setLang(lang);
   }
 
   scrollToTop() {

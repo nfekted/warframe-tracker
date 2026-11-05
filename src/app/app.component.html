@@ -1,20 +1,19 @@
-<app-sidebar [account]="account" [nextRank]="nextRank" [itemsCount]="itemsCount" (update)="calculate()"
-(changeRender)="render = $event"></app-sidebar>
+<app-sidebar (changeRender)="render = $event"></app-sidebar>
 <div class="container-fluid">
   <div class="row">
     @if (render == 'items') {
       <div class="col-12 mt-5">
-        <app-items-panel [account]="account" (update)="calculate()"></app-items-panel>
+        <app-items-panel></app-items-panel>
       </div>
     }
     @if (render == 'incarnon') {
       <div class="col-12 mt-5">
-        <app-incarnon-panel [account]="account" (update)="calculate()"></app-incarnon-panel>
+        <app-incarnon-panel></app-incarnon-panel>
       </div>
     }
     @if (render == 'locations') {
       <div class="col-12 mt-5">
-        <app-star-chart-panel [account]="account" (update)="calculate()"></app-star-chart-panel>
+        <app-star-chart-panel></app-star-chart-panel>
       </div>
     }
     @if (render == 'market') {
@@ -27,7 +26,7 @@
 <div class="btn-group" id="language">
   <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
     aria-expanded="false">
-    <img [src]="'assets/img/' + account.lang + 'flag.png'" width="55" />
+    <img [src]="'assets/img/' + store.lang() + 'flag.png'" width="55" />
   </button>
   <ul class="dropdown-menu">
     <li>

@@ -3,13 +3,13 @@
     <h3>{{'incarnon.description' | transloco}}</h3>
   </div>
   <div class="col-12 mt-2">
-    <small>{{'on_update' | transloco}}: Update 43:  Jade Shadows: Constellations (2026-06-19)</small>
+    <small>{{'on_update' | transloco}}: {{gameUpdate.name}} ({{gameUpdate.date}})</small>
   </div>
   <hr class="mt-4" />
   <div class="row">
     @for (item of incarnons; track item) {
       <div class="col-12 col-md-4">
-        <app-incarnon [image]="item" [incarnons]="account.incarnons" [account]="account"></app-incarnon>
+        <app-incarnon [image]="item" [incarnons]="groups().get(item)"></app-incarnon>
       </div>
     }
   </div>

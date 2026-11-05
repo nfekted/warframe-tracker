@@ -10,7 +10,6 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
 
 - **Mastery checklist** of every masterable item, grouped by category: Warframes, primaries, secondaries, melee, companions (Kubrows, Kavats, Predasites, Vulpaphylas, MOAs, Hounds, Sentinels and their weapons), Plexus, Necramechs, K-Drives, Amps, Archwings and Archwing weapons, Zaws and Kitguns.
   - Filters: acquisition source, item name, required MR, hide mastered, hide items above your current MR, hide Founder exclusives.
-  - Master or unmaster a whole category with one click.
   - Click an item to open its wiki page.
 - **Mastery Rank and XP calculation**, with a progress bar to the next rank. Counts:
   - 3,000 XP for weapons, Amps, Zaws, Kitguns and Archwing weapons
@@ -26,7 +25,8 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
   - *Best items*: tradeable items ranked by price, filterable by prime parts, sets, relics, helmets, arcanes and miscellaneous.
   - *Best relics*: Radiant relics ranked by expected platinum value, filterable by era.
 - **Languages**: English and Portuguese, switched with the flag button.
-- **No account needed**: all progress is saved in the browser's `localStorage`. *Delete all* wipes it.
+- **No account needed**: progress is saved in the browser (IndexedDB) as you click. *Delete all* removes only this app's data.
+- **Export / import**: download your progress as a JSON file and load it back in another browser or device.
 
 ## Tech stack
 
@@ -34,6 +34,7 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
 |---|---|
 | Framework | Angular 22 (standalone components, `@if`/`@for` control flow) |
 | i18n | [Transloco](https://jsverse.github.io/transloco/) 8 |
+| Storage | IndexedDB via [idb](https://github.com/jakearchibald/idb) |
 | UI | Bootstrap 5 (dark theme, bundled with Popper), Material Symbols, SweetAlert2 |
 | Language | TypeScript 6 |
 | Build | `@angular/build` (application builder) |
@@ -71,10 +72,10 @@ Assets and translations are loaded with relative paths (`assets/...`), so the sa
 ```
 src/
 ├── app/
-│   ├── app.component.*        # Root: loads saved data, merges new items, computes MR, switches views
-│   ├── app.config.ts          # Providers: router, HttpClient, Transloco
+│   ├── app.component.*        # Root layout: sidebar, current view, language switch
+│   ├── app.config.ts          # Providers: router, HttpClient, Transloco; loads the saved progress at startup
 │   ├── transloco-loader.ts    # Loads assets/i18n/{lang}.json
-│   ├── sidebar/               # MR, XP, intrinsics, navigation, delete data
+│   ├── sidebar/               # MR, XP, intrinsics, navigation, export/import, delete data
 │   ├── items-panel/           # Mastery checklist + filters (items/ = one category card)
 │   ├── star-chart-panel/      # Star Chart nodes per planet (items/ = one planet card)
 │   ├── incarnon-panel/        # Incarnon adapters per source (items/ = one group card)
@@ -83,7 +84,11 @@ src/
 │   ├── jsons/                 # Static game data: items, MR table, locations, incarnons, market data
 │   ├── models/                # Account, Item, StarChart, Incarnons, MasteryRank, ItemJsons
 │   ├── metadata.ts            # Current game update, market data dates, intrinsic limits
-│   └── utils/util.ts          # Item categories, XP calculation, localStorage helpers
+│   ├── store/
+│   │   ├── progress.model.ts  # Saved data format, validation, export file format
+│   │   ├── progress-db.ts     # IndexedDB access
+│   │   └── progress.store.ts  # Signals store: user progress, actions, account built from the JSONs
+│   └── utils/util.ts          # Item categories, XP calculation
 └── assets/
     ├── i18n/                  # en.json, pt.json
     └── img/                   # Icons, flags, MR badges, location images
@@ -103,10 +108,18 @@ The data is static and bundled at build time. Nothing is fetched from game or ma
 
 ## Saved data
 
-Everything stays in the browser's `localStorage`:
+Progress is stored in IndexedDB, in the `warframe-tracker` database (object store `state`, key `progress`). Only what the user chose is saved; item, node and Incarnon data always comes from the JSONs:
 
-| Key | Content |
+| Field | Content |
 |---|---|
-| `warframetracker` | Account progress (only mastered items are stored), intrinsics, nodes, Incarnons, language |
-| `NFDTools-WTOptions` | Mastery checklist filter preferences |
-| `NKDTools-WTMarket` | Market watchlist |
+| `mastered` | Names of mastered items, per category |
+| `locations` / `steelPath` | Names of completed Star Chart nodes, normal and Steel Path |
+| `incarnons` | Names of acquired Incarnon adapters |
+| `railjack` / `drifter` | Intrinsic ranks (limited to 50 and 40) |
+| `lang` | `en` or `pt` |
+| `options` | Mastery checklist filters |
+| `market` | Ids in the market watchlist |
+
+Changes are saved 300 ms after the last click and when the page is closed. Names that no longer exist in the JSONs are ignored.
+
+The export file is `{ "app": "warframe-tracker", "version": 1, "exportedAt": "...", "data": { ...fields above } }`. Importing validates it and replaces the current progress; files from a newer version are rejected.

@@ -6,13 +6,21 @@
     "sidebar": {
         "list": "Items list",
         "delete_all": "Delete all data",
-        "disclaimer": " This website and application(s) do not have any official affiliation with Digital Extremes Ltd or Warframe. All content is saved in browser cookies. By continuing, you understand and agree to the above text.",
+        "disclaimer": " This website and application(s) do not have any official affiliation with Digital Extremes Ltd or Warframe. All content is saved in your browser. By continuing, you understand and agree to the above text.",
         "star_chart": "Show Star Chart",
         "market": "Check warframe.market prices",
         "xp_needed": "needed to next mastery rank",
         "next_mr": "Your next rank is {{nextRank}}, with {{xp}}XP",
         "intrinsics": "Intrinsics",
-        "of": "of"
+        "of": "of",
+        "export": "Export my data",
+        "import": "Import data"
+    },
+    "import": {
+        "confirm": "Replace your current progress with the imported file? Can't be undone",
+        "success": "Data imported",
+        "invalid_file": "This file is not a Warframe Tracker export",
+        "newer_version": "This file was exported by a newer version of Warframe Tracker"
     },
     "items": {
         "options": "OPTIONS",

@@ -1,24 +1,23 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Item } from '../../../shared/models/item.model';
-import { Account } from '../../../shared/models/account.model';
 import { ItemJsons } from '../../../shared/models/item-jsons.model';
 import { ItemType } from '../../../shared/utils/util';
+import { ProgressStore } from '../../../shared/store/progress.store';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-items',
-    imports: [FormsModule, CommonModule, TranslocoModule],
+    imports: [CommonModule, TranslocoModule],
     templateUrl: './items.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './items.component.scss'
 })
 export class ItemsComponent {
+  private store = inject(ProgressStore);
 
   jsons: ItemJsons = new ItemJsons();
 
-  @Input() account: Account;
   @Input() image: ItemType;
   @Input() items: Item[] = [];
 
@@ -30,42 +29,20 @@ export class ItemsComponent {
   @Input() nameFilter: string = '';
   @Input() mr: number = null;
 
-  @Output() update = new EventEmitter<void>();
-
-  //Filters
   show: boolean = true;
-  itemCount: number = 0;
-  itemMastered: number = 0;
 
-  constructor() { }
-
-  calculate() {
-    this.update.emit();
+  get itemMastered(): number {
+    return this.items.filter(i => i.mastered).length;
   }
 
-  ngOnInit(): void {
-    this.itemCount = this.items.length;
-    this.items.sort((a, b) => a.name.localeCompare(b.name));
-    this.mastered();
-  }
-
-  masterAll() {
-    for (const item of this.items) {
-      item.mastered = !item.mastered
-    }
-
-    this.calculate();
-    this.mastered();
-  }
-
-  mastered() {
-    this.itemMastered = this.items.filter(i => i.mastered).length;
+  toggle(item: Item) {
+    this.store.toggleItem(this.image, item.name);
   }
 
   showItem(item: Item): boolean {
     return (this.acquisitionFilter == null || this.acquisitionFilter == item.acquisition)
       && (!this.hideMastered || (this.hideMastered && !item.mastered))
-      && (!this.showOnlyMrAvailable || (this.showOnlyMrAvailable && this.account.masteryRank.rank >= item.mastery_requirement))
+      && (!this.showOnlyMrAvailable || (this.showOnlyMrAvailable && this.store.masteryRank().rank >= item.mastery_requirement))
       && (this.nameFilter == '' || item.name.toUpperCase().includes(this.nameFilter.toUpperCase()))
       && (this.mr == null || (this.mr == item.mastery_requirement))
       && (!this.hideFounders || (this.hideFounders && item.acquisition != 'Founder Exclusive'))

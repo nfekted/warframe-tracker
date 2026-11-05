@@ -1,46 +1,37 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { Account } from '../../shared/models/account.model';
-import mrJson from '../../shared/jsons/mr.json';
-import { FormsModule } from '@angular/forms';
-import { MasteryRank } from '../../shared/models/mastery-rank.model';
+import { Component, EventEmitter, Output, ChangeDetectionStrategy, inject } from '@angular/core';
 import Swal from 'sweetalert2';
-import { Util } from '../../shared/utils/util';
 import { INTRINSICS } from '../../shared/metadata';
+import { ProgressStore } from '../../shared/store/progress.store';
 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-sidebar',
-    imports: [FormsModule, TranslocoModule],
+    imports: [TranslocoModule],
     templateUrl: './sidebar.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  private transloco = inject(TranslocoService);
+  store = inject(ProgressStore);
 
-  @Input() account: Account;
-  @Input() nextRank: MasteryRank;
-  @Input() itemsCount: number = 0;
-
-
-  @Output() update = new EventEmitter<void>();
   @Output() changeRender = new EventEmitter<string>();
 
-  mrList = mrJson;
-  maxXp: number = Util.maxXp();
   intrinsics = INTRINSICS;
   render: string = 'items';
 
-  constructor(private transloco: TranslocoService) { }
-
-  ngOnInit(): void { }
-
-  calculate() {
-    this.update.emit();
+  progress(): number {
+    const current = this.store.masteryRank().xp;
+    return (this.store.account().xp - current) / (this.store.nextRank().xp - current) * 100;
   }
 
-  progress(): number {
-    return (this.account.xp - this.account.masteryRank.xp) / (this.nextRank.xp - this.account.masteryRank.xp) * 100;
+  //The store clamps the value; the input is rewritten so it never shows a value that is not counted
+  setIntrinsic(kind: 'railjack' | 'drifter', input: HTMLInputElement) {
+    if (kind == 'railjack') this.store.setRailjack(input.valueAsNumber);
+    else this.store.setDrifter(input.valueAsNumber);
+
+    if (input.value != '') input.value = String(this.store[kind]());
   }
 
   delete() {
@@ -52,9 +43,41 @@ export class SidebarComponent {
       confirmButtonColor: '#a7160c'
     }).then((result) => {
       if (result.isConfirmed) {
-        Util.clear();
+        this.store.reset();
       }
     });
+  }
+
+  exportData() {
+    const blob = new Blob([this.store.exportData()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `warframe-tracker-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  async importData(input: HTMLInputElement) {
+    const file = input.files?.[0];
+    input.value = '';
+    if (!file) return;
+
+    const result = await Swal.fire({
+      text: this.transloco.translate('import.confirm'),
+      showCancelButton: true,
+      confirmButtonText: this.transloco.translate('sidebar.import'),
+      cancelButtonText: this.transloco.translate('cancel'),
+    });
+    if (!result.isConfirmed) return;
+
+    try {
+      await this.store.importData(await file.text());
+      Swal.fire({ text: this.transloco.translate('import.success'), icon: 'success' });
+    } catch (error) {
+      const reason = error instanceof Error && error.message == 'newer_version' ? 'newer_version' : 'invalid_file';
+      Swal.fire({ text: this.transloco.translate('import.' + reason), icon: 'error' });
+    }
   }
 
   changeRenderEvent(type: string) {

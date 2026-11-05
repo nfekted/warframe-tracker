@@ -22,7 +22,7 @@ export class BestRelicsComponent {
 
     loadRelics() {
         this.maxRelic = 100;
-        this.relics = relicPrices;
+        this.relics = [...relicPrices];
 
         switch (this.relicFilter) {
             case 'Lith':

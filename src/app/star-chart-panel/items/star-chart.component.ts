@@ -1,20 +1,19 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Account } from '../../../shared/models/account.model';
 import { StarChart } from '../../../shared/models/star-chart.model';
+import { ProgressStore } from '../../../shared/store/progress.store';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-star-chart',
-    imports: [FormsModule, CommonModule, TranslocoModule],
+    imports: [CommonModule, TranslocoModule],
     templateUrl: './star-chart.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './star-chart.component.scss'
 })
 export class StarChartComponent {
+  store = inject(ProgressStore);
 
-  @Input() account: Account;
   @Input() image: string = '';
 
   @Input() locations: StarChart[] = [];
@@ -22,28 +21,18 @@ export class StarChartComponent {
   //Filters
   @Input() hideComplete: boolean = false;
 
-  @Output() update = new EventEmitter<void>();
-
-  //Filters
   show: boolean = true;
-  itemCount: number = 0;
-  itemMastered: number = 0;
-  itemSteel: number = 0;
 
-  constructor() { }
-
-  calculate() {
-    this.update.emit();
+  get planetLocations(): StarChart[] {
+    return this.locations.filter(i => i.planet == this.image);
   }
 
-  ngOnInit(): void {
-    this.itemCount = this.locations.filter(i => i.planet == this.image).length;
-    this.mastered();
+  get itemMastered(): number {
+    return this.planetLocations.filter(i => i.mastered).length;
   }
 
-  mastered() {
-    this.itemMastered = this.locations.filter(i => i.planet == this.image && i.mastered).length;
-    this.itemSteel = this.locations.filter(i => i.planet == this.image && i.steel_path).length;
+  get itemSteel(): number {
+    return this.planetLocations.filter(i => i.steel_path).length;
   }
 
   showItem(item: StarChart): boolean {

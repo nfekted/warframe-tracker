@@ -1,12 +1,14 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
-import { Util } from '../../shared/utils/util';
 import { MARKET_DATA } from '../../shared/metadata';
+import { ProgressStore } from '../../shared/store/progress.store';
 import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
+
+type ItemPrice = { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number };
 
 @Component({
     selector: 'app-market',
@@ -16,31 +18,34 @@ import { BestItemsComponent } from './best-items/best-items.component';
     styleUrl: './market.component.scss'
 })
 export class MarketComponent {
+  private store = inject(ProgressStore);
+  private prices = new Map<string, ItemPrice>(itemPrices.map(p => [p.id, p]));
 
   tradeableList: { id: string, url: string, name_en: string, name_pt: string }[] = tradeables;
   marketData = MARKET_DATA;
 
-  lastSort: string = '';
+  //Clicking the same column again reverses the order
+  private sortState = signal<{ field: keyof ItemPrice, desc: boolean } | null>(null);
+  lastSort = computed(() => {
+    const sort = this.sortState();
+    return sort && !sort.desc ? sort.field : '';
+  });
 
   searchTerm: string = '';
   filteredItems = [];
-  myList: { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number }[] = [];
 
-  constructor() { }
+  //Saved ids that are no longer in the price list are skipped
+  myList = computed(() => {
+    const list = this.store.marketIds().map(id => this.prices.get(id)).filter(p => p);
+    const sort = this.sortState();
+    if (!sort) return list;
 
-  ngOnInit(): void {
-    this.myList = Util.loadMarket();
-    if (!this.myList) this.myList = [];
-    else this.updateMyList();
-  }
-
-  updateMyList() {
-    if (window.sessionStorage.getItem('updated')) return;
-    for (let i = 0; i < this.myList.length; i++) {
-      this.myList[i] = itemPrices.find(item => item.id == this.myList[i].id);
-    }
-    window.sessionStorage.setItem('updated', 'true');
-  }
+    const { field, desc } = sort;
+    return [...list].sort((a, b) => {
+      const result = typeof a[field] == 'number' ? +a[field] - +b[field] : String(a[field]).localeCompare(String(b[field]));
+      return desc ? -result : result;
+    });
+  });
 
   onSearchChange(event: any) {
     this.searchTerm = event.target.value;
@@ -58,31 +63,18 @@ export class MarketComponent {
     );
   }
 
-  selectItem(item) {
+  selectItem(item: { id: string }) {
     this.searchTerm = '';
     this.filteredItems = [];
-    if (this.myList.find(i => i.id == item.id)) return;
-
-    const result = itemPrices.find(i => i.id == item.id);
-    if (result) {
-      this.myList.unshift(itemPrices.find(i => i.id == item.id));
-      Util.saveMarket(this.myList);
-    };
+    if (this.prices.has(item.id)) this.store.addMarketItem(item.id);
   }
 
-  removeItem(index: number) {
-    this.myList.splice(index, 1);
-    Util.saveMarket(this.myList);
+  removeItem(item: ItemPrice) {
+    this.store.removeMarketItem(item.id);
   }
 
-  sort(field: string) {
-    this.myList.sort((a, b) => {
-      if (!isNaN(+a[field])) return (this.lastSort == field ? +b[field] - +a[field] : +a[field] - +b[field]);
-
-      return (this.lastSort == field ? b[field].localeCompare(a[field]) : a[field].localeCompare(b[field]));
-    });
-
-    this.lastSort == field ? this.lastSort = '' : this.lastSort = field;
+  sort(field: keyof ItemPrice) {
+    const current = this.sortState();
+    this.sortState.set({ field, desc: current?.field == field && !current.desc });
   }
-
 }

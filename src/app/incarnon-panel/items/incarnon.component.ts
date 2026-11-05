@@ -1,51 +1,33 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Account } from '../../../shared/models/account.model';
 import { TranslocoModule } from '@jsverse/transloco';
 import { Incarnons } from '../../../shared/models/incarnons.model';
+import { ProgressStore } from '../../../shared/store/progress.store';
 import incarnons from '../../../shared/jsons/incarnon.json';
 
 @Component({
     selector: 'app-incarnon',
-    imports: [FormsModule, CommonModule, TranslocoModule],
+    imports: [CommonModule, TranslocoModule],
     templateUrl: './incarnon.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './incarnon.component.scss'
 })
 export class IncarnonComponent {
+  store = inject(ProgressStore);
 
-  @Input() account: Account;
   @Input() image: string = '';
 
+  //Incarnons of this group only
   @Input() incarnons: Incarnons[] = [];
 
-  @Output() update = new EventEmitter<void>();
-
-  //Filters
   show: boolean = true;
-  itemCount: number = 0;
-  itemMastered: number = 0;
 
-  constructor() { }
-
-  calculate() {
-    this.update.emit();
-  }
-
-  ngOnInit(): void {
-    this.itemCount = this.incarnons.filter(i => i.acquisition == this.image).length;
-    this.mastered();
-  }
-
-  mastered() {
-    this.itemMastered = this.incarnons.filter(i => i.acquisition == this.image && i.acquired).length;
-    this.incarnons = this.incarnons.filter(i => i.acquisition == this.image);
+  get itemMastered(): number {
+    return this.incarnons.filter(i => i.acquired).length;
   }
 
   goToWiki(item: Incarnons) {
-    const list = incarnons.filter(i => i.acquisition == this.image);
-    window.open(list.find(i => i.name == item.name).acquisitionDescription, '_blank')
+    window.open(incarnons.find(i => i.name == item.name).acquisitionDescription, '_blank')
     window.focus();
   }
 }

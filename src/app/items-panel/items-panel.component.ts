@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { Account } from '../../shared/models/account.model';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ItemsComponent } from './items/items.component';
 import { ItemType, Util } from '../../shared/utils/util';
 import { ItemJsons } from '../../shared/models/item-jsons.model';
 import { GAME_UPDATE } from '../../shared/metadata';
+import { ItemOptions } from '../../shared/store/progress.model';
+import { ProgressStore } from '../../shared/store/progress.store';
 import acquisitionJson from '../../shared/jsons/acquisition.json';
 import { TranslocoModule } from '@jsverse/transloco';
 
@@ -17,35 +18,19 @@ import { TranslocoModule } from '@jsverse/transloco';
     styleUrl: './items-panel.component.scss'
 })
 export class ItemsPanelComponent {
-
-  @Input() account: Account;
-  @Output() update = new EventEmitter<void>();
+  store = inject(ProgressStore);
 
   items: readonly ItemType[] = Util.itemTypes;
   gameUpdate = GAME_UPDATE;
   mrOptions: number[] = this.buildMrOptions();
-  acquisitionList: { type: string, description: string }[] = acquisitionJson.sort((a, b) => a.type.localeCompare(b.type));
+  acquisitionList: { type: string, description: string }[] = [...acquisitionJson].sort((a, b) => a.type.localeCompare(b.type));
 
   acquisitionFilter: { type: string, description: string } = null;
-  hideMastered: boolean = false;
-  hideFounders: boolean = true;
-  showOnlyMrAvailable: boolean = true;
   nameFilter: string = '';
   mr: number = null;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    const options = Util.loadOptions();
-    if (options) {
-      this.hideMastered = options?.hideMastered;
-      this.showOnlyMrAvailable = options?.showOnlyMrAvailable;
-      this.hideFounders = options?.hideFounders;
-    }
-  }
-
-  calculate() {
-    this.update.emit();
+  get options(): ItemOptions {
+    return this.store.options();
   }
 
   //0 up to the highest MR required by any item
@@ -56,17 +41,18 @@ export class ItemsPanelComponent {
   }
 
   showCategory(type: ItemType): boolean {
+    const items = this.store.account()[type];
     if (this.acquisitionFilter != null) {
-      return this.account[type].some(i => i.acquisition == this.acquisitionFilter.type);
+      return items.some(i => i.acquisition == this.acquisitionFilter.type);
     }
-    if (this.hideMastered) {
-      return this.account[type].some(i => !i.mastered);
+    if (this.options.hideMastered) {
+      return items.some(i => !i.mastered);
     }
 
     return true;
   }
 
-  saveOptions() {
-    Util.saveOptions({ showOnlyMrAvailable: this.showOnlyMrAvailable, hideMastered: this.hideMastered, hideFounders: this.hideFounders });
+  setOption(option: Partial<ItemOptions>) {
+    this.store.setOptions(option);
   }
 }

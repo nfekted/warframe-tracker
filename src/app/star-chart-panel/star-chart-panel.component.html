@@ -35,14 +35,14 @@
         </div>
       </div>
       <div class="col-12 mt-2">
-        <small>{{'on_update' | transloco}}: Update 43:  Jade Shadows: Constellations (2026-06-19)</small>
+        <small>{{'on_update' | transloco}}: {{gameUpdate.name}} ({{gameUpdate.date}})</small>
       </div>
       <hr class="mt-4" />
       @for (item of locations; track item) {
         @if (showCategory(item)) {
           <div class="col-12 col-md-3">
-            <app-star-chart [image]="item" [locations]="account.locations" (update)="calculate()"
-            [hideComplete]="hideComplete" [account]="account"></app-star-chart>
+            <app-star-chart [image]="item" [locations]="store.account().locations"
+            [hideComplete]="hideComplete"></app-star-chart>
           </div>
         }
       }

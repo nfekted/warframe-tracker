@@ -1,32 +1,31 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { Account } from '../../shared/models/account.model';
-import { FormsModule } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 
-import incarnons from '../../shared/jsons/incarnon.json';
+import { GAME_UPDATE } from '../../shared/metadata';
+import { Incarnons } from '../../shared/models/incarnons.model';
+import { ProgressStore } from '../../shared/store/progress.store';
 import { TranslocoModule } from '@jsverse/transloco';
 import { IncarnonComponent } from './items/incarnon.component';
 
 @Component({
     selector: 'app-incarnon-panel',
-    imports: [FormsModule, TranslocoModule, IncarnonComponent],
+    imports: [TranslocoModule, IncarnonComponent],
     templateUrl: './incarnon-panel.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './incarnon-panel.component.scss'
 })
 export class IncarnonPanelComponent {
+  private store = inject(ProgressStore);
 
-  @Input() account: Account;
-  @Output() update = new EventEmitter<void>();
+  gameUpdate = GAME_UPDATE;
 
-  incarnons: string[] = [];
+  //Incarnons grouped by acquisition, in the JSON order
+  groups = computed(() => {
+    const groups = new Map<string, Incarnons[]>();
+    for (const item of this.store.account().incarnons) {
+      groups.set(item.acquisition, [...(groups.get(item.acquisition) ?? []), item]);
+    }
+    return groups;
+  });
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.incarnons = [...new Set(incarnons.map(loc => loc.acquisition))];
-  }
-
-  calculate() {
-    this.update.emit();
-  }
+  incarnons: string[] = [...this.groups().keys()];
 }

@@ -6,13 +6,21 @@
     "sidebar": {
         "list": "Lista items",
         "delete_all": "Apagar meus dados",
-        "disclaimer": "Esse site e aplicações não possuem nenhuma afiliação com a Digital Extremes Ltd ou Warframe. Todo conteudo é salvo nos cookies do seu navegador. Ao continuar, você entende e concorda com esse texto.",
+        "disclaimer": "Esse site e aplicações não possuem nenhuma afiliação com a Digital Extremes Ltd ou Warframe. Todo conteúdo é salvo no seu navegador. Ao continuar, você entende e concorda com esse texto.",
         "star_chart": "Ver mapa estelar",
         "market": "Verificar preços warframe.market",
         "xp_needed": "necessários para próximo nível",
         "next_mr": "Seu próximo MR é {{nextRank}}, com {{xp}}XP",
         "intrinsics": "Intrínsecos",
-        "of": "de"
+        "of": "de",
+        "export": "Exportar meus dados",
+        "import": "Importar dados"
+    },
+    "import": {
+        "confirm": "Substituir seu progresso atual pelo arquivo importado? Não poderá ser desfeito",
+        "success": "Dados importados",
+        "invalid_file": "Este arquivo não é uma exportação do Warframe Tracker",
+        "newer_version": "Este arquivo foi exportado por uma versão mais nova do Warframe Tracker"
     },
     "items": {
         "options": "OPÇÕES",
