@@ -37,7 +37,7 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
 | UI | Bootstrap 5 (dark theme, bundled with Popper), Material Symbols, SweetAlert2 |
 | Language | TypeScript 6 |
 | Build | `@angular/build` (application builder) |
-| Tests | Vitest via `@angular/build:unit-test` (no specs yet) |
+| Tests | Vitest + jsdom via `@angular/build:unit-test` |
 | Hosting | GitHub Pages, served from `/docs` |
 
 ## Getting started
