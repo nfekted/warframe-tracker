@@ -1,3 +1,5 @@
-@use 'mixins';
-
-@include mixins.toggle-buttons;
+//Every location complete and hidden
+.empty {
+    padding: 3rem 1rem;
+    text-align: center;
+}

@@ -29,6 +29,7 @@ const ITEMS = itemPrices
 })
 export class BestItemsComponent {
 
+    categories: TradeCategory[] = ['primeItems', 'primeSets', 'relics', 'helmets', 'miscellaneous', 'arcanes'];
     maxRender = signal(100);
     hidden = signal(new Set<TradeCategory>());
 
@@ -41,6 +42,10 @@ export class BestItemsComponent {
 
     showAll() {
         this.maxRender.set(Infinity);
+    }
+
+    showAllCategories() {
+        this.hidden.set(new Set());
     }
 
     show(category: TradeCategory, show: boolean) {

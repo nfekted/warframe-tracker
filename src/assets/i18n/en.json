@@ -61,7 +61,8 @@
             "kitguns": "KITGUNS"
         },
         "mr_needed": "MR needed to equip item",
-        "jump_to": "Jump to category"
+        "jump_to": "Jump to category",
+        "shown": "{{count}} items shown"
     },
     "incarnon": {
         "description": "Current items with Incarnon system",
@@ -98,7 +99,9 @@
         "steel_path": "Steel Path",
         "mr_awarded": "Mastery XP awarded for completing the mission",
         "complete_steel_path": "Complete the Steel Path version",
-        "steel_path_locked": "Complete the normal mode first"
+        "steel_path_locked": "Complete the normal mode first",
+        "all_complete": "All locations are complete",
+        "show_complete": "Show completed locations"
     },
     "acquisition": {
         "types": {
@@ -254,5 +257,7 @@
         "worst": "Worst result",
         "best": "Best result",
         "expected": "Expected price"
-    }
+    },
+    "no_results": "No items match the filters",
+    "clear_filters": "Clear filters"
 }

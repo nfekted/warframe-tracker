@@ -51,6 +51,33 @@
     font-weight: 400;
 }
 
+//On/off filters: gold when on, with a dark knob that stays readable on it
+.form-switch .form-check-input {
+    width: 2.5em;
+    height: 1.25em;
+    margin-top: 0.125em;
+    margin-right: 0.25rem;
+    background-color: var(--wt-input-bg);
+    border-color: var(--wt-border-soft);
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 0.85%29'/%3e%3c/svg%3e");
+    cursor: pointer;
+
+    &:checked {
+        background-color: var(--wt-gold);
+        border-color: var(--wt-gold);
+        --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23202e37'/%3e%3c/svg%3e");
+    }
+
+    &:focus {
+        border-color: var(--wt-gold-light);
+        box-shadow: 0 0 0 0.25rem rgba(209, 191, 84, 0.25);
+    }
+}
+
+.form-switch .form-check-label {
+    cursor: pointer;
+}
+
 //Buttons set Bootstrap's own button variables, so states (hover, pressed, open) follow without !important
 .btn-primary {
     --bs-btn-color: var(--wt-text);

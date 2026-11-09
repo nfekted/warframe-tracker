@@ -38,6 +38,9 @@ export class ItemsPanelComponent {
     rank: this.store.masteryRank().rank,
   }));
 
+  //How many items pass the filters, across all categories
+  shown = computed(() => this.categories().reduce((sum, c) => sum + c.visible.length, 0));
+
   shortcuts = computed(() => this.categories().map(({ type, items }) =>
     ({ type, mastered: items.filter(i => i.mastered).length, total: items.length })));
 
@@ -58,6 +61,14 @@ export class ItemsPanelComponent {
 
   setOption(option: Partial<ItemOptions>) {
     this.store.setOptions(option);
+  }
+
+  //Shows everything, so an empty result always has a way out
+  clearFilters() {
+    this.acquisition.set(null);
+    this.nameFilter.set('');
+    this.mr.set(null);
+    this.setOption({ hideMastered: false, showOnlyMrAvailable: false, hideFounders: false });
   }
 
   //Empty value means no filter

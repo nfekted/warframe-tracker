@@ -1,172 +1,23 @@
 <div class="col-12">
-  <div class="row">
-    <!-- Prime items -->
-    <div class="col-12 col-md-2">
-      <div class="row">
-        <div class="col-12 text-center">
-          {{'market.show.primeItems' | transloco}}
-        </div>
-        <div class="col-12 text-center">
-          <div class="btn-group" role="group" [attr.aria-label]="'market.show.primeItems' | transloco">
-            <input type="radio" class="btn-check" name="showPrimeItems" id="showPrime" autocomplete="off"
-              (change)="show('primeItems', true)" [checked]="!hidden().has('primeItems')">
-              <label class="btn btn-option btn-toggle" for="showPrime">
-                <span class="material-symbols-outlined">
-                  check
-                </span>
-              </label>
-
-              <input type="radio" class="btn-check" name="showPrimeItems" id="hidePrime" autocomplete="off"
-                (change)="show('primeItems', false)" [checked]="hidden().has('primeItems')">
-                <label class="btn btn-option btn-toggle" for="hidePrime">
-                  <span class="material-symbols-outlined">
-                    close
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Sets -->
-        <div class="col-12 col-md-2">
-          <div class="row">
-            <div class="col-12 text-center">
-              {{'market.show.primeSets' | transloco}}
-            </div>
-            <div class="col-12 text-center">
-              <div class="btn-group" role="group" [attr.aria-label]="'market.show.primeSets' | transloco">
-                <input type="radio" class="btn-check" name="showPrimeSets" id="showSets" autocomplete="off"
-                  (change)="show('primeSets', true)" [checked]="!hidden().has('primeSets')">
-                  <label class="btn btn-option btn-toggle" for="showSets">
-                    <span class="material-symbols-outlined">
-                      check
-                    </span>
-                  </label>
-
-                  <input type="radio" class="btn-check" name="showPrimeSets" id="hideSets" autocomplete="off"
-                    (change)="show('primeSets', false)" [checked]="hidden().has('primeSets')">
-                    <label class="btn btn-option btn-toggle" for="hideSets">
-                      <span class="material-symbols-outlined">
-                        close
-                      </span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Relics -->
-            <div class="col-12 col-md-2">
-              <div class="row">
-                <div class="col-12 text-center">
-                  {{'market.show.relics' | transloco}}
-                </div>
-                <div class="col-12 text-center">
-                  <div class="btn-group" role="group" [attr.aria-label]="'market.show.relics' | transloco">
-                    <input type="radio" class="btn-check" name="showRelics" id="showRelic" autocomplete="off"
-                      (change)="show('relics', true)" [checked]="!hidden().has('relics')">
-                      <label class="btn btn-option btn-toggle" for="showRelic">
-                        <span class="material-symbols-outlined">
-                          check
-                        </span>
-                      </label>
-
-                      <input type="radio" class="btn-check" name="showRelics" id="hideRelic" autocomplete="off"
-                        (change)="show('relics', false)" [checked]="hidden().has('relics')">
-                        <label class="btn btn-option btn-toggle" for="hideRelic">
-                          <span class="material-symbols-outlined">
-                            close
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Helmet -->
-                <div class="col-12 col-md-2">
-                  <div class="row">
-                    <div class="col-12 text-center">
-                      {{'market.show.helmets' | transloco}}
-                    </div>
-                    <div class="col-12 text-center">
-                      <div class="btn-group" role="group" [attr.aria-label]="'market.show.helmets' | transloco">
-                        <input type="radio" class="btn-check" name="showHelmet" id="showHelms" autocomplete="off"
-                          (change)="show('helmets', true)" [checked]="!hidden().has('helmets')">
-                          <label class="btn btn-option btn-toggle" for="showHelms">
-                            <span class="material-symbols-outlined">
-                              check
-                            </span>
-                          </label>
-
-                          <input type="radio" class="btn-check" name="showHelmet" id="hideHelmet" autocomplete="off"
-                            (change)="show('helmets', false)" [checked]="hidden().has('helmets')">
-                            <label class="btn btn-option btn-toggle" for="hideHelmet">
-                              <span class="material-symbols-outlined">
-                                close
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Misc -->
-                    <div class="col-12 col-md-2">
-                      <div class="row">
-                        <div class="col-12 text-center">
-                          {{'market.show.miscellaneous' | transloco}}
-                        </div>
-                        <div class="col-12 text-center">
-                          <div class="btn-group" role="group" [attr.aria-label]="'market.show.miscellaneous' | transloco">
-                            <input type="radio" class="btn-check" name="showMiscellaneous" id="showMisc" autocomplete="off"
-                              (change)="show('miscellaneous', true)" [checked]="!hidden().has('miscellaneous')">
-                              <label class="btn btn-option btn-toggle" for="showMisc">
-                                <span class="material-symbols-outlined">
-                                  check
-                                </span>
-                              </label>
-
-                              <input type="radio" class="btn-check" name="showMiscellaneous" id="hideMisc" autocomplete="off"
-                                (change)="show('miscellaneous', false)" [checked]="hidden().has('miscellaneous')">
-                                <label class="btn btn-option btn-toggle" for="hideMisc">
-                                  <span class="material-symbols-outlined">
-                                    close
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Misc -->
-                        <div class="col-12 col-md-2">
-                          <div class="row">
-                            <div class="col-12 text-center">
-                              {{'market.show.arcanes' | transloco}}
-                            </div>
-                            <div class="col-12 text-center">
-                              <div class="btn-group" role="group" [attr.aria-label]="'market.show.arcanes' | transloco">
-                                <input type="radio" class="btn-check" name="showArcanes" id="showArc" autocomplete="off"
-                                  (change)="show('arcanes', true)" [checked]="!hidden().has('arcanes')">
-                                  <label class="btn btn-option btn-toggle" for="showArc">
-                                    <span class="material-symbols-outlined">
-                                      check
-                                    </span>
-                                  </label>
-
-                                  <input type="radio" class="btn-check" name="showArcanes" id="hideArc" autocomplete="off"
-                                    (change)="show('arcanes', false)" [checked]="hidden().has('arcanes')">
-                                    <label class="btn btn-option btn-toggle" for="hideArc">
-                                      <span class="material-symbols-outlined">
-                                        close
-                                      </span>
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+  <div class="switches">
+    @for (category of categories; track category) {
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" [id]="'show-' + category"
+          [checked]="!hidden().has(category)" (change)="show(category, $any($event.target).checked)">
+        <label class="form-check-label" [for]="'show-' + category">{{'market.show.' + category | transloco}}</label>
+      </div>
+    }
+  </div>
+</div>
 
                         <div class="col-12 mt-4">
                           {{'market.items_on_list' | transloco: {count: tradeItem().length, shown: maxRender() >= tradeItem().length ? ('market.all' | transloco) : maxRender()} }}
+                          @if (tradeItem().length == 0) {
+                            <div class="empty">
+                              <p>{{'no_results' | transloco}}</p>
+                              <button type="button" class="btn btn-primary" (click)="showAllCategories()">{{'clear_filters' | transloco}}</button>
+                            </div>
+                          } @else {
                           <table class="table table-dark mt-4">
                             <thead>
                               <tr>
@@ -233,4 +84,5 @@
                           </table>
                           <p><button class="btn btn-sm btn-primary" (click)="maxRender.set(maxRender() + 100)">{{'market.show_more' | transloco}}</button></p>
                           <p><button class="btn btn-sm btn-primary" (click)="showAll()">{{'market.load_all' | transloco}}</button></p>
+                          }
                         </div>
