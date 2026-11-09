@@ -39,7 +39,7 @@
       </div>
       <hr class="mt-4" />
       @for (group of planets(); track group.planet) {
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-6 col-xl-4 col-xxl-3 mt-4">
           <app-star-chart [planet]="group.planet" [locations]="group.locations" [visible]="group.visible"></app-star-chart>
         </div>
       }

@@ -96,7 +96,8 @@
         "normal": "Normal",
         "steel_path": "Steel Path",
         "mr_awarded": "XP de maestria ganho ao completar a missão",
-        "complete_steel_path": "Completar a versão Steel Path"
+        "complete_steel_path": "Completar a versão Steel Path",
+        "steel_path_locked": "Conclua o modo normal primeiro"
     },
     "acquisition": {
         "types": {

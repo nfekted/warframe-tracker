@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy, computed, inject, input } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
 import { StarChart } from '../../../shared/models/star-chart.model';
 import { ProgressStore } from '../../../shared/store/progress.store';
 import { TrackerCardComponent } from '../../tracker-card/tracker-card.component';
@@ -7,7 +6,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-star-chart',
-    imports: [UpperCasePipe, TranslocoModule, TrackerCardComponent],
+    imports: [TranslocoModule, TrackerCardComponent],
     templateUrl: './star-chart.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './star-chart.component.scss'

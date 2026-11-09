@@ -57,11 +57,19 @@ export class ProgressStore {
         this.update(p => ({ ...p, mastered: { ...p.mastered, [type]: toggle(p.mastered[type] ?? [], name) } }));
     }
 
+    //Steel Path needs the normal node, so unmarking the node also unmarks its Steel Path
     toggleLocation(name: string) {
-        this.update(p => ({ ...p, locations: toggle(p.locations, name) }));
+        this.update(p => {
+            const locations = toggle(p.locations, name);
+            const steelPath = locations.includes(name) ? p.steelPath : p.steelPath.filter(v => v != name);
+            return { ...p, locations, steelPath };
+        });
     }
 
+    //Marked only after the normal node; always unmarkable, so older saves can still be fixed
     toggleSteelPath(name: string) {
+        const { locations, steelPath } = this.progress();
+        if (!locations.includes(name) && !steelPath.includes(name)) return;
         this.update(p => ({ ...p, steelPath: toggle(p.steelPath, name) }));
     }
 

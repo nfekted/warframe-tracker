@@ -96,7 +96,8 @@
         "normal": "Normal",
         "steel_path": "Steel Path",
         "mr_awarded": "Mastery XP awarded for completing the mission",
-        "complete_steel_path": "Complete the Steel Path version"
+        "complete_steel_path": "Complete the Steel Path version",
+        "steel_path_locked": "Complete the normal mode first"
     },
     "acquisition": {
         "types": {

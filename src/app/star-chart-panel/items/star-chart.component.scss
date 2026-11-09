@@ -1,8 +1,155 @@
-@use 'mixins';
+//Planet card
+:host {
+    display: block;
+    height: 100%;
+    padding: 0 0.75rem 0.75rem;
+    background-color: var(--wt-bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+}
 
-@include mixins.toggle-buttons;
-@include mixins.mastered;
+//Collapses with the card's mt-5 so the title sits 0.75rem from the top
+app-tracker-card {
+    display: block;
+    margin-top: -2.25rem;
+}
 
 .normal-label {
     margin-right: 10px;
+}
+
+//Node rows: main toggle, Steel Path toggle and wiki link
+.nodes {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    text-align: left;
+}
+
+.node {
+    display: flex;
+    background-color: var(--wt-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.375rem;
+    overflow: hidden;
+    transition: border-color 0.15s, background-color 0.15s;
+
+    &:hover {
+        border-color: var(--wt-gold-soft);
+    }
+
+    button,
+    a {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: 0;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            background-color: var(--wt-hover);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--wt-gold);
+            outline-offset: -2px;
+        }
+    }
+}
+
+.node-main {
+    flex: 1;
+    min-width: 0;
+    gap: 0.5rem;
+    padding: 0.375rem 0.5rem;
+    text-align: left;
+}
+
+.status {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.node-name {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.node-xp {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+.node .node-sp,
+.node .node-wiki {
+    padding: 0 0.625rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.node .node-wiki {
+    color: rgba(255, 255, 255, 0.7);
+
+    &:hover {
+        color: var(--wt-text);
+    }
+}
+
+//Steel Path off: dimmed grey icon; on: lit icon with a gold underline
+.node-sp img {
+    opacity: 0.35;
+    filter: grayscale(1);
+}
+
+//Locked until the normal node is done
+.node .node-sp:disabled {
+    cursor: not-allowed;
+    background: none;
+
+    img {
+        opacity: 0.15;
+    }
+}
+
+.node-sp.on {
+    background-color: var(--wt-hover);
+    box-shadow: inset 0 -2px 0 var(--wt-gold);
+
+    img {
+        opacity: 1;
+        filter: none;
+    }
+}
+
+//Normal done: filled check and darker row; normal and Steel Path done: gold border
+.done {
+    background-color: var(--wt-hover);
+    border-color: var(--wt-mastered-border);
+
+    .status {
+        color: var(--wt-gold);
+    }
+
+    .node-name {
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+.complete {
+    border-color: var(--wt-gold-soft);
+}
+
+.junction {
+    border-left: 3px solid #37cfd4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .node {
+        transition: none;
+    }
 }

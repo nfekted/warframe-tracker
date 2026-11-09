@@ -3,41 +3,34 @@
     <span class="card-heading">{{mastered()}}/{{locations().length}}</span>
     <small class="normal-label"> ({{'planets.normal' | transloco}})</small>
     <span class="card-heading">
-      <img src="assets/img/icons/mastered.png" width="20" />
+      <img src="assets/img/icons/mastered.png" width="20" height="20" alt="" />
       {{steelPath()}}/{{locations().length}}
     </span><small>({{'planets.steel_path' | transloco}})</small>
   </ng-container>
-  @for (item of visible(); track item.name) {
-    <div class="col-12 mt-2">
-      <div class="btn-group w" role="group">
-        <button class="btn btn-sm btn-primary btn-item w"
-          [class.mastered]="item.mastered" [class.tenet]="item.name.includes('Junction')"
+  <ul class="nodes">
+    @for (item of visible(); track item.name) {
+      <li class="node" [class.done]="item.mastered" [class.complete]="item.mastered && item.steel_path"
+        [class.junction]="item.name.includes('Junction')">
+        <button type="button" class="node-main" [attr.aria-pressed]="item.mastered"
           (click)="store.toggleLocation(item.name)">
-          <small class="float-start item-tag"
-            [title]="'planets.mr_awarded' | transloco">
-            <img src="assets/img/icons/mastered.png" width="15" />
-            MR Exp {{item.mastery_exp}}
-          </small>
-          {{item.name | uppercase}}
-          @if (item.mastered) {
-            <span class="material-symbols-outlined icon-md">
-              check
-            </span>
-          }
-        </button>
-        <button class="btn btn-sm btn-primary btn-item"
-          [class.mastered]="item.steel_path" [title]="'planets.complete_steel_path' | transloco"
-          (click)="store.toggleSteelPath(item.name)">
-          <img src="assets/img/icons/mastered.png" width="20" />
-        </button>
-        <a class="btn btn-primary btn-item" [href]="item.wiki" target="_blank" rel="noopener"
-          [style.opacity]="item.mastered ? 0.9 : 1"
-          [class.mastered]="item.mastered && item.steel_path">
-          <span class="material-symbols-outlined">
-            open_in_new
+          <span class="material-symbols-outlined status" aria-hidden="true">
+            {{item.mastered ? 'check_circle' : 'radio_button_unchecked'}}
           </span>
+          <span class="node-name">{{item.name}}</span>
+          <small class="node-xp" [title]="'planets.mr_awarded' | transloco">{{item.mastery_exp}} XP</small>
+        </button>
+        @let spLocked = !item.mastered && !item.steel_path;
+        <button type="button" class="node-sp" [class.on]="item.steel_path" [attr.aria-pressed]="item.steel_path"
+          [disabled]="spLocked"
+          [title]="(spLocked ? 'planets.steel_path_locked' : 'planets.complete_steel_path') | transloco"
+          [attr.aria-label]="(spLocked ? 'planets.steel_path_locked' : 'planets.complete_steel_path') | transloco"
+          (click)="store.toggleSteelPath(item.name)">
+          <img src="assets/img/icons/mastered.png" width="16" height="16" alt="" />
+        </button>
+        <a class="node-wiki" [href]="item.wiki" target="_blank" rel="noopener" [title]="'Wiki: ' + item.name">
+          <span class="material-symbols-outlined icon-md" aria-hidden="true">open_in_new</span>
         </a>
-      </div>
-    </div>
-  }
+      </li>
+    }
+  </ul>
 </app-tracker-card>

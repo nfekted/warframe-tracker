@@ -133,6 +133,32 @@ describe('ProgressStore', () => {
       expect(store.account().xp).toBe(node.mastery_exp * 2);
     });
 
+    it('marks Steel Path only after the normal node', () => {
+      store.toggleSteelPath(node.name);
+
+      expect(store.account().locations.find(l => l.name == node.name)!.steel_path).toBe(false);
+    });
+
+    it('unmarks Steel Path together with the normal node', () => {
+      store.toggleLocation(node.name);
+      store.toggleSteelPath(node.name);
+      store.toggleLocation(node.name);
+
+      const built = store.account().locations.find(l => l.name == node.name)!;
+      expect(built.mastered).toBe(false);
+      expect(built.steel_path).toBe(false);
+      expect(store.account().xp).toBe(0);
+    });
+
+    it('still unmarks a saved Steel Path without its normal node', async () => {
+      await saved({ steelPath: [node.name] });
+      const s = await loadedStore();
+
+      s.toggleSteelPath(node.name);
+
+      expect(s.account().locations.find(l => l.name == node.name)!.steel_path).toBe(false);
+    });
+
     it('toggles an Incarnon', () => {
       store.toggleIncarnon(incarnon[0].name);
 
