@@ -83,6 +83,29 @@ describe('MarketComponent search', () => {
     expect(market.noMatch()).toBe(false);
   });
 
+  it('sums the list by median price', () => {
+    const input = document.createElement('input');
+    const [first] = search('secura dual cestra');
+    market.selectItem(first, input);
+    const [second] = search('braton prime set');
+    market.selectItem(second, input);
+
+    const medians = market.myList().map(i => i.most_frequent);
+    expect(medians.length).toBe(2);
+    expect(market.total()).toBe(medians[0] + medians[1]);
+  });
+
+  it('marks only the sorted column, ascending then descending', () => {
+    expect(market.ariaSort('lowest')).toBeNull();
+
+    market.sort('lowest');
+    expect(market.ariaSort('lowest')).toBe('ascending');
+    expect(market.ariaSort('name')).toBeNull();
+
+    market.sort('lowest');
+    expect(market.ariaSort('lowest')).toBe('descending');
+  });
+
   it('adds the selected item and clears the search', () => {
     const input = document.createElement('input');
     input.value = 'secura dual';

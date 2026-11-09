@@ -5,3 +5,10 @@
 .best {
     color: var(--wt-gold-light);
 }
+
+//Phone cards: drop names take the room left by price and link
+@media (max-width: 767.98px) {
+    .drop-name {
+        flex: 1 1 50%;
+    }
+}

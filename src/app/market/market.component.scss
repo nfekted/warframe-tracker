@@ -2,6 +2,16 @@ th {
     font-weight: normal;
 }
 
+.empty-list,
+.total {
+    margin-top: 1.5rem;
+}
+
+//Columns not sorted yet only hint that they can be
+.sort-idle {
+    opacity: 0.5;
+}
+
 //Header buttons look like the header text
 .sort-button {
     padding: 0;

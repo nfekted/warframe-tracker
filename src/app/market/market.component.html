@@ -51,102 +51,67 @@
             }
           </div>
 
-          <table class="table table-dark mt-4">
-            <thead>
-              <tr>
-                <th scope="col">
-                  <button type="button" class="sort-button" (click)="sort('name')">
-                    {{'market.item' | transloco}}
-                    <span class="material-symbols-outlined" aria-hidden="true">
-                      {{lastSort() == 'name' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                    </span>
-                  </button>
-                </th>
-                <th scope="col" class="text-center">
-                  <button type="button" class="sort-button" (click)="sort('lowest')">
-                    {{'market.lowest' | transloco}}
-                    <span class="material-symbols-outlined" aria-hidden="true">
-                      {{lastSort() == 'lowest' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                    </span>
-                  </button>
-                </th>
-                <th scope="col" class="text-center">
-                  <button type="button" class="sort-button" (click)="sort('higher')">
-                    {{'market.highest' | transloco}}
-                    <span class="material-symbols-outlined" aria-hidden="true">
-                      {{lastSort() == 'higher' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                    </span>
-                  </button>
-                </th>
-                <th scope="col" class="text-center">
-                  <button type="button" class="sort-button" (click)="sort('average')">
-                    {{'market.average' | transloco}}
-                    <span class="material-symbols-outlined" aria-hidden="true">
-                      {{lastSort() == 'average' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                    </span>
-                  </button>
-                </th>
-                <th scope="col" class="text-center">
-                  <button type="button" class="sort-button" (click)="sort('most_frequent')">
-                    {{'market.median' | transloco}}
-                    <span class="material-symbols-outlined" aria-hidden="true">
-                      {{lastSort() == 'most_frequent' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-                    </span>
-                  </button>
-                </th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              @for (item of myList(); track item.id) {
-                <tr class="text-center">
-                  <td scope="row" class="text-start">{{item.name}}</td>
-                  <td scope="row">
-                    {{item.lowest > 0 ? item.lowest : '-'}}
-                    @if (item.lowest > 0) {
-                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
-                    }
-                  </td>
-                  <td scope="row">
-                    {{item.higher > 0 ? item.higher : '-'}}
-                    @if (item.higher > 0) {
-                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
-                    }
-                  </td>
-                  <td scope="row">
-                    {{item.average > 0 ? item.average : '-'}}
-                    @if (item.average > 0) {
-                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
-                    }
-                  </td>
-                  <td scope="row">
-                    {{item.most_frequent > 0 ? item.most_frequent : '-'}}
-                    @if (item.most_frequent > 0) {
-                      <img src="assets/img/icons/platinum.png" alt="platinum"
-                        width="25" />
-                    }
-                  </td>
-                  <td scope="row">
-                    <a class="text-white" [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"
-                      [title]="'market.open' | transloco">
-                      <span class="material-symbols-outlined">
-                        open_in_new
-                      </span>
-                    </a>
-                  </td>
-                  <td>
-                    <button type="button" class="remove" [title]="'market.remove' | transloco" [attr.aria-label]="'market.remove' | transloco"
-                      (click)="removeItem(item)">
-                      <span class="material-symbols-outlined" aria-hidden="true">
-                        delete
-                      </span>
-                    </button>
-                  </td>
+          @if (myList().length == 0) {
+            <p class="empty-list">{{'market.empty_list' | transloco}}</p>
+          } @else {
+            <p class="total">
+              {{'market.total' | transloco}}: <strong>{{total() | thousands: lang()}}</strong>
+              <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+            </p>
+            <table class="table table-dark stacked">
+              <thead>
+                <tr>
+                  @for (column of columns; track column.field) {
+                    <th scope="col" [class.text-center]="column.field != 'name'" [attr.aria-sort]="ariaSort(column.field)">
+                      <button type="button" class="sort-button" (click)="sort(column.field)">
+                        {{column.label | transloco}}
+                        <span class="material-symbols-outlined" [class.sort-idle]="!ariaSort(column.field)" aria-hidden="true">
+                          {{ariaSort(column.field) == 'ascending' ? 'arrow_upward' : ariaSort(column.field) == 'descending' ? 'arrow_downward' : 'swap_vert'}}
+                        </span>
+                      </button>
+                    </th>
+                  }
+                  <th scope="col"><span class="visually-hidden">{{'market.open' | transloco}}</span></th>
+                  <th scope="col"><span class="visually-hidden">{{'market.remove' | transloco}}</span></th>
                 </tr>
-              }
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                @for (item of myList(); track item.id) {
+                  <tr class="text-center">
+                    <td class="text-start st-main">{{item.name}}</td>
+                    <td class="st-extra" [attr.data-label]="'market.lowest' | transloco">
+                      {{item.lowest}}
+                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+                    </td>
+                    <td class="st-extra" [attr.data-label]="'market.highest' | transloco">
+                      {{item.higher}}
+                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+                    </td>
+                    <td class="st-extra" [attr.data-label]="'market.average' | transloco">
+                      {{item.average}}
+                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+                    </td>
+                    <td class="st-key" [attr.data-label]="'market.median' | transloco">
+                      {{item.most_frequent}}
+                      <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+                    </td>
+                    <td class="st-action">
+                      <a class="text-white" [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"
+                        [title]="'market.open' | transloco" [attr.aria-label]="'market.open' | transloco">
+                        <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+                      </a>
+                    </td>
+                    <td class="st-action">
+                      <button type="button" class="remove" [title]="'market.remove' | transloco" [attr.aria-label]="'market.remove' | transloco"
+                        (click)="removeItem(item)">
+                        <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                      </button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          }
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@
                               <button type="button" class="btn btn-primary" (click)="showAllCategories()">{{'clear_filters' | transloco}}</button>
                             </div>
                           } @else {
-                          <table class="table table-dark mt-4">
+                          <table class="table table-dark mt-4 stacked">
                             <thead>
                               <tr>
                                 <th scope="col">
@@ -45,33 +45,33 @@
                             <tbody>
                               @for (item of rendered(); track item.id; let i = $index) {
                                 <tr class="text-center">
-                                  <td scope="row" class="text-start">{{i+1}}</td>
-                                  <td scope="row" class="text-start">{{item.name}}</td>
-                                  <td scope="row">
+                                  <td scope="row" class="text-start st-rank">{{i+1}}</td>
+                                  <td scope="row" class="text-start st-main">{{item.name}}</td>
+                                  <td scope="row" class="st-extra" [attr.data-label]="'market.lowest' | transloco">
                                     {{item.lowest > 0 ? item.lowest : '-'}}
                                     @if (item.lowest > 0) {
                                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                                     }
                                   </td>
-                                  <td scope="row">
+                                  <td scope="row" class="st-extra" [attr.data-label]="'market.highest' | transloco">
                                     {{item.higher > 0 ? item.higher : '-'}}
                                     @if (item.higher > 0) {
                                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                                     }
                                   </td>
-                                  <td scope="row">
+                                  <td scope="row" class="st-extra" [attr.data-label]="'market.average' | transloco">
                                     {{item.average > 0 ? item.average : '-'}}
                                     @if (item.average > 0) {
                                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                                     }
                                   </td>
-                                  <td scope="row">
+                                  <td scope="row" class="st-key" [attr.data-label]="'market.median' | transloco">
                                     {{item.most_frequent > 0 ? item.most_frequent : '-'}}
                                     @if (item.most_frequent > 0) {
                                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                                     }
                                   </td>
-                                  <td scope="row">
+                                  <td scope="row" class="st-action">
                                     <a class="text-white" [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener" [title]="'market.open' | transloco">
                                       <span class="material-symbols-outlined">
                                         open_in_new

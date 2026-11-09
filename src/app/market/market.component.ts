@@ -7,6 +7,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
+import { ThousandsPipe } from '../../shared/utils/thousands.pipe';
 
 type ItemPrice = { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number };
 type Tradeable = { id: string, url: string, name_en: string, name_pt: string };
@@ -25,7 +26,7 @@ const SEARCH_INDEX = tradeables
 
 @Component({
     selector: 'app-market',
-    imports: [BestRelicsComponent, BestItemsComponent, TranslocoModule],
+    imports: [BestRelicsComponent, BestItemsComponent, TranslocoModule, ThousandsPipe],
     templateUrl: './market.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './market.component.scss'
@@ -38,12 +39,16 @@ export class MarketComponent {
   lang = this.store.lang;
   marketData = MARKET_DATA;
 
+  columns: { field: keyof ItemPrice, label: string }[] = [
+    { field: 'name', label: 'market.item' },
+    { field: 'lowest', label: 'market.lowest' },
+    { field: 'higher', label: 'market.highest' },
+    { field: 'average', label: 'market.average' },
+    { field: 'most_frequent', label: 'market.median' },
+  ];
+
   //Clicking the same column again reverses the order
   private sortState = signal<{ field: keyof ItemPrice, desc: boolean } | null>(null);
-  lastSort = computed(() => {
-    const sort = this.sortState();
-    return sort && !sort.desc ? sort.field : '';
-  });
 
   private searchTimer: ReturnType<typeof setTimeout> | undefined;
   private searchTerm = signal('');
@@ -77,6 +82,16 @@ export class MarketComponent {
       return desc ? -result : result;
     });
   });
+
+  //Whole list valued by the median price
+  total = computed(() => this.myList().reduce((sum, item) => sum + item.most_frequent, 0));
+
+  //Only the sorted column has a direction; the others are not announced as sorted
+  ariaSort(field: keyof ItemPrice): 'ascending' | 'descending' | null {
+    const sort = this.sortState();
+    if (sort?.field != field) return null;
+    return sort.desc ? 'descending' : 'ascending';
+  }
 
   onSearchChange(value: string) {
     clearTimeout(this.searchTimer);

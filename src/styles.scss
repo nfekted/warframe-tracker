@@ -167,3 +167,84 @@
 .material-symbols-outlined.icon-md {
     font-size: 1.25rem;
 }
+
+//Price tables turn into one card per row on phones: rank and name, then key price and actions,
+//then the other values; cells name their column through data-label
+@media (max-width: 767.98px) {
+    .table.stacked {
+        thead {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+
+        tbody {
+            display: block;
+        }
+
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.25rem 0.75rem;
+            padding: 0.625rem 0.75rem;
+            background-color: var(--bs-table-bg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            //Line breaks between the groups of values
+            &::before,
+            &::after {
+                content: '';
+                flex-basis: 100%;
+                order: 1;
+            }
+
+            &::after {
+                order: 3;
+            }
+        }
+
+        td {
+            display: block;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+            text-align: left;
+        }
+
+        td[data-label]::before {
+            content: attr(data-label) ': ';
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .st-rank {
+            color: rgba(255, 255, 255, 0.7);
+
+            &::before {
+                content: '#';
+            }
+        }
+
+        //Name fills the first line (beside the rank); the key price opens the next one, actions at its right
+        .st-main {
+            flex: 1 1 calc(100% - 3rem);
+        }
+
+        .st-key {
+            margin-right: auto;
+        }
+
+        .st-extra {
+            order: 2;
+            font-size: 0.875rem;
+        }
+
+        .st-extra-2 {
+            order: 4;
+            font-size: 0.875rem;
+        }
+    }
+}

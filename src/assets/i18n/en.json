@@ -257,7 +257,9 @@
         "worst": "Worst result",
         "best": "Best result",
         "expected": "Expected price",
-        "no_match": "No item found, or it is already on your list"
+        "no_match": "No item found, or it is already on your list",
+        "empty_list": "Your list is empty. Search for an item above to add it.",
+        "total": "Total value (median price)"
     },
     "no_results": "No items match the filters",
     "clear_filters": "Clear filters",

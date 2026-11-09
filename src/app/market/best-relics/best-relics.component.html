@@ -12,7 +12,7 @@
   </select>
 </div>
 <div class="col-12">
-  <table class="table table-dark mt-4">
+  <table class="table table-dark mt-4 stacked">
     <thead>
       <tr>
         <th scope="col">
@@ -35,16 +35,16 @@
     <tbody>
       @for (item of rendered(); track item.name; let i = $index) {
         <tr class="text-left">
-          <td scope="row" class="text-start">{{i+1}}</td>
-          <td scope="row" class="text-start">{{item.name}}</td>
-          <td class="worst" scope="row">
+          <td scope="row" class="text-start st-rank">{{i+1}}</td>
+          <td scope="row" class="text-start st-main">{{item.name}}</td>
+          <td class="worst st-extra drop-name" scope="row" [attr.data-label]="'market.worst' | transloco">
             {{item.worst_name}}
           </td>
-          <td class="worst">
+          <td class="worst st-extra">
             {{item.worst}}
             <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
           </td>
-          <td>
+          <td class="st-extra">
             <a class="worst" [href]="'https://warframe.market/items/' + item.worst_url" target="_blank" rel="noopener"
               [title]="'market.open' | transloco">
               <span class="material-symbols-outlined">
@@ -52,14 +52,14 @@
               </span>
             </a>
           </td>
-          <td class="best" scope="row">
+          <td class="best st-extra-2 drop-name" scope="row" [attr.data-label]="'market.best' | transloco">
             {{item.best_name}}
           </td>
-          <td class="best">
+          <td class="best st-extra-2">
             {{item.best}}
             <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
           </td>
-          <td>
+          <td class="st-extra-2">
             <a class="best" [href]="'https://warframe.market/items/' + item.best_url" target="_blank" rel="noopener"
               [title]="'market.open' | transloco">
               <span class="material-symbols-outlined">
@@ -67,7 +67,7 @@
               </span>
             </a>
           </td>
-          <td scope="row">
+          <td scope="row" class="st-key" [attr.data-label]="'market.expected' | transloco">
             {{item.expected}}
             <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
           </td>
