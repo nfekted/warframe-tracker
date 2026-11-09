@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ElementRef, afterNextRender, computed, inject, signal, viewChild } from '@angular/core';
 
 import tradeables from '../../shared/jsons/tradeable/tradeables.json';
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
@@ -8,15 +8,16 @@ import { ProgressStore } from '../../shared/store/progress.store';
 import { BestRelicsComponent } from './best-relics/best-relics.component';
 import { BestItemsComponent } from './best-items/best-items.component';
 import { ThousandsPipe } from '../../shared/utils/thousands.pipe';
+import { normalize } from '../../shared/utils/normalize';
+import { ariaSort, nextSort, SortState, sortRows } from '../../shared/utils/table-sort';
+import { Bootstrap } from '../../shared/utils/bootstrap';
 
 type ItemPrice = { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number };
 type Tradeable = { id: string, url: string, name_en: string, name_pt: string };
 
 const SEARCH_DELAY = 150;
 const MAX_RESULTS = 50;
-
-//Lower case and without accents, so "lamina" finds "Lâmina"
-export const normalize = (text: string) => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+const TAB_KEY = 'marketTab';
 
 //English and Portuguese names normalized once; items without a price are left out, as they could not be added
 const PRICED = new Set(itemPrices.map(p => p.id));
@@ -48,7 +49,20 @@ export class MarketComponent {
   ];
 
   //Clicking the same column again reverses the order
-  private sortState = signal<{ field: keyof ItemPrice, desc: boolean } | null>(null);
+  private sortState = signal<SortState<ItemPrice>>(null);
+
+  private tabs = viewChild.required<ElementRef<HTMLElement>>('tabs');
+
+  //Reopens the tab used last; Bootstrap still switches the tabs (and handles their arrow keys)
+  constructor() {
+    afterNextRender(() => {
+      const tabs = this.tabs().nativeElement;
+      const saved = tabs.querySelector(`[data-bs-target="#${localStorage.getItem(TAB_KEY)}"]`);
+      if (saved) Bootstrap().Tab.getOrCreateInstance(saved).show();
+      tabs.addEventListener('shown.bs.tab', event =>
+        localStorage.setItem(TAB_KEY, (event.target as HTMLElement).getAttribute('data-bs-target')!.slice(1)));
+    });
+  }
 
   private searchTimer: ReturnType<typeof setTimeout> | undefined;
   private searchTerm = signal('');
@@ -73,24 +87,14 @@ export class MarketComponent {
   //Saved ids that are no longer in the price list are skipped
   myList = computed(() => {
     const list = this.store.marketIds().map(id => this.prices.get(id)).filter(p => p !== undefined);
-    const sort = this.sortState();
-    if (!sort) return list;
-
-    const { field, desc } = sort;
-    return [...list].sort((a, b) => {
-      const result = typeof a[field] == 'number' ? +a[field] - +b[field] : String(a[field]).localeCompare(String(b[field]));
-      return desc ? -result : result;
-    });
+    return sortRows(list, this.sortState());
   });
 
   //Whole list valued by the median price
   total = computed(() => this.myList().reduce((sum, item) => sum + item.most_frequent, 0));
 
-  //Only the sorted column has a direction; the others are not announced as sorted
-  ariaSort(field: keyof ItemPrice): 'ascending' | 'descending' | null {
-    const sort = this.sortState();
-    if (sort?.field != field) return null;
-    return sort.desc ? 'descending' : 'ascending';
+  ariaSort(field: keyof ItemPrice) {
+    return ariaSort(this.sortState(), field);
   }
 
   onSearchChange(value: string) {
@@ -110,7 +114,6 @@ export class MarketComponent {
   }
 
   sort(field: keyof ItemPrice) {
-    const current = this.sortState();
-    this.sortState.set({ field, desc: current?.field == field && !current.desc });
+    this.sortState.set(nextSort(this.sortState(), field));
   }
 }

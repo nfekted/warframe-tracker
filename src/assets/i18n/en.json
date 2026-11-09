@@ -246,8 +246,6 @@
             "miscellaneous": "Show miscellaneous",
             "arcanes": "Show arcanes"
         },
-        "items_on_list": "{{count}} items on list. Displaying {{shown}}.",
-        "all": "all",
         "show_more": "Show +100",
         "load_all": "Load all",
         "radiant_only": "Only radiant relics are displayed, the ratio remains the same in other versions of the relic.",
@@ -259,7 +257,9 @@
         "expected": "Expected price",
         "no_match": "No item found, or it is already on your list",
         "empty_list": "Your list is empty. Search for an item above to add it.",
-        "total": "Total value (median price)"
+        "total": "Total value (median price)",
+        "found": "{{count}} items found",
+        "show_more_count": "Show more ({{shown}} of {{count}})"
     },
     "no_results": "No items match the filters",
     "clear_filters": "Clear filters",

@@ -1,9 +1,12 @@
-import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ChangeDetectionStrategy, ElementRef, computed, inject, viewChild } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { filter } from 'rxjs';
 import { INTRINSICS } from '../../shared/metadata';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { DialogService } from '../dialog/dialog.service';
 import { ThousandsPipe } from '../../shared/utils/thousands.pipe';
+import { Bootstrap } from '../../shared/utils/bootstrap';
 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
@@ -20,6 +23,14 @@ export class SidebarComponent {
   store = inject(ProgressStore);
 
   intrinsics = INTRINSICS;
+
+  private menu = viewChild.required<ElementRef<HTMLElement>>('menu');
+
+  //On phones the menu covers the page, so it closes after each navigation
+  constructor() {
+    inject(Router).events.pipe(filter(event => event instanceof NavigationEnd), takeUntilDestroyed())
+      .subscribe(() => Bootstrap().Collapse.getInstance(this.menu().nativeElement)?.hide());
+  }
 
   //Percentage of the way to the next rank; full at the last rank
   progress = computed(() => {

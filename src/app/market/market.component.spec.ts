@@ -3,7 +3,8 @@ import { TestBed } from '@angular/core/testing';
 import { TranslocoTestingModule } from '@jsverse/transloco';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { tradeCategory } from './best-items/best-items.component';
-import { MarketComponent, normalize } from './market.component';
+import { MarketComponent } from './market.component';
+import { normalize } from '../../shared/utils/normalize';
 import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
 
 describe('tradeCategory', () => {

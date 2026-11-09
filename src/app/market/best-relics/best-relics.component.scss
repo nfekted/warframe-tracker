@@ -1,5 +1,39 @@
+//Era chips: one at a time, the selected one in gold
+.eras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.era {
+    padding: 0.25rem 0.875rem;
+    background-color: var(--wt-bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: inherit;
+
+    &:hover {
+        background-color: var(--wt-hover);
+    }
+
+    &[aria-pressed=true] {
+        border-color: var(--wt-gold-soft);
+        color: var(--wt-gold);
+        background-color: var(--wt-hover);
+    }
+}
+
+th {
+    font-weight: normal;
+}
+
+.expected {
+    font-weight: 500;
+}
+
+//Worst drop stays quiet; only the best one is highlighted
 .worst {
-    color: #ff7575;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .best {

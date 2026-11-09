@@ -89,7 +89,7 @@ input:-ms-input-placeholder {
 .nav-tabs .nav-link {
     background-color: var(--wt-bg);
     color: var(--wt-text);
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom-color: transparent;
     margin-right: 5px;
 }
@@ -102,5 +102,6 @@ input:-ms-input-placeholder {
 
 .nav-tabs .nav-link:hover:not(.active) {
     background-color: var(--wt-bg);
-    border-color: #dee2e6 #dee2e6 #e9ecef;
+    border-color: var(--wt-border-soft);
+    border-bottom-color: transparent;
 }

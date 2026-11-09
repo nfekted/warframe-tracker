@@ -1,7 +1,12 @@
 
-import { Component, ChangeDetectionStrategy, computed, signal } from "@angular/core";
+import { Component, ChangeDetectionStrategy, computed, inject, signal } from "@angular/core";
 import { TranslocoModule } from '@jsverse/transloco';
 import itemPrices from '../../../shared/jsons/tradeable/tradePrices.json';
+import tradeables from '../../../shared/jsons/tradeable/tradeables.json';
+import { normalize } from '../../../shared/utils/normalize';
+import { ariaSort, nextSort, SortState, sortRows } from '../../../shared/utils/table-sort';
+import { ThousandsPipe } from '../../../shared/utils/thousands.pipe';
+import { ProgressStore } from '../../../shared/store/progress.store';
 
 export type TradeCategory = 'primeItems' | 'primeSets' | 'relics' | 'helmets' | 'arcanes' | 'miscellaneous';
 
@@ -15,37 +20,72 @@ export function tradeCategory(name: string): TradeCategory {
     return 'miscellaneous';
 }
 
-//Classified and sorted by median price once
-const ITEMS = itemPrices
-    .map(item => ({ ...item, category: tradeCategory(item.name) }))
-    .sort((a, b) => b.most_frequent - a.most_frequent);
+const PAGE = 100;
+
+//Classified, with the English and Portuguese names normalized for the search, once
+const PT_NAMES = new Map(tradeables.map(t => [t.id, t.name_pt]));
+const ITEMS = itemPrices.map(item => ({
+    ...item,
+    category: tradeCategory(item.name),
+    search: normalize(item.name + '\n' + (PT_NAMES.get(item.id) ?? '')),
+}));
+type TradeItem = typeof ITEMS[number];
 
 @Component({
     selector: 'app-best-items',
-    imports: [TranslocoModule],
+    imports: [TranslocoModule, ThousandsPipe],
     templateUrl: './best-items.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './best-items.component.scss'
 })
 export class BestItemsComponent {
+    lang = inject(ProgressStore).lang;
 
     categories: TradeCategory[] = ['primeItems', 'primeSets', 'relics', 'helmets', 'miscellaneous', 'arcanes'];
-    maxRender = signal(100);
+    columns: { field: keyof TradeItem, label: string }[] = [
+        { field: 'name', label: 'market.item' },
+        { field: 'lowest', label: 'market.lowest' },
+        { field: 'higher', label: 'market.highest' },
+        { field: 'average', label: 'market.average' },
+        { field: 'most_frequent', label: 'market.median' },
+    ];
+
+    maxRender = signal(PAGE);
     hidden = signal(new Set<TradeCategory>());
+    name = signal('');
+    //Most valuable first
+    private sortState = signal<SortState<TradeItem>>({ field: 'most_frequent', desc: true });
 
     tradeItem = computed(() => {
         const hidden = this.hidden();
-        return ITEMS.filter(item => !hidden.has(item.category));
+        const name = normalize(this.name().trim());
+        const items = ITEMS.filter(item => !hidden.has(item.category) && item.search.includes(name));
+        return sortRows(items, this.sortState());
     });
 
     rendered = computed(() => this.tradeItem().slice(0, this.maxRender()));
 
-    showAll() {
-        this.maxRender.set(Infinity);
+    //A new search starts again from the first page
+    setName(name: string) {
+        this.name.set(name);
+        this.maxRender.set(PAGE);
     }
 
-    showAllCategories() {
+    showMore() {
+        this.maxRender.update(max => max + PAGE);
+    }
+
+    clearFilters() {
         this.hidden.set(new Set());
+        this.name.set('');
+    }
+
+    ariaSort(field: keyof TradeItem) {
+        return ariaSort(this.sortState(), field);
+    }
+
+    sort(field: keyof TradeItem) {
+        this.sortState.set(nextSort(this.sortState(), field));
     }
 
     show(category: TradeCategory, show: boolean) {

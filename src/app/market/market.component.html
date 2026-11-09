@@ -1,18 +1,18 @@
 <div class="row page">
   <div class="col-12">
     <p>
-      {{'market.tradeable' | transloco: {count: tradeableCount} }} ({{marketData.tradeables.version}} {{'market.on' | transloco}} {{marketData.tradeables.date}}: <a class="text-white"
-    [href]="marketData.tradeables.wiki" target="_blank">{{marketData.tradeables.update}}</a>)
+      {{'market.tradeable' | transloco: {count: tradeableCount} }} ({{marketData.tradeables.version}} {{'market.on' | transloco}} {{marketData.tradeables.date}}: <a
+    [href]="marketData.tradeables.wiki" target="_blank" rel="noopener">{{marketData.tradeables.update}}</a>)
   </p>
 </div>
 <div class="col-12">
   <p>
-    {{'market.prices_based' | transloco}} <a [href]="marketData.prices.url" target="_blank">{{marketData.prices.source}}</a>, {{'market.last_update' | transloco}} {{marketData.prices.date}}
+    {{'market.prices_based' | transloco}} <a [href]="marketData.prices.url" target="_blank" rel="noopener">{{marketData.prices.source}}</a>, {{'market.last_update' | transloco}} {{marketData.prices.date}}
   </p>
 </div>
 <hr />
 <!-- Tabs -->
-<ul class="nav nav-tabs" id="marketTab" role="tablist">
+<ul #tabs class="nav nav-tabs" id="marketTab" role="tablist">
   <li class="nav-item">
     <button class="nav-link active" id="myList-tab" data-bs-toggle="tab" data-bs-target="#myList" type="button" role="tab"
     aria-controls="myList" aria-selected="true">{{'market.my_items' | transloco}}</button>
@@ -80,19 +80,19 @@
                   <tr class="text-center">
                     <td class="text-start st-main">{{item.name}}</td>
                     <td class="st-extra" [attr.data-label]="'market.lowest' | transloco">
-                      {{item.lowest}}
+                      {{item.lowest | thousands: lang()}}
                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                     </td>
                     <td class="st-extra" [attr.data-label]="'market.highest' | transloco">
-                      {{item.higher}}
+                      {{item.higher | thousands: lang()}}
                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                     </td>
                     <td class="st-extra" [attr.data-label]="'market.average' | transloco">
-                      {{item.average}}
+                      {{item.average | thousands: lang()}}
                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                     </td>
                     <td class="st-key" [attr.data-label]="'market.median' | transloco">
-                      {{item.most_frequent}}
+                      {{item.most_frequent | thousands: lang()}}
                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
                     </td>
                     <td class="st-action">

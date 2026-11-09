@@ -1,75 +1,63 @@
 <div class="col-12">
   <p>{{'market.radiant_only' | transloco}}</p>
 </div>
+<!-- Era filter: one chip per era, plus all of them -->
 <div class="col-12">
-  <label>{{'market.relic_filter' | transloco}}</label>
-  <select class="form-select" (change)="setFilter($any($event.target).value)">
-    <option value="">{{'market.show_all' | transloco}}</option>
-    <hr />
-    @for (era of eras; track era) {
-      <option [value]="era">{{era}}</option>
-    }
-  </select>
+  <p id="relic-filter" class="mb-2">{{'market.relic_filter' | transloco}}</p>
+</div>
+<div class="col-12 eras" role="group" aria-labelledby="relic-filter">
+  <button type="button" class="era" [attr.aria-pressed]="relicFilter() == ''" (click)="setFilter('')">
+    {{'market.show_all' | transloco}}
+  </button>
+  @for (era of eras; track era) {
+    <button type="button" class="era" [attr.aria-pressed]="relicFilter() == era" (click)="setFilter(era)">{{era}}</button>
+  }
 </div>
 <div class="col-12">
   <table class="table table-dark mt-4 stacked">
     <thead>
       <tr>
-        <th scope="col">
-          #
-        </th>
-        <th scope="col">
-          {{'market.relic' | transloco}}
-        </th>
-        <th scope="col" class="text-left" colspan="3">
-          {{'market.worst' | transloco}}
-        </th>
-        <th scope="col" class="text-left" colspan="3">
-          {{'market.best' | transloco}}
-        </th>
-        <th scope="col" class="text-left">
-          {{'market.expected' | transloco}}
-        </th>
+        <th scope="col">#</th>
+        <th scope="col">{{'market.relic' | transloco}}</th>
+        <th scope="col">{{'market.expected' | transloco}}</th>
+        <th scope="col" colspan="3">{{'market.worst' | transloco}}</th>
+        <th scope="col" colspan="3">{{'market.best' | transloco}}</th>
       </tr>
     </thead>
     <tbody>
       @for (item of rendered(); track item.name; let i = $index) {
-        <tr class="text-left">
-          <td scope="row" class="text-start st-rank">{{i+1}}</td>
-          <td scope="row" class="text-start st-main">{{item.name}}</td>
-          <td class="worst st-extra drop-name" scope="row" [attr.data-label]="'market.worst' | transloco">
+        <tr>
+          <td class="text-start st-rank">{{i+1}}</td>
+          <td class="text-start st-main">{{item.name}}</td>
+          <td class="st-key expected" [attr.data-label]="'market.expected' | transloco">
+            {{item.expected | thousands: lang()}}
+            <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+          </td>
+          <td class="worst st-extra drop-name" [attr.data-label]="'market.worst' | transloco">
             {{item.worst_name}}
           </td>
           <td class="worst st-extra">
-            {{item.worst}}
+            {{item.worst | thousands: lang()}}
             <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
           </td>
           <td class="st-extra">
             <a class="worst" [href]="'https://warframe.market/items/' + item.worst_url" target="_blank" rel="noopener"
-              [title]="'market.open' | transloco">
-              <span class="material-symbols-outlined">
-                open_in_new
-              </span>
+              [title]="'market.open' | transloco" [attr.aria-label]="'market.open' | transloco">
+              <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
             </a>
           </td>
-          <td class="best st-extra-2 drop-name" scope="row" [attr.data-label]="'market.best' | transloco">
+          <td class="best st-extra-2 drop-name" [attr.data-label]="'market.best' | transloco">
             {{item.best_name}}
           </td>
           <td class="best st-extra-2">
-            {{item.best}}
+            {{item.best | thousands: lang()}}
             <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
           </td>
           <td class="st-extra-2">
             <a class="best" [href]="'https://warframe.market/items/' + item.best_url" target="_blank" rel="noopener"
-              [title]="'market.open' | transloco">
-              <span class="material-symbols-outlined">
-                open_in_new
-              </span>
+              [title]="'market.open' | transloco" [attr.aria-label]="'market.open' | transloco">
+              <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
             </a>
-          </td>
-          <td scope="row" class="st-key" [attr.data-label]="'market.expected' | transloco">
-            {{item.expected}}
-            <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
           </td>
         </tr>
       }

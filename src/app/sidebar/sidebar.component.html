@@ -15,7 +15,7 @@
       aria-controls="sidebarContent" aria-expanded="false" [attr.aria-label]="'sidebar.toggle_navigation' | transloco">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="sidebarContent">
+    <div #menu class="collapse navbar-collapse" id="sidebarContent">
       <div class="row w">
         <div class="col-12 text-center">
           <img [src]="'assets/img/masteryRanks/' + store.masteryRank().rank + '.png'" width="80" height="80" alt="" />
