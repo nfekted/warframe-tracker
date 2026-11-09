@@ -27,6 +27,10 @@
     --bs-body-color: var(--wt-text);
     --bs-body-color-rgb: 255, 255, 255;
     --bs-body-font-family: "Tomorrow", sans-serif;
+    --bs-link-color: #8bb9fe;
+    --bs-link-color-rgb: 139, 185, 254;
+    --bs-link-hover-color: #9ec5fe;
+    --bs-link-hover-color-rgb: 158, 197, 254;
 }
 
 .form-control,
@@ -91,7 +95,7 @@
 }
 
 .btn-item {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 //Gradient border, text color and inner glow of each item rarity
@@ -121,7 +125,7 @@
 }
 
 .kuva {
-    @include rarity((#f75858, #d43737, #b80b0b), #b33a3a, #f75858bf, #d15454bf);
+    @include rarity((#f75858, #d43737, #b80b0b), #ff8a8a, #f75858bf, #d15454bf);
 }
 
 .coda {
@@ -145,17 +149,17 @@
 
 //Text and icon sizes
 .card-heading {
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 .item-tag {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
 }
 
 .material-symbols-outlined.icon-sm {
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .material-symbols-outlined.icon-md {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
