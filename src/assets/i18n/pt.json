@@ -256,7 +256,8 @@
         "relic": "Relíquia",
         "worst": "Pior resultado",
         "best": "Melhor resultado",
-        "expected": "Preço esperado"
+        "expected": "Preço esperado",
+        "no_match": "Nenhum item encontrado, ou ele já está na sua lista"
     },
     "no_results": "Nenhum item corresponde aos filtros",
     "clear_filters": "Limpar filtros",

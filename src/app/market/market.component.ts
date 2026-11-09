@@ -17,8 +17,11 @@ const MAX_RESULTS = 50;
 //Lower case and without accents, so "lamina" finds "Lâmina"
 export const normalize = (text: string) => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
 
-//English and Portuguese names normalized once
-const SEARCH_INDEX = tradeables.map(item => ({ item, text: normalize(item.name_en + '\n' + item.name_pt) }));
+//English and Portuguese names normalized once; items without a price are left out, as they could not be added
+const PRICED = new Set(itemPrices.map(p => p.id));
+const SEARCH_INDEX = tradeables
+  .filter(item => PRICED.has(item.id))
+  .map(item => ({ item, text: normalize(item.name_en + '\n' + item.name_pt) }));
 
 @Component({
     selector: 'app-market',
@@ -32,6 +35,7 @@ export class MarketComponent {
   private prices = new Map<string, ItemPrice>(itemPrices.map(p => [p.id, p]));
 
   tradeableCount = tradeables.length;
+  lang = this.store.lang;
   marketData = MARKET_DATA;
 
   //Clicking the same column again reverses the order
@@ -44,16 +48,22 @@ export class MarketComponent {
   private searchTimer: ReturnType<typeof setTimeout> | undefined;
   private searchTerm = signal('');
 
+  private term = computed(() => normalize(this.searchTerm().trim()));
+
+  //Items already on the list are not suggested again
   filteredItems = computed(() => {
-    const term = normalize(this.searchTerm().trim());
+    const term = this.term();
     if (!term) return [];
+    const added = new Set(this.store.marketIds());
     const results: Tradeable[] = [];
     for (const entry of SEARCH_INDEX) {
-      if (entry.text.includes(term)) results.push(entry.item);
+      if (entry.text.includes(term) && !added.has(entry.item.id)) results.push(entry.item);
       if (results.length == MAX_RESULTS) break;
     }
     return results;
   });
+
+  noMatch = computed(() => this.term() != '' && this.filteredItems().length == 0);
 
   //Saved ids that are no longer in the price list are skipped
   myList = computed(() => {

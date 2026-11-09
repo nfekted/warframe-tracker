@@ -4,6 +4,7 @@ import { TranslocoTestingModule } from '@jsverse/transloco';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { tradeCategory } from './best-items/best-items.component';
 import { MarketComponent, normalize } from './market.component';
+import itemPrices from '../../shared/jsons/tradeable/tradePrices.json';
 
 describe('tradeCategory', () => {
   it.each([
@@ -60,6 +61,26 @@ describe('MarketComponent search', () => {
 
   it('shows at most 50 results', () => {
     expect(search('a').length).toBe(50);
+  });
+
+  it('only suggests items that have a price', () => {
+    const priced = new Set(itemPrices.map(p => p.id));
+    expect(search('a').every(item => priced.has(item.id))).toBe(true);
+  });
+
+  it('does not suggest items already on the list', () => {
+    const [item] = search('secura dual cestra');
+    market.selectItem(item, document.createElement('input'));
+
+    expect(search('secura dual cestra').map(i => i.id)).not.toContain(item.id);
+  });
+
+  it('tells when nothing is found', () => {
+    search('zzzz');
+    expect(market.noMatch()).toBe(true);
+
+    search('');
+    expect(market.noMatch()).toBe(false);
   });
 
   it('adds the selected item and clears the search', () => {

@@ -33,7 +33,7 @@
     <div class="p-3 border rounded-bottom">
       <div class="col-12">
         <p>{{'market.my_list' | transloco}}</p>
-        <div>
+        <div class="search">
           <input #search type="text" [attr.aria-label]="'market.search' | transloco" (input)="onSearchChange(search.value)"
             class="form-control" [placeholder]="'market.search' | transloco" step="color: white">
 
@@ -42,10 +42,12 @@
                 @for (item of filteredItems(); track item.id) {
                   <button type="button" (click)="selectItem(item, search)"
                     class="autocomplete-item">
-                    {{item.name_en}}
+                    {{lang() == 'pt' ? item.name_pt : item.name_en}}
                   </button>
                 }
               </div>
+            } @else if (noMatch()) {
+              <div class="autocomplete-list autocomplete-empty" role="status">{{'market.no_match' | transloco}}</div>
             }
           </div>
 

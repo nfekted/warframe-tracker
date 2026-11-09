@@ -18,15 +18,27 @@ th {
     color: red;
 }
 
+//Suggestions open right under the search field, with its width
+.search {
+    position: relative;
+}
+
 .autocomplete-list {
-    border: 1px solid #ccc;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     max-height: 200px;
     overflow-y: auto;
-    width: 80vw;
-    background-color: white;
-    color: black;
-    position: absolute;
-    z-index: 1000;
+    background-color: var(--wt-bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.autocomplete-empty {
+    padding: 8px;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .autocomplete-item {
@@ -41,7 +53,7 @@ th {
 
 .autocomplete-item:hover,
 .autocomplete-item:focus-visible {
-    background-color: #f0f0f0;
+    background-color: var(--wt-hover);
 }
 
 input::placeholder {
