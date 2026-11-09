@@ -2,13 +2,20 @@ th {
     font-weight: normal;
 }
 
-.sortable {
-    cursor: pointer;
+//Header buttons look like the header text
+.sort-button {
+    padding: 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
 }
 
 .remove {
+    padding: 0;
+    background: none;
+    border: 0;
     color: red;
-    cursor: pointer;
 }
 
 .autocomplete-list {
@@ -23,11 +30,17 @@ th {
 }
 
 .autocomplete-item {
+    display: block;
+    width: 100%;
     padding: 8px;
-    cursor: pointer;
+    background: none;
+    border: 0;
+    color: inherit;
+    text-align: left;
 }
 
-.autocomplete-item:hover {
+.autocomplete-item:hover,
+.autocomplete-item:focus-visible {
     background-color: #f0f0f0;
 }
 

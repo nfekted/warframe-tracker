@@ -259,5 +259,6 @@
         "expected": "Preço esperado"
     },
     "no_results": "Nenhum item corresponde aos filtros",
-    "clear_filters": "Limpar filtros"
+    "clear_filters": "Limpar filtros",
+    "language": "Idioma"
 }

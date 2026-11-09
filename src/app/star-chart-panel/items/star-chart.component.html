@@ -18,7 +18,7 @@
             {{item.mastered ? 'check_circle' : 'radio_button_unchecked'}}
           </span>
           <span class="check-name">{{item.name}}</span>
-          <small class="check-meta" [title]="'planets.mr_awarded' | transloco">{{item.mastery_exp}} XP</small>
+          <small class="check-meta" [title]="'planets.mr_awarded' | transloco">{{item.mastery_exp | thousands: store.lang()}} XP</small>
         </button>
         @let spLocked = !item.mastered && !item.steel_path;
         <button type="button" class="check-side node-sp" [class.on]="item.steel_path" [attr.aria-pressed]="item.steel_path"

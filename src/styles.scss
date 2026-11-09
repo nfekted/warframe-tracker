@@ -50,8 +50,29 @@
     color: var(--wt-text);
 }
 
-.form-control:focus {
-    border: 3px solid var(--wt-gold-light);
+//One focus ring for every control: an outline outside the box, so nothing moves or resizes
+:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.dropdown-item:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible,
+.form-check-input:focus-visible,
+.navbar-toggler:focus-visible {
+    outline: 2px solid var(--wt-gold);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-border-color);
+    box-shadow: none;
+}
+
+.form-check-input:focus,
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 .form-select {
@@ -77,11 +98,6 @@
         background-color: var(--wt-gold);
         border-color: var(--wt-gold);
         --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23202e37'/%3e%3c/svg%3e");
-    }
-
-    &:focus {
-        border-color: var(--wt-gold-light);
-        box-shadow: 0 0 0 0.25rem rgba(209, 191, 84, 0.25);
     }
 }
 

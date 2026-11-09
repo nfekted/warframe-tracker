@@ -2,11 +2,12 @@ import { Component, ChangeDetectionStrategy, computed, inject, input } from '@an
 import { StarChart } from '../../../shared/models/star-chart.model';
 import { ProgressStore } from '../../../shared/store/progress.store';
 import { TrackerCardComponent } from '../../tracker-card/tracker-card.component';
+import { ThousandsPipe } from '../../../shared/utils/thousands.pipe';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-star-chart',
-    imports: [TranslocoModule, TrackerCardComponent],
+    imports: [TranslocoModule, TrackerCardComponent, ThousandsPipe],
     templateUrl: './star-chart.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './star-chart.component.scss'

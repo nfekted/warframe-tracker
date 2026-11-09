@@ -18,32 +18,32 @@
     <div class="collapse navbar-collapse" id="sidebarContent">
       <div class="row w">
         <div class="col-12 text-center">
-          <img [src]="'assets/img/masteryRanks/' + store.masteryRank().rank + '.png'" width="80" />
+          <img [src]="'assets/img/masteryRanks/' + store.masteryRank().rank + '.png'" width="80" height="80" alt="" />
         </div>
         <div class="col-12 text-center">
-          <h3>{{'sidebar.mastery_rank' | transloco}} {{store.masteryRank().rank}}</h3>
-          <h4><u>{{'mr.'+store.masteryRank().name | transloco}}</u></h4>
+          <p class="h3">{{'sidebar.mastery_rank' | transloco}} {{store.masteryRank().rank}}</p>
+          <p class="h4"><u>{{'mr.'+store.masteryRank().name | transloco}}</u></p>
         </div>
         <div class="col-12 text-center mt-4">
-          <h5>{{store.account().mastered}} {{'sidebar.of' | transloco}} {{store.itemsCount}} {{'sidebar.items' | transloco}}.</h5>
-          <h5>{{store.account().xp}} {{'sidebar.of' | transloco}} {{store.maxXp}} XP</h5>
+          <p class="h5">{{store.account().mastered}} {{'sidebar.of' | transloco}} {{store.itemsCount}} {{'sidebar.items' | transloco}}.</p>
+          <p class="h5">{{store.account().xp | thousands: store.lang()}} {{'sidebar.of' | transloco}} {{store.maxXp | thousands: store.lang()}} XP</p>
         </div>
         <div class="col-12 text-center mt-4">
-          <h5>Railjack {{'sidebar.intrinsics' |transloco}}:</h5>
-          <input class="form-control text-center" type="number" min="0" [max]="intrinsics.railjackMax" step="1"
+          <label class="h5 d-block" for="railjack">Railjack {{'sidebar.intrinsics' |transloco}}:</label>
+          <input id="railjack" class="form-control text-center" type="number" min="0" [max]="intrinsics.railjackMax" step="1"
             [value]="store.railjack()" (input)="setIntrinsic('railjack', $any($event.target))" />
-            <h5>Drifter {{'sidebar.intrinsics' |transloco}}:</h5>
-            <input class="form-control text-center" type="number" min="0" [max]="intrinsics.drifterMax" step="1"
+            <label class="h5 d-block" for="drifter">Drifter {{'sidebar.intrinsics' |transloco}}:</label>
+            <input id="drifter" class="form-control text-center" type="number" min="0" [max]="intrinsics.drifterMax" step="1"
               [value]="store.drifter()" (input)="setIntrinsic('drifter', $any($event.target))" />
             </div>
             <div class="col-12 text-center mt-4">
-              <h5 transloco="sidebar.next_mr"
-              [translocoParams]="{nextRank: ('mr.' + store.nextRank().name) | transloco, xp: store.nextRank().xp}"></h5>
-              <div class="progress" role="progressbar" [attr.aria-label]="'sidebar.current_xp' | transloco" aria-valuenow="0" aria-valuemin="0"
+              <p class="h5" transloco="sidebar.next_mr"
+              [translocoParams]="{nextRank: ('mr.' + store.nextRank().name) | transloco, xp: (store.nextRank().xp | thousands: store.lang())}"></p>
+              <div class="progress" role="progressbar" [attr.aria-label]="'sidebar.current_xp' | transloco" [attr.aria-valuenow]="progress()" aria-valuemin="0"
                 aria-valuemax="100">
                 <div class="progress-bar" [style.width.%]="progress()"></div>
               </div>
-              <small>{{store.nextRank().xp - store.account().xp}} XP {{'sidebar.xp_needed' | transloco}}</small>
+              <small>{{store.nextRank().xp - store.account().xp | thousands: store.lang()}} XP {{'sidebar.xp_needed' | transloco}}</small>
             </div>
 
             <hr class="mt-4" />

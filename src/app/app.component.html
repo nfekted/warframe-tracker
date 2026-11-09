@@ -9,20 +9,25 @@
 </div>
 <div class="btn-group" id="language">
   <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-    aria-expanded="false">
-    <img [src]="'assets/img/' + store.lang() + 'flag.png'" width="55" />
+    aria-expanded="false" [title]="'language' | transloco">
+    <img [src]="'assets/img/' + store.lang() + 'flag.png'" width="55" [alt]="store.lang() == 'pt' ? 'Português' : 'English'" />
   </button>
   <ul class="dropdown-menu">
     <li>
-      <img class="dropdown-item" [src]="'assets/img/enflag.png'" width="55" (click)="changeLang('en')" />
+      <button type="button" class="dropdown-item" (click)="changeLang('en')" lang="en">
+        <img src="assets/img/enflag.png" width="55" alt="English" />
+      </button>
     </li>
     <li>
-      <img class="dropdown-item" [src]="'assets/img/ptflag.png'" width="55" (click)="changeLang('pt')" />
+      <button type="button" class="dropdown-item" (click)="changeLang('pt')" lang="pt">
+        <img src="assets/img/ptflag.png" width="55" alt="Português" />
+      </button>
     </li>
   </ul>
 </div>
-<button id="myBtn" [title]="'go_to_top' | transloco" class="btn btn-sm btn-info" (click)="scrollToTop()">
-  <span class="material-symbols-outlined">
+<button id="myBtn" type="button" [title]="'go_to_top' | transloco" [attr.aria-label]="'go_to_top' | transloco"
+  class="btn btn-sm btn-info" (click)="scrollToTop()">
+  <span class="material-symbols-outlined" aria-hidden="true">
     arrow_circle_up
   </span>
 </button>

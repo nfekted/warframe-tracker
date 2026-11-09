@@ -3,12 +3,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { INTRINSICS } from '../../shared/metadata';
 import { ProgressStore } from '../../shared/store/progress.store';
 import { DialogService } from '../dialog/dialog.service';
+import { ThousandsPipe } from '../../shared/utils/thousands.pipe';
 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
     selector: 'app-sidebar',
-    imports: [TranslocoModule, RouterLink, RouterLinkActive],
+    imports: [TranslocoModule, RouterLink, RouterLinkActive, ThousandsPipe],
     templateUrl: './sidebar.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './sidebar.component.scss'
