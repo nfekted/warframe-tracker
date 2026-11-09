@@ -5,7 +5,7 @@
         <h5>{{'items.options'| transloco}}</h5>
       </div>
       <!-- Acquisition -->
-      <div class="col-12 col-md-3" data-bs-theme="dark">
+      <div class="col-12 col-md-3">
         <label>{{'items.acquisition' | transloco}}:</label>
         <select class="form-select" (change)="acquisition.set($any($event.target).value || null)">
           <option value="">{{'items.all_acquisition' | transloco}}</option>
@@ -89,7 +89,7 @@
               </div>
 
               <!-- MR -->
-              <div class="col-12 col-md-3" data-bs-theme="dark">
+              <div class="col-12 col-md-3">
                 <label>{{'items.mr_only' | transloco}}</label>
                 <select class="form-select" (change)="setMr($any($event.target).value)">
                   <option value=""></option>

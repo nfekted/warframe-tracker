@@ -2,26 +2,24 @@
   box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
-  background-color: #202e37 !important;
+  background-color: var(--wt-bg-dark);
 }
 
 .disclaimer {
   font-size: 10px;
 }
 
-.bg-warning {
-  --bs-bg-opacity: 1;
-  // background-color: #d1bf54 !important;
-  background-color: goldenrod !important;
+.progress {
+  --bs-progress-bar-bg: var(--wt-xp);
 }
 
 @media (max-width: 992px) {
   .sidebar {
-    border-bottom: solid 2px rgba(255, 255, 255, 0.75);
+    border-bottom: solid 2px var(--wt-border-soft);
 
     &:hover {
-      background-color: #172127 !important;
-      border-bottom: solid 2px #d1bf54bf;
+      background-color: var(--wt-hover);
+      border-bottom: solid 2px var(--wt-gold-soft);
     }
   }
 }
@@ -41,8 +39,8 @@
 
     &:hover {
 
-      background-color: #172127 !important;
-      border-right: solid 2px rgba(209, 191, 84, 0.75);
+      background-color: var(--wt-hover);
+      border-right: solid 2px var(--wt-gold-soft);
     }
   }
 }

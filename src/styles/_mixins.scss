@@ -11,20 +11,20 @@
     .btn:first-child:active,
     .btn.active,
     .btn.show {
-        border: solid 2px rgba(209, 191, 84, 0.75);
-        color: rgba(209, 191, 84);
-        background-color: #172127;
+        border: solid 2px var(--wt-gold-soft);
+        color: var(--wt-gold);
+        background-color: var(--wt-hover);
     }
 
     .btn-option {
-        background-color: #2e404c;
-        border: solid 2px white;
-        color: white;
+        background-color: var(--wt-bg);
+        border: solid 2px var(--wt-border);
+        color: var(--wt-text);
 
         &:hover {
-            background-color: #172127;
-            border: solid 2px white;
-            color: white;
+            background-color: var(--wt-hover);
+            border: solid 2px var(--wt-border);
+            color: var(--wt-text);
         }
     }
 }
@@ -32,15 +32,13 @@
 //Mastered item, node or Incarnon button
 @mixin mastered {
     .mastered {
-        border: inset 2px #add8e6bf;
-        background-color: #172127 !important;
+        --bs-btn-bg: var(--wt-hover);
+        --bs-btn-hover-bg: var(--wt-mastered-hover);
+        --bs-btn-active-bg: var(--wt-mastered-hover);
+        border: inset 2px var(--wt-mastered-border);
         opacity: 0.9;
         -webkit-box-shadow: outset 0 0 5px white;
         -moz-box-shadow: outset 0 0 5px white;
         box-shadow: outset 0 0 10px white;
-
-        &:hover {
-            background-color: #040e14 !important;
-        }
     }
 }

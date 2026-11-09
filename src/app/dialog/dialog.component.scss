@@ -1,10 +1,10 @@
 dialog {
     max-width: 26rem;
     padding: 1.5rem;
-    border: solid 2px rgba(255, 255, 255, 0.75);
+    border: solid 2px var(--wt-border-soft);
     border-radius: 0.5rem;
-    background-color: #202e37;
-    color: white;
+    background-color: var(--wt-bg-dark);
+    color: var(--wt-text);
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0.6);

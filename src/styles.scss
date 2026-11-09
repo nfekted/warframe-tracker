@@ -1,65 +1,92 @@
 @use "bootstrap/scss/bootstrap";
 
-body {
-    background-color: #2e404c;
-    color: white;
-    font-family: "Tomorrow", sans-serif;
-    font-style: normal;
-    font-weight: 400;
+//Palette, taken from the game's interface
+:root {
+    --wt-bg: #2e404c;
+    --wt-bg-dark: #202e37;
+    --wt-hover: #172127;
+    --wt-mastered-hover: #040e14;
+    --wt-input-bg: #2e4652;
+    --wt-select-bg: #212e36;
+    --wt-text: white;
+    --wt-border: white;
+    --wt-border-soft: rgba(255, 255, 255, 0.75);
+    --wt-gold: #d1bf54;
+    --wt-gold-soft: #d1bf54bf;
+    --wt-gold-light: #e6d15dbf;
+    --wt-xp: goldenrod;
+    --wt-danger: #d43737;
+    --wt-danger-hover: #882525;
+    --wt-mastered-border: #add8e6bf;
 }
 
-input {
-    background-color: #2e4652 !important;
-    color: white !important;
+//Bootstrap dark mode (set on <html>) fed with the palette
+[data-bs-theme=dark] {
+    --bs-body-bg: var(--wt-bg);
+    --bs-body-bg-rgb: 46, 64, 76;
+    --bs-body-color: var(--wt-text);
+    --bs-body-color-rgb: 255, 255, 255;
+    --bs-body-font-family: "Tomorrow", sans-serif;
 }
 
-input:focus {
-    border: 3px solid #e6d15dbf !important;
+.form-control,
+.form-control:focus {
+    background-color: var(--wt-input-bg);
+    color: var(--wt-text);
+}
+
+.form-control:focus {
+    border: 3px solid var(--wt-gold-light);
 }
 
 .form-select {
-    background-color: #212e36;
-    color: white;
+    background-color: var(--wt-select-bg);
+    color: var(--wt-text);
     font-family: "Anta", sans-serif;
     font-style: normal;
     font-weight: 400;
 }
 
-
-
+//Buttons set Bootstrap's own button variables, so states (hover, pressed, open) follow without !important
 .btn-primary {
-    background-color: #2e404c !important;
-    color: white !important;
-    border: solid 2px white;
+    --bs-btn-color: var(--wt-text);
+    --bs-btn-bg: var(--wt-bg);
+    --bs-btn-hover-color: var(--wt-text);
+    --bs-btn-hover-bg: var(--wt-hover);
+    --bs-btn-active-color: var(--wt-text);
+    --bs-btn-active-bg: var(--wt-hover);
+    border: solid 2px var(--wt-border);
 
     &:hover {
-        background-color: #172127 !important;
-        color: white !important;
-        border: solid 2px white;
+        border: solid 2px var(--wt-border);
     }
 }
 
 .btn-secondary {
-    background-color: #2e404c !important;
-    color: white !important;
-    border: solid 2px white;
+    --bs-btn-color: var(--wt-text);
+    --bs-btn-bg: var(--wt-bg);
+    --bs-btn-hover-color: var(--wt-text);
+    --bs-btn-hover-bg: var(--wt-bg);
+    --bs-btn-active-color: var(--wt-text);
+    --bs-btn-active-bg: var(--wt-bg);
+    border: solid 2px var(--wt-border);
 
     &:hover {
-        background-color: #2e404c !important;
-        color: white !important;
-        border: solid 2px #d1bf54bf;
+        border: solid 2px var(--wt-gold-soft);
     }
 }
 
 .btn-danger {
-    background-color: #2e404c !important;
-    color: white !important;
-    border: solid 2px #d43737;
+    --bs-btn-color: var(--wt-text);
+    --bs-btn-bg: var(--wt-bg);
+    --bs-btn-hover-color: var(--wt-text);
+    --bs-btn-hover-bg: var(--wt-danger-hover);
+    --bs-btn-active-color: var(--wt-text);
+    --bs-btn-active-bg: var(--wt-danger-hover);
+    border: solid 2px var(--wt-danger);
 
     &:hover {
-        background-color: #882525 !important;
-        color: white !important;
-        border: solid 2px white;
+        border: solid 2px var(--wt-border);
     }
 }
 
@@ -67,84 +94,42 @@ input:focus {
     font-size: 20px;
 }
 
-.prime {
-    background-color: #2e404c !important;
+//Gradient border, text color and inner glow of each item rarity
+@mixin rarity($gradient, $text, $glow, $hover-border) {
+    --bs-btn-color: #{$text};
+    --bs-btn-bg: var(--wt-bg);
+    --bs-btn-hover-color: var(--wt-text);
+    --bs-btn-hover-bg: var(--wt-hover);
+    --bs-btn-active-color: var(--wt-text);
+    --bs-btn-active-bg: var(--wt-hover);
     border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #f7d358, #d4af37, #b8860b);
+    border-image: linear-gradient(45deg, $gradient);
     border-image-slice: 1;
-    color: #d1bf54 !important;
     cursor: pointer;
     transition: all 0.5s ease;
-    -webkit-box-shadow: inset 0 -3px 7px #f7d358bf;
-    -moz-box-shadow: inset 0 -3px 7px #f7d358bf;
-    box-shadow: inset 0 -3px 7px #f7d358bf;
+    -webkit-box-shadow: inset 0 -3px 7px $glow;
+    -moz-box-shadow: inset 0 -3px 7px $glow;
+    box-shadow: inset 0 -3px 7px $glow;
 
     &:hover {
-        background-color: #172127 !important;
-        color: white !important;
-        border: solid 2px #d1bf54bf;
-
+        border: solid 2px $hover-border;
     }
+}
+
+.prime {
+    @include rarity((#f7d358, #d4af37, #b8860b), var(--wt-gold), #f7d358bf, var(--wt-gold-soft));
 }
 
 .kuva {
-    background-color: #2e404c !important;
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #f75858, #d43737, #b80b0b);
-    border-image-slice: 1;
-    color: #b33a3a !important;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    -webkit-box-shadow: inset 0 -3px 7px #f75858bf;
-    -moz-box-shadow: inset 0 -3px 7px #f75858bf;
-    box-shadow: inset 0 -3px 7px #f75858bf;
-
-    &:hover {
-        background-color: #172127 !important;
-        color: white !important;
-        border: solid 2px #d15454bf;
-
-    }
+    @include rarity((#f75858, #d43737, #b80b0b), #b33a3a, #f75858bf, #d15454bf);
 }
 
 .coda {
-    background-color: #2e404c !important;
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #f758ea, #d437bf, #b80ba1);
-    border-image-slice: 1;
-    color: #ffd1f7 !important;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    -webkit-box-shadow: inset 0 -3px 7px #f758ddbf;
-    -moz-box-shadow: inset 0 -3px 7px #f758ddbf;
-    box-shadow: inset 0 -3px 7px #f758ddbf;
-
-    &:hover {
-        background-color: #172127 !important;
-        color: white !important;
-        border: solid 2px #d154c0bf;
-
-    }
+    @include rarity((#f758ea, #d437bf, #b80ba1), #ffd1f7, #f758ddbf, #d154c0bf);
 }
 
 .tenet {
-    background-color: #2e404c !important;
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #58ecf7, #37cfd4, #0badb8);
-    border-image-slice: 1;
-    color: rgb(209, 252, 255) !important;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    -webkit-box-shadow: inset 0 -3px 7px #58f2f7bf;
-    -moz-box-shadow: inset 0 -3px 7px #58f2f7bf;
-    box-shadow: inset 0 -3px 7px #58f2f7bf;
-
-    &:hover {
-        background-color: #172127 !important;
-        color: white !important;
-        border: solid 2px #54c9d1bf;
-
-    }
+    @include rarity((#58ecf7, #37cfd4, #0badb8), rgb(209, 252, 255), #58f2f7bf, #54c9d1bf);
 }
 
 .w {
