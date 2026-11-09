@@ -60,7 +60,8 @@
             "zaws": "ZAWS",
             "kitguns": "KITGUNS"
         },
-        "mr_needed": "MR necessário para equipar o item"
+        "mr_needed": "MR necessário para equipar o item",
+        "jump_to": "Ir para a categoria"
     },
     "incarnon": {
         "description": "Items atuais com sistema Incarnon",
@@ -217,7 +218,6 @@
     },
     "ok": "OK",
     "go_to_top": "Voltar ao topo",
-    "show_hide": "Mostrar ou ocultar {{name}}",
     "market": {
         "tradeable": "{{count}} itens podem ser negociados atualmente.",
         "on": "em",

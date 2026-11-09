@@ -1,3 +1,79 @@
-@use 'mixins';
+:host {
+    display: block;
+    //Leaves room for the panel's sticky shortcut bar when jumping to a card
+    scroll-margin-top: 4.5rem;
+}
 
-@include mixins.toggle-buttons;
+//The whole header opens and closes the list
+.card-toggle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 0.5rem;
+    background: none;
+    border: 0;
+    border-radius: 0.375rem;
+    color: inherit;
+    text-align: left;
+
+    &:hover {
+        background-color: var(--wt-hover);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--wt-gold);
+        outline-offset: -2px;
+    }
+}
+
+.card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    img {
+        object-fit: contain;
+    }
+}
+
+.card-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.25rem;
+    overflow-wrap: anywhere;
+}
+
+.chevron {
+    transition: transform 0.2s;
+}
+
+[aria-expanded=true] .chevron {
+    transform: rotate(180deg);
+}
+
+.card-counter {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.card-bar {
+    display: block;
+    height: 0.25rem;
+    border-radius: 0.125rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+.card-bar-fill {
+    display: block;
+    height: 100%;
+    background-color: var(--wt-gold);
+    transition: width 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chevron,
+    .card-bar-fill {
+        transition: none;
+    }
+}

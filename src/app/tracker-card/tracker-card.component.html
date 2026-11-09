@@ -1,34 +1,19 @@
-<div class="row text-center mt-5">
-  <div class="col-12">
+<button type="button" class="card-toggle" [attr.aria-expanded]="show()" [attr.aria-controls]="'list-' + id()"
+  (click)="show.set(!show())">
+  <span class="card-title-row">
     @if (icon()) {
-      <img [src]="icon()" width="50" />&nbsp;
+      <img [src]="icon()" width="40" height="40" alt="" />
     }
-    <span class="card-heading">{{title()}}</span><br />
-    <ng-content select="[counter]" />
-  </div>
-  <div class="col-12">
-    <div class="btn-group" role="group" [attr.aria-label]="'show_hide' | transloco: {name: title()}">
-      <input type="radio" class="btn-check" [name]="id()" [id]="'show'+id()" autocomplete="off"
-        (change)="show.set(true)" [checked]="show()">
-      <label class="btn btn-option btn-toggle" [for]="'show'+id()">
-        <span class="material-symbols-outlined">
-          check
-        </span>
-      </label>
-
-      <input type="radio" class="btn-check" [name]="id()" [id]="'hide'+id()" autocomplete="off"
-        (change)="show.set(false)" [checked]="!show()">
-      <label class="btn btn-option btn-toggle" [for]="'hide'+id()">
-        <span class="material-symbols-outlined">
-          close
-        </span>
-      </label>
-    </div>
-  </div>
-  <!-- ITEMS -->
-  <div class="col-12" [hidden]="!show()">
-    <div class="row">
-      <ng-content />
-    </div>
+    <span class="card-title">{{title()}}</span>
+    <span class="material-symbols-outlined chevron" aria-hidden="true">expand_more</span>
+  </span>
+  <span class="card-counter"><ng-content select="[counter]" /></span>
+  @for (value of progress(); track $index) {
+    <span class="card-bar"><span class="card-bar-fill" [style.width.%]="value * 100"></span></span>
+  }
+</button>
+<div [id]="'list-' + id()" [hidden]="!show()">
+  <div class="row">
+    <ng-content />
   </div>
 </div>

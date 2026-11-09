@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, DOCUMENT, computed, inject, signal } from '@angular/core';
 
 import { ItemsComponent } from './items/items.component';
 import { filterCategories } from './items-filter';
@@ -19,6 +19,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 })
 export class ItemsPanelComponent {
   private store = inject(ProgressStore);
+  private document = inject(DOCUMENT);
 
   gameUpdate = GAME_UPDATE;
   mrOptions: number[] = this.buildMrOptions();
@@ -36,6 +37,17 @@ export class ItemsPanelComponent {
     mr: this.mr(),
     rank: this.store.masteryRank().rank,
   }));
+
+  shortcuts = computed(() => this.categories().map(({ type, items }) =>
+    ({ type, mastered: items.filter(i => i.mastered).length, total: items.length })));
+
+  //Scrolls to the category card and focuses its header, so keyboard users land there too
+  jumpTo(type: string) {
+    const card = this.document.getElementById('card-' + type);
+    const reduceMotion = this.document.defaultView?.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    card?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    card?.querySelector('button')?.focus({ preventScroll: true });
+  }
 
   //0 up to the highest MR required by any item
   buildMrOptions(): number[] {

@@ -1,5 +1,6 @@
-<app-tracker-card [id]="type()" [title]="'items.types.'+type() | transloco" [icon]="'assets/img/icons/'+type()+'.png'">
-  <span class="card-heading" counter>{{mastered()}}/{{items().length}}</span>
+<app-tracker-card [id]="type()" [title]="'items.types.'+type() | transloco" [icon]="'assets/img/icons/'+type()+'.png'"
+  [progress]="[mastered() / items().length]">
+  <span counter>{{mastered()}}/{{items().length}}</span>
   <ul class="check-list">
     @for (row of rows(); track row.item.name) {
       <li class="check-row" [class.done]="row.item.mastered" [attr.data-rarity]="row.rarity">

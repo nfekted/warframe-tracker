@@ -135,6 +135,16 @@
                 <small>{{'on_update' | transloco}}: {{gameUpdate.name}} ({{gameUpdate.date}})</small>
               </div>
               <hr class="mt-4" />
+              <!-- Shortcuts to each category -->
+              <nav class="col-12 jump-bar" [attr.aria-label]="'items.jump_to' | transloco">
+                @for (shortcut of shortcuts(); track shortcut.type) {
+                  <button type="button" class="jump" (click)="jumpTo(shortcut.type)">
+                    <img [src]="'assets/img/icons/'+shortcut.type+'.png'" width="20" height="20" alt="" />
+                    {{'items.types.'+shortcut.type | transloco}}
+                    <small>{{shortcut.mastered}}/{{shortcut.total}}</small>
+                  </button>
+                }
+              </nav>
               @for (category of categories(); track category.type) {
                 <div class="col-12 col-md-6 col-xl-4 col-xxl-3 mt-4">
                   <app-items [type]="category.type" [items]="category.items" [visible]="category.visible"></app-items>

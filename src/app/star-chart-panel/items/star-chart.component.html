@@ -1,9 +1,10 @@
-<app-tracker-card [id]="planet()" [title]="'planets.'+planet() | transloco" [icon]="'assets/img/locations/'+planet()+'.webp'">
+<app-tracker-card [id]="planet()" [title]="'planets.'+planet() | transloco" [icon]="'assets/img/locations/'+planet()+'.webp'"
+  [progress]="[mastered() / locations().length, steelPath() / locations().length]">
   <ng-container counter>
-    <span class="card-heading">{{mastered()}}/{{locations().length}}</span>
+    <span>{{mastered()}}/{{locations().length}}</span>
     <small class="normal-label"> ({{'planets.normal' | transloco}})</small>
-    <span class="card-heading">
-      <img src="assets/img/icons/mastered.png" width="20" height="20" alt="" />
+    <span>
+      <img src="assets/img/icons/mastered.png" width="16" height="16" alt="" />
       {{steelPath()}}/{{locations().length}}
     </span><small>({{'planets.steel_path' | transloco}})</small>
   </ng-container>

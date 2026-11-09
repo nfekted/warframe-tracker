@@ -67,12 +67,16 @@ describe('ItemsComponent', () => {
     const el = render([wisp]);
     const list = el.querySelector('.check-list')!.closest('.row')!.parentElement!;
 
-    el.querySelector<HTMLInputElement>('#hidewarframes')!.dispatchEvent(new Event('change'));
+    const header = el.querySelector<HTMLButtonElement>('.card-toggle')!;
+
+    header.click();
     TestBed.tick();
     expect(list.hidden).toBe(true);
+    expect(header.getAttribute('aria-expanded')).toBe('false');
 
-    el.querySelector<HTMLInputElement>('#showwarframes')!.dispatchEvent(new Event('change'));
+    header.click();
     TestBed.tick();
     expect(list.hidden).toBe(false);
+    expect(header.getAttribute('aria-expanded')).toBe('true');
   });
 });

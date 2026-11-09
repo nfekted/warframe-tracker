@@ -1,5 +1,5 @@
-<app-tracker-card [id]="group()" [title]="'incarnon.'+group() | transloco">
-  <span class="card-heading" counter>{{acquired()}}/{{incarnons().length}}</span>
+<app-tracker-card [id]="group()" [title]="'incarnon.'+group() | transloco" [progress]="[acquired() / incarnons().length]">
+  <span counter>{{acquired()}}/{{incarnons().length}}</span>
   <ul class="tiles">
     @for (item of incarnons(); track item.name) {
       <li class="tile" [class.done]="item.acquired">
