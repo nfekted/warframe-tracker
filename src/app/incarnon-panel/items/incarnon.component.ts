@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, computed, inject, input } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
+import { Component, ChangeDetectionStrategy, computed, inject, input, signal } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 import { Incarnons } from '../../../shared/models/incarnons.model';
 import { ProgressStore } from '../../../shared/store/progress.store';
@@ -7,7 +6,7 @@ import { TrackerCardComponent } from '../../tracker-card/tracker-card.component'
 
 @Component({
     selector: 'app-incarnon',
-    imports: [UpperCasePipe, TranslocoModule, TrackerCardComponent],
+    imports: [TranslocoModule, TrackerCardComponent],
     templateUrl: './incarnon.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './incarnon.component.scss'
@@ -21,4 +20,11 @@ export class IncarnonComponent {
   incarnons = input.required<Incarnons[]>();
 
   acquired = computed(() => this.incarnons().filter(i => i.acquired).length);
+
+  //Incarnons without an image file show a placeholder
+  missingImages = signal(new Set<string>());
+
+  imageMissing(name: string) {
+    this.missingImages.update(names => new Set(names).add(name));
+  }
 }

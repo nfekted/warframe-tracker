@@ -42,3 +42,21 @@
         box-shadow: outset 0 0 10px white;
     }
 }
+
+//Card around a tracker-card in a panel grid (Star Chart planets, Incarnon groups)
+@mixin panel-card {
+    :host {
+        display: block;
+        height: 100%;
+        padding: 0 0.75rem 0.75rem;
+        background-color: var(--wt-bg-dark);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 0.5rem;
+    }
+
+    //Collapses with the card's mt-5 so the title sits 0.75rem from the top
+    app-tracker-card {
+        display: block;
+        margin-top: -2.25rem;
+    }
+}

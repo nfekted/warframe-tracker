@@ -1,20 +1,25 @@
 <app-tracker-card [id]="group()" [title]="'incarnon.'+group() | transloco">
   <span class="card-heading" counter>{{acquired()}}/{{incarnons().length}}</span>
-  @for (item of incarnons(); track item.name) {
-    <div class="col-12 mt-2">
-      <div class="btn-group w" role="group">
-        <button class="btn btn-sm btn-primary btn-item w"
-          [class.mastered]="item.acquired" [class.prime]="item.acquired"
+  <ul class="tiles">
+    @for (item of incarnons(); track item.name) {
+      <li class="tile" [class.done]="item.acquired">
+        <button type="button" class="tile-main" [attr.aria-pressed]="item.acquired"
           (click)="store.toggleIncarnon(item.name)">
-          <img [src]="'assets/img/incarnon/'+(item.name.toLowerCase())+'.png'" /><br />
-          {{item.name | uppercase}}
+          @if (missingImages().has(item.name)) {
+            <span class="material-symbols-outlined tile-placeholder" aria-hidden="true">image_not_supported</span>
+          } @else {
+            <img [src]="'assets/img/incarnon/'+(item.name.toLowerCase())+'.png'" width="64" height="64" alt=""
+              loading="lazy" (error)="imageMissing(item.name)" />
+          }
+          <span class="tile-name">{{item.name}}</span>
         </button>
-        <a class="btn btn-primary btn-item" [href]="item.wiki" target="_blank" rel="noopener" [class.mastered]="item.acquired">
-          <span class="material-symbols-outlined">
-            open_in_new
-          </span>
+        @if (item.acquired) {
+          <span class="material-symbols-outlined tile-check" aria-hidden="true">check_circle</span>
+        }
+        <a class="tile-wiki" [href]="item.wiki" target="_blank" rel="noopener" [title]="'Wiki: ' + item.name">
+          <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
         </a>
-      </div>
-    </div>
-  }
+      </li>
+    }
+  </ul>
 </app-tracker-card>
