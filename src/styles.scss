@@ -20,6 +20,17 @@
     --wt-mastered-border: #add8e6bf;
 }
 
+//Height of the mobile top bar, so sticky bars below it are not covered
+:root {
+    --wt-sticky-top: 0px;
+}
+
+@media (max-width: 991.98px) {
+    :root {
+        --wt-sticky-top: 3.5rem;
+    }
+}
+
 //Bootstrap dark mode (set on <html>) fed with the palette
 [data-bs-theme=dark] {
     --bs-body-bg: var(--wt-bg);
@@ -118,28 +129,6 @@
 
     &:hover {
         border: solid 2px var(--wt-border);
-    }
-}
-
-//Gold gradient border, text and inner glow (sidebar Market link)
-.prime {
-    --bs-btn-color: var(--wt-gold);
-    --bs-btn-bg: var(--wt-bg);
-    --bs-btn-hover-color: var(--wt-text);
-    --bs-btn-hover-bg: var(--wt-hover);
-    --bs-btn-active-color: var(--wt-text);
-    --bs-btn-active-bg: var(--wt-hover);
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #f7d358, #d4af37, #b8860b);
-    border-image-slice: 1;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    -webkit-box-shadow: inset 0 -3px 7px #f7d358bf;
-    -moz-box-shadow: inset 0 -3px 7px #f7d358bf;
-    box-shadow: inset 0 -3px 7px #f7d358bf;
-
-    &:hover {
-        border: solid 2px var(--wt-gold-soft);
     }
 }
 

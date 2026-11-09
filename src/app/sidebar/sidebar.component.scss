@@ -1,3 +1,19 @@
+//Mobile: the top bar stays in view while scrolling
+@media (max-width: 991.98px) {
+  :host {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+
+  //An open menu scrolls on its own instead of running past the screen
+  #sidebarContent {
+    max-height: calc(100dvh - var(--wt-sticky-top));
+    overflow-y: auto;
+  }
+}
+
 .sidebar {
   box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 0px 14px 0px rgba(0, 0, 0, 0.75);
@@ -13,14 +29,42 @@
   --bs-progress-bar-bg: var(--wt-xp);
 }
 
+.mobile-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+  margin-right: 0.75rem;
+}
+
+.mobile-summary-text {
+  flex: 1;
+  min-width: 0;
+  max-width: 16rem;
+
+  span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.mobile-progress {
+  height: 0.375rem;
+}
+
+//Current page: gold, like a pressed button
+.nav-links .btn.active {
+  border-color: var(--wt-gold-soft);
+  color: var(--wt-gold);
+  background-color: var(--wt-hover);
+}
+
 @media (max-width: 992px) {
   .sidebar {
     border-bottom: solid 2px var(--wt-border-soft);
-
-    &:hover {
-      background-color: var(--wt-hover);
-      border-bottom: solid 2px var(--wt-gold-soft);
-    }
   }
 }
 
@@ -36,11 +80,5 @@
     float: left;
     border-right: solid 2px rgba(255, 255, 255, 0.5);
     position: fixed;
-
-    &:hover {
-
-      background-color: var(--wt-hover);
-      border-right: solid 2px var(--wt-gold-soft);
-    }
   }
 }

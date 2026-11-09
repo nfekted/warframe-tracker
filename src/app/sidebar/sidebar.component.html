@@ -1,5 +1,16 @@
 <nav class="navbar navbar-expand-lg sidebar">
   <div class="container-fluid">
+    <!-- Mobile only: rank and progress stay visible while the menu is closed -->
+    <div class="mobile-summary d-lg-none">
+      <img [src]="'assets/img/masteryRanks/' + store.masteryRank().rank + '.png'" width="32" height="32" alt="" />
+      <div class="mobile-summary-text">
+        <span>MR {{store.masteryRank().rank}} · {{'mr.'+store.masteryRank().name | transloco}}</span>
+        <div class="progress mobile-progress" role="progressbar" [attr.aria-label]="'sidebar.current_xp' | transloco"
+          aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="progress()">
+          <div class="progress-bar" [style.width.%]="progress()"></div>
+        </div>
+      </div>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarContent"
       aria-controls="sidebarContent" aria-expanded="false" [attr.aria-label]="'sidebar.toggle_navigation' | transloco">
       <span class="navbar-toggler-icon"></span>
@@ -36,31 +47,32 @@
             </div>
 
             <hr class="mt-4" />
-            <div class="col-12 text-center">
+            <div class="col-12 text-center nav-links">
+              <!-- Every page stays listed; the current one is highlighted -->
               <!-- start page -->
-              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/items" routerLinkActive="d-none">
-                <span class="material-symbols-outlined icon-sm">
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/items" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <span class="material-symbols-outlined icon-sm" aria-hidden="true">
                   checklist
                 </span>
                 {{'sidebar.list' | transloco}}
               </a>
               <!-- Incarnation -->
-              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/incarnon" routerLinkActive="d-none">
-                <span class="material-symbols-outlined icon-sm">
-                  checklist
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/incarnon" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <span class="material-symbols-outlined icon-sm" aria-hidden="true">
+                  auto_awesome
                 </span>
                 Incarnon
               </a>
               <!-- Locations -->
-              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/star-chart" routerLinkActive="d-none">
-                <span class="material-symbols-outlined icon-sm">
-                  search
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/star-chart" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <span class="material-symbols-outlined icon-sm" aria-hidden="true">
+                  public
                 </span>
                 {{'sidebar.star_chart' | transloco}}
               </a>
               <!-- Market -->
-              <a class="btn btn-sm btn-secondary w prime mt-2" routerLink="/market" routerLinkActive="d-none">
-                <span class="material-symbols-outlined icon-sm">
+              <a class="btn btn-sm btn-secondary w mt-2" routerLink="/market" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <span class="material-symbols-outlined icon-sm" aria-hidden="true">
                   currency_exchange
                 </span>
                 {{'sidebar.market' | transloco}}
