@@ -7,27 +7,27 @@
       {{steelPath()}}/{{locations().length}}
     </span><small>({{'planets.steel_path' | transloco}})</small>
   </ng-container>
-  <ul class="nodes">
+  <ul class="check-list">
     @for (item of visible(); track item.name) {
-      <li class="node" [class.done]="item.mastered" [class.complete]="item.mastered && item.steel_path"
+      <li class="check-row" [class.done]="item.mastered" [class.complete]="item.mastered && item.steel_path"
         [class.junction]="item.name.includes('Junction')">
-        <button type="button" class="node-main" [attr.aria-pressed]="item.mastered"
+        <button type="button" class="check-main" [attr.aria-pressed]="item.mastered"
           (click)="store.toggleLocation(item.name)">
-          <span class="material-symbols-outlined status" aria-hidden="true">
+          <span class="material-symbols-outlined check-status" aria-hidden="true">
             {{item.mastered ? 'check_circle' : 'radio_button_unchecked'}}
           </span>
-          <span class="node-name">{{item.name}}</span>
-          <small class="node-xp" [title]="'planets.mr_awarded' | transloco">{{item.mastery_exp}} XP</small>
+          <span class="check-name">{{item.name}}</span>
+          <small class="check-meta" [title]="'planets.mr_awarded' | transloco">{{item.mastery_exp}} XP</small>
         </button>
         @let spLocked = !item.mastered && !item.steel_path;
-        <button type="button" class="node-sp" [class.on]="item.steel_path" [attr.aria-pressed]="item.steel_path"
+        <button type="button" class="check-side node-sp" [class.on]="item.steel_path" [attr.aria-pressed]="item.steel_path"
           [disabled]="spLocked"
           [title]="(spLocked ? 'planets.steel_path_locked' : 'planets.complete_steel_path') | transloco"
           [attr.aria-label]="(spLocked ? 'planets.steel_path_locked' : 'planets.complete_steel_path') | transloco"
           (click)="store.toggleSteelPath(item.name)">
           <img src="assets/img/icons/mastered.png" width="16" height="16" alt="" />
         </button>
-        <a class="node-wiki" [href]="item.wiki" target="_blank" rel="noopener" [title]="'Wiki: ' + item.name">
+        <a class="check-side check-link" [href]="item.wiki" target="_blank" rel="noopener" [title]="'Wiki: ' + item.name">
           <span class="material-symbols-outlined icon-md" aria-hidden="true">open_in_new</span>
         </a>
       </li>

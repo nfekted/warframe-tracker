@@ -1,14 +1,21 @@
 import { Component, ChangeDetectionStrategy, computed, inject, input } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
 import { Item } from '../../../shared/models/item.model';
 import { ItemType } from '../../../shared/utils/util';
 import { ProgressStore } from '../../../shared/store/progress.store';
 import { TrackerCardComponent } from '../../tracker-card/tracker-card.component';
 import { TranslocoModule } from '@jsverse/transloco';
 
+function rarity(item: Item): string | null {
+  if (item.name.includes('Prime')) return 'prime';
+  if (item.name.includes('Kuva')) return 'kuva';
+  if (item.name.includes('Coda')) return 'coda';
+  if (item.name.includes('Tenet') || item.type == 'hounds') return 'tenet';
+  return null;
+}
+
 @Component({
     selector: 'app-items',
-    imports: [UpperCasePipe, TranslocoModule, TrackerCardComponent],
+    imports: [TranslocoModule, TrackerCardComponent],
     templateUrl: './items.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './items.component.scss'
@@ -24,16 +31,8 @@ export class ItemsComponent {
 
   mastered = computed(() => this.items().filter(i => i.mastered).length);
 
-  rows = computed(() => this.visible().map(item => ({
-    item,
-    classes: {
-      mastered: item.mastered,
-      prime: item.name.includes('Prime'),
-      kuva: item.name.includes('Kuva'),
-      coda: item.name.includes('Coda'),
-      tenet: item.name.includes('Tenet') || item.type == 'hounds',
-    },
-  })));
+  //Rarity colors the row accent and name; Hounds count as Tenet
+  rows = computed(() => this.visible().map(item => ({ item, rarity: rarity(item) })));
 
   toggle(item: Item) {
     this.store.toggleItem(this.type(), item.name);

@@ -36,17 +36,17 @@ describe('ItemsComponent', () => {
     const el = render([ash, excalibur]);
 
     expect(el.querySelector('[counter]')!.textContent).toBe('1/3');
-    expect([...el.querySelectorAll('button.btn-item')].map(b => b.textContent!.replace(/\s+/g, ' ').trim()))
-      .toEqual(['MR 0 ASH check', 'MR 0 EXCALIBUR PRIME']);
+    expect([...el.querySelectorAll('.check-name')].map(n => n.textContent)).toEqual(['Ash', 'Excalibur Prime']);
   });
 
-  it('styles mastered and special items', () => {
-    const [ashButton, excaliburButton] = render([ash, excalibur]).querySelectorAll('button.btn-item');
+  it('marks mastered items and their rarity', () => {
+    const [ashRow, excaliburRow] = render([ash, excalibur]).querySelectorAll('.check-row');
 
-    expect(ashButton.classList).toContain('mastered');
-    expect(ashButton.classList).toContain('btn-primary');
-    expect(excaliburButton.classList).toContain('prime');
-    expect(excaliburButton.classList).not.toContain('mastered');
+    expect(ashRow.classList).toContain('done');
+    expect(ashRow.querySelector('.check-main')!.getAttribute('aria-pressed')).toBe('true');
+    expect(ashRow.hasAttribute('data-rarity')).toBe(false);
+    expect(excaliburRow.getAttribute('data-rarity')).toBe('prime');
+    expect(excaliburRow.classList).not.toContain('done');
   });
 
   it('links to the wiki in a new tab', () => {
@@ -58,14 +58,14 @@ describe('ItemsComponent', () => {
   });
 
   it('toggles the item in the store', () => {
-    render([wisp]).querySelector<HTMLButtonElement>('button.btn-item')!.click();
+    render([wisp]).querySelector<HTMLButtonElement>('.check-main')!.click();
 
     expect(TestBed.inject(ProgressStore).account().warframes.find(i => i.name == 'Wisp')!.mastered).toBe(true);
   });
 
   it('hides and shows the list', () => {
     const el = render([wisp]);
-    const list = el.querySelector('button.btn-item')!.closest('.row')!.parentElement!;
+    const list = el.querySelector('.check-list')!.closest('.row')!.parentElement!;
 
     el.querySelector<HTMLInputElement>('#hidewarframes')!.dispatchEvent(new Event('change'));
     TestBed.tick();

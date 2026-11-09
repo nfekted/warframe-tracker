@@ -29,21 +29,7 @@
     }
 }
 
-//Mastered item, node or Incarnon button
-@mixin mastered {
-    .mastered {
-        --bs-btn-bg: var(--wt-hover);
-        --bs-btn-hover-bg: var(--wt-mastered-hover);
-        --bs-btn-active-bg: var(--wt-mastered-hover);
-        border: inset 2px var(--wt-mastered-border);
-        opacity: 0.9;
-        -webkit-box-shadow: outset 0 0 5px white;
-        -moz-box-shadow: outset 0 0 5px white;
-        box-shadow: outset 0 0 10px white;
-    }
-}
-
-//Card around a tracker-card in a panel grid (Star Chart planets, Incarnon groups)
+//Card around a tracker-card in a panel grid (item categories, Star Chart planets, Incarnon groups)
 @mixin panel-card {
     :host {
         display: block;
@@ -58,5 +44,108 @@
     app-tracker-card {
         display: block;
         margin-top: -2.25rem;
+    }
+}
+
+//Checklist rows: main toggle (status, name, meta) plus side buttons/links (Star Chart nodes, items)
+@mixin check-rows {
+    .check-list {
+        list-style: none;
+        margin: 0.75rem 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        text-align: left;
+    }
+
+    .check-row {
+        display: flex;
+        background-color: var(--wt-bg);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0.375rem;
+        overflow: hidden;
+        transition: border-color 0.15s, background-color 0.15s;
+
+        &:hover {
+            border-color: var(--wt-gold-soft);
+        }
+
+        button,
+        a {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: 0;
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                background-color: var(--wt-hover);
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--wt-gold);
+                outline-offset: -2px;
+            }
+        }
+
+        .check-side {
+            padding: 0 0.625rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .check-link {
+            color: rgba(255, 255, 255, 0.7);
+
+            &:hover {
+                color: var(--wt-text);
+            }
+        }
+    }
+
+    .check-main {
+        flex: 1;
+        min-width: 0;
+        gap: 0.5rem;
+        padding: 0.375rem 0.5rem;
+        text-align: left;
+    }
+
+    .check-status {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .check-name {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .check-meta {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        white-space: nowrap;
+    }
+
+    //Done: filled gold check and darker row
+    .done {
+        background-color: var(--wt-hover);
+        border-color: var(--wt-mastered-border);
+
+        .check-status {
+            color: var(--wt-gold);
+        }
+
+        .check-name {
+            color: rgba(255, 255, 255, 0.75);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .check-row {
+            transition: none;
+        }
     }
 }

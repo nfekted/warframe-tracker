@@ -1,27 +1,19 @@
 <app-tracker-card [id]="type()" [title]="'items.types.'+type() | transloco" [icon]="'assets/img/icons/'+type()+'.png'">
   <span class="card-heading" counter>{{mastered()}}/{{items().length}}</span>
-  @for (row of rows(); track row.item.name) {
-    <div class="col-12 mt-2">
-      <div class="btn-group w" role="group">
-        <button class="btn btn-sm btn-primary btn-item w"
-          (click)="toggle(row.item)" [class]="row.classes">
-          <small class="float-start item-tag" [title]="'items.mr_needed' | transloco">
-            <img src="assets/img/icons/mastered.png" width="15" />
-            MR {{row.item.mastery_requirement}}
-          </small>
-          {{row.item.name | uppercase}}
-          @if (row.item.mastered) {
-            <span class="material-symbols-outlined icon-md">
-              check
-            </span>
-          }
-        </button>
-        <a class="btn btn-primary btn-item" [href]="row.item.wiki" target="_blank" rel="noopener" [class.mastered]="row.item.mastered">
-          <span class="material-symbols-outlined">
-            open_in_new
+  <ul class="check-list">
+    @for (row of rows(); track row.item.name) {
+      <li class="check-row" [class.done]="row.item.mastered" [attr.data-rarity]="row.rarity">
+        <button type="button" class="check-main" [attr.aria-pressed]="row.item.mastered" (click)="toggle(row.item)">
+          <span class="material-symbols-outlined check-status" aria-hidden="true">
+            {{row.item.mastered ? 'check_circle' : 'radio_button_unchecked'}}
           </span>
+          <span class="check-name">{{row.item.name}}</span>
+          <small class="check-meta" [title]="'items.mr_needed' | transloco">MR {{row.item.mastery_requirement}}</small>
+        </button>
+        <a class="check-side check-link" [href]="row.item.wiki" target="_blank" rel="noopener" [title]="'Wiki: ' + row.item.name">
+          <span class="material-symbols-outlined icon-md" aria-hidden="true">open_in_new</span>
         </a>
-      </div>
-    </div>
-  }
+      </li>
+    }
+  </ul>
 </app-tracker-card>

@@ -136,7 +136,7 @@
               </div>
               <hr class="mt-4" />
               @for (category of categories(); track category.type) {
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-6 col-xl-4 col-xxl-3 mt-4">
                   <app-items [type]="category.type" [items]="category.items" [visible]="category.visible"></app-items>
                 </div>
               }

@@ -94,46 +94,26 @@
     }
 }
 
-.btn-item {
-    font-size: 1.25rem;
-}
-
-//Gradient border, text color and inner glow of each item rarity
-@mixin rarity($gradient, $text, $glow, $hover-border) {
-    --bs-btn-color: #{$text};
+//Gold gradient border, text and inner glow (sidebar Market link)
+.prime {
+    --bs-btn-color: var(--wt-gold);
     --bs-btn-bg: var(--wt-bg);
     --bs-btn-hover-color: var(--wt-text);
     --bs-btn-hover-bg: var(--wt-hover);
     --bs-btn-active-color: var(--wt-text);
     --bs-btn-active-bg: var(--wt-hover);
     border: 2px solid transparent;
-    border-image: linear-gradient(45deg, $gradient);
+    border-image: linear-gradient(45deg, #f7d358, #d4af37, #b8860b);
     border-image-slice: 1;
     cursor: pointer;
     transition: all 0.5s ease;
-    -webkit-box-shadow: inset 0 -3px 7px $glow;
-    -moz-box-shadow: inset 0 -3px 7px $glow;
-    box-shadow: inset 0 -3px 7px $glow;
+    -webkit-box-shadow: inset 0 -3px 7px #f7d358bf;
+    -moz-box-shadow: inset 0 -3px 7px #f7d358bf;
+    box-shadow: inset 0 -3px 7px #f7d358bf;
 
     &:hover {
-        border: solid 2px $hover-border;
+        border: solid 2px var(--wt-gold-soft);
     }
-}
-
-.prime {
-    @include rarity((#f7d358, #d4af37, #b8860b), var(--wt-gold), #f7d358bf, var(--wt-gold-soft));
-}
-
-.kuva {
-    @include rarity((#f75858, #d43737, #b80b0b), #ff8a8a, #f75858bf, #d15454bf);
-}
-
-.coda {
-    @include rarity((#f758ea, #d437bf, #b80ba1), #ffd1f7, #f758ddbf, #d154c0bf);
-}
-
-.tenet {
-    @include rarity((#58ecf7, #37cfd4, #0badb8), rgb(209, 252, 255), #58f2f7bf, #54c9d1bf);
 }
 
 .w {
@@ -150,10 +130,6 @@
 //Text and icon sizes
 .card-heading {
     font-size: 1.5625rem;
-}
-
-.item-tag {
-    font-size: 0.75rem;
 }
 
 .material-symbols-outlined.icon-sm {

@@ -1,4 +1,23 @@
+@use 'sass:list';
 @use 'mixins';
 
-@include mixins.toggle-buttons;
-@include mixins.mastered;
+@include mixins.panel-card;
+@include mixins.check-rows;
+
+//Rarity: colored left accent and name, kept when mastered
+$rarities: (
+    prime: (#d4af37, var(--wt-gold)),
+    kuva: (#d43737, #ff8a8a),
+    coda: (#d437bf, #ffd1f7),
+    tenet: (#37cfd4, rgb(209, 252, 255)),
+);
+
+@each $name, $colors in $rarities {
+    [data-rarity=#{$name}] {
+        border-left: 3px solid list.nth($colors, 1);
+
+        .check-name {
+            color: list.nth($colors, 2);
+        }
+    }
+}
