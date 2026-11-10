@@ -22438,5 +22438,929 @@
     "url": "hayan_dabor",
     "name_en": "Hayan-Dabor",
     "name_pt": "Hayan-Dabor"
+  },
+  {
+    "id": "6944ca272366b4663960aaa4",
+    "url": "vanguard_c1_relic",
+    "name_en": "Vanguard C1 Relic",
+    "name_pt": "Relíquia Vanguarda C1"
+  },
+  {
+    "id": "6944ca352366b4663960aaa6",
+    "url": "vanguard_p1_relic",
+    "name_en": "Vanguard P1 Relic",
+    "name_pt": "Relíquia Vanguarda P1"
+  },
+  {
+    "id": "6944ca3e2366b4663960aaa8",
+    "url": "vanguard_m1_relic",
+    "name_en": "Vanguard M1 Relic",
+    "name_pt": "Relíquia Vanguarda M1"
+  },
+  {
+    "id": "6944ca462366b4663960aaaa",
+    "url": "vanguard_e1_relic",
+    "name_en": "Vanguard E1 Relic",
+    "name_pt": "Relíquia Vanguarda E1"
+  },
+  {
+    "id": "694ec216f384e9a134cf4f47",
+    "url": "primed_venomous_clip",
+    "name_en": "Primed Venomous Clip",
+    "name_pt": "Primed Venomous Clip"
+  },
+  {
+    "id": "69765a057b65a4e83d4ab4ae",
+    "url": "zid_an_sek_eel",
+    "name_en": "Zid-an Sek-eel",
+    "name_pt": "Zid-An Sek-Eel"
+  },
+  {
+    "id": "69765a057b65a4e83d4ab4af",
+    "url": "zid_an_asheir",
+    "name_en": "Zid-an Asheir",
+    "name_pt": "Zid-An Asheir"
+  },
+  {
+    "id": "69765a057b65a4e83d4ab4b0",
+    "url": "zid_an_uskos",
+    "name_en": "Zid-an Uskos",
+    "name_pt": "Zid-An Uskos"
+  },
+  {
+    "id": "69765a067b65a4e83d4ab4b1",
+    "url": "zid_an_haras",
+    "name_en": "Zid-an Haras",
+    "name_pt": "Zid-An Haras"
+  },
+  {
+    "id": "69765a067b65a4e83d4ab4b2",
+    "url": "zid_an_osbok",
+    "name_en": "Zid-an Osbok",
+    "name_pt": "Zid-An Osbok"
+  },
+  {
+    "id": "69988d58bdd67bd33c02704b",
+    "url": "primed_ammo_chain",
+    "name_en": "Primed Ammo Chain",
+    "name_pt": "Primed Ammo Chain"
+  },
+  {
+    "id": "69c52958bb986142bb6e02bb",
+    "url": "requiem_eterna_relic",
+    "name_en": "Requiem Eterna Relic",
+    "name_pt": "Relíquia Réquiem Eterna"
+  },
+  {
+    "id": "69c52999bb986142bb6e02bd",
+    "url": "velox_conclusion",
+    "name_en": "Velox Conclusion",
+    "name_pt": "Velox Conclusion"
+  },
+  {
+    "id": "69c529b5bb986142bb6e02bf",
+    "url": "sentient_incision",
+    "name_en": "Sentient Incision",
+    "name_pt": "Sentient Incision"
+  },
+  {
+    "id": "69c529ffbb986142bb6e02c1",
+    "url": "truths_flame",
+    "name_en": "Truth's Flame",
+    "name_pt": "Truth's Flame"
+  },
+  {
+    "id": "69d1bf747e9d0a1afb371589",
+    "url": "haunted_vesper_relay_scene",
+    "name_en": "Haunted Vesper Relay Scene",
+    "name_pt": "Cena Relay Vesper Assombrado"
+  },
+  {
+    "id": "69d6763bb3984cc97e24174b",
+    "url": "voruna_prime_set",
+    "name_en": "Voruna Prime Set",
+    "name_pt": "Voruna Prime Conjunto"
+  },
+  {
+    "id": "69d6766fb3984cc97e24174d",
+    "url": "voruna_prime_blueprint",
+    "name_en": "Voruna Prime Blueprint",
+    "name_pt": "Voruna Prime (Diagrama)"
+  },
+  {
+    "id": "69d67671b3984cc97e24174e",
+    "url": "voruna_prime_neuroptics_blueprint",
+    "name_en": "Voruna Prime Neuroptics Blueprint",
+    "name_pt": "Voruna Prime Neurovisor (Diagrama)"
+  },
+  {
+    "id": "69d67673b3984cc97e24174f",
+    "url": "voruna_prime_chassis_blueprint",
+    "name_en": "Voruna Prime Chassis Blueprint",
+    "name_pt": "Voruna Prime Chassi (Diagrama)"
+  },
+  {
+    "id": "69d67675b3984cc97e241750",
+    "url": "voruna_prime_systems_blueprint",
+    "name_en": "Voruna Prime Systems Blueprint",
+    "name_pt": "Voruna Prime Sistemas (Diagrama)"
+  },
+  {
+    "id": "69d67708b3984cc97e241752",
+    "url": "perigale_prime_set",
+    "name_en": "Perigale Prime Set",
+    "name_pt": "Perigale Prime Conjunto"
+  },
+  {
+    "id": "69d6770ab3984cc97e241753",
+    "url": "perigale_prime_blueprint",
+    "name_en": "Perigale Prime Blueprint",
+    "name_pt": "Perigale Prime (Diagrama)"
+  },
+  {
+    "id": "69d6770bb3984cc97e241754",
+    "url": "perigale_prime_barrel",
+    "name_en": "Perigale Prime Barrel",
+    "name_pt": "Perigale Prime Cano"
+  },
+  {
+    "id": "69d6770cb3984cc97e241755",
+    "url": "perigale_prime_receiver",
+    "name_en": "Perigale Prime Receiver",
+    "name_pt": "Perigale Prime Receptor"
+  },
+  {
+    "id": "69d6770db3984cc97e241756",
+    "url": "perigale_prime_stock",
+    "name_en": "Perigale Prime Stock",
+    "name_pt": "Perigale Prime Coronha"
+  },
+  {
+    "id": "69d6774fb3984cc97e241758",
+    "url": "sarofang_prime_set",
+    "name_en": "Sarofang Prime Set",
+    "name_pt": "Sarofang Prime Conjunto"
+  },
+  {
+    "id": "69d67750b3984cc97e241759",
+    "url": "sarofang_prime_blueprint",
+    "name_en": "Sarofang Prime Blueprint",
+    "name_pt": "Sarofang Prime (Diagrama)"
+  },
+  {
+    "id": "69d67751b3984cc97e24175a",
+    "url": "sarofang_prime_blade",
+    "name_en": "Sarofang Prime Blade",
+    "name_pt": "Sarofang Prime Lâmina"
+  },
+  {
+    "id": "69d67752b3984cc97e24175b",
+    "url": "sarofang_prime_handle",
+    "name_en": "Sarofang Prime Handle",
+    "name_pt": "Sarofang Prime Cabo"
+  },
+  {
+    "id": "69d67827b3984cc97e24175d",
+    "url": "axi_v14_relic",
+    "name_en": "Axi V14 Relic",
+    "name_pt": "Relíquia Axi V14"
+  },
+  {
+    "id": "69d67828b3984cc97e24175e",
+    "url": "axi_s20_relic",
+    "name_en": "Axi S20 Relic",
+    "name_pt": "Relíquia Axi S20"
+  },
+  {
+    "id": "69d67829b3984cc97e24175f",
+    "url": "axi_c11_relic",
+    "name_en": "Axi C11 Relic",
+    "name_pt": "Relíquia Axi C11"
+  },
+  {
+    "id": "69d6782ab3984cc97e241760",
+    "url": "neo_v11_relic",
+    "name_en": "Neo V11 Relic",
+    "name_pt": "Relíquia Neo V11"
+  },
+  {
+    "id": "69d6782bb3984cc97e241761",
+    "url": "neo_s20_relic",
+    "name_en": "Neo S20 Relic",
+    "name_pt": "Relíquia Neo S20"
+  },
+  {
+    "id": "69d6782cb3984cc97e241762",
+    "url": "neo_p10_relic",
+    "name_en": "Neo P10 Relic",
+    "name_pt": "Relíquia Neo P10"
+  },
+  {
+    "id": "69d6782db3984cc97e241763",
+    "url": "meso_d8_relic",
+    "name_en": "Meso D8 Relic",
+    "name_pt": "Relíquia Meso D8"
+  },
+  {
+    "id": "69d6782eb3984cc97e241764",
+    "url": "meso_e7_relic",
+    "name_en": "Meso E7 Relic",
+    "name_pt": "Relíquia Meso E7"
+  },
+  {
+    "id": "69d6782fb3984cc97e241765",
+    "url": "meso_l4_relic",
+    "name_en": "Meso L4 Relic",
+    "name_pt": "Relíquia Meso L4"
+  },
+  {
+    "id": "69d67830b3984cc97e241766",
+    "url": "lith_n19_relic",
+    "name_en": "Lith N19 Relic",
+    "name_pt": "Relíquia Lith N19"
+  },
+  {
+    "id": "69d67831b3984cc97e241767",
+    "url": "lith_c14_relic",
+    "name_en": "Lith C14 Relic",
+    "name_pt": "Relíquia Lith C14"
+  },
+  {
+    "id": "69d67851b3984cc97e241769",
+    "url": "iron_wake_scene",
+    "name_en": "Iron Wake Scene",
+    "name_pt": "Cena Vigia De Ferro"
+  },
+  {
+    "id": "69df8581158c0f2a93756b0b",
+    "url": "axi_d6_relic",
+    "name_en": "Axi D6 Relic",
+    "name_pt": "Relíquia Axi D6"
+  },
+  {
+    "id": "69df8582158c0f2a93756b0c",
+    "url": "axi_y3_relic",
+    "name_en": "Axi Y3 Relic",
+    "name_pt": "Relíquia Axi Y3"
+  },
+  {
+    "id": "69df8583158c0f2a93756b0d",
+    "url": "axi_g15_relic",
+    "name_en": "Axi G15 Relic",
+    "name_pt": "Relíquia Axi G15"
+  },
+  {
+    "id": "69df8584158c0f2a93756b0e",
+    "url": "neo_n24_relic",
+    "name_en": "Neo N24 Relic",
+    "name_pt": "Relíquia Neo N24"
+  },
+  {
+    "id": "69df8585158c0f2a93756b0f",
+    "url": "neo_m6_relic",
+    "name_en": "Neo M6 Relic",
+    "name_pt": "Relíquia Neo M6"
+  },
+  {
+    "id": "69df8586158c0f2a93756b10",
+    "url": "neo_g10_relic",
+    "name_en": "Neo G10 Relic",
+    "name_pt": "Relíquia Neo G10"
+  },
+  {
+    "id": "69df8587158c0f2a93756b11",
+    "url": "meso_a10_relic",
+    "name_en": "Meso A10 Relic",
+    "name_pt": "Relíquia Meso A10"
+  },
+  {
+    "id": "69df8588158c0f2a93756b12",
+    "url": "meso_v15_relic",
+    "name_en": "Meso V15 Relic",
+    "name_pt": "Relíquia Meso V15"
+  },
+  {
+    "id": "69df8589158c0f2a93756b13",
+    "url": "meso_z6_relic",
+    "name_en": "Meso Z6 Relic",
+    "name_pt": "Relíquia Meso Z6"
+  },
+  {
+    "id": "69df858a158c0f2a93756b14",
+    "url": "meso_a11_relic",
+    "name_en": "Meso A11 Relic",
+    "name_pt": "Relíquia Meso A11"
+  },
+  {
+    "id": "69df858b158c0f2a93756b15",
+    "url": "lith_a11_relic",
+    "name_en": "Lith A11 Relic",
+    "name_pt": "Relíquia Lith A11"
+  },
+  {
+    "id": "6a078bfc24866a8783042630",
+    "url": "primed_combustion_rounds",
+    "name_en": "Primed Combustion Rounds",
+    "name_pt": "Primed Combustion Rounds"
+  },
+  {
+    "id": "6a330f3c58b60af8cd1a0d07",
+    "url": "styanax_prime_set",
+    "name_en": "Styanax Prime Set",
+    "name_pt": "Styanax Prime Conjunto"
+  },
+  {
+    "id": "6a330f3e58b60af8cd1a0d08",
+    "url": "styanax_prime_blueprint",
+    "name_en": "Styanax Prime Blueprint",
+    "name_pt": "Styanax Prime (Diagrama)"
+  },
+  {
+    "id": "6a330f3f58b60af8cd1a0d09",
+    "url": "styanax_prime_neuroptics_blueprint",
+    "name_en": "Styanax Prime Neuroptics Blueprint",
+    "name_pt": "Styanax Prime Neurovisor (Diagrama)"
+  },
+  {
+    "id": "6a330f4158b60af8cd1a0d0a",
+    "url": "styanax_prime_chassis_blueprint",
+    "name_en": "Styanax Prime Chassis Blueprint",
+    "name_pt": "Styanax Prime Chassi (Diagrama)"
+  },
+  {
+    "id": "6a330f4258b60af8cd1a0d0b",
+    "url": "styanax_prime_systems_blueprint",
+    "name_en": "Styanax Prime Systems Blueprint",
+    "name_pt": "Styanax Prime Sistemas (Diagrama)"
+  },
+  {
+    "id": "6a330f5858b60af8cd1a0d0d",
+    "url": "afentis_prime_set",
+    "name_en": "Afentis Prime Set",
+    "name_pt": "Afentis Prime Conjunto"
+  },
+  {
+    "id": "6a330f5958b60af8cd1a0d0e",
+    "url": "afentis_prime_blueprint",
+    "name_en": "Afentis Prime Blueprint",
+    "name_pt": "Afentis Prime (Diagrama)"
+  },
+  {
+    "id": "6a330f5a58b60af8cd1a0d0f",
+    "url": "afentis_prime_barrel",
+    "name_en": "Afentis Prime Barrel",
+    "name_pt": "Afentis Prime Cano"
+  },
+  {
+    "id": "6a330f5b58b60af8cd1a0d10",
+    "url": "afentis_prime_blade",
+    "name_en": "Afentis Prime Blade",
+    "name_pt": "Afentis Prime Lâmina"
+  },
+  {
+    "id": "6a330f5c58b60af8cd1a0d11",
+    "url": "afentis_prime_handle",
+    "name_en": "Afentis Prime Handle",
+    "name_pt": "Afentis Prime Cabo"
+  },
+  {
+    "id": "6a330f9e58b60af8cd1a0d13",
+    "url": "athodai_prime_set",
+    "name_en": "Athodai Prime Set",
+    "name_pt": "Athodai Prime Conjunto"
+  },
+  {
+    "id": "6a330f9f58b60af8cd1a0d14",
+    "url": "athodai_prime_blueprint",
+    "name_en": "Athodai Prime Blueprint",
+    "name_pt": "Athodai Prime (Diagrama)"
+  },
+  {
+    "id": "6a330fa158b60af8cd1a0d15",
+    "url": "athodai_prime_barrel",
+    "name_en": "Athodai Prime Barrel",
+    "name_pt": "Athodai Prime Cano"
+  },
+  {
+    "id": "6a330fa358b60af8cd1a0d16",
+    "url": "athodai_prime_receiver",
+    "name_en": "Athodai Prime Receiver",
+    "name_pt": "Athodai Prime Receptor"
+  },
+  {
+    "id": "6a33103258b60af8cd1a0d18",
+    "url": "primary_compression",
+    "name_en": "Primary Compression",
+    "name_pt": "Compressão Primária"
+  },
+  {
+    "id": "6a33106858b60af8cd1a0d1a",
+    "url": "arcane_sculptor",
+    "name_en": "Arcane Sculptor",
+    "name_pt": "Escultor Arcano"
+  },
+  {
+    "id": "6a33109658b60af8cd1a0d1c",
+    "url": "secondary_cryogenic",
+    "name_en": "Secondary Cryogenic",
+    "name_pt": "Criogenia Secundária"
+  },
+  {
+    "id": "6a3310be58b60af8cd1a0d1e",
+    "url": "melee_assimilation",
+    "name_en": "Melee Assimilation",
+    "name_pt": "Assimilação (Corpo A Corpo)"
+  },
+  {
+    "id": "6a33110258b60af8cd1a0d20",
+    "url": "noctua_swarm",
+    "name_en": "Noctua Swarm",
+    "name_pt": "Enxame Do Noctua"
+  },
+  {
+    "id": "6a33111858b60af8cd1a0d22",
+    "url": "reroot_rampage",
+    "name_en": "Reroot Rampage",
+    "name_pt": "Chacina Reenraizada"
+  },
+  {
+    "id": "6a33112b58b60af8cd1a0d24",
+    "url": "kumihimo_loading",
+    "name_en": "Kumihimo Loading",
+    "name_pt": "Carga De Kumihimo"
+  },
+  {
+    "id": "6a33113c58b60af8cd1a0d26",
+    "url": "rhythm_guard",
+    "name_en": "Rhythm Guard",
+    "name_pt": "Guarda Rítmica"
+  },
+  {
+    "id": "6a3311f158b60af8cd1a0d28",
+    "url": "axi_a22_relic",
+    "name_en": "Axi A22 Relic",
+    "name_pt": "Relíquia Axi A22"
+  },
+  {
+    "id": "6a3311f358b60af8cd1a0d29",
+    "url": "axi_p10_relic",
+    "name_en": "Axi P10 Relic",
+    "name_pt": "Relíquia Axi P10"
+  },
+  {
+    "id": "6a3311f458b60af8cd1a0d2a",
+    "url": "axi_a21_relic",
+    "name_en": "Axi A21 Relic",
+    "name_pt": "Relíquia Axi A21"
+  },
+  {
+    "id": "6a3311f558b60af8cd1a0d2b",
+    "url": "neo_c9_relic",
+    "name_en": "Neo C9 Relic",
+    "name_pt": "Relíquia Neo C9"
+  },
+  {
+    "id": "6a3311f658b60af8cd1a0d2c",
+    "url": "neo_y1_relic",
+    "name_en": "Neo Y1 Relic",
+    "name_pt": "Relíquia Neo Y1"
+  },
+  {
+    "id": "6a3311f758b60af8cd1a0d2d",
+    "url": "neo_t11_relic",
+    "name_en": "Neo T11 Relic",
+    "name_pt": "Relíquia Neo T11"
+  },
+  {
+    "id": "6a3311f858b60af8cd1a0d2e",
+    "url": "neo_a16_relic",
+    "name_en": "Neo A16 Relic",
+    "name_pt": "Relíquia Neo A16"
+  },
+  {
+    "id": "6a3311f958b60af8cd1a0d2f",
+    "url": "neo_c8_relic",
+    "name_en": "Neo C8 Relic",
+    "name_pt": "Relíquia Neo C8"
+  },
+  {
+    "id": "6a3311fa58b60af8cd1a0d30",
+    "url": "meso_a12_relic",
+    "name_en": "Meso A12 Relic",
+    "name_pt": "Relíquia Meso A12"
+  },
+  {
+    "id": "6a3311fb58b60af8cd1a0d31",
+    "url": "meso_k8_relic",
+    "name_en": "Meso K8 Relic",
+    "name_pt": "Relíquia Meso K8"
+  },
+  {
+    "id": "6a3311fc58b60af8cd1a0d32",
+    "url": "meso_y2_relic",
+    "name_en": "Meso Y2 Relic",
+    "name_pt": "Relíquia Meso Y2"
+  },
+  {
+    "id": "6a3311fe58b60af8cd1a0d33",
+    "url": "meso_l5_relic",
+    "name_en": "Meso L5 Relic",
+    "name_pt": "Relíquia Meso L5"
+  },
+  {
+    "id": "6a3311ff58b60af8cd1a0d34",
+    "url": "lith_s18_relic",
+    "name_en": "Lith S18 Relic",
+    "name_pt": "Relíquia Lith S18"
+  },
+  {
+    "id": "6a33120058b60af8cd1a0d35",
+    "url": "lith_t14_relic",
+    "name_en": "Lith T14 Relic",
+    "name_pt": "Relíquia Lith T14"
+  },
+  {
+    "id": "6a33120158b60af8cd1a0d36",
+    "url": "lith_v11_relic",
+    "name_en": "Lith V11 Relic",
+    "name_pt": "Relíquia Lith V11"
+  },
+  {
+    "id": "6a33120258b60af8cd1a0d37",
+    "url": "lith_a12_relic",
+    "name_en": "Lith A12 Relic",
+    "name_pt": "Relíquia Lith A12"
+  },
+  {
+    "id": "6a33120358b60af8cd1a0d38",
+    "url": "lith_q3_relic",
+    "name_en": "Lith Q3 Relic",
+    "name_pt": "Relíquia Lith Q3"
+  },
+  {
+    "id": "6a34bb30875fcabc85ef5bdf",
+    "url": "neo_v12_relic",
+    "name_en": "Neo V12 Relic",
+    "name_pt": "Relíquia Neo V12"
+  },
+  {
+    "id": "6a549ad9cfb1ce3a499be7a8",
+    "url": "scorias_angel_scene",
+    "name_en": "Scoria's Angel Scene",
+    "name_pt": "Cena Arcanja Da Escória"
+  },
+  {
+    "id": "6a549aeccfb1ce3a499be7aa",
+    "url": "kuva_wytch_scene",
+    "name_en": "Kuva Wytch Scene",
+    "name_pt": "Cena Bruxa Da Kuva"
+  },
+  {
+    "id": "6a549af6cfb1ce3a499be7ac",
+    "url": "pontis_tower_scene",
+    "name_en": "Pontis Tower Scene",
+    "name_pt": "Cena Torre Pontis"
+  },
+  {
+    "id": "6a8850a5ce20a7532e0ab570",
+    "url": "primed_polar_magazine",
+    "name_en": "Primed Polar Magazine",
+    "name_pt": "Primed Polar Magazine"
+  },
+  {
+    "id": "6a8cec31ce20a7532e0ab572",
+    "url": "overpressured_rounds",
+    "name_en": "Overpressured Rounds",
+    "name_pt": "Overpressured Rounds"
+  },
+  {
+    "id": "6a8cec33ce20a7532e0ab574",
+    "url": "prototype_shock_coils",
+    "name_en": "Prototype Shock Coils",
+    "name_pt": "Prototype Shock Coils"
+  },
+  {
+    "id": "6ab3edcf7bf68b8584b4ff24",
+    "url": "broods_oversurge",
+    "name_en": "Brood's Oversurge",
+    "name_pt": "Sobrecarga Da Ninhada"
+  },
+  {
+    "id": "6ab3ee527bf68b8584b4ff26",
+    "url": "infernum",
+    "name_en": "Infernum",
+    "name_pt": "Infernum"
+  },
+  {
+    "id": "6ab3ee697bf68b8584b4ff28",
+    "url": "cold_front",
+    "name_en": "Cold Front",
+    "name_pt": "Frente Fria"
+  },
+  {
+    "id": "6ab3eea97bf68b8584b4ff2a",
+    "url": "gastroparesis",
+    "name_en": "Gastroparesis",
+    "name_pt": "Gastroparesia"
+  },
+  {
+    "id": "6ab3f1b7626e0c6df7f6c9ad",
+    "url": "citrine_prime_set",
+    "name_en": "Citrine Prime Set",
+    "name_pt": "Citrine Prime Conjunto"
+  },
+  {
+    "id": "6ab3f1b9626e0c6df7f6c9ae",
+    "url": "citrine_prime_blueprint",
+    "name_en": "Citrine Prime Blueprint",
+    "name_pt": "Citrine Prime (Diagrama)"
+  },
+  {
+    "id": "6ab3f1bb626e0c6df7f6c9af",
+    "url": "citrine_prime_neuroptics_blueprint",
+    "name_en": "Citrine Prime Neuroptics Blueprint",
+    "name_pt": "Citrine Prime Neurovisor (Diagrama)"
+  },
+  {
+    "id": "6ab3f1bd626e0c6df7f6c9b0",
+    "url": "citrine_prime_chassis_blueprint",
+    "name_en": "Citrine Prime Chassis Blueprint",
+    "name_pt": "Citrine Prime Chassi (Diagrama)"
+  },
+  {
+    "id": "6ab3f1c0626e0c6df7f6c9b1",
+    "url": "citrine_prime_systems_blueprint",
+    "name_en": "Citrine Prime Systems Blueprint",
+    "name_pt": "Citrine Prime Sistemas (Diagrama)"
+  },
+  {
+    "id": "6ab3f22e626e0c6df7f6c9b3",
+    "url": "steflos_prime_set",
+    "name_en": "Steflos Prime Set",
+    "name_pt": "Steflos Prime Conjunto"
+  },
+  {
+    "id": "6ab3f230626e0c6df7f6c9b4",
+    "url": "steflos_prime_blueprint",
+    "name_en": "Steflos Prime Blueprint",
+    "name_pt": "Steflos Prime (Diagrama)"
+  },
+  {
+    "id": "6ab3f232626e0c6df7f6c9b5",
+    "url": "steflos_prime_receiver",
+    "name_en": "Steflos Prime Receiver",
+    "name_pt": "Steflos Prime Receptor"
+  },
+  {
+    "id": "6ab3f233626e0c6df7f6c9b6",
+    "url": "steflos_prime_barrel",
+    "name_en": "Steflos Prime Barrel",
+    "name_pt": "Steflos Prime Cano"
+  },
+  {
+    "id": "6ab3f235626e0c6df7f6c9b7",
+    "url": "steflos_prime_stock",
+    "name_en": "Steflos Prime Stock",
+    "name_pt": "Steflos Prime Coronha"
+  },
+  {
+    "id": "6ab3f276626e0c6df7f6c9b9",
+    "url": "corufell_prime_set",
+    "name_en": "Corufell Prime Set",
+    "name_pt": "Corufell Prime Conjunto"
+  },
+  {
+    "id": "6ab3f278626e0c6df7f6c9ba",
+    "url": "corufell_prime_blueprint",
+    "name_en": "Corufell Prime Blueprint",
+    "name_pt": "Corufell Prime (Diagrama)"
+  },
+  {
+    "id": "6ab3f279626e0c6df7f6c9bb",
+    "url": "corufell_prime_stock",
+    "name_en": "Corufell Prime Stock",
+    "name_pt": "Corufell Prime Coronha"
+  },
+  {
+    "id": "6ab3f27b626e0c6df7f6c9bc",
+    "url": "corufell_prime_handle",
+    "name_en": "Corufell Prime Handle",
+    "name_pt": "Corufell Prime Cabo"
+  },
+  {
+    "id": "6ab3f27d626e0c6df7f6c9bd",
+    "url": "corufell_prime_receiver",
+    "name_en": "Corufell Prime Receiver",
+    "name_pt": "Corufell Prime Receptor"
+  },
+  {
+    "id": "6ab3f2ee626e0c6df7f6c9bf",
+    "url": "axi_c12_relic",
+    "name_en": "Axi C12 Relic",
+    "name_pt": "Relíquia Axi C12"
+  },
+  {
+    "id": "6ab3f312626e0c6df7f6c9c1",
+    "url": "neo_h5_relic",
+    "name_en": "Neo H5 Relic",
+    "name_pt": "Relíquia Neo H5"
+  },
+  {
+    "id": "6ab3f34c626e0c6df7f6c9c3",
+    "url": "axi_s21_relic",
+    "name_en": "Axi S21 Relic",
+    "name_pt": "Relíquia Axi S21"
+  },
+  {
+    "id": "6ab3f361626e0c6df7f6c9c5",
+    "url": "lith_a13_relic",
+    "name_en": "Lith A13 Relic",
+    "name_pt": "Relíquia Lith A13"
+  },
+  {
+    "id": "6ab3f377626e0c6df7f6c9c7",
+    "url": "lith_c15_relic",
+    "name_en": "Lith C15 Relic",
+    "name_pt": "Relíquia Lith C15"
+  },
+  {
+    "id": "6ab3f38d626e0c6df7f6c9c9",
+    "url": "lith_s19_relic",
+    "name_en": "Lith S19 Relic",
+    "name_pt": "Relíquia Lith S19"
+  },
+  {
+    "id": "6ab3f3ab626e0c6df7f6c9cb",
+    "url": "neo_c11_relic",
+    "name_en": "Neo C11 Relic",
+    "name_pt": "Relíquia Neo C11"
+  },
+  {
+    "id": "6ab3f3c9626e0c6df7f6c9cd",
+    "url": "meso_d9_relic",
+    "name_en": "Meso D9 Relic",
+    "name_pt": "Relíquia Meso D9"
+  },
+  {
+    "id": "6ab3f3dc626e0c6df7f6c9cf",
+    "url": "meso_v17_relic",
+    "name_en": "Meso V17 Relic",
+    "name_pt": "Relíquia Meso V17"
+  },
+  {
+    "id": "6ab3f3f3626e0c6df7f6c9d1",
+    "url": "neo_c10_relic",
+    "name_en": "Neo C10 Relic",
+    "name_pt": "Relíquia Neo C10"
+  },
+  {
+    "id": "6ab3f40b626e0c6df7f6c9d3",
+    "url": "meso_c11_relic",
+    "name_en": "Meso C11 Relic",
+    "name_pt": "Relíquia Meso C11"
+  },
+  {
+    "id": "6ab3f428626e0c6df7f6c9d5",
+    "url": "neo_y2_relic",
+    "name_en": "Neo Y2 Relic",
+    "name_pt": "Relíquia Neo Y2"
+  },
+  {
+    "id": "6ab3f456626e0c6df7f6c9d7",
+    "url": "axi_n14_relic",
+    "name_en": "Axi N14 Relic",
+    "name_pt": "Relíquia Axi N14"
+  },
+  {
+    "id": "6ab3f473626e0c6df7f6c9d9",
+    "url": "axi_b10_relic",
+    "name_en": "Axi B10 Relic",
+    "name_pt": "Relíquia Axi B10"
+  },
+  {
+    "id": "6ab3f492626e0c6df7f6c9db",
+    "url": "axi_a23_relic",
+    "name_en": "Axi A23 Relic",
+    "name_pt": "Relíquia Axi A23"
+  },
+  {
+    "id": "6ab3f52f626e0c6df7f6c9dd",
+    "url": "neo_n25_relic",
+    "name_en": "Neo N25 Relic",
+    "name_pt": "Relíquia Neo N25"
+  },
+  {
+    "id": "6ab3f54a626e0c6df7f6c9df",
+    "url": "neo_o4_relic",
+    "name_en": "Neo O4 Relic",
+    "name_pt": "Relíquia Neo O4"
+  },
+  {
+    "id": "6ab3f55d626e0c6df7f6c9e1",
+    "url": "neo_p11_relic",
+    "name_en": "Neo P11 Relic",
+    "name_pt": "Relíquia Neo P11"
+  },
+  {
+    "id": "6ab3f572626e0c6df7f6c9e3",
+    "url": "neo_v13_relic",
+    "name_en": "Neo V13 Relic",
+    "name_pt": "Relíquia Neo V13"
+  },
+  {
+    "id": "6ab3f5c7626e0c6df7f6c9e5",
+    "url": "neo_k10_relic",
+    "name_en": "Neo K10 Relic",
+    "name_pt": "Relíquia Neo K10"
+  },
+  {
+    "id": "6ab3f5d6626e0c6df7f6c9e7",
+    "url": "meso_e8_relic",
+    "name_en": "Meso E8 Relic",
+    "name_pt": "Relíquia Meso E8"
+  },
+  {
+    "id": "6ab3f5ea626e0c6df7f6c9e9",
+    "url": "meso_v16_relic",
+    "name_en": "Meso V16 Relic",
+    "name_pt": "Relíquia Meso V16"
+  },
+  {
+    "id": "6ab3f5fa626e0c6df7f6c9eb",
+    "url": "meso_i3_relic",
+    "name_en": "Meso I3 Relic",
+    "name_pt": "Relíquia Meso I3"
+  },
+  {
+    "id": "6ab3f60b626e0c6df7f6c9ed",
+    "url": "meso_k9_relic",
+    "name_en": "Meso K9 Relic",
+    "name_pt": "Relíquia Meso K9"
+  },
+  {
+    "id": "6ab3f61c626e0c6df7f6c9ef",
+    "url": "lith_s20_relic",
+    "name_en": "Lith S20 Relic",
+    "name_pt": "Relíquia Lith S20"
+  },
+  {
+    "id": "6ab3f62b626e0c6df7f6c9f1",
+    "url": "lith_b12_relic",
+    "name_en": "Lith B12 Relic",
+    "name_pt": "Relíquia Lith B12"
+  },
+  {
+    "id": "6ab3f63a626e0c6df7f6c9f3",
+    "url": "lith_l8_relic",
+    "name_en": "Lith L8 Relic",
+    "name_pt": "Relíquia Lith L8"
+  },
+  {
+    "id": "6ab3f65d626e0c6df7f6c9f5",
+    "url": "melicas_laboratory_scene",
+    "name_en": "Melica's Laboratory Scene",
+    "name_pt": "Cena Laboratório Da Mélica"
+  },
+  {
+    "id": "6ab3f6a7626e0c6df7f6c9f7",
+    "url": "yuvan_peak_scene",
+    "name_en": "Yuvan Peak Scene",
+    "name_pt": "Yuvan Peak Scene"
+  },
+  {
+    "id": "6ab73d32626e0c6df7f6d2d2",
+    "url": "nightwave_set",
+    "name_en": "Nightwave Set",
+    "name_pt": "Nightwave Conjunto"
+  },
+  {
+    "id": "6ab73d33626e0c6df7f6d2d3",
+    "url": "nightwave_fuselage_blueprint",
+    "name_en": "Nightwave Fuselage Blueprint",
+    "name_pt": "Nightwave Fuselagem (Diagrama)"
+  },
+  {
+    "id": "6ab73d34626e0c6df7f6d2d4",
+    "url": "nightwave_engines_blueprint",
+    "name_en": "Nightwave Engines Blueprint",
+    "name_pt": "Nightwave Motores (Diagrama)"
+  },
+  {
+    "id": "6ab73d36626e0c6df7f6d2d5",
+    "url": "nightwave_avionics_blueprint",
+    "name_en": "Nightwave Avionics Blueprint",
+    "name_pt": "Nightwave Aviônicos (Diagrama)"
+  },
+  {
+    "id": "6ac6e85324fe2680bad773be",
+    "url": "glacial_laboratory_scene",
+    "name_en": "Glacial Laboratory Scene",
+    "name_pt": "Cena Laboratório Glacial"
+  },
+  {
+    "id": "6ae170e6f8ac355d8e222a5c",
+    "url": "axi_c13_relic",
+    "name_en": "Axi C13 Relic",
+    "name_pt": "Relíquia Axi C13"
   }
 ]

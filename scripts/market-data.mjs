@@ -1,19 +1,4 @@
-// Generates the market JSONs in src/shared/jsons/tradeable from raw exports.
-//
-//   node scripts/market-data.mjs tradeables <items.json>
-//     items.json: warframe.market v2 items list ({ data: [{ id, slug, i18n: { en: { name }, pt: { name } } }] })
-//     writes tradeables.json
-//
-//   node scripts/market-data.mjs prices <statistics.json>
-//     statistics.json: { [key]: [{ item_id, order_type, mod_rank, min_price, max_price, avg_price, median }] }
-//     reads tradeables.json, writes tradePrices.json
-//
-//   node scripts/market-data.mjs relics <drop-table.txt>
-//     drop-table.txt: relic drop table as text, one "<Relic> Relic (Radiant)" line followed by its 6 drop lines
-//     ("<Item> <Common|Uncommon|Rare> (<chance>%)")
-//     reads tradePrices.json, writes relics.json
-
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 
 const dir = new URL('../src/shared/jsons/tradeable/', import.meta.url);
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'));
@@ -23,18 +8,51 @@ const write = (file, data) => {
   console.log(`${file}: ${data.length} entries`);
 };
 
-function tradeables(input) {
+//Saves the download next to this script and returns its path; it is deleted once the import finishes
+const downloads = [];
+async function download(url, file, headers = {}) {
+  //Without a User-Agent of its own the market API answers 403
+  const response = await fetch(url, { headers: { ...headers, 'User-Agent': 'WarframeTracker import script' } });
+  if (!response.ok) throw new Error(`${url}: ${response.status}`);
+  const path = new URL(file, import.meta.url);
+  writeFileSync(path, await response.text());
+  downloads.push(path);
+  console.log(`${file} saved`);
+  return path;
+}
+
+//Without a file, downloads the item list in Portuguese (it also carries the English names)
+async function tradeables(input) {
+  input ??= await download('https://api.warframe.market/v2/items', 'tradeable_pt.json', { Language: 'pt' });
   const cleanName = (name) => name.replace(':', '');
-  const list = read(input).data.map(item => ({
+  const list = readData('tradeables.json');
+  const known = new Set(list.map(t => t.id));
+  const added = read(input).data.filter(item => !known.has(item.id)).map(item => ({
     id: item.id,
     url: item.slug,
     name_en: cleanName(item.i18n.en.name),
-    name_pt: cleanName((item.i18n.pt ?? item.i18n.en).name),
+    name_pt: item.i18n.pt ? cleanName(item.i18n.pt.name) : 'PLACEHOLDER',
   }));
-  write('tradeables.json', list);
+  write('tradeables.json', [...list, ...added]);
+  console.log(`${added.length} new, ${added.filter(t => t.name_pt == 'PLACEHOLDER').length} waiting for a Portuguese name`);
 }
 
-function prices(input) {
+//Without a file, downloads the newest daily price history, going back from today until one is published
+async function latestPrices() {
+  const day = new Date();
+  for (let i = 0; i < 7; i++, day.setUTCDate(day.getUTCDate() - 1)) {
+    const file = `price_history_${day.toISOString().slice(0, 10)}.json`;
+    try {
+      return await download(`https://relics.run/history/${file}`, file);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  throw new Error('No price history in the last 7 days');
+}
+
+async function prices(input) {
+  input ??= await latestPrices();
   const byId = new Map(readData('tradeables.json').map(t => [t.id, t]));
   const list = [];
 
@@ -61,23 +79,26 @@ function prices(input) {
   write('tradePrices.json', list.filter(i => i.average > 0 && i.higher > 0 && i.lowest > 0));
 }
 
-function relics(input) {
+//Without a file, downloads the official PC drop tables page; only its Relics section is read
+async function relics(input) {
+  //The official address redirects to wherever the page is hosted
+  input ??= await download('https://www.warframe.com/droptables', 'droptables.html');
   const byName = new Map(readData('tradePrices.json').map(p => [p.name.toLowerCase(), p]));
-  const lines = readFileSync(input, 'utf8').split(/\r?\n/);
+  const html = readFileSync(input, 'utf8');
+  const start = html.indexOf('id="relicRewards"');
+  const section = html.slice(start, html.indexOf('<h3', start));
+  const text = (cell) => cell.replace(/&amp;/g, '&').replace(/&#39;/g, "'").trim();
+  console.log(`Drop tables: ${html.match(/Last Update:<\/b>\s*([^<]+)/)?.[1].trim()}`);
   const list = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    if (!lines[i].includes('Relic (Radiant)')) continue;
-    const relicName = lines[i].split(',')[0].trim();
+  //Each relic is a header row followed by its rewards: <tr><td>item</td><td>Rarity (chance%)</td></tr>
+  for (const table of section.split('<tr class="blank-row">')) {
+    const relicName = text(table.match(/<th[^>]*>([^<]*)<\/th>/)?.[1] ?? '');
+    if (!relicName.endsWith('Relic (Radiant)')) continue;
 
     //Each drop keeps its own chance, so sorting by price does not mix them up
-    const drops = lines.slice(i + 1, i + 7).map(line => {
-      const cell = line.split(',')[0];
-      const chance = +cell.split('(')[1].split('%')[0];
-      const name = cell.split(/Common|Uncommon|Rare/)[0].trim();
-      return { price: byName.get(name.toLowerCase()), chance };
-    }).filter(d => d.price);
-    i += 6;
+    const drops = [...table.matchAll(/<td>([^<]*)<\/td><td>[^<(]*\(([\d.]+)%\)<\/td>/g)].map(([, name, chance]) =>
+      ({ price: byName.get(text(name).toLowerCase()), chance: +chance })).filter(d => d.price);
 
     if (!drops.length) continue;
     drops.sort((a, b) => a.price.most_frequent - b.price.most_frequent);
@@ -102,8 +123,12 @@ function relics(input) {
 const [command, input] = process.argv.slice(2);
 const commands = { tradeables, prices, relics };
 
-if (!commands[command] || !input) {
-  console.error('Usage: node scripts/market-data.mjs <tradeables|prices|relics> <input file>');
+if (command && !commands[command]) {
+  console.error('Usage: node scripts/market-data.mjs [tradeables|prices|relics] [input file] (without a file, the source is downloaded; without a command, all three run in order)');
   process.exit(1);
 }
-commands[command](input);
+if (command) await commands[command](input);
+//Each step reads what the one before wrote
+else for (const step of Object.values(commands)) await step();
+//Only after a successful import, so a failed one leaves its download to look at
+downloads.forEach(path => unlinkSync(path));
