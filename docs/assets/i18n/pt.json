@@ -1,18 +1,31 @@
 {
     "on_update": "Atualização",
     "erase": "Apagar dados? Não poderá ser desfeito",
-    "delete": "Delete",
-    "cancel": "Cancel",
+    "delete": "Apagar",
+    "cancel": "Cancelar",
     "sidebar": {
         "list": "Lista items",
         "delete_all": "Apagar meus dados",
-        "disclaimer": "Esse site e aplicações não possuem nenhuma afiliação com a Digital Extremes Ltd ou Warframe. Todo conteudo é salvo nos cookies do seu navegador. Ao continuar, você entende e concorda com esse texto.",
+        "disclaimer": "Esse site e aplicações não possuem nenhuma afiliação com a Digital Extremes Ltd ou Warframe. Todo conteúdo é salvo no seu navegador. Ao continuar, você entende e concorda com esse texto.",
         "star_chart": "Ver mapa estelar",
         "market": "Verificar preços warframe.market",
         "xp_needed": "necessários para próximo nível",
         "next_mr": "Seu próximo MR é {{nextRank}}, com {{xp}}XP",
         "intrinsics": "Intrínsecos",
-        "of": "de"
+        "of": "de",
+        "export": "Exportar meus dados",
+        "import": "Importar dados",
+        "data": "Meus dados",
+        "mastery_rank": "MASTERY RANK",
+        "items": "itens",
+        "current_xp": "XP atual",
+        "toggle_navigation": "Abrir ou fechar o menu"
+    },
+    "import": {
+        "confirm": "Substituir seu progresso atual pelo arquivo importado? Não poderá ser desfeito",
+        "success": "Dados importados",
+        "invalid_file": "Este arquivo não é uma exportação do Warframe Tracker",
+        "newer_version": "Este arquivo foi exportado por uma versão mais nova do Warframe Tracker"
     },
     "items": {
         "options": "OPÇÕES",
@@ -46,7 +59,10 @@
             "archwing_primary": "ARCH-ARMA",
             "zaws": "ZAWS",
             "kitguns": "KITGUNS"
-        }
+        },
+        "mr_needed": "MR necessário para equipar o item",
+        "jump_to": "Ir para a categoria",
+        "shown": "{{count}} itens exibidos"
     },
     "incarnon": {
         "description": "Items atuais com sistema Incarnon",
@@ -78,9 +94,16 @@
         "Eris": "ERIS",
         "Kuva_Fortress": "FORTALEZA KUVA",
         "Void": "VOID",
-        "Zariman": "ZARIMAN"
+        "Zariman": "ZARIMAN",
+        "normal": "Normal",
+        "steel_path": "Steel Path",
+        "mr_awarded": "XP de maestria ganho ao completar a missão",
+        "complete_steel_path": "Completar a versão Steel Path",
+        "steel_path_locked": "Conclua o modo normal primeiro",
+        "all_complete": "Todos os mapas estão completos",
+        "show_complete": "Mostrar mapas completos"
     },
-    "acquisiton": {
+    "acquisition": {
         "types": {
             "Arbitration": "Arbitragem ",
             "Automatically acquired": "Adiquirido automáticamente",
@@ -195,5 +218,54 @@
         "Legendary 19": "Lendário 19",
         "Legendary 20": "Lendário 20",
         "Legendary 21": "Lendário 21"
-    }
+    },
+    "ok": "OK",
+    "go_to_top": "Voltar ao topo",
+    "market": {
+        "tradeable": "{{count}} itens podem ser negociados atualmente.",
+        "on": "em",
+        "prices_based": "Preços baseados em",
+        "last_update": "última atualização de preços em",
+        "list_source": "Lista de itens do",
+        "my_items": "Meus itens",
+        "best_items": "Itens mais valiosos",
+        "best_relics": "Melhores relíquias para farmar",
+        "my_list": "Sua lista de itens, veja os mais e os menos valiosos",
+        "search": "Busque e adicione itens à lista",
+        "item": "Item",
+        "lowest": "Menor preço",
+        "highest": "Maior preço",
+        "average": "Preço médio",
+        "median": "Preço mediano",
+        "open": "Abrir no warframe.market",
+        "remove": "Remover",
+        "show": {
+            "primeItems": "Mostrar itens prime",
+            "primeSets": "Mostrar sets prime",
+            "relics": "Mostrar relíquias",
+            "helmets": "Mostrar capacetes",
+            "miscellaneous": "Mostrar diversos",
+            "arcanes": "Mostrar arcanos"
+        },
+        "show_more": "Mostrar +100",
+        "load_all": "Carregar todos",
+        "radiant_only": "Apenas relíquias radiantes são exibidas; a proporção é a mesma nas outras versões da relíquia.",
+        "drops_based": "Chances de drop baseadas na",
+        "drop_tables": "tabela oficial de drops do Warframe",
+        "drops_update": "atualizada em",
+        "relic_filter": "Filtrar por tipo de relíquia:",
+        "show_all": "Mostrar todas",
+        "relic": "Relíquia",
+        "worst": "Pior resultado",
+        "best": "Melhor resultado",
+        "expected": "Preço esperado",
+        "no_match": "Nenhum item encontrado, ou ele já está na sua lista",
+        "empty_list": "Sua lista está vazia. Busque um item acima para adicionar.",
+        "total": "Valor total (preço mediano)",
+        "found": "{{count}} itens encontrados",
+        "show_more_count": "Mostrar mais ({{shown}} de {{count}})"
+    },
+    "no_results": "Nenhum item corresponde aos filtros",
+    "clear_filters": "Limpar filtros",
+    "language": "Idioma"
 }

@@ -2,7 +2,7 @@
 
 export const GAME_UPDATE = {
     name: 'Update 43: Jade Shadows: Constellations',
-    date: '2026-06-19',
+    date: '2026-11-08',
 };
 
 export const MARKET_DATA = {
