@@ -2,6 +2,7 @@
 import { Component, ChangeDetectionStrategy, computed, inject, signal } from "@angular/core";
 import { TranslocoModule } from '@jsverse/transloco';
 import relicPrices from '../../../shared/jsons/tradeable/relics.json';
+import { MARKET_DATA } from '../../../shared/metadata';
 import { ProgressStore } from '../../../shared/store/progress.store';
 import { ThousandsPipe } from '../../../shared/utils/thousands.pipe';
 
@@ -20,6 +21,7 @@ const RELICS = relicPrices
 })
 export class BestRelicsComponent {
     lang = inject(ProgressStore).lang;
+    relicData = MARKET_DATA.relics;
 
     eras = ['Lith', 'Meso', 'Neo', 'Axi', 'Requiem'];
     maxRelic = signal(100);

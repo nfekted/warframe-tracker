@@ -11,11 +11,17 @@ export const MARKET_DATA = {
         date: '2025-09-14',
         update: 'The Old Peace',
         wiki: 'https://wiki.warframe.com/w/Update_41',
+        source: 'Warframe Market',
+        url: 'https://warframe.market/',
     },
     prices: {
         source: 'Relic run',
         url: 'https://relics.run/',
         date: '2026-04-11',
+    },
+    relics: {
+        url: 'https://www.warframe.com/droptables',
+        date: '2026-10-22',
     },
 };
 

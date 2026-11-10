@@ -2,7 +2,8 @@
   <div class="col-12">
     <p>
       {{'market.tradeable' | transloco: {count: tradeableCount} }} ({{marketData.tradeables.version}} {{'market.on' | transloco}} {{marketData.tradeables.date}}: <a
-    [href]="marketData.tradeables.wiki" target="_blank" rel="noopener">{{marketData.tradeables.update}}</a>)
+    [href]="marketData.tradeables.wiki" target="_blank" rel="noopener">{{marketData.tradeables.update}}</a>).
+    {{'market.list_source' | transloco}} <a [href]="marketData.tradeables.url" target="_blank" rel="noopener">{{marketData.tradeables.source}}</a>.
   </p>
 </div>
 <div class="col-12">

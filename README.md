@@ -97,7 +97,7 @@ src/
     ├── i18n/                  # en.json, pt.json
     └── img/                   # Icons, flags, MR badges, location images
 scripts/
-└── market-data.mjs            # Generates the market JSONs from raw exports
+└── market-data.mjs            # Downloads the market sources and generates the market JSONs
 ```
 
 ## Updating game data
@@ -107,7 +107,10 @@ The data is static and bundled at build time. Nothing is fetched from game or ma
 - **New items, nodes or Incarnons**: add them to the JSON files in `src/shared/jsons/`. Each item has its own `mastery_xp` (3000, 4000 for Kuva/Tenet/Coda weapons, 6000 or 8000). Items are always built from the JSON and only the mastered flag comes from the saved data, so changes in the JSON reach existing users. The tests check that every item's `mastery_xp` matches its category.
 - **New game update**: update `GAME_UPDATE` in `src/shared/metadata.ts`. The max XP and the MR filter options are calculated from the JSONs.
 - **New item category**: add the JSON to `ItemJsons` (`shared/models/item-jsons.model.ts`), the property to `Account` and the key to `Util.itemTypes`.
-- **Market data**: `src/shared/jsons/tradeable/` holds the tradeable items with English and Portuguese names (`tradeables.json`), prices (`tradePrices.json`) and relic values (`relics.json`). Regenerate them with `node scripts/market-data.mjs <tradeables|prices|relics> <input file>` (input formats are described at the top of the script), then update `MARKET_DATA` in `src/shared/metadata.ts`.
+- **Market data**: `src/shared/jsons/tradeable/` holds the tradeable items with English and Portuguese names (`tradeables.json`), prices (`tradePrices.json`) and relic values (`relics.json`). Run `node scripts/market-data.mjs` to download every source and regenerate the three files in order; the downloads are deleted once the import succeeds. Then update `MARKET_DATA` in `src/shared/metadata.ts` (the script prints the drop tables date; the price date is in the downloaded file name). The sources, each also a single command that accepts a saved file instead of downloading:
+  - `tradeables`: the [Warframe Market](https://warframe.market/) item list (`https://api.warframe.market/v2/items`, requested in Portuguese, which also carries the English names). Only items not listed yet are added; `name_pt` is `PLACEHOLDER` when there is no Portuguese name.
+  - `prices`: the daily price history from [relics.run](https://relics.run/) (`https://relics.run/history/price_history_<yyyy-mm-dd>.json`), the newest one published in the last 7 days. The sell statistics give the lowest, highest, average and median prices.
+  - `relics`: the Relics section of the [official Warframe drop tables](https://www.warframe.com/droptables). Only Radiant relics are read; worst, best and expected values come from `tradePrices.json`.
 - **Translations**: edit `src/assets/i18n/en.json` and `pt.json`.
 
 ## Saved data
