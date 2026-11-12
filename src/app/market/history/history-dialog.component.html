@@ -1,0 +1,65 @@
+<dialog #dialog [attr.aria-label]="'market.history' | transloco" (close)="service.close()">
+  @if (service.current(); as item) {
+    <div class="header">
+      <h2>{{item.name}}</h2>
+      <button type="button" class="close" [title]="'market.history_close' | transloco" [attr.aria-label]="'market.history_close' | transloco"
+        (click)="close()">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+
+    @if (history() === undefined) {
+      <p role="status">{{'market.history_loading' | transloco}}</p>
+    } @else if (history() === null) {
+      <p role="status">{{'market.history_empty' | transloco}}</p>
+    } @else {
+      <div class="controls">
+        @if (variants().length > 1) {
+          <div class="btn-group btn-group-sm" role="group" [attr.aria-label]="'market.history_variant' | transloco">
+            @for (v of variants(); track v) {
+              <button type="button" class="btn btn-outline-light" [class.active]="v == variant()" [attr.aria-pressed]="v == variant()"
+                (click)="variant.set(v)">{{variantLabel(v)}}</button>
+            }
+          </div>
+        }
+        <div class="btn-group btn-group-sm" role="group" [attr.aria-label]="'market.history_period' | transloco">
+          @for (p of periods; track p) {
+            <button type="button" class="btn btn-outline-light" [class.active]="p == period()" [attr.aria-pressed]="p == period()"
+              (click)="period.set(p)">{{'market.periods.' + p | transloco}}</button>
+          }
+        </div>
+      </div>
+
+      @if (legend(); as l) {
+        <p class="legend" aria-live="polite">
+          <span>{{formatDate(l.date)}}</span>
+          <span>
+            <span class="swatch closed" aria-hidden="true"></span>{{'market.history_closed' | transloco}}: <strong>{{formatPrice(l.closed)}}</strong>
+            @if (l.closed != null) {
+              <img src="assets/img/icons/platinum.png" alt="platinum" width="20" />
+            }
+            @if (l.trades != null) {
+              · {{'market.history_trades' | transloco: {count: formatPrice(l.trades)} }}
+            }
+            @if (l.closedChange != null) {
+              <span class="change">({{'market.history_change' | transloco: {change: formatChange(l.closedChange), period: ('market.periods_change.' + period() | transloco)} }})</span>
+            }
+          </span>
+          <span>
+            <span class="swatch sell" aria-hidden="true"></span>{{'market.history_sell' | transloco}}: <strong>{{formatPrice(l.sell)}}</strong>
+            @if (l.sell != null) {
+              <img src="assets/img/icons/platinum.png" alt="platinum" width="20" />
+            }
+            @if (l.orders != null) {
+              · {{'market.history_orders' | transloco: {count: formatPrice(l.orders)} }}
+            }
+            @if (l.sellChange != null) {
+              <span class="change">({{'market.history_change' | transloco: {change: formatChange(l.sellChange), period: ('market.periods_change.' + period() | transloco)} }})</span>
+            }
+          </span>
+        </p>
+      }
+      <div #chart class="chart"></div>
+    }
+  }
+</dialog>

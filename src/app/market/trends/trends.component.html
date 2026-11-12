@@ -1,0 +1,88 @@
+@if (summary() === undefined) {
+  <p role="status">{{'market.trends.loading' | transloco}}</p>
+} @else if (summary() === null) {
+  <p role="status">{{'market.trends.error' | transloco}}</p>
+} @else {
+  <div class="col-12">
+    <p>
+      {{'market.trends.intro' | transloco: {date: formatDate(summary()!.date)} }}<br />
+      {{'market.trends.intro_median' | transloco}}<br />
+      <small>{{(relics() ? 'market.trends.rules_relics' : 'market.trends.rules_items') | transloco}}</small>
+    </p>
+    <div class="controls">
+      <div class="btn-group btn-group-sm" role="group" [attr.aria-label]="'market.trends.group' | transloco">
+        <button type="button" class="btn btn-outline-light" [class.active]="!relics()" [attr.aria-pressed]="!relics()"
+          (click)="showRelics(false)">{{'market.trends.items' | transloco}}</button>
+        <button type="button" class="btn btn-outline-light" [class.active]="relics()" [attr.aria-pressed]="relics()"
+          (click)="showRelics(true)">{{'market.trends.relics' | transloco}}</button>
+      </div>
+      <div class="btn-group btn-group-sm" role="group" [attr.aria-label]="'market.trends.list' | transloco">
+        @for (l of lists; track l) {
+          <button type="button" class="btn btn-outline-light" [class.active]="l == list()" [attr.aria-pressed]="l == list()"
+            (click)="showList(l)">{{'market.trends.' + l | transloco}}</button>
+        }
+      </div>
+    </div>
+    <p class="hint">{{'market.trends.' + list() + '_hint' | transloco}}</p>
+  </div>
+
+  <div class="col-12">
+    <span class="found" aria-live="polite">{{'market.found' | transloco: {count: (rows().length | thousands: lang())} }}</span>
+    @if (rows().length == 0) {
+      <p class="empty">{{'market.trends.empty' | transloco}}</p>
+    } @else {
+      <table class="table table-dark mt-3 stacked">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            @for (column of columns(); track column.field) {
+              <th scope="col" [class.text-center]="column.field != 'name'" [attr.aria-sort]="ariaSort(column.field)">
+                <button type="button" class="sort-button" (click)="sort(column.field)">
+                  {{column.label | transloco}}
+                  <span class="material-symbols-outlined" [class.sort-idle]="!ariaSort(column.field)" aria-hidden="true">
+                    {{ariaSort(column.field) == 'ascending' ? 'arrow_upward' : ariaSort(column.field) == 'descending' ? 'arrow_downward' : 'swap_vert'}}
+                  </span>
+                </button>
+              </th>
+            }
+            <th scope="col"><span class="visually-hidden">{{'market.history' | transloco}}</span></th>
+            <th scope="col"><span class="visually-hidden">{{'market.open' | transloco}}</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows(); track row.id + row.variant; let i = $index) {
+            <tr class="text-center">
+              <td class="text-start st-rank">{{i + 1}}</td>
+              <td class="text-start st-main">{{row.name}}</td>
+              <td class="st-extra" [attr.data-label]="columns()[1].label | transloco">
+                {{row.before | thousands: lang()}}
+                <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+              </td>
+              <td class="st-extra" [attr.data-label]="'market.trends.now' | transloco">
+                {{row.price | thousands: lang()}}
+                <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+              </td>
+              <td class="st-key" [attr.data-label]="'market.trends.change' | transloco"
+                [class.text-success]="row.change > 0" [class.text-danger]="row.change < 0">
+                {{formatChange(row.change)}}
+              </td>
+              <td class="st-extra" [attr.data-label]="columns()[4].label | transloco">{{row.volume | thousands: lang()}}</td>
+              <td class="st-action">
+                <button type="button" class="icon-button" [title]="'market.history' | transloco" [attr.aria-label]="'market.history' | transloco"
+                  (click)="openHistory(row)">
+                  <span class="material-symbols-outlined" aria-hidden="true">show_chart</span>
+                </button>
+              </td>
+              <td class="st-action">
+                <a class="text-white" [href]="'https://warframe.market/items/' + row.url" target="_blank" rel="noopener"
+                  [title]="'market.open' | transloco" [attr.aria-label]="'market.open' | transloco">
+                  <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+                </a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </div>
+}

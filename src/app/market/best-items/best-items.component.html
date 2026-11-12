@@ -36,6 +36,7 @@
               </button>
             </th>
           }
+          <th scope="col"><span class="visually-hidden">{{'market.history' | transloco}}</span></th>
           <th scope="col"><span class="visually-hidden">{{'market.open' | transloco}}</span></th>
         </tr>
       </thead>
@@ -59,6 +60,12 @@
             <td class="st-key" [attr.data-label]="'market.median' | transloco">
               {{item.most_frequent | thousands: lang()}}
               <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+            </td>
+            <td class="st-action">
+              <button type="button" class="icon-button" [title]="'market.history' | transloco" [attr.aria-label]="'market.history' | transloco"
+                (click)="openHistory(item)">
+                <span class="material-symbols-outlined" aria-hidden="true">show_chart</span>
+              </button>
             </td>
             <td class="st-action">
               <a class="text-white" [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"

@@ -11,6 +11,9 @@ import { ThousandsPipe } from '../../shared/utils/thousands.pipe';
 import { normalize } from '../../shared/utils/normalize';
 import { ariaSort, nextSort, SortState, sortRows } from '../../shared/utils/table-sort';
 import { Bootstrap } from '../../shared/utils/bootstrap';
+import { HistoryDialogComponent } from './history/history-dialog.component';
+import { TrendsComponent } from './trends/trends.component';
+import { HistoryService } from './history/history.service';
 
 type ItemPrice = { id: string, url: string, name: string, lowest: number, higher: number, average: number, most_frequent: number };
 type Tradeable = { id: string, url: string, name_en: string, name_pt: string };
@@ -27,13 +30,14 @@ const SEARCH_INDEX = tradeables
 
 @Component({
     selector: 'app-market',
-    imports: [BestRelicsComponent, BestItemsComponent, TranslocoModule, ThousandsPipe],
+    imports: [BestRelicsComponent, BestItemsComponent, HistoryDialogComponent, TrendsComponent, TranslocoModule, ThousandsPipe],
     templateUrl: './market.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './market.component.scss'
 })
 export class MarketComponent {
   private store = inject(ProgressStore);
+  private history = inject(HistoryService);
   private prices = new Map<string, ItemPrice>(itemPrices.map(p => [p.id, p]));
 
   tradeableCount = tradeables.length;
@@ -111,6 +115,10 @@ export class MarketComponent {
 
   removeItem(item: ItemPrice) {
     this.store.removeMarketItem(item.id);
+  }
+
+  openHistory(item: ItemPrice) {
+    this.history.open({ id: item.id, name: item.name });
   }
 
   sort(field: keyof ItemPrice) {

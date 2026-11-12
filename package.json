@@ -19,6 +19,7 @@
     "@jsverse/transloco": "^8.4.0",
     "bootstrap": "^5.3.3",
     "idb": "^8.0.4",
+    "lightweight-charts": "^5.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

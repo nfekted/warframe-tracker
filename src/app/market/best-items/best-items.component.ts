@@ -7,6 +7,7 @@ import { normalize } from '../../../shared/utils/normalize';
 import { ariaSort, nextSort, SortState, sortRows } from '../../../shared/utils/table-sort';
 import { ThousandsPipe } from '../../../shared/utils/thousands.pipe';
 import { ProgressStore } from '../../../shared/store/progress.store';
+import { HistoryService } from '../history/history.service';
 
 export type TradeCategory = 'primeItems' | 'primeSets' | 'relics' | 'helmets' | 'arcanes' | 'miscellaneous';
 
@@ -40,6 +41,7 @@ type TradeItem = typeof ITEMS[number];
 })
 export class BestItemsComponent {
     lang = inject(ProgressStore).lang;
+    private history = inject(HistoryService);
 
     categories: TradeCategory[] = ['primeItems', 'primeSets', 'relics', 'helmets', 'miscellaneous', 'arcanes'];
     columns: { field: keyof TradeItem, label: string }[] = [
@@ -86,6 +88,10 @@ export class BestItemsComponent {
 
     sort(field: keyof TradeItem) {
         this.sortState.set(nextSort(this.sortState(), field));
+    }
+
+    openHistory(item: TradeItem) {
+        this.history.open({ id: item.id, name: item.name });
     }
 
     show(category: TradeCategory, show: boolean) {

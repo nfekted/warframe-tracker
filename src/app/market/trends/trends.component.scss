@@ -1,0 +1,39 @@
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hint {
+    margin-top: 1rem;
+    opacity: 0.85;
+}
+
+.empty {
+    margin-top: 1rem;
+}
+
+th {
+    font-weight: normal;
+}
+
+//Header buttons look like the header text
+.sort-button {
+    padding: 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+}
+
+//Columns not sorted yet only hint that they can be
+.sort-idle {
+    opacity: 0.5;
+}
+
+.icon-button {
+    padding: 0;
+    background: none;
+    border: 0;
+    color: inherit;
+}

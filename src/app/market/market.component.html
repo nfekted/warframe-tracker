@@ -26,6 +26,10 @@
     <button class="nav-link" id="bestRelics-tab" data-bs-toggle="tab" data-bs-target="#bestRelics" type="button" role="tab"
     aria-controls="bestRelics" aria-selected="false">{{'market.best_relics' | transloco}}</button>
   </li>
+  <li class="nav-item">
+    <button class="nav-link" id="trends-tab" data-bs-toggle="tab" data-bs-target="#trends" type="button" role="tab"
+    aria-controls="trends" aria-selected="false">{{'market.trends.title' | transloco}}</button>
+  </li>
 </ul>
 <!-- Content -->
 <div class="tab-content p-0" id="marketContent">
@@ -72,6 +76,7 @@
                       </button>
                     </th>
                   }
+                  <th scope="col"><span class="visually-hidden">{{'market.history' | transloco}}</span></th>
                   <th scope="col"><span class="visually-hidden">{{'market.open' | transloco}}</span></th>
                   <th scope="col"><span class="visually-hidden">{{'market.remove' | transloco}}</span></th>
                 </tr>
@@ -95,6 +100,12 @@
                     <td class="st-key" [attr.data-label]="'market.median' | transloco">
                       {{item.most_frequent | thousands: lang()}}
                       <img src="assets/img/icons/platinum.png" alt="platinum" width="25" />
+                    </td>
+                    <td class="st-action">
+                      <button type="button" class="icon-button" [title]="'market.history' | transloco" [attr.aria-label]="'market.history' | transloco"
+                        (click)="openHistory(item)">
+                        <span class="material-symbols-outlined" aria-hidden="true">show_chart</span>
+                      </button>
                     </td>
                     <td class="st-action">
                       <a class="text-white" [href]="'https://warframe.market/items/' + item.url" target="_blank" rel="noopener"
@@ -128,5 +139,16 @@
         <app-best-relics></app-best-relics>
       </div>
     </div>
+    <!-- Trends: the summary is only loaded once the tab is shown -->
+    <div class="tab-pane fade show" id="trends" role="tabpanel" aria-labelledby="trends-tab">
+      <div class="p-3 border rounded-bottom">
+        @defer (on viewport) {
+          <app-trends></app-trends>
+        } @placeholder {
+          <p>{{'market.trends.loading' | transloco}}</p>
+        }
+      </div>
+    </div>
   </div>
 </div>
+<app-history-dialog></app-history-dialog>

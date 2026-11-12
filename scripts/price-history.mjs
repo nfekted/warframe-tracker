@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
+import { buildSummary } from './history-summary.mjs';
 
 const FIRST_DAY = '2021-09-12';
 const WAIT = 2000;
@@ -144,3 +145,4 @@ console.log(`${added} days added, ${items.size} items, ${index.first} to ${index
 console.log(`${mb(size)} MB, ${mb(gzipped)} MB compressed`);
 if (unmatched.size) console.log(`Unmatched names (add them to scripts/history-aliases.json and rebuild from scratch): ${[...unmatched].join(' | ')}`);
 if (unknownIds.size) console.log(`${unknownIds.size} ids not in tradeables.json (run market-data.mjs tradeables first)`);
+buildSummary();
