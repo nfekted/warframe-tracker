@@ -69,6 +69,7 @@
         </p>
       }
       <div #chart class="chart"></div>
+      <p class="note"><small>{{'market.history_source' | transloco}} <a [href]="source.url" target="_blank" rel="noopener">{{source.source}}</a>.</small></p>
       @if (launch(); as launch) {
         <p class="note"><small>
           {{'market.history_typical_note.' + launch.group | transloco: {count: launch.items} }}

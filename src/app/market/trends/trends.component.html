@@ -5,7 +5,8 @@
 } @else {
   <div class="col-12">
     <p>
-      {{'market.trends.intro' | transloco: {date: formatDate(summary()!.date)} }}<br />
+      {{'market.trends.intro' | transloco: {date: formatDate(summary()!.date)} }}
+      {{'market.history_source' | transloco}} <a [href]="source.url" target="_blank" rel="noopener">{{source.source}}</a>.<br />
       {{'market.trends.intro_median' | transloco}}<br />
       <small>{{(relics() ? 'market.trends.rules_relics' : 'market.trends.rules_items') | transloco}}</small>
     </p>

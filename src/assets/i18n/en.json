@@ -266,6 +266,7 @@
         "show_more_count": "Show more ({{shown}} of {{count}})",
         "history": "Price history",
         "history_close": "Close",
+        "history_source": "Price history from",
         "history_loading": "Loading price history...",
         "history_empty": "There is no price history for this item yet.",
         "history_variant": "Version",

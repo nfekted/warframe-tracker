@@ -6,6 +6,7 @@ import { ariaSort, nextSort, SortState, sortRows } from '../../../shared/utils/t
 import { ThousandsPipe } from '../../../shared/utils/thousands.pipe';
 import { ProgressStore } from '../../../shared/store/progress.store';
 import { HistoryService, variantLabel } from '../history/history.service';
+import { MARKET_DATA } from '../../../shared/metadata';
 
 type Change = { percent: number, platinum: number } | null;
 type Status = 'rising' | 'falling' | 'broke';
@@ -36,6 +37,7 @@ export class TrendsComponent {
   private history = inject(HistoryService);
   lang = inject(ProgressStore).lang;
 
+  source = MARKET_DATA.history;
   lists: Status[] = ['rising', 'falling', 'broke'];
   //undefined while loading, null when it could not be loaded
   summary = signal<Summary | null | undefined>(undefined);

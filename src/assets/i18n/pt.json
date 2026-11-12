@@ -266,6 +266,7 @@
         "show_more_count": "Mostrar mais ({{shown}} de {{count}})",
         "history": "Histórico de preços",
         "history_close": "Fechar",
+        "history_source": "Histórico de preços do",
         "history_loading": "Carregando o histórico de preços...",
         "history_empty": "Ainda não há histórico de preços para este item.",
         "history_variant": "Versão",

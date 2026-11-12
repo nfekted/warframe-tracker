@@ -6,6 +6,7 @@ import type { IChartApi } from 'lightweight-charts';
 import tradeables from '../../../shared/jsons/tradeable/tradeables.json';
 import { HistoryService, variantLabel } from './history.service';
 import { ProgressStore } from '../../../shared/store/progress.store';
+import { MARKET_DATA } from '../../../shared/metadata';
 
 type Values = (number | null)[];
 type Series = { sell?: Values, sellVolume?: Values, closed?: Values, closedVolume?: Values };
@@ -57,6 +58,7 @@ export class HistoryDialogComponent {
   private store = inject(ProgressStore);
 
   periods = PERIODS;
+  source = MARKET_DATA.history;
   //undefined while loading, null when the item has no history
   history = signal<History | null | undefined>(undefined);
   variant = signal('');

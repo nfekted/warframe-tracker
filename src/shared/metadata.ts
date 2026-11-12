@@ -23,6 +23,11 @@ export const MARKET_DATA = {
         url: 'https://www.warframe.com/droptables',
         date: '2026-10-22',
     },
+    //No date here: the trends tab shows the last imported day from the history summary
+    history: {
+        source: 'relics.run',
+        url: 'https://relics.run/',
+    },
 };
 
 export const INTRINSICS = {

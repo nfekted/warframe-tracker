@@ -24,6 +24,8 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
   - *My list*: search tradeable items (English or Portuguese names) and keep a personal price watchlist.
   - *Best items*: tradeable items ranked by price, filterable by prime parts, sets, relics, helmets, arcanes and miscellaneous.
   - *Best relics*: Radiant relics ranked by expected platinum value, filterable by era.
+  - *Trends*: items and intact relics rising, falling or breaking a long fixed price, from the daily price history since September 2021.
+  - *Price history*: a chart for each item in the lists, with the median of closed trades and of sell orders, trades per day, versions (rank, relic refinement) and periods from 7 days to the whole history. Prime items released since 2021 also show the typical price curve after a launch.
 - **Languages**: English and Portuguese, switched with the flag button.
 - **No account needed**: progress is saved in the browser (IndexedDB) as you click. *Delete all* removes only this app's data.
 - **Export / import**: download your progress as a JSON file and load it back in another browser or device.
@@ -36,6 +38,7 @@ A free, browser-only tracker for **Warframe** Mastery progress. Mark what you ha
 | i18n | [Transloco](https://jsverse.github.io/transloco/) 8 |
 | Storage | IndexedDB via [idb](https://github.com/jakearchibald/idb) |
 | UI | Bootstrap 5 (dark theme, bundled with Popper), Material Symbols, native `<dialog>` |
+| Charts | [Lightweight Charts](https://github.com/tradingview/lightweight-charts) 5 by TradingView (Apache 2.0, attribution through the logo on the chart), loaded only when a chart opens |
 | Language | TypeScript 6 |
 | Build | `@angular/build` (application builder) |
 | Tests | Vitest + jsdom via `@angular/build:unit-test` |
@@ -82,7 +85,7 @@ src/
 │   ├── items-panel/           # Mastery checklist + filters (items-filter.ts; items/ = one category card)
 │   ├── star-chart-panel/      # Star Chart nodes per planet (items/ = one planet card)
 │   ├── incarnon-panel/        # Incarnon adapters per source (items/ = one group card)
-│   └── market/                # Watchlist, best-items/, best-relics/
+│   └── market/                # Watchlist, best-items/, best-relics/, trends/, history/ (price history chart dialog)
 ├── shared/
 │   ├── jsons/                 # Static game data: items, MR table, locations, incarnons, market data
 │   ├── models/                # Account, Item, StarChart, Incarnons, MasteryRank, ItemJsons
@@ -94,15 +97,19 @@ src/
 │   └── utils/util.ts          # Item categories, XP calculation
 ├── styles/_mixins.scss        # Panel card and checklist row styles included by components (@use 'mixins')
 └── assets/
+    ├── history/               # Price history: one file per item in 16 folders, index, trend summary, launch curves
     ├── i18n/                  # en.json, pt.json
     └── img/                   # Icons, flags, MR badges, location images
 scripts/
-└── market-data.mjs            # Downloads the market sources and generates the market JSONs
+├── market-data.mjs            # Downloads the market sources and generates the market JSONs
+├── price-history.mjs          # Adds the days after the last import to the price history
+├── history-summary.mjs        # Trend summary and launch curves, from the price history
+└── history-aliases.json       # Old English names of renamed items, for the files from before item ids
 ```
 
 ## Updating game data
 
-The data is static and bundled at build time. Nothing is fetched from game or market APIs at runtime.
+The data is static and bundled at build time. Nothing is fetched from game or market APIs at runtime; the price history is also static, in `src/assets/history/`, and each file is only downloaded from the site itself when its chart or tab opens.
 
 - **New items, nodes or Incarnons**: add them to the JSON files in `src/shared/jsons/`. Each item has its own `mastery_xp` (3000, 4000 for Kuva/Tenet/Coda weapons, 6000 or 8000). Items are always built from the JSON and only the mastered flag comes from the saved data, so changes in the JSON reach existing users. The tests check that every item's `mastery_xp` matches its category.
 - **New game update**: update `GAME_UPDATE` in `src/shared/metadata.ts`. The max XP and the MR filter options are calculated from the JSONs.
@@ -111,6 +118,11 @@ The data is static and bundled at build time. Nothing is fetched from game or ma
   - `tradeables`: the [Warframe Market](https://warframe.market/) item list (`https://api.warframe.market/v2/items`, requested in Portuguese, which also carries the English names). Only items not listed yet are added; `name_pt` is `PLACEHOLDER` when there is no Portuguese name.
   - `prices`: the daily price history from [relics.run](https://relics.run/) (`https://relics.run/history/price_history_<yyyy-mm-dd>.json`), the newest one published in the last 7 days. The sell statistics give the lowest, highest, average and median prices.
   - `relics`: the Relics section of the [official Warframe drop tables](https://www.warframe.com/droptables). Only Radiant relics are read; worst, best and expected values come from `tradePrices.json`.
+- **Price history**: run `node scripts/market-data.mjs tradeables` first, since items not in `tradeables.json` are left out, then `node scripts/price-history.mjs`. It reads `src/assets/history/index.json`, downloads only the days after its `last` day from [relics.run](https://relics.run/) (one file every 2 seconds, retrying busy answers) and appends them to each item file, so the history in the repository is the only copy needed. Nothing is written until the end; if it stops, run it again. A day without a file only counts as missing once a later day exists. Without `src/assets/history/` it rebuilds everything from 2021-09-12, which takes about two hours. The format:
+  - `index.json`: first and last imported days, and the days relics.run has no file for.
+  - `<last character of the id>/<id>.json`: `{ start, series: { <variant>: { sell, sellVolume, closed, closedVolume } } }`, one value per day from `start` to the index's `last` day, `null` on days without data, and an array left out when it has no value at all. Medians of sell orders and of closed trades, with their volumes. The variant is `""`, the rank (`r0`, `r5`), the subtype (`intact`, `radiant`, `blueprint`...) or the Ayatan stars (`c2a1`).
+  - `summary.json` and `launch-curves.json`: written by `scripts/history-summary.mjs`, which `price-history.mjs` runs at the end; `node scripts/history-summary.mjs` recalculates them alone. The thresholds of each list are constants at the top of the script. Each day's price is the median of its last 7 days; only series measured by closed trades (intact relics also by sell orders with 50 or more a day) worth at least 10 platinum enter the lists. The launch curves are the median share of the launch price on each day, up to two years, of the Prime sets and parts released since 2021.
+  - The files from before 2023-07-21 have no item ids, so their items are found by English name; `scripts/history-aliases.json` maps old names of renamed items to the current ones (`" Blueprint"` added to the name is tried on its own). A new alias only applies to those days on a rebuild from scratch.
 - **Translations**: edit `src/assets/i18n/en.json` and `pt.json`.
 
 ## Saved data
