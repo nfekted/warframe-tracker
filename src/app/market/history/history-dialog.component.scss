@@ -63,6 +63,19 @@ dialog {
     &.sell {
         background-color: #7fb3d5;
     }
+
+    //Matches the dashed launch curve
+    &.typical {
+        height: 0;
+        border-top: 2px dashed rgba(255, 255, 255, 0.6);
+        border-radius: 0;
+        vertical-align: middle;
+    }
+}
+
+.note {
+    margin: 0.5rem 0 0;
+    opacity: 0.85;
 }
 
 .chart {

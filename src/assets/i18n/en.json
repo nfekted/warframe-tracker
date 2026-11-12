@@ -275,6 +275,13 @@
         "history_change": "{{change}} in {{period}}",
         "history_trades": "{{count}} trades",
         "history_orders": "{{count}} orders",
+        "history_typical": "Typical after launch",
+        "history_expected": "{{price}} in 90 days",
+        "history_typical_ended": "This item is more than two years past its launch, beyond the curve: choose All to see it.",
+        "history_typical_note": {
+            "sets": "Dashed line: the typical price of a Prime set after its launch, the median of {{count}} sets released since 2021, starting from this item's launch price. It is a reference, not a forecast.",
+            "parts": "Dashed line: the typical price of a Prime part after its launch, the median of {{count}} parts released since 2021, starting from this item's launch price. It is a reference, not a forecast."
+        },
         "periods": {
             "7": "7 days",
             "30": "30 days",

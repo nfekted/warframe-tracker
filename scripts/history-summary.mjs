@@ -20,6 +20,11 @@ const TREND_PLATINUM = 5;
 const TREND_MIN_PRICE = 10;
 //Only series measured by closed trades enter the trend lists; relics, which rarely have them, use intact sell orders with this volume
 const RELIC_MIN_SELL_VOLUME = 50;
+//Launch curve: Prime items first seen this long after the history starts were released inside it; the curve covers
+//this many days after the release and stops where fewer items than the minimum are that old
+const LAUNCH_MARGIN_DAYS = 30;
+const LAUNCH_CURVE_DAYS = 730;
+const LAUNCH_MIN_ITEMS = 10;
 
 const output = new URL('../src/assets/history/', import.meta.url);
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'));
@@ -36,6 +41,7 @@ const average = (values) => {
 };
 const percent = (from, to) => from ? (to - from) / from * 100 : null;
 const addDays = (day, n) => new Date(Date.parse(day) + n * 86400000).toISOString().slice(0, 10);
+const daysBetween = (from, to) => Math.round((Date.parse(to) - Date.parse(from)) / 86400000);
 
 //Least squares slope of the values, in platinum per day
 function slope(values) {
@@ -121,14 +127,64 @@ function summarize(id, name, variant, series, start) {
   };
 }
 
+//Prime sets and Prime parts each get a curve, since parts spread a little more
+export const launchGroup = (name) => / Prime Set$/.test(name) ? 'sets' : / Prime /.test(name) ? 'parts' : null;
+
+//The launch price is the median of the first week; closed trades when most of the first month has them, otherwise sell orders.
+//The same rule is in history-dialog.component.ts, which draws the curve from each item's own launch price
+function launchWeeks(series) {
+  const closed = series.closedVolume && series.closedVolume.slice(0, 30).filter(v => v >= MIN_CLOSED_VOLUME).length >= 15;
+  const prices = closed ? series.closed : series.sell;
+  const volumes = closed ? series.closedVolume : series.sellVolume;
+  const minVolume = closed ? MIN_CLOSED_VOLUME : MIN_SELL_VOLUME;
+  if (!prices) return null;
+  const week = (d) => {
+    const values = prices.slice(d, d + 7).filter((v, i) => v != null && volumes[d + i] >= minVolume);
+    return values.length >= 3 ? median(values) : null;
+  };
+  return week;
+}
+
+//Median share of the launch price on each day after release, for the Prime items released inside the history
+function launchCurves(items, first) {
+  const shares = { sets: [], parts: [] };
+  const counts = { sets: 0, parts: 0 };
+  for (const { name, item } of items) {
+    const group = launchGroup(name ?? '');
+    const series = item.series[''];
+    if (!group || !series || daysBetween(first, item.start) < LAUNCH_MARGIN_DAYS) continue;
+    const week = launchWeeks(series);
+    const base = week?.(0);
+    if (!base) continue;
+    counts[group]++;
+    const length = (series.sell ?? series.closed).length;
+    for (let d = 0; d < LAUNCH_CURVE_DAYS && d + 7 <= length; d++) {
+      const value = week(d);
+      if (value != null) (shares[group][d] ??= []).push(value / base);
+    }
+  }
+  const curves = {};
+  for (const group of Object.keys(shares)) {
+    const curve = [];
+    for (const day of shares[group]) {
+      if (!day || day.length < LAUNCH_MIN_ITEMS) break;
+      curve.push(round(median(day), 3));
+    }
+    curves[group] = { items: counts[group], curve };
+  }
+  return curves;
+}
+
 export function buildSummary() {
   const index = read(new URL('index.json', output));
   const names = new Map(read(new URL('../src/shared/jsons/tradeable/tradeables.json', import.meta.url)).map(t => [t.id, t.name_en]));
   const entries = [];
+  const items = [];
   for (const folder of readdirSync(output, { withFileTypes: true }).filter(f => f.isDirectory())) {
     for (const file of readdirSync(new URL(`${folder.name}/`, output))) {
       const id = file.slice(0, -5);
       const item = read(new URL(`${folder.name}/${file}`, output));
+      items.push({ name: names.get(id), item });
       for (const [variant, series] of Object.entries(item.series)) {
         const entry = summarize(id, names.get(id), variant, series, item.start);
         if (entry) entries.push({ variant, ...entry });
@@ -137,6 +193,12 @@ export function buildSummary() {
   }
   //Names are only for reading the terminal; the screen takes them from tradeables.json
   writeFileSync(new URL('summary.json', output), JSON.stringify({ date: index.last, items: entries.map(({ name, ...e }) => e) }));
+  const curves = launchCurves(items, index.first);
+  writeFileSync(new URL('launch-curves.json', output), JSON.stringify(curves));
+  const point = (curve, day) => curve[day] == null ? '-' : `${Math.round(curve[day] * 100)}%`;
+  for (const [group, { items, curve }] of Object.entries(curves)) {
+    console.log(`Launch curve, ${group}: ${items} items, ${curve.length} days; ${[30, 90, 180, 365, 540, 729].map(d => `${d}d ${point(curve, d)}`).join(', ')}`);
+  }
 
   const label = (e) => `${e.name}${e.variant ? ` (${e.variant})` : ''}`;
   const show = (title, list, value) => {

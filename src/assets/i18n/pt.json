@@ -275,6 +275,13 @@
         "history_change": "{{change}} em {{period}}",
         "history_trades": "{{count}} vendas",
         "history_orders": "{{count}} ofertas",
+        "history_typical": "Típico após o lançamento",
+        "history_expected": "{{price}} em 90 dias",
+        "history_typical_ended": "Este item já passou dos 2 anos de lançamento, além da curva: escolha Tudo para vê-la.",
+        "history_typical_note": {
+            "sets": "Linha tracejada: o preço típico de um Prime Set depois do lançamento, mediana de {{count}} sets lançados desde 2021, a partir do preço de lançamento deste item. É uma referência, não uma previsão.",
+            "parts": "Linha tracejada: o preço típico de uma peça Prime depois do lançamento, mediana de {{count}} peças lançadas desde 2021, a partir do preço de lançamento deste item. É uma referência, não uma previsão."
+        },
         "periods": {
             "7": "7 dias",
             "30": "30 dias",

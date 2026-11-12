@@ -57,9 +57,26 @@
               <span class="change">({{'market.history_change' | transloco: {change: formatChange(l.sellChange), period: ('market.periods_change.' + period() | transloco)} }})</span>
             }
           </span>
+          @if (l.typical != null) {
+            <span>
+              <span class="swatch typical" aria-hidden="true"></span>{{'market.history_typical' | transloco}}: <strong>{{formatPrice(l.typical)}}</strong>
+              <img src="assets/img/icons/platinum.png" alt="platinum" width="20" />
+              @if (l.expected != null) {
+                <span class="change">({{'market.history_expected' | transloco: {price: formatPrice(l.expected)} }})</span>
+              }
+            </span>
+          }
         </p>
       }
       <div #chart class="chart"></div>
+      @if (launch(); as launch) {
+        <p class="note"><small>
+          {{'market.history_typical_note.' + launch.group | transloco: {count: launch.items} }}
+          @if (launch.ended) {
+            {{'market.history_typical_ended' | transloco}}
+          }
+        </small></p>
+      }
     }
   }
 </dialog>
