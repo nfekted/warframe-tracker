@@ -132,7 +132,8 @@
             "Standing": "Reputação",
             "Star Chart": "Mapa estelar",
             "Syndicates": "Sindicatos",
-            "Old Peace": "Old Peace"
+            "Old Peace": "Old Peace",
+            "Cephalon Melica": "Cephalon Melica"
         },
         "descriptions": {
             "Arbitration": "Trocado por recursos da  Arbitragem nos Árbitros do Hexis.",
@@ -162,7 +163,8 @@
             "Standing": "Comprado por recompensa em cetus, Furtuna, Necralisk e outros.",
             "Star Chart": "Diagrama ou parte de arma, encontrado em missões do mapa estelar.",
             "Syndicates": "Comprado com reputação nos sindicatos.",
-            "Old Peace": "Adquirido nos modos de jogo Descêndia e Rebelião de Perita"
+            "Old Peace": "Adquirido nos modos de jogo Descêndia e Rebelião de Perita",
+            "Cephalon Melica": "Pode ser comprado com Cephalon Melica no Pico de Yuvan, na Terra"
         }
     },
     "mr": {
@@ -263,7 +265,66 @@
         "empty_list": "Sua lista está vazia. Busque um item acima para adicionar.",
         "total": "Valor total (preço mediano)",
         "found": "{{count}} itens encontrados",
-        "show_more_count": "Mostrar mais ({{shown}} de {{count}})"
+        "show_more_count": "Mostrar mais ({{shown}} de {{count}})",
+        "history": "Histórico de preços",
+        "history_close": "Fechar",
+        "history_source": "Histórico de preços do",
+        "history_loading": "Carregando o histórico de preços...",
+        "history_empty": "Ainda não há histórico de preços para este item.",
+        "history_variant": "Versão",
+        "history_period": "Período",
+        "history_closed": "Vendas concluídas",
+        "history_sell": "Ofertas de venda",
+        "history_change": "{{change}} em {{period}}",
+        "history_trades": "{{count}} vendas",
+        "history_orders": "{{count}} ofertas",
+        "history_typical": "Típico após o lançamento",
+        "history_expected": "{{price}} em 90 dias",
+        "history_typical_ended": "Este item já passou dos 2 anos de lançamento, além da curva: escolha Tudo para vê-la.",
+        "history_typical_note": {
+            "sets": "Linha tracejada: o preço típico de um Prime Set depois do lançamento, mediana de {{count}} sets lançados desde 2021, a partir do preço de lançamento deste item. É uma referência, não uma previsão.",
+            "parts": "Linha tracejada: o preço típico de uma peça Prime depois do lançamento, mediana de {{count}} peças lançadas desde 2021, a partir do preço de lançamento deste item. É uma referência, não uma previsão."
+        },
+        "periods": {
+            "7": "7 dias",
+            "30": "30 dias",
+            "90": "90 dias",
+            "365": "1 ano",
+            "0": "Tudo"
+        },
+        "periods_change": {
+            "7": "7 dias",
+            "30": "30 dias",
+            "90": "90 dias",
+            "365": "1 ano",
+            "0": "todo o histórico"
+        },
+        "trends": {
+            "title": "Tendências",
+            "loading": "Carregando as tendências...",
+            "error": "Não foi possível carregar as tendências.",
+            "intro": "Tendências do histórico de preços até {{date}}.",
+            "intro_median": "O preço de cada dia é a mediana dos últimos 7 dias, então um dia fora do normal não conta.",
+            "rules_items": "Só entram itens medidos por vendas concluídas: eles precisam valer pelo menos 10 platinas e ter variado pelo menos 20% e 5 platinas em 30 dias.",
+            "rules_relics": "Só entram relíquias intact, medidas por vendas concluídas ou por ofertas de venda quando têm 50 ou mais por dia: elas precisam valer pelo menos 10 platinas e ter variado pelo menos 20% e 5 platinas em 30 dias.",
+            "group": "Mostrar",
+            "items": "Itens",
+            "relics": "Relíquias",
+            "list": "Lista",
+            "rising": "Subindo",
+            "falling": "Caindo",
+            "broke": "Quebrou o padrão",
+            "rising_hint": "Maiores altas de preço nos últimos 30 dias.",
+            "falling_hint": "Maiores quedas de preço nos últimos 30 dias.",
+            "broke_hint": "Preços que ficaram meses no mesmo valor e agora estão a pelo menos 25% e 5 platinas dele.",
+            "before": "30 dias atrás",
+            "usual": "Preço de sempre",
+            "now": "Agora",
+            "change": "Variação",
+            "trades": "Vendas por dia",
+            "orders": "Ofertas por dia",
+            "empty": "Nada nesta lista no momento."
+        }
     },
     "no_results": "Nenhum item corresponde aos filtros",
     "clear_filters": "Limpar filtros",

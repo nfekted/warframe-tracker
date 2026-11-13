@@ -132,7 +132,8 @@
             "Standing": "Standing",
             "Star Chart": "Star Chart",
             "Syndicates": "Syndicates",
-            "Old Peace": "Old Peace"
+            "Old Peace": "Old Peace",
+            "Cephalon Melica": "Cephalon Melica"
         },
         "descriptions": {
             "Arbitration": "Traded with Arbitration resources in Arbiters of Hexis.",
@@ -162,7 +163,8 @@
             "Standing": "Purchased with Standing in Cetus, Fortuna, Necralisk among many others.",
             "Star Chart": "Blueprint or item parts dropped in common missions or Star Chart.",
             "Syndicates": "Purchased from Syndicates with Standing.",
-            "Old Peace": "Dropped in The Descendia game mode or The Perita Rebellion game mode."
+            "Old Peace": "Dropped in The Descendia game mode or The Perita Rebellion game mode.",
+            "Cephalon Melica": "Can be purchased from Cephalon Melica NPC on Yuvan Peak on Earth"
         }
     },
     "mr": {
@@ -263,7 +265,66 @@
         "empty_list": "Your list is empty. Search for an item above to add it.",
         "total": "Total value (median price)",
         "found": "{{count}} items found",
-        "show_more_count": "Show more ({{shown}} of {{count}})"
+        "show_more_count": "Show more ({{shown}} of {{count}})",
+        "history": "Price history",
+        "history_close": "Close",
+        "history_source": "Price history from",
+        "history_loading": "Loading price history...",
+        "history_empty": "There is no price history for this item yet.",
+        "history_variant": "Version",
+        "history_period": "Period",
+        "history_closed": "Closed trades",
+        "history_sell": "Sell orders",
+        "history_change": "{{change}} in {{period}}",
+        "history_trades": "{{count}} trades",
+        "history_orders": "{{count}} orders",
+        "history_typical": "Typical after launch",
+        "history_expected": "{{price}} in 90 days",
+        "history_typical_ended": "This item is more than two years past its launch, beyond the curve: choose All to see it.",
+        "history_typical_note": {
+            "sets": "Dashed line: the typical price of a Prime set after its launch, the median of {{count}} sets released since 2021, starting from this item's launch price. It is a reference, not a forecast.",
+            "parts": "Dashed line: the typical price of a Prime part after its launch, the median of {{count}} parts released since 2021, starting from this item's launch price. It is a reference, not a forecast."
+        },
+        "periods": {
+            "7": "7 days",
+            "30": "30 days",
+            "90": "90 days",
+            "365": "1 year",
+            "0": "All"
+        },
+        "periods_change": {
+            "7": "7 days",
+            "30": "30 days",
+            "90": "90 days",
+            "365": "1 year",
+            "0": "the whole history"
+        },
+        "trends": {
+            "title": "Trends",
+            "loading": "Loading trends...",
+            "error": "The trends could not be loaded.",
+            "intro": "Trends from the price history up to {{date}}.",
+            "intro_median": "Each day's price is the median of its last 7 days, so a single odd day does not count.",
+            "rules_items": "Only items measured by closed trades are listed: they must be worth at least 10 platinum and have moved at least 20% and 5 platinum in 30 days.",
+            "rules_relics": "Only intact relics are listed, measured by closed trades or by sell orders when they have 50 or more a day: they must be worth at least 10 platinum and have moved at least 20% and 5 platinum in 30 days.",
+            "group": "Show",
+            "items": "Items",
+            "relics": "Relics",
+            "list": "List",
+            "rising": "Rising",
+            "falling": "Falling",
+            "broke": "Broke the pattern",
+            "rising_hint": "Biggest price increases in the last 30 days.",
+            "falling_hint": "Biggest price drops in the last 30 days.",
+            "broke_hint": "Prices that stayed at the same value for months and are now at least 25% and 5 platinum away from it.",
+            "before": "30 days ago",
+            "usual": "Usual price",
+            "now": "Now",
+            "change": "Change",
+            "trades": "Trades a day",
+            "orders": "Orders a day",
+            "empty": "Nothing in this list right now."
+        }
     },
     "no_results": "No items match the filters",
     "clear_filters": "Clear filters",
