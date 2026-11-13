@@ -91,6 +91,13 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Citrine#Acquisition"
     },
     {
+        "name": "Citrine Prime",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Citrine/Prime#Acquisition"
+    },
+    {
         "name": "Cyte-09",
         "mastery_requirement": 0,
         "mastery_xp": 6000,
@@ -154,7 +161,7 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Excalibur/Prime#Acquisition"
     },
     {
-        "name": "Folie",
+        "name": "Follie",
         "mastery_requirement": 0,
         "mastery_xp": 6000,
         "acquisition": "Star Chart",
@@ -446,6 +453,13 @@
         "mastery_xp": 6000,
         "acquisition": "Relic Drop",
         "acquisitionDescription": "https://wiki.warframe.com/w/Mirage/Prime#Acquisition"
+    },
+    {
+        "name": "Narin",
+        "mastery_requirement": 0,
+        "mastery_xp": 6000,
+        "acquisition": "Star Chart",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Narin#Acquisition"
     },
     {
         "name": "Nekros",

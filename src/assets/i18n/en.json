@@ -132,7 +132,8 @@
             "Standing": "Standing",
             "Star Chart": "Star Chart",
             "Syndicates": "Syndicates",
-            "Old Peace": "Old Peace"
+            "Old Peace": "Old Peace",
+            "Cephalon Melica": "Cephalon Melica"
         },
         "descriptions": {
             "Arbitration": "Traded with Arbitration resources in Arbiters of Hexis.",
@@ -162,7 +163,8 @@
             "Standing": "Purchased with Standing in Cetus, Fortuna, Necralisk among many others.",
             "Star Chart": "Blueprint or item parts dropped in common missions or Star Chart.",
             "Syndicates": "Purchased from Syndicates with Standing.",
-            "Old Peace": "Dropped in The Descendia game mode or The Perita Rebellion game mode."
+            "Old Peace": "Dropped in The Descendia game mode or The Perita Rebellion game mode.",
+            "Cephalon Melica": "Can be purchased from Cephalon Melica NPC on Yuvan Peak on Earth"
         }
     },
     "mr": {

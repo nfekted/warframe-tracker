@@ -1027,5 +1027,12 @@
         "mastery_xp": 3000,
         "acquisition": "Duviri",
         "acquisitionDescription": "https://wiki.warframe.com/w/Scyotid#Acquisition"
+    },
+    {
+        "name": "Aksondol",
+        "mastery_requirement": 14,
+        "mastery_xp": 3000,
+        "acquisition": "Cephalon Melica",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Aksondol#Acquisition"
     }
 ]

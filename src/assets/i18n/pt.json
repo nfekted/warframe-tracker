@@ -132,7 +132,8 @@
             "Standing": "Reputação",
             "Star Chart": "Mapa estelar",
             "Syndicates": "Sindicatos",
-            "Old Peace": "Old Peace"
+            "Old Peace": "Old Peace",
+            "Cephalon Melica": "Cephalon Melica"
         },
         "descriptions": {
             "Arbitration": "Trocado por recursos da  Arbitragem nos Árbitros do Hexis.",
@@ -162,7 +163,8 @@
             "Standing": "Comprado por recompensa em cetus, Furtuna, Necralisk e outros.",
             "Star Chart": "Diagrama ou parte de arma, encontrado em missões do mapa estelar.",
             "Syndicates": "Comprado com reputação nos sindicatos.",
-            "Old Peace": "Adquirido nos modos de jogo Descêndia e Rebelião de Perita"
+            "Old Peace": "Adquirido nos modos de jogo Descêndia e Rebelião de Perita",
+            "Cephalon Melica": "Pode ser comprado com Cephalon Melica no Pico de Yuvan, na Terra"
         }
     },
     "mr": {

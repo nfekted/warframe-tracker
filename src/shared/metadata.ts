@@ -1,16 +1,16 @@
 // Values that change with game or data updates. Edit here instead of the templates.
 
 export const GAME_UPDATE = {
-    name: 'Update 43: Jade Shadows: Constellations',
-    date: '2026-11-08',
+    name: 'Update 44: Iceblade of Narin',
+    date: '2026-11-12',
 };
 
 export const MARKET_DATA = {
     tradeables: {
-        version: 'Warframe 39.1',
-        date: '2025-09-14',
-        update: 'The Old Peace',
-        wiki: 'https://wiki.warframe.com/w/Update_41',
+        version: 'Warframe 44',
+        date: '2026-11-12',
+        update: 'Iceblade of Narin',
+        wiki: 'https://wiki.warframe.com/w/Update_44:_Iceblade_of_Narin',
         source: 'Warframe Market',
         url: 'https://warframe.market/',
     },
@@ -23,7 +23,6 @@ export const MARKET_DATA = {
         url: 'https://www.warframe.com/droptables',
         date: '2026-10-22',
     },
-    //No date here: the trends tab shows the last imported day from the history summary
     history: {
         source: 'relics.run',
         url: 'https://relics.run/',

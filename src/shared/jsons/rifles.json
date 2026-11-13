@@ -1134,6 +1134,13 @@
         "acquisitionDescription": "https://wiki.warframe.com/w/Steflos#Acquisition"
     },
     {
+        "name": "Steflos Prime",
+        "mastery_requirement": 15,
+        "mastery_xp": 3000,
+        "acquisition": "Relic Drop",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Steflos_Prime#Acquisition"
+    },
+    {
         "name": "Strun",
         "mastery_requirement": 1,
         "mastery_xp": 3000,
@@ -1349,5 +1356,12 @@
         "mastery_xp": 4000,
         "acquisition": "Coda / Eleanor",
         "acquisitionDescription": "https://wiki.warframe.com/w/Coda_Bubonico#Acquisition"
+    },
+    {
+        "name": "Nunchasa",
+        "mastery_requirement": 14,
+        "mastery_xp": 3000,
+        "acquisition": "Cephalon Melica",
+        "acquisitionDescription": "https://wiki.warframe.com/w/Nunchasa#Acquisition"
     }
 ]
